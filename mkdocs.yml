@@ -154,6 +154,12 @@ nav:
     - PLC/DCSトラブル: 06-trouble/plc-dcs.md
     - 接地・ノイズ: 06-trouble/grounding-noise.md
     - 保護装置誤動作: 06-trouble/protection.md
+  - 鶴見工場固有:
+    - 07-tsurumi/index.md
+    - 塩害・腐食環境: 07-tsurumi/salt-damage.md
+    - 石油コンビナート法対応: 07-tsurumi/combinat-law.md
+    - プロセス特性: 07-tsurumi/process-chars.md
+    - 接地・腐食対策: 07-tsurumi/grounding-coastal.md
   - リファレンス:
     - reference/index.md
     - 用語集: reference/glossary.md
