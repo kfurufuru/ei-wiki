@@ -1,11 +1,19 @@
 ---
-title: 保護協調
-tags: [高圧, 保護協調]
+title: "保護協調"
+description: "協調曲線・時限設定・保護協調図の読み方"
+tags:
+  - 高圧
+audience:
+  - 電気担当
 last_verified: 2026-04-03
-status: stub
+status: draft
 ---
 
 # 保護協調
 
-!!! warning "作成中"
-    この記事はまだ作成中です。内容は今後追加されます。
+!!! note "作成中"
+    この記事は現在作成中です。テンプレートは `docs/templates/` を参照してください。
+
+## 概要
+
+[30秒まとめ — ここから書き始める]

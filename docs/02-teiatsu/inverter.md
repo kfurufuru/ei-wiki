@@ -1,11 +1,19 @@
 ---
-title: インバータ
-tags: [低圧, インバータ]
+title: "インバータ"
+description: "インバータ選定・パラメータ設定・ノイズ対策"
+tags:
+  - 低圧
+audience:
+  - 電気担当
 last_verified: 2026-04-03
-status: stub
+status: draft
 ---
 
 # インバータ
 
-!!! warning "作成中"
-    この記事はまだ作成中です。内容は今後追加されます。
+!!! note "作成中"
+    この記事は現在作成中です。テンプレートは `docs/templates/` を参照してください。
+
+## 概要
+
+[30秒まとめ — ここから書き始める]

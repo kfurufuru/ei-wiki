@@ -1,11 +1,19 @@
 ---
-title: 規格・法規
-tags: [設計, 規格, 法規]
+title: "規格・法規"
+description: "電気設備技術基準・内線規程・JIS早見"
+tags:
+  - 設計
+audience:
+  - 電気担当
 last_verified: 2026-04-03
-status: stub
+status: draft
 ---
 
 # 規格・法規
 
-!!! warning "作成中"
-    この記事はまだ作成中です。内容は今後追加されます。
+!!! note "作成中"
+    この記事は現在作成中です。テンプレートは `docs/templates/` を参照してください。
+
+## 概要
+
+[30秒まとめ — ここから書き始める]
