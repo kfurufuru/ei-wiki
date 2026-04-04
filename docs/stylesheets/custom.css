@@ -21,3 +21,17 @@
 .md-typeset .admonition.trouble {
   border-color: #ff6b6b;
 }
+
+/* 更新日バッジ・対象者バッジのレスポンシブ調整 */
+.ei-verified-badge,
+.ei-audience-badges {
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .ei-verified-badge span,
+  .ei-audience-badges span {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
+}
