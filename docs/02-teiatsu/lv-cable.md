@@ -32,10 +32,16 @@ status: active
 
 ---
 
-## 許容電流表（CV 3芯 600V）
+## 許容電流表（600V）
 
-| 断面積 [mm²] | 管路敷設 [A] | 空中敷設（気中） [A] | ケーブルラック [A] |
-|------------|------------|-------------------|-----------------|
+<div style="margin-bottom:0.6rem">
+<button id="amp-btn-cv" onclick="switchAmpTable('cv')" style="padding:0.3rem 1rem;border:2px solid var(--md-primary-fg-color,#00897b);background:var(--md-primary-fg-color,#00897b);color:#fff;border-radius:4px 0 0 4px;cursor:pointer;font-size:0.9rem">CV 3芯</button><button id="amp-btn-cvt" onclick="switchAmpTable('cvt')" style="padding:0.3rem 1rem;border:2px solid var(--md-primary-fg-color,#00897b);background:transparent;color:var(--md-primary-fg-color,#00897b);border-radius:0 4px 4px 0;cursor:pointer;font-size:0.9rem">CVT</button>
+</div>
+
+<div id="amp-table-cv">
+
+| 断面積 [mm²] | 管路敷設 [A] | 気中敷設 [A] | ケーブルラック [A] |
+|------------|------------|------------|-----------------|
 | 2.0 | 19 | 26 | 24 |
 | 3.5 | 26 | 36 | 33 |
 | 5.5 | 34 | 47 | 43 |
@@ -45,6 +51,23 @@ status: active
 | 38 | 105 | 144 | 132 |
 | 60 | 135 | 185 | 170 |
 | 100 | 175 | 240 | 220 |
+
+</div>
+
+<div id="amp-table-cvt" style="display:none">
+
+| 断面積 [mm²] | 管路敷設 [A] | 気中敷設 [A] | ケーブルラック [A] |
+|------------|------------|------------|-----------------|
+| 14 | 61 | 88 | 80 |
+| 22 | 78 | 112 | 103 |
+| 38 | 105 | 152 | 139 |
+| 60 | 135 | 194 | 178 |
+| 100 | 175 | 252 | 231 |
+| 150 | 210 | 302 | 277 |
+| 200 | 240 | 346 | 317 |
+| 250 | 270 | 385 | 353 |
+
+</div>
 
 !!! warning "補正係数を忘れずに"
     - 周囲温度 40℃ 超：温度補正係数を乗じる（40℃ 基準値）
@@ -97,9 +120,17 @@ V0 : 受電端電圧 [V]（200V または 400V）
 ## ケーブルサイズ選定ツール
 
 <div id="cable-calc-wrap" style="background:var(--md-code-bg-color,#f5f5f5);border:1px solid #ddd;border-radius:8px;padding:1.2rem 1.5rem;margin:1rem 0">
-<p style="margin:0 0 1rem;font-weight:bold;color:var(--md-primary-fg-color,#00897b)">⚡ CV ケーブルサイズ選定ツール（600V CV 3芯）</p>
+<p style="margin:0 0 1rem;font-weight:bold;color:var(--md-primary-fg-color,#00897b)">⚡ ケーブルサイズ選定ツール（600V CV / CVT）</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.8rem">
+
+<div>
+<label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">ケーブル種類</label>
+<select id="cc_ctype" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
+<option value="cv">CV 3芯（2.0〜100mm²）</option>
+<option value="cvt">CVT（14〜250mm²）</option>
+</select>
+</div>
 
 <div>
 <label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">負荷電流 [A]</label>
