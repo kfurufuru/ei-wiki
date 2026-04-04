@@ -75,6 +75,9 @@ extra_css:
   - stylesheets/custom.css
 
 extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/kfurufuru/ei-wiki
@@ -82,6 +85,7 @@ extra:
 
 nav:
   - Home: index.md
+  - はじめての方へ: getting-started.md
   - 症状逆引き: 06-trouble/index.md
   - 高圧:
     - 01-koatsu/index.md
@@ -160,6 +164,33 @@ nav:
     - 石油コンビナート法対応: 07-site/combinat-law.md
     - プロセス特性: 07-site/process-chars.md
     - 接地・腐食対策: 07-site/grounding-coastal.md
+  - 省エネ・エネルギー管理:
+    - 08-energy/index.md
+    - 省エネ法対応: 08-energy/energy-law.md
+    - デマンド管理: 08-energy/demand-management.md
+    - インバータ省エネ計算: 08-energy/vfd-energy.md
+    - 力率改善ROI: 08-energy/power-factor-roi.md
+    - エネルギー監視: 08-energy/energy-monitoring.md
+  - 電気主任技術者業務:
+    - 09-hoantokei/index.md
+    - 法定業務一覧: 09-hoantokei/legal-duties.md
+    - 保安規程の管理: 09-hoantokei/hoan-kisoku.md
+    - 電力会社との窓口: 09-hoantokei/denryoku-toiawase.md
+    - 電気事故対応と報告: 09-hoantokei/jiko-taiou.md
+  - 安全管理・作業許可:
+    - 10-safety/index.md
+    - 作業許可制度（PTW）: 10-safety/ptw.md
+    - 特別教育・資格一覧: 10-safety/special-education.md
+    - LOTO（ロックアウト）: 10-safety/lockout-tagout.md
+    - リスクアセスメント: 10-safety/risk-assessment.md
+  - 生成AI業務活用:
+    - 11-genai/index.md
+    - 生成AIの基本: 11-genai/basics.md
+    - M365 Copilot活用: 11-genai/m365-copilot.md
+    - ChatGPT活用: 11-genai/chatgpt.md
+    - プロンプトの書き方: 11-genai/prompt-writing.md
+    - 電気計装業務への応用: 11-genai/ei-applications.md
+    - 注意事項・情報セキュリティ: 11-genai/security.md
   - リファレンス:
     - reference/index.md
     - 用語集: reference/glossary.md
