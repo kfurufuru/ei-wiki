@@ -23,4 +23,34 @@
     </span>
   </div>
 {% endblock %}
-{% block content %}{{ super() }}{% endblock %}
+{% block content %}
+{% if page.meta and page.meta.last_verified %}
+  {% set lv = page.meta.last_verified | string %}
+  <div class="ei-verified-badge" style="margin-bottom: 1rem;">
+    {% set today = "2026-04-04" %}
+    {% if lv < "2025-04-04" %}
+      <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:4px;font-size:0.78rem;font-weight:600;background:#fff3cd;color:#856404;border:1px solid #ffc107;">
+        ⚠️ 最終確認: {{ lv }} — 1年以上未更新。内容を確認してから参照してください。
+      </span>
+    {% else %}
+      <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:4px;font-size:0.78rem;font-weight:600;background:#d1e7dd;color:#0a3622;border:1px solid #a3cfbb;">
+        ✅ 最終確認: {{ lv }}
+      </span>
+    {% endif %}
+  </div>
+{% endif %}
+{% if page.meta and page.meta.audience %}
+  <div class="ei-audience-badges" style="margin-bottom:1.2rem;display:flex;gap:6px;flex-wrap:wrap;">
+    {% for a in page.meta.audience %}
+      {% if a == "電気担当" %}
+        <span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:4px;font-size:0.75rem;font-weight:700;background:#cfe2ff;color:#084298;border:1px solid #9ec5fe;">⚡ 電気担当</span>
+      {% elif a == "保全担当" %}
+        <span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:4px;font-size:0.75rem;font-weight:700;background:#f8d7da;color:#58151c;border:1px solid #f1aeb5;">🔧 保全担当</span>
+      {% elif a == "製造担当" %}
+        <span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:4px;font-size:0.75rem;font-weight:700;background:#d1e7dd;color:#0a3622;border:1px solid #a3cfbb;">🏭 製造担当</span>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+{{ super() }}
+{% endblock %}
