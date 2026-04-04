@@ -75,9 +75,6 @@ extra_css:
   - stylesheets/custom.css
 
 extra:
-  analytics:
-    provider: google
-    property: G-XXXXXXXXXX
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/kfurufuru/ei-wiki
