@@ -96,250 +96,73 @@ V0 : 受電端電圧 [V]（200V または 400V）
 
 ## ケーブルサイズ選定ツール
 
-<div class="cable-calc" markdown="block">
+<div id="cable-calc-wrap" style="background:var(--md-code-bg-color,#f5f5f5);border:1px solid #ddd;border-radius:8px;padding:1.2rem 1.5rem;margin:1rem 0">
+<p style="margin:0 0 1rem;font-weight:bold;color:var(--md-primary-fg-color,#00897b)">⚡ CV ケーブルサイズ選定ツール（600V CV 3芯）</p>
 
-<style>
-.cable-calc-box {
-  background: var(--md-code-bg-color, #f5f5f5);
-  border: 1px solid var(--md-default-fg-color--lightest, #ddd);
-  border-radius: 8px;
-  padding: 1.2rem 1.5rem;
-  margin: 1rem 0;
-}
-.cable-calc-box h4 {
-  margin: 0 0 1rem 0;
-  font-size: 1rem;
-  color: var(--md-primary-fg-color, #00897b);
-}
-.cable-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.8rem;
-}
-.cable-field label {
-  display: block;
-  font-size: 0.82rem;
-  color: var(--md-default-fg-color--light, #666);
-  margin-bottom: 0.25rem;
-}
-.cable-field input,
-.cable-field select {
-  width: 100%;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid var(--md-default-fg-color--lightest, #ccc);
-  border-radius: 4px;
-  font-size: 0.95rem;
-  background: var(--md-default-bg-color, #fff);
-  color: var(--md-default-fg-color, #333);
-  box-sizing: border-box;
-}
-.cable-btn {
-  margin-top: 1rem;
-  padding: 0.5rem 1.5rem;
-  background: var(--md-primary-fg-color, #00897b);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.95rem;
-}
-.cable-btn:hover { opacity: 0.85; }
-.cable-result {
-  margin-top: 1rem;
-  display: none;
-}
-.cable-result-main {
-  background: #e8f5e9;
-  border-left: 4px solid #43a047;
-  border-radius: 4px;
-  padding: 0.8rem 1rem;
-  margin-bottom: 0.8rem;
-}
-.cable-result-main.warn {
-  background: #fff8e1;
-  border-left-color: #fb8c00;
-}
-.cable-result-main .size-label {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #1b5e20;
-}
-.cable-result-main.warn .size-label { color: #e65100; }
-.cable-result-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-}
-.cable-result-table th {
-  background: var(--md-primary-fg-color, #00897b);
-  color: #fff;
-  padding: 0.35rem 0.6rem;
-  text-align: center;
-}
-.cable-result-table td {
-  padding: 0.3rem 0.6rem;
-  text-align: center;
-  border-bottom: 1px solid var(--md-default-fg-color--lightest, #eee);
-}
-.cable-result-table tr.selected {
-  background: #e8f5e9;
-  font-weight: bold;
-}
-.cable-result-table .ok { color: #2e7d32; }
-.cable-result-table .ng { color: #c62828; }
-</style>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.8rem">
 
-<div class="cable-calc-box">
-<h4>⚡ CV ケーブルサイズ選定ツール（600V CV 3芯）</h4>
-
-<div class="cable-grid">
-  <div class="cable-field">
-    <label>負荷電流 [A]</label>
-    <input type="number" id="cc_current" value="30" min="1" step="1">
-  </div>
-  <div class="cable-field">
-    <label>ケーブル長 [m]</label>
-    <input type="number" id="cc_length" value="50" min="1" step="1">
-  </div>
-  <div class="cable-field">
-    <label>電源電圧</label>
-    <select id="cc_voltage">
-      <option value="200">200 V（三相）</option>
-      <option value="400">400 V（三相）</option>
-      <option value="200s">200 V（単相 2線）</option>
-      <option value="100">100 V（単相 2線）</option>
-    </select>
-  </div>
-  <div class="cable-field">
-    <label>敷設方法</label>
-    <select id="cc_install">
-      <option value="conduit">管路敷設</option>
-      <option value="air">空中（気中）敷設</option>
-      <option value="rack">ケーブルラック</option>
-    </select>
-  </div>
-  <div class="cable-field">
-    <label>負荷力率 cosθ</label>
-    <input type="number" id="cc_pf" value="0.85" min="0.1" max="1.0" step="0.01">
-  </div>
-  <div class="cable-field">
-    <label>許容電圧降下率 [%]</label>
-    <input type="number" id="cc_vd_limit" value="4" min="1" max="10" step="0.5">
-  </div>
+<div>
+<label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">負荷電流 [A]</label>
+<input id="cc_current" type="number" value="30" min="1" step="1" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
 </div>
 
-<button class="cable-btn" onclick="calcCable()">選定実行</button>
+<div>
+<label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">ケーブル長 [m]</label>
+<input id="cc_length" type="number" value="50" min="1" step="1" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
+</div>
 
-<div class="cable-result" id="cc_result">
-  <div class="cable-result-main" id="cc_result_main">
-    <div style="font-size:0.85rem; margin-bottom:0.3rem">推奨ケーブルサイズ</div>
-    <div class="size-label" id="cc_result_size"></div>
-    <div style="font-size:0.82rem; margin-top:0.4rem" id="cc_result_reason"></div>
-  </div>
-  <table class="cable-result-table">
-    <thead>
-      <tr>
-        <th>断面積 [mm²]</th>
-        <th>許容電流 [A]</th>
-        <th>電流マージン</th>
-        <th>電圧降下 [V]</th>
-        <th>電圧降下率 [%]</th>
-        <th>判定</th>
-      </tr>
-    </thead>
-    <tbody id="cc_result_tbody"></tbody>
-  </table>
-  <div style="font-size:0.78rem; color:#888; margin-top:0.5rem">
-    ※ CV 3芯 600V 基準。周囲温度・多条敷設の補正係数は別途適用すること。<br>
-    ※ リアクタンス X = 0.09 Ω/km（固定値）。精密計算はカタログ値を使用。
-  </div>
+<div>
+<label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">電源電圧</label>
+<select id="cc_voltage" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
+<option value="200">200 V（三相）</option>
+<option value="400">400 V（三相）</option>
+<option value="200s">200 V（単相2線）</option>
+<option value="100">100 V（単相2線）</option>
+</select>
+</div>
+
+<div>
+<label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">敷設方法</label>
+<select id="cc_install" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
+<option value="conduit">管路敷設</option>
+<option value="air">空中（気中）敷設</option>
+<option value="rack">ケーブルラック</option>
+</select>
+</div>
+
+<div>
+<label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">負荷力率 cosθ</label>
+<input id="cc_pf" type="number" value="0.85" min="0.1" max="1.0" step="0.01" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
+</div>
+
+<div>
+<label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">許容電圧降下率 [%]</label>
+<input id="cc_vd_limit" type="number" value="4" min="1" max="10" step="0.5" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
 </div>
 
 </div>
 
-<script>
-(function(){
-  // CV 3芯 許容電流 [管路, 気中, ラック]
-  var CABLE_DATA = [
-    { size: 2.0,  amp: [19, 26, 24],  R: 9.61  },
-    { size: 3.5,  amp: [26, 36, 33],  R: 5.48  },
-    { size: 5.5,  amp: [34, 47, 43],  R: 3.49  },
-    { size: 8,    amp: [42, 58, 53],  R: 2.40  },
-    { size: 14,   amp: [61, 84, 77],  R: 1.37  },
-    { size: 22,   amp: [78, 107, 98], R: 0.872 },
-    { size: 38,   amp: [105,144,132], R: 0.505 },
-    { size: 60,   amp: [135,185,170], R: 0.320 },
-    { size: 100,  amp: [175,240,220], R: 0.193 },
-  ];
-  var X = 0.09; // Ω/km
+<button onclick="calcCable()" style="margin-top:1rem;padding:0.5rem 1.5rem;background:var(--md-primary-fg-color,#00897b);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:0.95rem">選定実行</button>
 
-  window.calcCable = function() {
-    var I      = parseFloat(document.getElementById('cc_current').value);
-    var L      = parseFloat(document.getElementById('cc_length').value) / 1000; // km
-    var vSel   = document.getElementById('cc_voltage').value;
-    var inst   = document.getElementById('cc_install').value;
-    var pf     = parseFloat(document.getElementById('cc_pf').value);
-    var vdLim  = parseFloat(document.getElementById('cc_vd_limit').value);
-
-    var instIdx = {conduit:0, air:1, rack:2}[inst];
-    var isSingle = (vSel === '200s' || vSel === '100');
-    var V0 = parseFloat(vSel) || 200;
-    var factor = isSingle ? 2 : Math.sqrt(3);
-    var sinθ = Math.sqrt(1 - pf*pf);
-
-    var tbody = document.getElementById('cc_result_tbody');
-    tbody.innerHTML = '';
-
-    var recommended = null;
-
-    for (var i = 0; i < CABLE_DATA.length; i++) {
-      var d = CABLE_DATA[i];
-      var allowable = d.amp[instIdx];
-      var currentOK = allowable >= I;
-      var vd = factor * I * (d.R * pf + X * sinθ) * L;
-      var vdRate = vd / V0 * 100;
-      var vdOK = vdRate <= vdLim;
-      var both = currentOK && vdOK;
-
-      if (both && recommended === null) recommended = { d: d, allowable: allowable, vd: vd, vdRate: vdRate };
-
-      var tr = document.createElement('tr');
-      if (both && recommended && recommended.d.size === d.size) tr.className = 'selected';
-
-      var margin = ((allowable / I - 1) * 100).toFixed(0);
-      var currentClass = currentOK ? 'ok' : 'ng';
-      var vdClass = vdOK ? 'ok' : 'ng';
-      var judge = (currentOK && vdOK) ? '<span class="ok">✓ OK</span>' : '<span class="ng">✗ NG</span>';
-
-      tr.innerHTML = '<td>' + (d.size < 10 ? d.size.toFixed(1) : d.size) + '</td>'
-        + '<td class="' + currentClass + '">' + allowable + '</td>'
-        + '<td class="' + currentClass + '">' + (currentOK ? '+' + margin + '%' : '不足') + '</td>'
-        + '<td class="' + vdClass + '">' + vd.toFixed(2) + '</td>'
-        + '<td class="' + vdClass + '">' + vdRate.toFixed(2) + '</td>'
-        + '<td>' + judge + '</td>';
-      tbody.appendChild(tr);
-    }
-
-    var resultMain = document.getElementById('cc_result_main');
-    var resultSize = document.getElementById('cc_result_size');
-    var resultReason = document.getElementById('cc_result_reason');
-
-    if (recommended) {
-      resultMain.className = 'cable-result-main';
-      var sizeStr = recommended.d.size < 10 ? recommended.d.size.toFixed(1) : recommended.d.size;
-      resultSize.textContent = 'CV ' + sizeStr + ' mm²';
-      resultReason.textContent = '許容電流 ' + recommended.allowable + ' A（負荷の ' + ((recommended.allowable/I)*100).toFixed(0) + '%）、電圧降下率 ' + recommended.vdRate.toFixed(2) + '%';
-    } else {
-      resultMain.className = 'cable-result-main warn';
-      resultSize.textContent = '100mm² 超 — 要別途検討';
-      resultReason.textContent = '表内サイズでは条件を満たせません。ケーブル並列または電圧昇圧を検討してください。';
-    }
-
-    document.getElementById('cc_result').style.display = 'block';
-  };
-})();
-</script>
+<div id="cc_result" style="display:none;margin-top:1rem">
+<div id="cc_result_main" style="border-left:4px solid #43a047;background:#e8f5e9;border-radius:4px;padding:0.8rem 1rem;margin-bottom:0.8rem">
+<div style="font-size:0.82rem;margin-bottom:0.3rem">推奨ケーブルサイズ</div>
+<div id="cc_result_size" style="font-size:1.4rem;font-weight:bold;color:#1b5e20"></div>
+<div id="cc_result_sub" style="font-size:0.82rem;margin-top:0.3rem"></div>
+</div>
+<table style="width:100%;border-collapse:collapse;font-size:0.85rem">
+<thead><tr style="background:var(--md-primary-fg-color,#00897b);color:#fff">
+<th style="padding:0.35rem 0.6rem">断面積 [mm²]</th>
+<th style="padding:0.35rem 0.6rem">許容電流 [A]</th>
+<th style="padding:0.35rem 0.6rem">電流マージン</th>
+<th style="padding:0.35rem 0.6rem">電圧降下 [V]</th>
+<th style="padding:0.35rem 0.6rem">電圧降下率 [%]</th>
+<th style="padding:0.35rem 0.6rem">判定</th>
+</tr></thead>
+<tbody id="cc_result_tbody"></tbody>
+</table>
+<p style="font-size:0.78rem;color:#888;margin-top:0.5rem">※ CV 3芯 600V 基準。温度・多条補正係数は別途適用すること。リアクタンス X = 0.09 Ω/km（固定値）。</p>
+</div>
 
 </div>
 
