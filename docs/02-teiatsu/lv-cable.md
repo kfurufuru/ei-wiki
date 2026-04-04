@@ -38,36 +38,44 @@ status: active
 <button id="amp-btn-cv" onclick="switchAmpTable('cv')" style="padding:0.3rem 1rem;border:2px solid var(--md-primary-fg-color,#00897b);background:var(--md-primary-fg-color,#00897b);color:#fff;border-radius:4px 0 0 4px;cursor:pointer;font-size:0.9rem">CV 3芯</button><button id="amp-btn-cvt" onclick="switchAmpTable('cvt')" style="padding:0.3rem 1rem;border:2px solid var(--md-primary-fg-color,#00897b);background:transparent;color:var(--md-primary-fg-color,#00897b);border-radius:0 4px 4px 0;cursor:pointer;font-size:0.9rem">CVT</button>
 </div>
 
-<div id="amp-table-cv">
+<table id="amp-table-cv" style="width:100%;border-collapse:collapse">
+<thead><tr style="background:var(--md-primary-fg-color,#00897b);color:#fff">
+<th style="padding:0.4rem 0.8rem;text-align:left">断面積 [mm²]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">管路敷設 [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">気中敷設 [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">ケーブルラック [A]</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:0.3rem 0.8rem">2.0</td><td style="text-align:right;padding:0.3rem 0.8rem">19</td><td style="text-align:right;padding:0.3rem 0.8rem">26</td><td style="text-align:right;padding:0.3rem 0.8rem">24</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">3.5</td><td style="text-align:right;padding:0.3rem 0.8rem">26</td><td style="text-align:right;padding:0.3rem 0.8rem">36</td><td style="text-align:right;padding:0.3rem 0.8rem">33</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">5.5</td><td style="text-align:right;padding:0.3rem 0.8rem">34</td><td style="text-align:right;padding:0.3rem 0.8rem">47</td><td style="text-align:right;padding:0.3rem 0.8rem">43</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">8</td><td style="text-align:right;padding:0.3rem 0.8rem">42</td><td style="text-align:right;padding:0.3rem 0.8rem">58</td><td style="text-align:right;padding:0.3rem 0.8rem">53</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">14</td><td style="text-align:right;padding:0.3rem 0.8rem">61</td><td style="text-align:right;padding:0.3rem 0.8rem">84</td><td style="text-align:right;padding:0.3rem 0.8rem">77</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">22</td><td style="text-align:right;padding:0.3rem 0.8rem">78</td><td style="text-align:right;padding:0.3rem 0.8rem">107</td><td style="text-align:right;padding:0.3rem 0.8rem">98</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">38</td><td style="text-align:right;padding:0.3rem 0.8rem">105</td><td style="text-align:right;padding:0.3rem 0.8rem">144</td><td style="text-align:right;padding:0.3rem 0.8rem">132</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">60</td><td style="text-align:right;padding:0.3rem 0.8rem">135</td><td style="text-align:right;padding:0.3rem 0.8rem">185</td><td style="text-align:right;padding:0.3rem 0.8rem">170</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">100</td><td style="text-align:right;padding:0.3rem 0.8rem">175</td><td style="text-align:right;padding:0.3rem 0.8rem">240</td><td style="text-align:right;padding:0.3rem 0.8rem">220</td></tr>
+</tbody>
+</table>
 
-| 断面積 [mm²] | 管路敷設 [A] | 気中敷設 [A] | ケーブルラック [A] |
-|------------|------------|------------|-----------------|
-| 2.0 | 19 | 26 | 24 |
-| 3.5 | 26 | 36 | 33 |
-| 5.5 | 34 | 47 | 43 |
-| 8 | 42 | 58 | 53 |
-| 14 | 61 | 84 | 77 |
-| 22 | 78 | 107 | 98 |
-| 38 | 105 | 144 | 132 |
-| 60 | 135 | 185 | 170 |
-| 100 | 175 | 240 | 220 |
-
-</div>
-
-<div id="amp-table-cvt" style="display:none">
-
-| 断面積 [mm²] | 管路敷設 [A] | 気中敷設 [A] | ケーブルラック [A] |
-|------------|------------|------------|-----------------|
-| 14 | 61 | 88 | 80 |
-| 22 | 78 | 112 | 103 |
-| 38 | 105 | 152 | 139 |
-| 60 | 135 | 194 | 178 |
-| 100 | 175 | 252 | 231 |
-| 150 | 210 | 302 | 277 |
-| 200 | 240 | 346 | 317 |
-| 250 | 270 | 385 | 353 |
-
-</div>
+<table id="amp-table-cvt" style="width:100%;border-collapse:collapse;display:none">
+<thead><tr style="background:var(--md-primary-fg-color,#00897b);color:#fff">
+<th style="padding:0.4rem 0.8rem;text-align:left">断面積 [mm²]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">管路敷設 [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">気中敷設 [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">ケーブルラック [A]</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:0.3rem 0.8rem">14</td><td style="text-align:right;padding:0.3rem 0.8rem">61</td><td style="text-align:right;padding:0.3rem 0.8rem">88</td><td style="text-align:right;padding:0.3rem 0.8rem">80</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">22</td><td style="text-align:right;padding:0.3rem 0.8rem">78</td><td style="text-align:right;padding:0.3rem 0.8rem">112</td><td style="text-align:right;padding:0.3rem 0.8rem">103</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">38</td><td style="text-align:right;padding:0.3rem 0.8rem">105</td><td style="text-align:right;padding:0.3rem 0.8rem">152</td><td style="text-align:right;padding:0.3rem 0.8rem">139</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">60</td><td style="text-align:right;padding:0.3rem 0.8rem">135</td><td style="text-align:right;padding:0.3rem 0.8rem">194</td><td style="text-align:right;padding:0.3rem 0.8rem">178</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">100</td><td style="text-align:right;padding:0.3rem 0.8rem">175</td><td style="text-align:right;padding:0.3rem 0.8rem">252</td><td style="text-align:right;padding:0.3rem 0.8rem">231</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">150</td><td style="text-align:right;padding:0.3rem 0.8rem">210</td><td style="text-align:right;padding:0.3rem 0.8rem">302</td><td style="text-align:right;padding:0.3rem 0.8rem">277</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">200</td><td style="text-align:right;padding:0.3rem 0.8rem">240</td><td style="text-align:right;padding:0.3rem 0.8rem">346</td><td style="text-align:right;padding:0.3rem 0.8rem">317</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">250</td><td style="text-align:right;padding:0.3rem 0.8rem">270</td><td style="text-align:right;padding:0.3rem 0.8rem">385</td><td style="text-align:right;padding:0.3rem 0.8rem">353</td></tr>
+</tbody>
+</table>
 
 !!! warning "補正係数を忘れずに"
     - 周囲温度 40℃ 超：温度補正係数を乗じる（40℃ 基準値）
