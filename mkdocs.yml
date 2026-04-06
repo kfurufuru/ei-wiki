@@ -137,6 +137,7 @@ nav:
     - 図面体系: 04-sekkei/drawing-system.md
     - 規格・法規: 04-sekkei/standards.md
     - メーカー選定: 04-sekkei/vendor-selection.md
+    - 改造・更新設計の注意点: 04-sekkei/renovation-design.md
   - 保全:
     - 05-hozen/index.md
     - 保全体系: 05-hozen/maintenance-system.md
@@ -147,6 +148,8 @@ nav:
     - 予備品管理: 05-hozen/spare-parts.md
     - 停電作業: 05-hozen/outage-work.md
     - 測定器の使い方: 05-hozen/instruments.md
+    - 他部門調整ノウハウ: 05-hozen/coordination.md
+    - データ活用・予兆保全: 05-hozen/predictive-maintenance.md
   - トラブル:
     - 06-trouble/index.md
     - トラブル対応の基本: 06-trouble/basics.md
@@ -158,6 +161,7 @@ nav:
     - PLC/DCSトラブル: 06-trouble/plc-dcs.md
     - 接地・ノイズ: 06-trouble/grounding-noise.md
     - 保護装置誤動作: 06-trouble/protection.md
+    - 非定常時の判断フレーム: 06-trouble/abnormal-situation.md
   - 当工場固有:
     - 07-site/index.md
     - 塩害・腐食環境: 07-site/salt-damage.md
@@ -183,6 +187,7 @@ nav:
     - 特別教育・資格一覧: 10-safety/special-education.md
     - LOTO（ロックアウト）: 10-safety/lockout-tagout.md
     - リスクアセスメント: 10-safety/risk-assessment.md
+    - よくあるミス・ヒヤリハット集: 10-safety/near-miss.md
   - 生成AI業務活用:
     - 11-genai/index.md
     - 生成AIの基本: 11-genai/basics.md
