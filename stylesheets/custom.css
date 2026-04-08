@@ -1,0 +1,23 @@
+/* ============================================================
+   電気計装 実務Wiki — カスタムスタイル
+   ============================================================ */
+
+/* 対象読者バッジ */
+.md-typeset .audience-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+/* カードグリッドの調整 */
+.md-typeset .grid.cards > ul > li {
+  border-left: 4px solid var(--md-primary-fg-color);
+}
+
+/* トラブル記事の強調 */
+.md-typeset .admonition.trouble {
+  border-color: #ff6b6b;
+}
