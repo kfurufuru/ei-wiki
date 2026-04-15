@@ -6,8 +6,8 @@ tags:
   - 配電
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 低圧配電
@@ -126,3 +126,13 @@ L   : 片道距離 [km]
 
 !!! info "計装回路の電源品質"
     DCS・PLC・伝送器の電源は電圧変動 ±10%以内、瞬停 20ms 以内が要求仕様となることが多い。ノイズフィルタまたは絶縁トランスの追加を標準化する。
+
+---
+
+## 関連ページ
+
+- [モーター制御](motor-control.md) — 分岐回路・MC 保護の関連性
+- [インバータ](inverter.md) — 低圧幹線からの給電・フィルタ設置
+- [PLC基礎](plc.md) — DI/DO 給電・計装電源分離
+- [接地（低圧）](grounding-lv.md) — 低圧接地方式・ELCB 整定
+- [低圧カテゴリ](index.md) — より広い低圧知識へ

@@ -7,8 +7,8 @@ tags:
   - 制御
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # PLC 基礎
@@ -146,3 +146,12 @@ flowchart TD
 - 変更記録：日付・変更者・変更内容・確認者を記録
 - 現物図面への反映：ラダー変更後は展開接続図・フロー図も更新
 - 現地確認：変更後の実機で入出力動作を点対点で確認
+
+---
+
+## 関連ページ
+
+- [モーター制御](motor-control.md) — PLC 出力による MC 制御
+- [制御回路](control-circuit.md) — ラダー設計・シーケンス管理
+- [低圧配電](distribution.md) — PLC 電源・DCS 給電系統
+- [低圧カテゴリ](index.md) — より広い低圧知識へ
