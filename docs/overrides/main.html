@@ -1,4 +1,25 @@
 {% extends "base.html" %}
+
+{% block site_meta %}
+  {{ super() }}
+  {# OGP メタデータ（ChatGPT・SNS共有用） #}
+  <meta property="og:type" content="{{ config.extra.og_type | default('website') }}" />
+  <meta property="og:url" content="{{ config.site_url }}" />
+  <meta property="og:title" content="{% if page and page.title %}{{ page.title }} | {% endif %}{{ config.site_name }}" />
+  <meta property="og:description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}" />
+  {% if config.extra.og_image %}
+    <meta property="og:image" content="{{ config.extra.og_image }}" />
+    <meta property="og:image:alt" content="{{ config.extra.og_image_alt | default('og-image') }}" />
+  {% endif %}
+  {# Twitter Card #}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{% if page and page.title %}{{ page.title }} | {% endif %}{{ config.site_name }}" />
+  <meta name="twitter:description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}" />
+  {% if config.extra.og_image %}
+    <meta name="twitter:image" content="{{ config.extra.og_image }}" />
+  {% endif %}
+{% endblock %}
+
 {% block announce %}
   <div style="display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap; padding:2px 0;">
     <a href="https://kfurufuru.github.io/secretary-portal/" style="font-weight:600; color:#fff; text-decoration:none; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:4px; padding:2px 10px; font-size:0.82rem;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">← ポータル</a>
@@ -25,6 +46,7 @@
     </span>
   </div>
 {% endblock %}
+
 {% block content %}
 {% if page.meta and page.meta.last_verified %}
   {% set lv = page.meta.last_verified | string %}
