@@ -13,8 +13,25 @@
 }
 
 /* カードグリッドの調整 */
+.md-typeset .grid.cards {
+  gap: 20px 16px;
+}
+
 .md-typeset .grid.cards > ul > li {
   border-left: 4px solid var(--md-primary-fg-color);
+}
+
+/* セクション区切り線 */
+.md-typeset h2 {
+  border-top: 2px solid var(--md-border-color);
+  padding-top: 32px;
+  margin-top: 40px;
+}
+
+.md-typeset h2:first-of-type {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /* トラブル記事の強調 */
