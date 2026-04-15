@@ -133,6 +133,7 @@ nav:
     - 防爆: 03-keiso/explosion-proof.md
     - 計装配線: 03-keiso/wiring.md
     - NPN/PNP選定: 03-keiso/npn-pnp.md
+    - 工事完了後の受入実務: 03-keiso/koji-kanryo.md
   - 設計:
     - 04-sekkei/index.md
     - 設備投資フロー: 04-sekkei/investment-flow.md
@@ -158,6 +159,9 @@ nav:
     - 測定器の使い方: 05-hozen/instruments.md
     - 他部門調整ノウハウ: 05-hozen/coordination.md
     - データ活用・予兆保全: 05-hozen/predictive-maintenance.md
+  - 工事・検収フロー:
+    - 03-koji-kenshu/index.md
+    - フロー全体図: 03-koji-kenshu/flow-overview.md
   - トラブル:
     - 06-trouble/index.md
     - トラブル対応の基本: 06-trouble/basics.md

@@ -1,0 +1,23 @@
+# build artifacts
+site/
+
+# version control
+.git/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# env & logs
+.env*
+*.log
+
+# binary documents
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+
+# OS
+.DS_Store
