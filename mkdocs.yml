@@ -44,6 +44,9 @@ plugins:
   - search:
       lang: ja
   - tags
+  - sitemap:
+      priority: 1.0
+      changefreq: weekly
 
 markdown_extensions:
   - admonition
@@ -78,6 +81,10 @@ extra_javascript:
   - javascripts/cable-calc.js
 
 extra:
+  # OGP メタデータ（ChatGPT・SNS共有用）
+  og_image: "https://kfurufuru.github.io/ei-wiki/og-image.png"
+  og_image_alt: "電気計装 実務Wiki"
+  og_type: "website"
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/kfurufuru/ei-wiki
