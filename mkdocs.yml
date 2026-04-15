@@ -125,6 +125,7 @@ nav:
     - 調節計・記録計: 03-keiso/controller.md
     - 防爆: 03-keiso/explosion-proof.md
     - 計装配線: 03-keiso/wiring.md
+    - NPN/PNP選定: 03-keiso/npn-pnp.md
   - 設計:
     - 04-sekkei/index.md
     - 設備投資フロー: 04-sekkei/investment-flow.md
