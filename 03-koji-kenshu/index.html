@@ -6,35 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="%インピーダンス法・系統Zの取得・遮断容量確認">
+        <meta name="description" content="工事企画から竣工・検収まで — 発注者側の実務チェックリスト">
       
       
       
-        <link rel="canonical" href="https://kfurufuru.github.io/ei-wiki/04-sekkei/fault-current/">
+        <link rel="canonical" href="https://kfurufuru.github.io/ei-wiki/03-koji-kenshu/">
       
       
-        <link rel="prev" href="../load-calc/">
+        <link rel="prev" href="../05-hozen/predictive-maintenance/">
       
       
-        <link rel="next" href="../voltage-drop/">
+        <link rel="next" href="flow-overview/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>短絡電流計算 - 電気計装 実務Wiki</title>
+        <title>工事・検収・試運転フロー - 電気計装 実務Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/custom.css">
+      <link rel="stylesheet" href="../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -129,7 +129,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href="../.." title="電気計装 実務Wiki" class="md-header__button md-logo" aria-label="電気計装 実務Wiki" data-md-component="logo">
+    <a href=".." title="電気計装 実務Wiki" class="md-header__button md-logo" aria-label="電気計装 実務Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              短絡電流計算
+              工事・検収・試運転フロー
             
           </span>
         </div>
@@ -261,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -280,7 +280,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../getting-started/" class="md-tabs__link">
+      <a href="../getting-started/" class="md-tabs__link">
         
   
   
@@ -299,7 +299,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../06-trouble/" class="md-tabs__link">
+      <a href="../06-trouble/" class="md-tabs__link">
         
   
   
@@ -320,7 +320,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../01-koatsu/" class="md-tabs__link">
+        <a href="../01-koatsu/" class="md-tabs__link">
           
   
   
@@ -342,7 +342,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../02-teiatsu/" class="md-tabs__link">
+        <a href="../02-teiatsu/" class="md-tabs__link">
           
   
   
@@ -364,7 +364,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../03-keiso/" class="md-tabs__link">
+        <a href="../03-keiso/" class="md-tabs__link">
           
   
   
@@ -382,13 +382,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../04-sekkei/" class="md-tabs__link">
           
   
   
@@ -410,7 +408,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../05-hozen/" class="md-tabs__link">
+        <a href="../05-hozen/" class="md-tabs__link">
           
   
   
@@ -428,11 +426,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../03-koji-kenshu/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -454,7 +454,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../06-trouble/" class="md-tabs__link">
+        <a href="../06-trouble/" class="md-tabs__link">
           
   
   
@@ -476,7 +476,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../07-site/" class="md-tabs__link">
+        <a href="../07-site/" class="md-tabs__link">
           
   
   
@@ -498,7 +498,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../08-energy/" class="md-tabs__link">
+        <a href="../08-energy/" class="md-tabs__link">
           
   
   
@@ -520,7 +520,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../09-hoantokei/" class="md-tabs__link">
+        <a href="../09-hoantokei/" class="md-tabs__link">
           
   
   
@@ -542,7 +542,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../10-safety/" class="md-tabs__link">
+        <a href="../10-safety/" class="md-tabs__link">
           
   
   
@@ -564,7 +564,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../11-genai/" class="md-tabs__link">
+        <a href="../11-genai/" class="md-tabs__link">
           
   
   
@@ -586,7 +586,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/" class="md-tabs__link">
+        <a href="../reference/" class="md-tabs__link">
           
   
   
@@ -628,7 +628,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="電気計装 実務Wiki" class="md-nav__button md-logo" aria-label="電気計装 実務Wiki" data-md-component="logo">
+    <a href=".." title="電気計装 実務Wiki" class="md-nav__button md-logo" aria-label="電気計装 実務Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -658,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -685,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
@@ -712,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/" class="md-nav__link">
+      <a href="../06-trouble/" class="md-nav__link">
         
   
   
@@ -782,7 +782,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../01-koatsu/" class="md-nav__link ">
+            <a href="../01-koatsu/" class="md-nav__link ">
               
   
   
@@ -826,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/juhenden/" class="md-nav__link">
+      <a href="../01-koatsu/juhenden/" class="md-nav__link">
         
   
   
@@ -861,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/transformer/" class="md-nav__link">
+      <a href="../01-koatsu/transformer/" class="md-nav__link">
         
   
   
@@ -896,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/breaker/" class="md-nav__link">
+      <a href="../01-koatsu/breaker/" class="md-nav__link">
         
   
   
@@ -931,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/relay/" class="md-nav__link">
+      <a href="../01-koatsu/relay/" class="md-nav__link">
         
   
   
@@ -966,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/coordination/" class="md-nav__link">
+      <a href="../01-koatsu/coordination/" class="md-nav__link">
         
   
   
@@ -1001,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/hv-cable/" class="md-nav__link">
+      <a href="../01-koatsu/hv-cable/" class="md-nav__link">
         
   
   
@@ -1036,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/hv-motor/" class="md-nav__link">
+      <a href="../01-koatsu/hv-motor/" class="md-nav__link">
         
   
   
@@ -1071,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/power-factor/" class="md-nav__link">
+      <a href="../01-koatsu/power-factor/" class="md-nav__link">
         
   
   
@@ -1106,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/grounding-hv/" class="md-nav__link">
+      <a href="../01-koatsu/grounding-hv/" class="md-nav__link">
         
   
   
@@ -1141,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-koatsu/insulation-test/" class="md-nav__link">
+      <a href="../01-koatsu/insulation-test/" class="md-nav__link">
         
   
   
@@ -1226,7 +1226,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../02-teiatsu/" class="md-nav__link ">
+            <a href="../02-teiatsu/" class="md-nav__link ">
               
   
   
@@ -1270,7 +1270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/distribution/" class="md-nav__link">
+      <a href="../02-teiatsu/distribution/" class="md-nav__link">
         
   
   
@@ -1305,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/motor-control/" class="md-nav__link">
+      <a href="../02-teiatsu/motor-control/" class="md-nav__link">
         
   
   
@@ -1340,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/inverter/" class="md-nav__link">
+      <a href="../02-teiatsu/inverter/" class="md-nav__link">
         
   
   
@@ -1375,7 +1375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/lv-cable/" class="md-nav__link">
+      <a href="../02-teiatsu/lv-cable/" class="md-nav__link">
         
   
   
@@ -1410,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/control-circuit/" class="md-nav__link">
+      <a href="../02-teiatsu/control-circuit/" class="md-nav__link">
         
   
   
@@ -1445,7 +1445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/plc/" class="md-nav__link">
+      <a href="../02-teiatsu/plc/" class="md-nav__link">
         
   
   
@@ -1480,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/panel-hmi/" class="md-nav__link">
+      <a href="../02-teiatsu/panel-hmi/" class="md-nav__link">
         
   
   
@@ -1515,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/ups/" class="md-nav__link">
+      <a href="../02-teiatsu/ups/" class="md-nav__link">
         
   
   
@@ -1550,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/grounding-lv/" class="md-nav__link">
+      <a href="../02-teiatsu/grounding-lv/" class="md-nav__link">
         
   
   
@@ -1585,7 +1585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-teiatsu/lighting/" class="md-nav__link">
+      <a href="../02-teiatsu/lighting/" class="md-nav__link">
         
   
   
@@ -1676,7 +1676,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../03-keiso/" class="md-nav__link ">
+            <a href="../03-keiso/" class="md-nav__link ">
               
   
   
@@ -1720,7 +1720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/basics/" class="md-nav__link">
+      <a href="../03-keiso/basics/" class="md-nav__link">
         
   
   
@@ -1755,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/temperature/" class="md-nav__link">
+      <a href="../03-keiso/temperature/" class="md-nav__link">
         
   
   
@@ -1790,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/pressure/" class="md-nav__link">
+      <a href="../03-keiso/pressure/" class="md-nav__link">
         
   
   
@@ -1825,7 +1825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/flow/" class="md-nav__link">
+      <a href="../03-keiso/flow/" class="md-nav__link">
         
   
   
@@ -1860,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/level/" class="md-nav__link">
+      <a href="../03-keiso/level/" class="md-nav__link">
         
   
   
@@ -1895,7 +1895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/analyzer/" class="md-nav__link">
+      <a href="../03-keiso/analyzer/" class="md-nav__link">
         
   
   
@@ -1930,7 +1930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/control-valve/" class="md-nav__link">
+      <a href="../03-keiso/control-valve/" class="md-nav__link">
         
   
   
@@ -1965,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/pid/" class="md-nav__link">
+      <a href="../03-keiso/pid/" class="md-nav__link">
         
   
   
@@ -2000,7 +2000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/dcs/" class="md-nav__link">
+      <a href="../03-keiso/dcs/" class="md-nav__link">
         
   
   
@@ -2035,7 +2035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/controller/" class="md-nav__link">
+      <a href="../03-keiso/controller/" class="md-nav__link">
         
   
   
@@ -2070,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/explosion-proof/" class="md-nav__link">
+      <a href="../03-keiso/explosion-proof/" class="md-nav__link">
         
   
   
@@ -2105,7 +2105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/wiring/" class="md-nav__link">
+      <a href="../03-keiso/wiring/" class="md-nav__link">
         
   
   
@@ -2140,7 +2140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-keiso/koji-kanryo/" class="md-nav__link">
+      <a href="../03-keiso/koji-kanryo/" class="md-nav__link">
         
   
   
@@ -2179,8 +2179,6 @@
       
   
   
-    
-  
   
   
     
@@ -2216,23 +2214,20 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../04-sekkei/" class="md-nav__link ">
               
   
   
@@ -2250,13 +2245,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2276,7 +2271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../investment-flow/" class="md-nav__link">
+      <a href="../04-sekkei/investment-flow/" class="md-nav__link">
         
   
   
@@ -2311,7 +2306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../spec-writing/" class="md-nav__link">
+      <a href="../04-sekkei/spec-writing/" class="md-nav__link">
         
   
   
@@ -2346,7 +2341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../panel-design/" class="md-nav__link">
+      <a href="../04-sekkei/panel-design/" class="md-nav__link">
         
   
   
@@ -2381,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cable-route/" class="md-nav__link">
+      <a href="../04-sekkei/cable-route/" class="md-nav__link">
         
   
   
@@ -2416,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../load-calc/" class="md-nav__link">
+      <a href="../04-sekkei/load-calc/" class="md-nav__link">
         
   
   
@@ -2448,44 +2443,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    短絡電流計算
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--active"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../04-sekkei/fault-current/" class="md-nav__link">
         
   
   
@@ -2508,148 +2469,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#30" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        30秒まとめ
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        %インピーダンス法の概要
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="%インピーダンス法の概要">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        基準容量の設定
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#z" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        各要素の %Z 換算
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        三相短絡電流計算
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        計算例
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="計算例">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        前提条件
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        計算
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        系統インピーダンスの取得方法
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        遮断容量の確認フロー
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2662,7 +2481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../voltage-drop/" class="md-nav__link">
+      <a href="../04-sekkei/voltage-drop/" class="md-nav__link">
         
   
   
@@ -2697,7 +2516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drawing-system/" class="md-nav__link">
+      <a href="../04-sekkei/drawing-system/" class="md-nav__link">
         
   
   
@@ -2732,7 +2551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../standards/" class="md-nav__link">
+      <a href="../04-sekkei/standards/" class="md-nav__link">
         
   
   
@@ -2767,7 +2586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vendor-selection/" class="md-nav__link">
+      <a href="../04-sekkei/vendor-selection/" class="md-nav__link">
         
   
   
@@ -2802,7 +2621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../renovation-design/" class="md-nav__link">
+      <a href="../04-sekkei/renovation-design/" class="md-nav__link">
         
   
   
@@ -2887,7 +2706,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../05-hozen/" class="md-nav__link ">
+            <a href="../05-hozen/" class="md-nav__link ">
               
   
   
@@ -2931,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/maintenance-system/" class="md-nav__link">
+      <a href="../05-hozen/maintenance-system/" class="md-nav__link">
         
   
   
@@ -2966,7 +2785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/periodic-inspection/" class="md-nav__link">
+      <a href="../05-hozen/periodic-inspection/" class="md-nav__link">
         
   
   
@@ -3001,7 +2820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/insulation-management/" class="md-nav__link">
+      <a href="../05-hozen/insulation-management/" class="md-nav__link">
         
   
   
@@ -3036,7 +2855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/calibration/" class="md-nav__link">
+      <a href="../05-hozen/calibration/" class="md-nav__link">
         
   
   
@@ -3071,7 +2890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/lifetime/" class="md-nav__link">
+      <a href="../05-hozen/lifetime/" class="md-nav__link">
         
   
   
@@ -3106,7 +2925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/spare-parts/" class="md-nav__link">
+      <a href="../05-hozen/spare-parts/" class="md-nav__link">
         
   
   
@@ -3141,7 +2960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/outage-work/" class="md-nav__link">
+      <a href="../05-hozen/outage-work/" class="md-nav__link">
         
   
   
@@ -3176,7 +2995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/instruments/" class="md-nav__link">
+      <a href="../05-hozen/instruments/" class="md-nav__link">
         
   
   
@@ -3211,7 +3030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/coordination/" class="md-nav__link">
+      <a href="../05-hozen/coordination/" class="md-nav__link">
         
   
   
@@ -3246,7 +3065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-hozen/predictive-maintenance/" class="md-nav__link">
+      <a href="../05-hozen/predictive-maintenance/" class="md-nav__link">
         
   
   
@@ -3285,6 +3104,8 @@
       
   
   
+    
+  
   
   
     
@@ -3300,20 +3121,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../03-koji-kenshu/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -3338,13 +3162,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_9" id="__nav_9_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3364,7 +3188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-koji-kenshu/flow-overview/" class="md-nav__link">
+      <a href="flow-overview/" class="md-nav__link">
         
   
   
@@ -3449,7 +3273,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../06-trouble/" class="md-nav__link ">
+            <a href="../06-trouble/" class="md-nav__link ">
               
   
   
@@ -3493,7 +3317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/basics/" class="md-nav__link">
+      <a href="../06-trouble/basics/" class="md-nav__link">
         
   
   
@@ -3521,7 +3345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/power/" class="md-nav__link">
+      <a href="../06-trouble/power/" class="md-nav__link">
         
   
   
@@ -3549,7 +3373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/motor/" class="md-nav__link">
+      <a href="../06-trouble/motor/" class="md-nav__link">
         
   
   
@@ -3577,7 +3401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/inverter/" class="md-nav__link">
+      <a href="../06-trouble/inverter/" class="md-nav__link">
         
   
   
@@ -3605,7 +3429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/signal/" class="md-nav__link">
+      <a href="../06-trouble/signal/" class="md-nav__link">
         
   
   
@@ -3633,7 +3457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/valve/" class="md-nav__link">
+      <a href="../06-trouble/valve/" class="md-nav__link">
         
   
   
@@ -3661,7 +3485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/plc-dcs/" class="md-nav__link">
+      <a href="../06-trouble/plc-dcs/" class="md-nav__link">
         
   
   
@@ -3689,7 +3513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/grounding-noise/" class="md-nav__link">
+      <a href="../06-trouble/grounding-noise/" class="md-nav__link">
         
   
   
@@ -3717,7 +3541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/protection/" class="md-nav__link">
+      <a href="../06-trouble/protection/" class="md-nav__link">
         
   
   
@@ -3745,7 +3569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-trouble/abnormal-situation/" class="md-nav__link">
+      <a href="../06-trouble/abnormal-situation/" class="md-nav__link">
         
   
   
@@ -3818,7 +3642,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../07-site/" class="md-nav__link ">
+            <a href="../07-site/" class="md-nav__link ">
               
   
   
@@ -3862,7 +3686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07-site/salt-damage/" class="md-nav__link">
+      <a href="../07-site/salt-damage/" class="md-nav__link">
         
   
   
@@ -3890,7 +3714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07-site/combinat-law/" class="md-nav__link">
+      <a href="../07-site/combinat-law/" class="md-nav__link">
         
   
   
@@ -3918,7 +3742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07-site/process-chars/" class="md-nav__link">
+      <a href="../07-site/process-chars/" class="md-nav__link">
         
   
   
@@ -3946,7 +3770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07-site/grounding-coastal/" class="md-nav__link">
+      <a href="../07-site/grounding-coastal/" class="md-nav__link">
         
   
   
@@ -4014,7 +3838,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../08-energy/" class="md-nav__link ">
+            <a href="../08-energy/" class="md-nav__link ">
               
   
   
@@ -4058,7 +3882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../08-energy/energy-law/" class="md-nav__link">
+      <a href="../08-energy/energy-law/" class="md-nav__link">
         
   
   
@@ -4086,7 +3910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../08-energy/demand-management/" class="md-nav__link">
+      <a href="../08-energy/demand-management/" class="md-nav__link">
         
   
   
@@ -4114,7 +3938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../08-energy/vfd-energy/" class="md-nav__link">
+      <a href="../08-energy/vfd-energy/" class="md-nav__link">
         
   
   
@@ -4142,7 +3966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../08-energy/power-factor-roi/" class="md-nav__link">
+      <a href="../08-energy/power-factor-roi/" class="md-nav__link">
         
   
   
@@ -4170,7 +3994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../08-energy/energy-monitoring/" class="md-nav__link">
+      <a href="../08-energy/energy-monitoring/" class="md-nav__link">
         
   
   
@@ -4236,7 +4060,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../09-hoantokei/" class="md-nav__link ">
+            <a href="../09-hoantokei/" class="md-nav__link ">
               
   
   
@@ -4280,7 +4104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../09-hoantokei/legal-duties/" class="md-nav__link">
+      <a href="../09-hoantokei/legal-duties/" class="md-nav__link">
         
   
   
@@ -4308,7 +4132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../09-hoantokei/hoan-kisoku/" class="md-nav__link">
+      <a href="../09-hoantokei/hoan-kisoku/" class="md-nav__link">
         
   
   
@@ -4336,7 +4160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../09-hoantokei/denryoku-toiawase/" class="md-nav__link">
+      <a href="../09-hoantokei/denryoku-toiawase/" class="md-nav__link">
         
   
   
@@ -4364,7 +4188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../09-hoantokei/jiko-taiou/" class="md-nav__link">
+      <a href="../09-hoantokei/jiko-taiou/" class="md-nav__link">
         
   
   
@@ -4432,7 +4256,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../10-safety/" class="md-nav__link ">
+            <a href="../10-safety/" class="md-nav__link ">
               
   
   
@@ -4476,7 +4300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../10-safety/ptw/" class="md-nav__link">
+      <a href="../10-safety/ptw/" class="md-nav__link">
         
   
   
@@ -4504,7 +4328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../10-safety/special-education/" class="md-nav__link">
+      <a href="../10-safety/special-education/" class="md-nav__link">
         
   
   
@@ -4532,7 +4356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../10-safety/lockout-tagout/" class="md-nav__link">
+      <a href="../10-safety/lockout-tagout/" class="md-nav__link">
         
   
   
@@ -4560,7 +4384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../10-safety/risk-assessment/" class="md-nav__link">
+      <a href="../10-safety/risk-assessment/" class="md-nav__link">
         
   
   
@@ -4588,7 +4412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../10-safety/near-miss/" class="md-nav__link">
+      <a href="../10-safety/near-miss/" class="md-nav__link">
         
   
   
@@ -4665,7 +4489,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../11-genai/" class="md-nav__link ">
+            <a href="../11-genai/" class="md-nav__link ">
               
   
   
@@ -4709,7 +4533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../11-genai/basics/" class="md-nav__link">
+      <a href="../11-genai/basics/" class="md-nav__link">
         
   
   
@@ -4737,7 +4561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../11-genai/m365-copilot/" class="md-nav__link">
+      <a href="../11-genai/m365-copilot/" class="md-nav__link">
         
   
   
@@ -4765,7 +4589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../11-genai/chatgpt/" class="md-nav__link">
+      <a href="../11-genai/chatgpt/" class="md-nav__link">
         
   
   
@@ -4793,7 +4617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../11-genai/prompt-writing/" class="md-nav__link">
+      <a href="../11-genai/prompt-writing/" class="md-nav__link">
         
   
   
@@ -4821,7 +4645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../11-genai/ei-applications/" class="md-nav__link">
+      <a href="../11-genai/ei-applications/" class="md-nav__link">
         
   
   
@@ -4849,7 +4673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../11-genai/security/" class="md-nav__link">
+      <a href="../11-genai/security/" class="md-nav__link">
         
   
   
@@ -4913,7 +4737,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../reference/" class="md-nav__link ">
+            <a href="../reference/" class="md-nav__link ">
               
   
   
@@ -4957,7 +4781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/glossary/" class="md-nav__link">
+      <a href="../reference/glossary/" class="md-nav__link">
         
   
   
@@ -4992,7 +4816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/standards-list/" class="md-nav__link">
+      <a href="../reference/standards-list/" class="md-nav__link">
         
   
   
@@ -5027,7 +4851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/calculators/" class="md-nav__link">
+      <a href="../reference/calculators/" class="md-nav__link">
         
   
   
@@ -5103,49 +4927,32 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        %インピーダンス法の概要
+        全体フロー（工事フェーズ別ガイド）
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="%インピーダンス法の概要">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基準容量の設定
+        よくあるミス・見落とし
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#z" class="md-nav__link">
-    <span class="md-ellipsis">
       
-        各要素の %Z 換算
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三相短絡電流計算
+        関連カテゴリ
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5153,57 +4960,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        計算例
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="計算例">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        前提条件
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        計算
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        系統インピーダンスの取得方法
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        遮断容量の確認フロー
+        このフローを使うときのコツ
       
     </span>
   </a>
@@ -5235,7 +4992,7 @@
   
   
     <li class="md-path__item">
-      <a href="../.." class="md-path__link">
+      <a href=".." class="md-path__link">
         
   <span class="md-ellipsis">
     Home
@@ -5253,10 +5010,10 @@
     
     
       <li class="md-path__item">
-        <a href="../" class="md-path__link">
+        <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
-    設計
+    工事・検収フロー
   </span>
 
         </a>
@@ -5277,7 +5034,7 @@
     
     
       <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:4px;font-size:0.78rem;font-weight:600;background:#d1e7dd;color:#0a3622;border:1px solid #a3cfbb;">
-        ✅ 最終確認: 2026-04-04
+        ✅ 最終確認: 2026-04-15
       </span>
     
   </div>
@@ -5287,6 +5044,8 @@
     
       
         <span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:4px;font-size:0.75rem;font-weight:700;background:#cfe2ff;color:#084298;border:1px solid #9ec5fe;">⚡ 電気担当</span>
+      
+    
       
     
   </div>
@@ -5300,21 +5059,35 @@
       
       
       
-        <span class="md-tag">保護協調</span>
+        <span class="md-tag">実務</span>
       
     
       
       
       
       
-        <span class="md-tag">短絡電流</span>
+        <span class="md-tag">工事フロー</span>
       
     
       
       
       
       
-        <span class="md-tag">設計</span>
+        <span class="md-tag">工事管理</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">検収</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">試運転</span>
       
     
   </nav>
@@ -5324,123 +5097,117 @@
   
 
 
-<h1 id="_1">短絡電流計算<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">工事・検収・試運転フロー<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="30">30秒まとめ<a class="headerlink" href="#30" title="Permanent link">&para;</a></h2>
-<p>短絡電流は「%インピーダンス法」で計算する。計算値が設置する MCCB・VCB の定格遮断電流を超えてはならない。系統インピーダンスは電力会社に問い合わせ、変圧器の %Z はメーカー銘板から取得する。</p>
+<p>工事完了宣言は <strong>確認開始の合図</strong>。設備技術部担当者が <strong>企画→設計→施工→竣工→検収→引継ぎ</strong> の6段階で、<br />
+現場・性能・書類・安全・維持管理を 閉じる必要がある。</p>
 <hr />
-<h2 id="_2">%インピーダンス法の概要<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">基準容量の設定<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>基準容量 Pb = 任意（計算しやすい値を選ぶ）
-例: Pb = 1,000kVA（1MVA）
-
-基準電圧 Vb = 系統電圧
-例: Vb = 6.6kV（高圧）または 200V（低圧）
-
-基準電流 Ib = Pb / (√3 × Vb)
-</code></pre></div>
-<h3 id="z">各要素の %Z 換算<a class="headerlink" href="#z" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>変圧器 %Z（メーカー銘板値）→ 基準容量に換算:
-  %Z換算 = %Z銘板 × (Pb / Pn)
-  Pn: 変圧器定格容量 [kVA]
-
-系統（電力会社）%Z（問い合わせ値）→ 基準容量で統一
-
-ケーブル %Z:
-  %R = R × Ib² / Pb × 100  [%]
-  %X = X × Ib² / Pb × 100  [%]
-  （R, X は Ω 値）
-</code></pre></div>
-<h3 id="_4">三相短絡電流計算<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>%Z合計 = %Z系統 + %Z変圧器 + %Zケーブル
-
-三相短絡電流 Is3 = Ib × 100 / %Z合計  [A]
-または
-Is3 = (Pb × 1000) / (√3 × Vb × %Z合計 / 100)  [A]
-</code></pre></div>
-<hr />
-<h2 id="_5">計算例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="_6">前提条件<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h2 id="_2">全体フロー（工事フェーズ別ガイド）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>項目</th>
-<th>数値</th>
+<th>フェーズ</th>
+<th>タイミング</th>
+<th>主な確認項目</th>
+<th>関連記事</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>変圧器容量</td>
-<td>1,000kVA</td>
+<td><strong>工事企画・設計</strong></td>
+<td>工事着手前</td>
+<td>仕様・予算・リスク</td>
+<td><a href="../04-sekkei/investment-flow/">設備投資フロー</a></td>
 </tr>
 <tr>
-<td>変圧器二次電圧</td>
-<td>200V</td>
+<td><strong>ベンダー施工</strong></td>
+<td>工事実施中</td>
+<td>進捗・品質確認</td>
+<td>（保全担当と連携）</td>
 </tr>
 <tr>
-<td>変圧器 %Z（銘板）</td>
-<td>5%</td>
+<td><strong>完成報告直後</strong></td>
+<td>竣工報告から1営業日以内</td>
+<td>範囲・残件確認</td>
+<td><a href="../03-keiso/koji-kanryo/">工事完了後の受入実務</a></td>
 </tr>
 <tr>
-<td>系統インピーダンス（受電点から変圧器一次まで）</td>
-<td>0.5%（1,000kVA 基準）</td>
+<td><strong>現地検査</strong></td>
+<td>竣工から3営業日以内</td>
+<td>施工品質・外観</td>
+<td><a href="../03-keiso/koji-kanryo/">工事完了後の受入実務</a></td>
+</tr>
+<tr>
+<td><strong>試運転・性能確認</strong></td>
+<td>現地検査後1週間以内</td>
+<td>性能・安全・運転模擬</td>
+<td><a href="../03-keiso/koji-kanryo/">工事完了後の受入実務</a></td>
+</tr>
+<tr>
+<td><strong>検収判断</strong></td>
+<td>試運転完了後</td>
+<td>結果確認・支払準備</td>
+<td><a href="../03-keiso/koji-kanryo/">工事完了後の受入実務</a></td>
+</tr>
+<tr>
+<td><strong>運転/保全部門への引継ぎ</strong></td>
+<td>検収合格後</td>
+<td>図書・教育・マニュアル</td>
+<td><a href="../03-keiso/koji-kanryo/">工事完了後の受入実務</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="_7">計算<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>基準容量 Pb = 1,000kVA
-基準電流 Ib = 1,000,000 / (√3 × 200) = 2,887 A
-
-変圧器 %Z換算 = 5% × (1,000 / 1,000) = 5.0%
-系統 %Z = 0.5%（既に 1,000kVA 基準）
-
-%Z合計（ケーブル無視）= 5.0 + 0.5 = 5.5%
-
-三相短絡電流 Is3 = 2,887 × 100 / 5.5 = 52,490 A ≈ 52.5 kA
-</code></pre></div>
+<hr />
+<h2 id="_3">よくあるミス・見落とし<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="admonition danger">
-<p class="admonition-title">遮断容量確認</p>
-<p>変圧器直近（二次側）の MCCB には 52.5kA 以上の遮断容量が必要。一般的な低圧 MCCB は 25〜50kA が多いため、変圧器直近では限流ヒューズまたは高遮断容量 MCCB（100kA 対応）を選定する。</p>
+<p class="admonition-title">後戻りコストが高い順</p>
+<ol>
+<li><strong>完了範囲の曖昧さ</strong> — 「そこは対象外」で手戻り（最優先確認項目）</li>
+<li><strong>試運転計画の欠落</strong> — 性能確認の判定基準が決まっていない</li>
+<li><strong>完成図書の未回収</strong> — 保全がマニュアル不足で運用開始後にトラブル</li>
+<li><strong>安全基準の確認漏れ</strong> — 検査官指摘で施工やり直し</li>
+</ol>
 </div>
 <hr />
-<h2 id="_8">系統インピーダンスの取得方法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_4">関連カテゴリ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>方法</th>
-<th>内容</th>
+<th>カテゴリ</th>
+<th>リンク</th>
+<th>活用シーン</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>電力会社への問い合わせ</td>
-<td>受電点の最大短絡容量 [kVA] を問い合わせ → %Z に換算</td>
+<td><strong>設計</strong></td>
+<td><a href="../04-sekkei/">04-sekkei/</a></td>
+<td>工事仕様・図面体系・負荷計算</td>
 </tr>
 <tr>
-<td>変圧器銘板</td>
-<td>%Z（インピーダンス電圧比）が記載されている</td>
+<td><strong>計装</strong></td>
+<td><a href="../03-keiso/">03-keiso/</a></td>
+<td>計装工事の施工・試運転確認</td>
 </tr>
 <tr>
-<td>ケーブル抵抗</td>
-<td>ケーブルメーカーカタログの導体抵抗・リアクタンス値</td>
+<td><strong>安全管理</strong></td>
+<td><a href="../10-safety/">10-safety/</a></td>
+<td>工事中の安全・LOTO・作業許可</td>
+</tr>
+<tr>
+<td><strong>保全</strong></td>
+<td><a href="../05-hozen/">05-hozen/</a></td>
+<td>竣工後の保全引継ぎ・教育</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code>電力会社から「最大短絡容量 Ps [kVA]」を入手した場合：
-%Z系統 = Pb / Ps × 100 [%]（Pb：基準容量）
-</code></pre></div>
 <hr />
-<h2 id="_9">遮断容量の確認フロー<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-    A[系統インピーダンスを収集\n電力会社・変圧器銘板・ケーブル] --&gt; B[基準容量で%Z統一]
-    B --&gt; C[三相短絡電流 Is3 を計算]
-    C --&gt; D{設置 MCCB の\n定格遮断電流 ≥ Is3?}
-    D -- Yes --&gt; E[OK：遮断容量確認済み]
-    D -- No --&gt; F[MCCB を大きな遮断容量に変更\nまたは限流ヒューズ追加]
-    F --&gt; D</code></pre>
-<div class="admonition tip">
-<p class="admonition-title">端末分岐回路はケーブルインピーダンスで電流が減衰</p>
-<p>変圧器から遠い分岐端末では、ケーブルインピーダンスの影響で短絡電流が変圧器直近より大幅に減少する。端末では小容量 MCCB（5〜10kA）でも十分な場合が多いが、計算で確認する。</p>
-</div>
+<h2 id="_5">このフローを使うときのコツ<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>初見なら：</strong> この表で全体フェーズを把握してから、関連記事へ</li>
+<li><strong>急ぎなら：</strong> 「完了範囲の曖昧さ」は後戻りコスト最高 → 最初に <a href="../03-keiso/koji-kanryo/">工事完了後の受入実務</a> の① 完了範囲確認へ</li>
+<li><strong>計装工事なら：</strong> <a href="../03-keiso/koji-kanryo/">計装 &gt; 工事完了後の受入実務</a> が専用ガイド</li>
+</ul>
 
 
 
@@ -5521,12 +5288,12 @@ Is3 = (Pb × 1000) / (√3 × Vb × %Z合計 / 100)  [A]
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.path", "search.suggest", "search.highlight", "search.share", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.path", "search.suggest", "search.highlight", "search.share", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../javascripts/cable-calc.js"></script>
+        <script src="../javascripts/cable-calc.js"></script>
       
     
   </body>
