@@ -2,6 +2,9 @@
 title: 高圧
 description: 受変電設備・変圧器・保護継電器・高圧ケーブル
 tags: [高圧, 受変電, 変圧器, 保護継電器]
+audience: [電気担当, 保全担当]
+last_verified: 2026-04-16
+status: published
 ---
 
 # 高圧

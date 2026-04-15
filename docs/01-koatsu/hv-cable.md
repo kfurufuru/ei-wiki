@@ -6,7 +6,7 @@ tags:
   - ケーブル
 audience:
   - 電気担当
-last_verified: 2026-04-04
+last_verified: 2026-04-16
 status: published
 ---
 
@@ -120,3 +120,12 @@ status: published
 | D > 50 mm | 10D 以上 |
 
 （参考値。メーカー仕様書を必ず確認すること）
+
+---
+
+## 関連ページ
+
+- [変圧器](transformer.md) — 二次側ケーブル選定・サージ対策
+- [耐圧試験・絶縁診断](insulation-test.md) — ケーブル劣化診断・直流耐圧試験
+- [接地（高圧）](grounding-hv.md) — ケーブルシース接地・アース方式
+- [高圧カテゴリ](index.md) — より広い高圧知識へ

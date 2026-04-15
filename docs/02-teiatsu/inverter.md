@@ -7,8 +7,8 @@ tags:
   - モーター
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # インバータ
@@ -126,3 +126,12 @@ flowchart LR
 - インバータ〜モーター間のケーブルには出力リアクトルを挿入
 - ケーブルシールドは電気室端で接地（防爆エリア側は単端接地）
 - モーター端子箱は防爆認証（Ex d または Ex e）を確認
+
+---
+
+## 関連ページ
+
+- [モーター制御](motor-control.md) — モーター直入れ・Y-Δ始動との比較
+- [低圧配電](distribution.md) — インバータ給電・EMC フィルタ配置
+- [PLC基礎](plc.md) — インバータとの通信（CC-Link/Modbus/EtherNet）
+- [低圧カテゴリ](index.md) — より広い低圧知識へ

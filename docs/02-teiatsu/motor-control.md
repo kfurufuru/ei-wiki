@@ -7,8 +7,8 @@ tags:
   - 制御回路
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # モーター制御
@@ -220,3 +220,12 @@ L1 ─[非常停止 NC]─[停止 NC]─[起動 NO]─[MC コイル]─ L2
 | 2 | 制御停止・動力保持 | 特殊工作機械 |
 
 化学プラントのポンプ・コンプレッサーはカテゴリ 0 が基本。機械的慣性で危険が生じる場合のみカテゴリ 1 を検討する。
+
+---
+
+## 関連ページ
+
+- [低圧配電](distribution.md) — MC 給電・回路分離・MCCB 選定
+- [インバータ](inverter.md) — モーター制御と変速制御の比較
+- [制御回路](control-circuit.md) — MC 制御回路・シーケンス設計
+- [低圧カテゴリ](index.md) — より広い低圧知識へ
