@@ -7,8 +7,8 @@ tags:
   - 計測
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 測定器の使い方
@@ -138,3 +138,11 @@ status: active
 - 電子式非接触型は誘導電圧に反応することがある → 最終確認は接触型でも確認
 - 高圧検電器は定格電圧に合ったものを使用（6.6kV 系には 6kV 以上対応品）
 - 雨天・結露時は検電器の絶縁性が低下するため天候を考慮する
+
+## 関連ページ
+
+- [絶縁管理](insulation-management.md) — メガーの詳細手順・温度補正・判定基準の全体像
+- [定期点検](periodic-inspection.md) — 各測定器を使用する年次・月次点検の項目一覧
+- [校正](calibration.md) — ループキャリブレーターの校正作業での活用方法
+- [データ活用・予兆保全](predictive-maintenance.md) — クランプメータ・放射温度計・振動計を使った CBM の実践
+- [停電作業](outage-work.md) — 検電器を使った無電圧確認の安全手順

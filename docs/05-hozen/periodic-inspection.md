@@ -6,8 +6,8 @@ tags:
   - 定期点検
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 定期点検
@@ -98,3 +98,12 @@ status: active
 | 確認者 | 保安担当責任者の署名 |
 
 保存期間：10 年以上（高圧ガス保安法施行規則による）
+
+## 関連ページ
+
+- [保全体系](maintenance-system.md) — TBM/CBM の考え方と設備重要度ランクの判断基準
+- [絶縁管理](insulation-management.md) — 年次点検での絶縁抵抗測定の詳細手順・判定基準
+- [データ活用・予兆保全](predictive-maintenance.md) — 点検記録データのトレンド分析・予兆検知への活用
+- [停電作業](outage-work.md) — 年次停電点検時の停電手順・LOTO・復電前チェックリスト
+- [測定器の使い方](instruments.md) — 点検で使用するメガー・クランプメーター・検電器の操作
+- [規格・法規](../04-sekkei/standards.md) — 年次点検の法的根拠（電気事業法・高圧ガス保安法）

@@ -7,8 +7,8 @@ tags:
   - プロジェクト管理
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 設備投資フロー
@@ -102,3 +102,13 @@ flowchart TD
 | 停電確認 | 作業前に検電・短絡接地を確認 | 停電作業前 |
 | 立入制限 | 危険区域にバリケード・看板設置 | 工事中常時 |
 | 作業許可証（PTW） | 危険作業は許可証発行後に着手 | 危険作業ごと |
+
+## 関連ページ
+
+- [仕様書の書き方](spec-writing.md) — 仕様検討フェーズで使う仕様書テンプレートと必須項目
+- [メーカー選定](vendor-selection.md) — 業者選定・RFQ 評価の具体的な手順
+- [規格・法規](standards.md) — 届出に必要な法規制（高圧ガス保安法・電気事業法）の整理
+- [盤設計](panel-design.md) — 基本設計フェーズで必要な盤設計の考え方
+- [改造・更新設計の注意点](renovation-design.md) — 新設ではなく改造・更新で進める場合の注意事項
+- [保全体系](../05-hozen/maintenance-system.md) — 竣工引継後の保全計画策定に必要な考え方
+- [停電作業](../05-hozen/outage-work.md) — 施工・試運転フェーズでの停電手順

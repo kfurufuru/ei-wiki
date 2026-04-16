@@ -7,8 +7,8 @@ tags:
   - 電路
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 電路設計
@@ -125,3 +125,11 @@ status: active
 
 !!! tip "番号付け規則の統一"
     ケーブル番号は「エリアコード + 設備 TAG + 連番」の形式で統一する。例：`1F-P001-001`（1 階、ポンプ 001、1 本目）。工事会社と事前に規則を合意しておく。
+
+## 関連ページ
+
+- [電圧降下計算](voltage-drop.md) — ケーブルサイズ選定の根拠となる電圧降下の計算手順
+- [盤設計](panel-design.md) — ケーブル終端側となる制御盤・動力盤の設計
+- [仕様書の書き方](spec-writing.md) — ケーブル仕様（種類・サイズ・接続方式）の仕様書記載方法
+- [規格・法規](standards.md) — 防爆エリアの電路に関わる法規・規格（JIS C 60079 等）
+- [絶縁管理](../05-hozen/insulation-management.md) — 完成後のケーブル絶縁抵抗測定基準

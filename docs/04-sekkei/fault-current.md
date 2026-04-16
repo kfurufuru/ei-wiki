@@ -7,8 +7,8 @@ tags:
   - 保護協調
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 短絡電流計算
@@ -119,3 +119,11 @@ flowchart TD
 
 !!! tip "端末分岐回路はケーブルインピーダンスで電流が減衰"
     変圧器から遠い分岐端末では、ケーブルインピーダンスの影響で短絡電流が変圧器直近より大幅に減少する。端末では小容量 MCCB（5〜10kA）でも十分な場合が多いが、計算で確認する。
+
+## 関連ページ
+
+- [負荷計算](load-calc.md) — 変圧器容量算定（負荷計算の結果が短絡電流計算の前提）
+- [電圧降下計算](voltage-drop.md) — ケーブルインピーダンスを活用する電圧降下計算との連携
+- [盤設計](panel-design.md) — 計算した遮断容量値をもとにした MCCB 選定・盤設計
+- [規格・法規](standards.md) — 遮断容量確認に関連する電気設備技術基準・JIS の参照先
+- [定期点検](../05-hozen/periodic-inspection.md) — 設置後の MCCB の点検・動作確認手順

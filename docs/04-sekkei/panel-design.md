@@ -6,8 +6,8 @@ tags:
   - 制御盤
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 盤設計
@@ -111,3 +111,12 @@ A  : 有効放熱面積 [m²]（盤の表面積から床面・背面を除く）
 
 !!! info "化学プラントの標準"
     化学プラント屋外盤は IP65 + SUS304 を最低基準とする。塩素・硫酸雰囲気では SUS316 を選定する。SUS と SECC の混在はガルバニック腐食の原因になるためボルト・ナットも SUS で統一する。
+
+## 関連ページ
+
+- [仕様書の書き方](spec-writing.md) — 盤仕様書に記載する電源・保護等級・接地の必須項目
+- [電路設計](cable-route.md) — 盤から現場機器への配線ルート・ケーブルラック選定
+- [負荷計算](load-calc.md) — 盤設計の前提となる変圧器容量と電流値の算定
+- [短絡電流計算](fault-current.md) — 盤内 MCCB の遮断容量選定に必要な短絡電流値
+- [改造・更新設計の注意点](renovation-design.md) — 既設盤への機器追加時の熱計算・スペース確認
+- [絶縁管理](../05-hozen/insulation-management.md) — 竣工後の盤内絶縁抵抗測定手順

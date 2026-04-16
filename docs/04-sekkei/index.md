@@ -2,6 +2,9 @@
 title: 設計
 description: 仕様書・負荷計算・図面体系・規格
 tags: [設計, 仕様書, 負荷計算, 設備投資]
+audience: [電気担当]
+last_verified: 2026-04-16
+status: published
 ---
 
 # 設計

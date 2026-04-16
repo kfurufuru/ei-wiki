@@ -10,8 +10,8 @@ audience:
   - 電気担当
   - 保全担当
   - 電気主任
-last_verified: 2026-04-07
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 他部門調整ノウハウ
@@ -178,3 +178,11 @@ flowchart TD
 
 !!! tip "メールの件名に「承認依頼」「確認依頼」を入れる"
     件名に「承認依頼」「確認依頼」と入れると、受け手が何をすべきかが明確になる。「〇月〇日までに回答ください」を本文冒頭に入れることも有効。
+
+## 関連ページ
+
+- [停電作業](outage-work.md) — 停電承認取得後の LOTO・検電・復電前チェックの実務手順
+- [校正](calibration.md) — ループテスト時のバイパス申請・DCS アラーム抑制の調整手順
+- [保全体系](maintenance-system.md) — ターンアラウンドの全体計画と電気計装作業の位置づけ
+- [定期点検](periodic-inspection.md) — 年次停電点検の計画立案と製造課への影響説明の材料
+- [改造・更新設計の注意点](../04-sekkei/renovation-design.md) — MOC 申請・安全環境部レビューを通すための記載方法
