@@ -44,9 +44,6 @@ plugins:
   - search:
       lang: ja
   - tags
-  - sitemap:
-      priority: 1.0
-      changefreq: weekly
 
 markdown_extensions:
   - admonition
