@@ -6,8 +6,8 @@ tags:
   - 保全体系
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 保全体系
@@ -101,3 +101,12 @@ MTTR（平均修復時間）= 修復時間の合計 / 故障回数
 - **1 ヶ月前：** 工程表確定・危険作業の許可申請準備
 - **1 週間前：** 材料・工具の搬入・現地確認
 - **T/A 後：** 試運転チェックリスト・図面更新・竣工記録
+
+## 関連ページ
+
+- [定期点検](periodic-inspection.md) — TBM の実務：年次・月次点検の標準チェックリスト
+- [データ活用・予兆保全](predictive-maintenance.md) — CBM・PDM の実装方法と測定データ活用
+- [絶縁管理](insulation-management.md) — A ランク設備の状態基準指標となる絶縁抵抗のトレンド管理
+- [寿命管理](lifetime.md) — MTBF を活用した計画交換・更新計画の立案
+- [予備品管理](spare-parts.md) — A/B ランク設備の予備品選定と在庫数量の考え方
+- [設備投資フロー](../04-sekkei/investment-flow.md) — 更新投資・改造投資の稟議・設計フロー

@@ -2,6 +2,9 @@
 title: 保全
 description: 定期点検・校正・絶縁管理・停電作業
 tags: [保全, 点検, 校正, 絶縁, 停電]
+audience: [電気担当, 保全担当]
+last_verified: 2026-04-16
+status: published
 ---
 
 # 保全

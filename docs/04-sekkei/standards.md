@@ -7,8 +7,8 @@ tags:
   - 規格
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 規格・法規
@@ -99,3 +99,13 @@ status: active
 | ISA-S88 | バッチ制御 | バッチプロセスの制御標準 |
 | NAMUR NE 43 | 4-20mA 信号の障害検出 | 伝送器の上下限信号（3.8/21mA） |
 | NAMUR NE 107 | フィールド機器の自己診断 | HART 機器の診断情報活用 |
+
+## 関連ページ
+
+- [設備投資フロー](investment-flow.md) — 法規確認（高圧ガス保安法・電気事業法届出）を含む投資フロー
+- [仕様書の書き方](spec-writing.md) — 仕様書に記載する防爆・接地・通信の規格根拠
+- [短絡電流計算](fault-current.md) — 電技解釈・内線規程を根拠とした遮断容量確認
+- [電圧降下計算](voltage-drop.md) — 内線規程 JEAC8001 に基づく電圧降下許容値
+- [改造・更新設計の注意点](renovation-design.md) — 変更工事の届出義務と MOC プロセス
+- [定期点検](../05-hozen/periodic-inspection.md) — 電気事業法・高圧ガス保安法の自主検査記録要件
+- [停電作業](../05-hozen/outage-work.md) — 労働安全衛生法に基づく停電作業の安全基準

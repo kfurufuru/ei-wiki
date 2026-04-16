@@ -7,8 +7,8 @@ tags:
   - 計装
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 校正
@@ -127,3 +127,11 @@ JCSS（計量法校正事業者登録制度）認定校正機関
 - アラーム設定点（例：80%）で警報が発報するか
 - ケーブル断線で NAMUR NE43（3.6mA）断線検出が動作するか
 ```
+
+## 関連ページ
+
+- [定期点検](periodic-inspection.md) — T/A 時の計装全校正をスケジュールに組み込む際の参照
+- [測定器の使い方](instruments.md) — ループキャリブレーターの具体的な操作手順（ソース/シンクモード）
+- [他部門調整ノウハウ](coordination.md) — 校正作業時のバイパス申請・DCS アラーム抑制の調整手順
+- [保全体系](maintenance-system.md) — 校正周期の決定に必要な設備重要度（A/B/C ランク）の考え方
+- [規格・法規](../04-sekkei/standards.md) — 校正トレーサビリティの根拠となる計量法・NAMUR NE43 の参照先

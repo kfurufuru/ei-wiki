@@ -6,8 +6,8 @@ tags:
   - 予備品管理
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 予備品管理
@@ -111,3 +111,11 @@ status: active
 - 単価・調達先・リードタイム
 - 使用設備 TAG 番号
 - 最終入庫日・最終出庫日
+
+## 関連ページ
+
+- [保全体系](maintenance-system.md) — 設備重要度 A ランク基準と予備品優先度の判断軸
+- [寿命管理](lifetime.md) — MTBF・廃番リスクを考慮した推奨在庫数量の計算
+- [定期点検](periodic-inspection.md) — T/A で使用する消耗品（パッキン・リレー等）の一括補充タイミング
+- [メーカー選定](../04-sekkei/vendor-selection.md) — 既設メーカー統一の判断と部品互換性確認の考え方
+- [改造・更新設計の注意点](../04-sekkei/renovation-design.md) — 製造中止品の代替品調査と先行確保の手順

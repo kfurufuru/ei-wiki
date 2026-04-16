@@ -7,8 +7,8 @@ tags:
   - ケーブル
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 電圧降下計算
@@ -119,3 +119,11 @@ flowchart TD
 | 38 sq | 0.490 |
 | 60 sq | 0.308 |
 | 100 sq | 0.188 |
+
+## 関連ページ
+
+- [負荷計算](load-calc.md) — 電圧降下計算の入力となる負荷電流値の算定手順
+- [短絡電流計算](fault-current.md) — ケーブルインピーダンスを使う短絡電流計算との連携
+- [電路設計](cable-route.md) — ケーブルサイズ選定後のラック・管路ルート設計
+- [規格・法規](standards.md) — 許容電圧降下 4% の根拠となる内線規程 JEAC8001
+- [盤設計](panel-design.md) — 電圧降下を抑えるための分電盤配置の考え方

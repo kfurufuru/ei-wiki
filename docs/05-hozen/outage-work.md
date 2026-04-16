@@ -7,8 +7,8 @@ tags:
   - 安全
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 停電作業
@@ -121,3 +121,12 @@ flowchart TD
 | 消耗品交換（同等品への交換） | 軽微変更届または届出不要の場合が多い |
 
 不明な場合は工場保安担当者・都道府県高圧ガス担当部署に事前確認する。
+
+## 関連ページ
+
+- [他部門調整ノウハウ](coordination.md) — 停電承認取得・製造課への影響説明・事前連絡のタイムライン
+- [定期点検](periodic-inspection.md) — 停電作業中に実施する年次点検項目と記録方法
+- [絶縁管理](insulation-management.md) — 停電後に実施するケーブル・電動機の絶縁抵抗測定
+- [測定器の使い方](instruments.md) — 停電作業で使用する検電器の種類・使用前確認方法
+- [規格・法規](../04-sekkei/standards.md) — 停電作業の法的根拠（労働安全衛生法・高圧ガス保安法）
+- [設備投資フロー](../04-sekkei/investment-flow.md) — 改造工事を伴う停電作業時の施工安全管理との連携

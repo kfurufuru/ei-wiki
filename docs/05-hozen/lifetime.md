@@ -7,8 +7,8 @@ tags:
   - 更新計画
 audience:
   - 電気担当
-last_verified: 2026-04-04
-status: active
+last_verified: 2026-04-16
+status: published
 ---
 
 # 寿命管理
@@ -100,3 +100,12 @@ flowchart TD
 - メーカーニュースレター・製品終息通知を定期確認
 - 年次点検時に使用部品の継続販売状況を確認
 - 重要設備の部品は 5〜10 年分の予備品を確保
+
+## 関連ページ
+
+- [保全体系](maintenance-system.md) — 設備重要度（A/B/C ランク）と最適な保全方式の選択
+- [予備品管理](spare-parts.md) — 廃番リスクが高い部品の先行確保と在庫数量の決め方
+- [データ活用・予兆保全](predictive-maintenance.md) — 絶縁抵抗・電流・振動のトレンドから交換判断へ
+- [定期点検](periodic-inspection.md) — T/A 時の計画交換実施と記録の残し方
+- [メーカー選定](../04-sekkei/vendor-selection.md) — LCC 計算・代替品選定での評価軸と見積比較
+- [改造・更新設計の注意点](../04-sekkei/renovation-design.md) — 廃番品代替選定の互換性確認 5 項目
