@@ -205,6 +205,15 @@ nav:
     - プロンプトの書き方: 11-genai/prompt-writing.md
     - 電気計装業務への応用: 11-genai/ei-applications.md
     - 注意事項・情報セキュリティ: 11-genai/security.md
+  - 業務マニュアル:
+    - ガイドライン一覧: guidelines/index.md
+    - 計装ループチェック: guidelines/loop-check.md
+    - 保護リレー試験: guidelines/protective-relay-test.md
+    - 接地抵抗測定: guidelines/grounding-inspection.md
+    - 盤内配線作業要領: guidelines/panel-wiring.md
+    - ケーブルトレイ施工: guidelines/cable-tray.md
+    - トラブル初動対応: guidelines/trouble-first-response.md
+    - 作業許可証(PTW): guidelines/work-permit.md
   - リファレンス:
     - reference/index.md
     - 用語集: reference/glossary.md
