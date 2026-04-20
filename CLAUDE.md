@@ -94,6 +94,13 @@ last_verified: 2026-01-15
 - docs内にHTML/JS/CSS埋め込み（単一ファイル完結）
 - レスポンシブデザイン・入力バリデーション必須
 
+## Skill配置ルール
+
+| 配置 | パス | 対象Skill |
+|------|------|----------|
+| グローバル | `~/.claude/skills/` | ai-architect, ai-reviewer, inbox-manager, morning-reporter |
+| ローカル | `.claude/skills/` | mkdocs-writer, wiki-deployer |
+
 ## 命名規則
 
 - ファイル名: ケバブケース（例: `motor-control.md`）
