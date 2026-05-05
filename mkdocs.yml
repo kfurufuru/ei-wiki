@@ -79,7 +79,7 @@ extra_javascript:
 
 extra:
   # OGP メタデータ（ChatGPT・SNS共有用）
-  og_image: "https://kfurufuru.github.io/ei-wiki/og-image.png"
+  # og_image: 未配置のため一旦コメントアウト（404回避）。生成後にパス設定して復活
   og_image_alt: "電気計装 実務Wiki"
   og_type: "website"
   social:
@@ -171,10 +171,10 @@ nav:
     - 接地・ノイズ: 06-trouble/grounding-noise.md
     - 保護装置誤動作: 06-trouble/protection.md
     - 非定常時の判断フレーム: 06-trouble/abnormal-situation.md
-  - 当工場固有:
+  - 自工場固有:
     - 07-site/index.md
     - 塩害・腐食環境: 07-site/salt-damage.md
-    - 石油コンビナート法対応: 07-site/combinat-law.md
+    - コンビナート法対応: 07-site/combinat-law.md
     - プロセス特性: 07-site/process-chars.md
     - 接地・腐食対策: 07-site/grounding-coastal.md
   - 省エネ・エネルギー管理:

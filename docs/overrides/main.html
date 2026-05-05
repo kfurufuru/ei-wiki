@@ -1,7 +1,23 @@
 {% extends "base.html" %}
 
+{# <title> 重複防止：home では site_name 1回のみ #}
+{% block htmltitle %}
+  {% if page and page.is_homepage %}
+    <title>{{ config.site_name }}</title>
+  {% elif page and page.title and not page.is_homepage %}
+    <title>{{ page.title | striptags }} | {{ config.site_name }}</title>
+  {% else %}
+    <title>{{ config.site_name }}</title>
+  {% endif %}
+{% endblock %}
+
 {% block site_meta %}
   {{ super() }}
+  {# 検索エンジン除外（社内実務参照用） #}
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  {# テーマカラー（モバイルブラウザのアドレスバー） #}
+  <meta name="theme-color" content="#009688" />
   {# OGP メタデータ（ChatGPT・SNS共有用） #}
   <meta property="og:type" content="{{ config.extra.og_type | default('website') }}" />
   <meta property="og:url" content="{{ config.site_url }}" />
