@@ -68,7 +68,15 @@
   {% set lv = page.meta.last_verified | string %}
   <div class="ei-verified-badge" style="margin-bottom: 1rem;">
     {% set today = "2026-04-04" %}
-    {% if lv < "2025-04-04" %}
+    {% if lv < "2023-04-04" %}
+      <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:4px;font-size:0.78rem;font-weight:600;background:#f8d7da;color:#58151c;border:1px solid #dc3545;">
+        🔴 最終確認: {{ lv }} — 3年以上未更新。<strong>信頼性低下</strong>。再確認後の利用推奨。
+      </span>
+    {% elif lv < "2024-04-04" %}
+      <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:4px;font-size:0.78rem;font-weight:600;background:#ffe5b4;color:#7a3e00;border:1px solid #ff9800;">
+        🟠 最終確認: {{ lv }} — 2年以上未更新。記載内容が古い可能性が高い。最新規格・法令を確認してください。
+      </span>
+    {% elif lv < "2025-04-04" %}
       <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:4px;font-size:0.78rem;font-weight:600;background:#fff3cd;color:#856404;border:1px solid #ffc107;">
         ⚠️ 最終確認: {{ lv }} — 1年以上未更新。内容を確認してから参照してください。
       </span>
