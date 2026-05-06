@@ -89,7 +89,6 @@ extra:
 
 nav:
   - Home: index.md
-  - はじめての方へ: getting-started.md
   - 症状逆引き: 06-trouble/index.md
   - 高圧:
     - 01-koatsu/index.md
@@ -131,89 +130,92 @@ nav:
     - 計装配線: 03-keiso/wiring.md
     - NPN/PNP選定: 03-keiso/npn-pnp.md
     - 工事完了後の受入実務: 03-keiso/koji-kanryo.md
-  - 設計:
-    - 04-sekkei/index.md
-    - 設備投資フロー: 04-sekkei/investment-flow.md
-    - 仕様書の書き方: 04-sekkei/spec-writing.md
-    - 盤設計: 04-sekkei/panel-design.md
-    - 電路設計: 04-sekkei/cable-route.md
-    - 負荷計算: 04-sekkei/load-calc.md
-    - 短絡電流計算: 04-sekkei/fault-current.md
-    - 電圧降下計算: 04-sekkei/voltage-drop.md
-    - 図面体系: 04-sekkei/drawing-system.md
-    - 規格・法規: 04-sekkei/standards.md
-    - メーカー選定: 04-sekkei/vendor-selection.md
-    - 改造・更新設計の注意点: 04-sekkei/renovation-design.md
-  - 保全:
-    - 05-hozen/index.md
-    - 保全体系: 05-hozen/maintenance-system.md
-    - 定期点検: 05-hozen/periodic-inspection.md
-    - 絶縁管理: 05-hozen/insulation-management.md
-    - 校正: 05-hozen/calibration.md
-    - 寿命管理: 05-hozen/lifetime.md
-    - 予備品管理: 05-hozen/spare-parts.md
-    - 停電作業: 05-hozen/outage-work.md
-    - 測定器の使い方: 05-hozen/instruments.md
-    - 他部門調整ノウハウ: 05-hozen/coordination.md
-    - データ活用・予兆保全: 05-hozen/predictive-maintenance.md
-  - 工事・検収フロー:
-    - 03-koji-kenshu/index.md
-    - フロー全体図: 03-koji-kenshu/flow-overview.md
-  - トラブル:
-    - 06-trouble/index.md
-    - トラブル対応の基本: 06-trouble/basics.md
-    - 電源トラブル: 06-trouble/power.md
-    - モータートラブル: 06-trouble/motor.md
-    - インバータトラブル: 06-trouble/inverter.md
-    - 計装信号トラブル: 06-trouble/signal.md
-    - 制御弁トラブル: 06-trouble/valve.md
-    - PLC/DCSトラブル: 06-trouble/plc-dcs.md
-    - 接地・ノイズ: 06-trouble/grounding-noise.md
-    - 保護装置誤動作: 06-trouble/protection.md
-    - 非定常時の判断フレーム: 06-trouble/abnormal-situation.md
-  - 自工場固有:
-    - 07-site/index.md
-    - 塩害・腐食環境: 07-site/salt-damage.md
-    - コンビナート法対応: 07-site/combinat-law.md
-    - プロセス特性: 07-site/process-chars.md
-    - 接地・腐食対策: 07-site/grounding-coastal.md
-  - 省エネ・エネルギー管理:
-    - 08-energy/index.md
-    - 省エネ法対応: 08-energy/energy-law.md
-    - デマンド管理: 08-energy/demand-management.md
-    - インバータ省エネ計算: 08-energy/vfd-energy.md
-    - 力率改善ROI: 08-energy/power-factor-roi.md
-    - エネルギー監視: 08-energy/energy-monitoring.md
-  - 電気主任技術者業務:
-    - 09-hoantokei/index.md
-    - 法定業務一覧: 09-hoantokei/legal-duties.md
-    - 保安規程の管理: 09-hoantokei/hoan-kisoku.md
-    - 電力会社との窓口: 09-hoantokei/denryoku-toiawase.md
-    - 電気事故対応と報告: 09-hoantokei/jiko-taiou.md
-  - 安全管理・作業許可:
-    - 10-safety/index.md
-    - 作業許可制度（PTW）: 10-safety/ptw.md
-    - 特別教育・資格一覧: 10-safety/special-education.md
-    - LOTO（ロックアウト）: 10-safety/lockout-tagout.md
-    - リスクアセスメント: 10-safety/risk-assessment.md
-    - よくあるミス・ヒヤリハット集: 10-safety/near-miss.md
-  - 生成AI業務活用:
-    - 11-genai/index.md
-    - 生成AIの基本: 11-genai/basics.md
-    - M365 Copilot活用: 11-genai/m365-copilot.md
-    - ChatGPT活用: 11-genai/chatgpt.md
-    - プロンプトの書き方: 11-genai/prompt-writing.md
-    - 電気計装業務への応用: 11-genai/ei-applications.md
-    - 注意事項・情報セキュリティ: 11-genai/security.md
-  - 業務マニュアル:
-    - ガイドライン一覧: guidelines/index.md
-    - 計装ループチェック: guidelines/loop-check.md
-    - 保護リレー試験: guidelines/protective-relay-test.md
-    - 接地抵抗測定: guidelines/grounding-inspection.md
-    - 盤内配線作業要領: guidelines/panel-wiring.md
-    - ケーブルトレイ施工: guidelines/cable-tray.md
-    - トラブル初動対応: guidelines/trouble-first-response.md
-    - 作業許可証(PTW): guidelines/work-permit.md
+  - 設計・保全:
+    - 設計:
+      - 04-sekkei/index.md
+      - 設備投資フロー: 04-sekkei/investment-flow.md
+      - 仕様書の書き方: 04-sekkei/spec-writing.md
+      - 盤設計: 04-sekkei/panel-design.md
+      - 電路設計: 04-sekkei/cable-route.md
+      - 負荷計算: 04-sekkei/load-calc.md
+      - 短絡電流計算: 04-sekkei/fault-current.md
+      - 電圧降下計算: 04-sekkei/voltage-drop.md
+      - 図面体系: 04-sekkei/drawing-system.md
+      - 規格・法規: 04-sekkei/standards.md
+      - メーカー選定: 04-sekkei/vendor-selection.md
+      - 改造・更新設計の注意点: 04-sekkei/renovation-design.md
+    - 保全:
+      - 05-hozen/index.md
+      - 保全体系: 05-hozen/maintenance-system.md
+      - 定期点検: 05-hozen/periodic-inspection.md
+      - 絶縁管理: 05-hozen/insulation-management.md
+      - 校正: 05-hozen/calibration.md
+      - 寿命管理: 05-hozen/lifetime.md
+      - 予備品管理: 05-hozen/spare-parts.md
+      - 停電作業: 05-hozen/outage-work.md
+      - 測定器の使い方: 05-hozen/instruments.md
+      - 他部門調整ノウハウ: 05-hozen/coordination.md
+      - データ活用・予兆保全: 05-hozen/predictive-maintenance.md
+    - 工事・検収:
+      - 03-koji-kenshu/index.md
+      - フロー全体図: 03-koji-kenshu/flow-overview.md
+    - トラブル詳細:
+      - 06-trouble/index.md
+      - トラブル対応の基本: 06-trouble/basics.md
+      - 電源トラブル: 06-trouble/power.md
+      - モータートラブル: 06-trouble/motor.md
+      - インバータトラブル: 06-trouble/inverter.md
+      - 計装信号トラブル: 06-trouble/signal.md
+      - 制御弁トラブル: 06-trouble/valve.md
+      - PLC/DCSトラブル: 06-trouble/plc-dcs.md
+      - 接地・ノイズ: 06-trouble/grounding-noise.md
+      - 保護装置誤動作: 06-trouble/protection.md
+      - 非定常時の判断フレーム: 06-trouble/abnormal-situation.md
+  - 業務:
+    - 主任技術者業務:
+      - 09-hoantokei/index.md
+      - 法定業務一覧: 09-hoantokei/legal-duties.md
+      - 保安規程の管理: 09-hoantokei/hoan-kisoku.md
+      - 電力会社との窓口: 09-hoantokei/denryoku-toiawase.md
+      - 電気事故対応と報告: 09-hoantokei/jiko-taiou.md
+    - 安全管理:
+      - 10-safety/index.md
+      - 作業許可制度（PTW）: 10-safety/ptw.md
+      - 特別教育・資格一覧: 10-safety/special-education.md
+      - LOTO（ロックアウト）: 10-safety/lockout-tagout.md
+      - リスクアセスメント: 10-safety/risk-assessment.md
+      - よくあるミス・ヒヤリハット集: 10-safety/near-miss.md
+    - 業務マニュアル:
+      - ガイドライン一覧: guidelines/index.md
+      - 計装ループチェック: guidelines/loop-check.md
+      - 保護リレー試験: guidelines/protective-relay-test.md
+      - 接地抵抗測定: guidelines/grounding-inspection.md
+      - 盤内配線作業要領: guidelines/panel-wiring.md
+      - ケーブルトレイ施工: guidelines/cable-tray.md
+      - トラブル初動対応: guidelines/trouble-first-response.md
+      - 作業許可証(PTW): guidelines/work-permit.md
+    - 自工場固有:
+      - 07-site/index.md
+      - 塩害・腐食環境: 07-site/salt-damage.md
+      - コンビナート法対応: 07-site/combinat-law.md
+      - プロセス特性: 07-site/process-chars.md
+      - 接地・腐食対策: 07-site/grounding-coastal.md
+    - 省エネ:
+      - 08-energy/index.md
+      - 省エネ法対応: 08-energy/energy-law.md
+      - デマンド管理: 08-energy/demand-management.md
+      - インバータ省エネ計算: 08-energy/vfd-energy.md
+      - 力率改善ROI: 08-energy/power-factor-roi.md
+      - エネルギー監視: 08-energy/energy-monitoring.md
+    - 生成AI業務活用:
+      - 11-genai/index.md
+      - 生成AIの基本: 11-genai/basics.md
+      - M365 Copilot活用: 11-genai/m365-copilot.md
+      - ChatGPT活用: 11-genai/chatgpt.md
+      - プロンプトの書き方: 11-genai/prompt-writing.md
+      - 電気計装業務への応用: 11-genai/ei-applications.md
+      - 注意事項・情報セキュリティ: 11-genai/security.md
+    - はじめての方へ: getting-started.md
   - リファレンス:
     - reference/index.md
     - 用語集: reference/glossary.md
