@@ -1,3 +1,9 @@
+---
+title: 作業許可証（PTW）発行手順
+tags: [業務マニュアル]
+last_verified: 2026-05-20
+---
+
 # 作業許可証（PTW）発行手順
 
 Permit to Work（PTW / 作業許可証）の申請・発行・作業完了の手順です。  

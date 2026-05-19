@@ -2,6 +2,7 @@
 title: 計装
 description: センサ・制御弁・PID・DCS・防爆
 tags: [計装, センサ, PID, DCS, 防爆]
+last_verified: 2026-05-20
 ---
 
 # 計装
