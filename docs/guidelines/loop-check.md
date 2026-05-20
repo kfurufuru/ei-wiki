@@ -1,6 +1,8 @@
 ---
 title: 計装ループチェック手順
+description: 新設・改造工事後の計装ループ動作確認手順
 tags: [業務マニュアル]
+audience: [電気担当, 保全担当]
 last_verified: 2026-05-20
 ---
 

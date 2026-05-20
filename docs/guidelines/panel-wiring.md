@@ -1,6 +1,8 @@
 ---
 title: 盤内配線作業要領
+description: 制御盤・分電盤・計装盤の内部配線作業要領
 tags: [業務マニュアル]
+audience: [電気担当, 保全担当]
 last_verified: 2026-05-20
 ---
 

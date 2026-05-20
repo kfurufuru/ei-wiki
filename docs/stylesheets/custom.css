@@ -39,15 +39,53 @@
   border-color: #ff6b6b;
 }
 
-/* 更新日バッジ・対象者バッジのレスポンシブ調整 */
-.ei-verified-badge,
+/* 対象者バッジのレスポンシブ調整 */
 .ei-audience-badges {
   line-height: 1.4;
 }
 
 @media (max-width: 600px) {
-  .ei-verified-badge span,
   .ei-audience-badges span {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
+}
+
+/* === last_verified バッジ（JS描画・基準日は閲覧時の実日付） ===
+   しきい値は scripts/check_last_verified.py と統一（DUE_SOON 300日 / EXPIRED 365日） */
+.last-verified-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.last-verified-badge:empty {
+  display: none;
+}
+
+.last-verified-badge.ok {
+  background-color: #d1e7dd;
+  color: #0a3622;
+  border: 1px solid #a3cfbb;
+}
+
+.last-verified-badge.due-soon {
+  background-color: #fff3cd;
+  color: #7a3e00;
+  border: 1px solid #ff9800;
+}
+
+.last-verified-badge.expired {
+  background-color: #f8d7da;
+  color: #58151c;
+  border: 1px solid #dc3545;
+}
+
+@media (max-width: 600px) {
+  .last-verified-badge {
     font-size: 0.72rem;
     padding: 3px 8px;
   }

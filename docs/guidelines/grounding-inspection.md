@@ -1,6 +1,8 @@
 ---
 title: 接地抵抗測定手順
+description: 設備接地の定期検査・法定点検における測定手順
 tags: [業務マニュアル]
+audience: [電気担当, 保全担当]
 last_verified: 2026-05-20
 ---
 

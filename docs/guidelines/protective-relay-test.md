@@ -1,6 +1,8 @@
 ---
 title: 保護リレー試験手順
+description: 過電流・地絡リレーの動作試験手順
 tags: [業務マニュアル]
+audience: [電気担当, 保全担当]
 last_verified: 2026-05-20
 ---
 

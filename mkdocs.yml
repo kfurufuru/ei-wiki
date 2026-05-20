@@ -76,6 +76,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/cable-calc.js
+  - javascripts/verified-badge.js
 
 extra:
   # OGP メタデータ（ChatGPT・SNS共有用）

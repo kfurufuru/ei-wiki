@@ -1,6 +1,8 @@
 ---
 title: ケーブルトレイ施工要領
+description: ケーブルトレイ設置・延線の標準施工手順
 tags: [業務マニュアル]
+audience: [電気担当, 保全担当]
 last_verified: 2026-05-20
 ---
 
