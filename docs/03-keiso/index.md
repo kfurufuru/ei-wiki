@@ -24,6 +24,7 @@ last_verified: 2026-05-20
 | [DCS](dcs.md) | DCS 構成・タグ命名・設定変更手順 |
 | [調節計・記録計](controller.md) | 単ループ調節計の設定・配線 |
 | [防爆](explosion-proof.md) | 防爆構造の種類・エリア区分・認証 |
+| [グランドと接地](grounding-gnd.md) | GNDとアースの違い・グランド/接地の種類（FG/SG/AGND/DGND/PGND） |
 | [計装配線](wiring.md) | シールド処理・配管・マルチペアケーブル |
 | [NPN/PNP選定](npn-pnp.md) | センサ出力タイプの違いと計器選定・PLC接続の実務判断 |
 | [工事完了後の受入実務](koji-kanryo.md) | ベンダー完了報告後の現場・性能・書類・引継ぎ確認 |
