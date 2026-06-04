@@ -128,6 +128,7 @@ nav:
     - DCS: 03-keiso/dcs.md
     - 調節計・記録計: 03-keiso/controller.md
     - 防爆: 03-keiso/explosion-proof.md
+    - グランドと接地: 03-keiso/grounding-gnd.md
     - 計装配線: 03-keiso/wiring.md
     - NPN/PNP選定: 03-keiso/npn-pnp.md
     - 工事完了後の受入実務: 03-keiso/koji-kanryo.md
