@@ -178,6 +178,14 @@ last_verified: 2026-05-20
 
         [:octicons-arrow-right-24: 03-keiso/explosion-proof.md](03-keiso/explosion-proof.md)
 
+    - :fontawesome-solid-bolt: **グランドと接地**
+
+        ---
+
+        GND と接地の違い・FG/SG/AGND/DGND/PGND・1 点接地の考え方。ノイズ対策の土台。
+
+        [:octicons-arrow-right-24: 03-keiso/grounding-gnd.md](03-keiso/grounding-gnd.md)
+
     </div>
 
     ---
