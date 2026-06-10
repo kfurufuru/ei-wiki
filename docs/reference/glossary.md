@@ -6,13 +6,13 @@ tags:
   - 用語集
 audience:
   - 電気担当
-last_verified: 2026-04-04
+last_verified: 2026-06-10
 status: active
 ---
 
 # 用語集
 
-## 電気系用語（50語）
+## 電気系用語（52語）
 
 | 日本語 | English | 略語 | 説明 |
 |-------|---------|------|------|
@@ -21,6 +21,8 @@ status: active
 | サーマルリレー | Thermal Relay | THR | バイメタルの熱変形で過電流を検出しモーターを保護 |
 | 漏電遮断器 | Earth Leakage Circuit Breaker | ELCB / RCCB | 漏洩電流を検出して遮断する安全装置 |
 | 配線用遮断器 | Molded Case Circuit Breaker | MCCB | 樹脂成形ケース内に遮断機構を持つ遮断器 |
+| アンペアトリップ | Ampere Trip | AT | MCCB の定格電流。超過が続くと引き外し動作する電流値 |
+| アンペアフレーム | Ampere Frame | AF | MCCB のフレーム（外箱）の大きさの呼び。搭載できる最大 AT を表し、常に AF ≥ AT |
 | 真空遮断器 | Vacuum Circuit Breaker | VCB | 真空バルブで電流を遮断する高圧用遮断器 |
 | 断路器 | Disconnecting Switch | DS | 無負荷状態で回路を切り離す開閉器（負荷開閉不可） |
 | 過電流継電器 | Overcurrent Relay | OCR | 設定電流値を超えると動作する保護継電器 |
