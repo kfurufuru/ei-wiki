@@ -130,3 +130,4 @@ flowchart TD
 - [測定器の使い方](instruments.md) — 停電作業で使用する検電器の種類・使用前確認方法
 - [規格・法規](../04-sekkei/standards.md) — 停電作業の法的根拠（労働安全衛生法・高圧ガス保安法）
 - [設備投資フロー](../04-sekkei/investment-flow.md) — 改造工事を伴う停電作業時の施工安全管理との連携
+- [保護リレー試験手順](../guidelines/protective-relay-test.md) — 停電状態で実施する保護継電器試験の手順・CT二次開放防止の注意点

@@ -133,3 +133,4 @@ status: published
 - [仕様書の書き方](spec-writing.md) — ケーブル仕様（種類・サイズ・接続方式）の仕様書記載方法
 - [規格・法規](standards.md) — 防爆エリアの電路に関わる法規・規格（JIS C 60079 等）
 - [絶縁管理](../05-hozen/insulation-management.md) — 完成後のケーブル絶縁抵抗測定基準
+- [ケーブルトレイ施工要領](../guidelines/cable-tray.md) — 選定したケーブルラックを現場で設置・延線する際の施工手順

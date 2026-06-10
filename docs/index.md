@@ -25,6 +25,9 @@ last_verified: 2026-05-20
 
 [症状逆引き全リストへ →](06-trouble/index.md){ .md-button }
 
+!!! tip "まず何をすべきか迷ったら"
+    症状が特定できない・どこから手をつけるか迷う場合は [トラブル初動対応フロー](guidelines/trouble-first-response.md) を開いてください。安全確保から切り分けまでの初動手順を現場でそのまま追えます。
+
 ## 仕事から探す
 
 <div class="grid cards" markdown>
