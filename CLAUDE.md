@@ -14,7 +14,7 @@
 - MkDocs + Material for MkDocs（静的サイトジェネレータ）
 - GitHub Pages（ホスティング）
 - GitHub Actions（自動デプロイ: `.github/workflows/deploy.yml`）
-- MathJax（数式）/ Mermaid（図表）
+- Mermaid（図表）。数式レンダラ（MathJax/KaTeX）は**未導入**＝数式はユニコード表記（下記Markdown規約）
 - Python（MkDocs依存。`mkdocs-material` のみ）
 
 ## ファイル構造
@@ -77,7 +77,7 @@ last_verified: 2026-01-15
 - H1はページに1つ。`##` 以下で階層構成
 - リストは `-`（`*` 不可）
 - コードブロックは言語指定必須
-- 数式: インライン `$I = V/R$` / ブロック `$$P = VI\cos\theta$$`
+- 数式: **`$..$`/`$$..$$` のLaTeX記法は使用禁止**（レンダラ未配線のため文字のまま公開される。2026-06-11 PR #5で実害確認）。ユニコード表記で書く（例: `Io = √(Ioc² + Ior²)`、上付き²³・√・Δ・Ω等）。式の多いページが実際に必要になった時点でKaTeX配線を検討（AI社員諮問 2026-06-11 全員一致でYAGNI判断）
 - Admonition多用: `!!! tip`, `!!! warning`, `!!! danger`
 - タブ: `=== "タブ名"`
 
