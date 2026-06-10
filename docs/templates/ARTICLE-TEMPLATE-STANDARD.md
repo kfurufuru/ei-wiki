@@ -503,4 +503,4 @@ YYY で 5分で判定できる。
 
 - [MkDocs Material テーマ](https://squidfunk.github.io/mkdocs-material/)
 - [Markdown 記法](https://www.markdownguide.org/)
-- [ei-wiki ナビゲーション構造](index.md)
+- `[ei-wiki ナビゲーション構造](../index.md)` ← 実際のパスに合わせて確認すること

@@ -40,6 +40,17 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
+validation:
+  nav:
+    omitted_files: warn
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+not_in_nav: |
+  includes/abbreviations.md
+
 plugins:
   - search:
       lang: ja
@@ -114,6 +125,7 @@ nav:
     - 操作盤・表示灯: 02-teiatsu/panel-hmi.md
     - UPS・非常電源: 02-teiatsu/ups.md
     - 接地（低圧）: 02-teiatsu/grounding-lv.md
+    - 絶縁監視（常時監視）: 02-teiatsu/insulation-monitoring.md
     - 照明・コンセント: 02-teiatsu/lighting.md
   - 計装:
     - 03-keiso/index.md
@@ -124,6 +136,7 @@ nav:
     - レベル計測: 03-keiso/level.md
     - 分析計: 03-keiso/analyzer.md
     - 制御弁: 03-keiso/control-valve.md
+    - 計装空気: 03-keiso/instrument-air.md
     - PID制御: 03-keiso/pid.md
     - DCS: 03-keiso/dcs.md
     - 調節計・記録計: 03-keiso/controller.md
@@ -158,6 +171,7 @@ nav:
       - 測定器の使い方: 05-hozen/instruments.md
       - 他部門調整ノウハウ: 05-hozen/coordination.md
       - データ活用・予兆保全: 05-hozen/predictive-maintenance.md
+      - サーモグラフィ診断: 05-hozen/thermography.md
     - 工事・検収:
       - 03-koji-kenshu/index.md
       - フロー全体図: 03-koji-kenshu/flow-overview.md

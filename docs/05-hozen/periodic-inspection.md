@@ -107,3 +107,5 @@ status: published
 - [停電作業](outage-work.md) — 年次停電点検時の停電手順・LOTO・復電前チェックリスト
 - [測定器の使い方](instruments.md) — 点検で使用するメガー・クランプメーター・検電器の操作
 - [規格・法規](../04-sekkei/standards.md) — 年次点検の法的根拠（電気事業法・高圧ガス保安法）
+- [接地抵抗測定手順](../guidelines/grounding-inspection.md) — 年次点検の接地抵抗測定を現場でそのまま実施できる手順書
+- [保護リレー試験手順](../guidelines/protective-relay-test.md) — 年次点検の保護継電器動作試験の具体的な試験手順・判定基準

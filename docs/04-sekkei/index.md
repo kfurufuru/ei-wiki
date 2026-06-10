@@ -25,3 +25,4 @@ status: published
 | [図面体系](drawing-system.md) | 単線結線図・展開図・計装図の体系 |
 | [規格・法規](standards.md) | 電気設備技術基準・内線規程・JIS 早見 |
 | [メーカー選定](vendor-selection.md) | 比較評価の視点・選定記録のまとめ方 |
+| [改造・更新設計の注意点](renovation-design.md) | 既設盤増設・PLC更新・製造中止品代替など改造・更新設計の落とし穴と確認事項 |

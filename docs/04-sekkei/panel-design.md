@@ -120,3 +120,5 @@ A  : 有効放熱面積 [m²]（盤の表面積から床面・背面を除く）
 - [短絡電流計算](fault-current.md) — 盤内 MCCB の遮断容量選定に必要な短絡電流値
 - [改造・更新設計の注意点](renovation-design.md) — 既設盤への機器追加時の熱計算・スペース確認
 - [絶縁管理](../05-hozen/insulation-management.md) — 竣工後の盤内絶縁抵抗測定手順
+- [盤内配線作業要領](../guidelines/panel-wiring.md) — 設計した盤を実際に配線施工する際の現場作業手順
+- [ケーブルトレイ施工要領](../guidelines/cable-tray.md) — 盤への引き込みケーブルを支持するトレイの設置・延線手順

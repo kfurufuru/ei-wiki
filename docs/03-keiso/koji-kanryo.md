@@ -268,6 +268,7 @@ No. | 是正内容 | 対応期限 | 担当（ベンダー/自社） | 確認日 
 
 - [計装配線](wiring.md) — ループ図・端子番号管理
 - [DCS](dcs.md) — DCS タグ・設定変更手順
+- [計装ループチェック手順](../guidelines/loop-check.md) — 受入時に実施する計装ループの導通・動作確認の具体手順
 - [校正](../05-hozen/calibration.md) — 試運転後の初期校正
 - [停電作業](../05-hozen/outage-work.md) — 工事前後の安全管理
 - [設備投資フロー](../04-sekkei/investment-flow.md) — 発注〜完了までの全体像

@@ -117,4 +117,5 @@ CT 二次換算電流 = 変圧器定格電流（A） / CT 変流比
 - [遮断器・断路器](breaker.md) — VCB 動作・トリップ信号・インターロック
 - [変圧器](transformer.md) — OCR・ブッフホルツ継電器の配置
 - [保護協調](coordination.md) — 多段階保護・時限協調設定
+- [保護リレー試験手順](../guidelines/protective-relay-test.md) — OCR/GR/DGR の動作試験・整定値確認を現場で行う実務手順
 - [高圧カテゴリ](index.md) — より広い高圧知識へ

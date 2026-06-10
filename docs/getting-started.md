@@ -293,6 +293,7 @@ last_verified: 2026-05-20
 | 目的 | リンク |
 |------|--------|
 | 症状・現象から原因を探す | [トラブル逆引き](06-trouble/index.md) |
+| 現場で使う作業マニュアルを探す | [業務マニュアル一覧](guidelines/index.md) |
 | 用語・略語を調べる | [用語集](reference/glossary.md) |
 | 計算ツールをすぐ使いたい | [計算ツール集](reference/calculators.md) |
 | 規格番号で探す | [規格一覧](reference/standards-list.md) |

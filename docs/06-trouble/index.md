@@ -99,6 +99,7 @@ last_verified: 2026-05-20
 | [PLC/DCSトラブル](plc-dcs.md) | PLC・DCS |
 | [接地・ノイズ](grounding-noise.md) | 共通 |
 | [保護装置誤動作](protection.md) | 継電器・保護装置 |
+| [非定常時の判断フレーム](abnormal-situation.md) | 複数トリップ同時発生・地震後点検など非定常時の判断枠組み |
 
 ---
 
