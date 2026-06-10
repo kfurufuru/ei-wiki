@@ -24,4 +24,5 @@ status: published
 | [操作盤・表示灯](panel-hmi.md) | 盤内配線・表示灯色の標準・HMI操作 |
 | [UPS・非常電源](ups.md) | UPS 選定・バッテリー管理・切替試験 |
 | [接地（低圧）](grounding-lv.md) | D種・C種接地の施工・測定 |
+| [絶縁監視（常時監視）](insulation-monitoring.md) | Io/Ior 方式の違い・警報設定・無停電での絶縁劣化監視 |
 | [照明・コンセント](lighting.md) | 照明設計・コンセント回路・LED化 |
