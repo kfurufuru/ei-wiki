@@ -70,4 +70,4 @@ last_verified: YYYY-MM-DD
 
 ## 関連記事
 
-- [関連記事](../path/to/article.md)
+- `[関連記事タイトル](../カテゴリ/ページ名.md)` ← ここを実リンクに置き換える

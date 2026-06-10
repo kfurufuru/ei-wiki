@@ -22,20 +22,23 @@
 ```
 ei-wiki/
 ├── mkdocs.yml              # サイト設定・ナビゲーション（nav約200エントリ）
+├── requirements.txt        # mkdocs-material バージョン固定（pip install -r requirements.txt）
 ├── docs/
 │   ├── index.md            # トップページ
 │   ├── getting-started.md  # 読み方ガイド
-│   ├── 01-koatsu/          # 高圧受変電（11ページ）
-│   ├── 02-teiatsu/         # 低圧設備（11ページ）
-│   ├── 03-keiso/           # 計装・プロセス制御（13ページ）
-│   ├── 04-sekkei/          # 電気設計（11ページ）
-│   ├── 05-hozen/           # 保全・点検（9ページ）
-│   ├── 06-trouble/         # トラブルシューティング（9ページ）
-│   ├── 07-site/            # 自工場固有（5ページ）
-│   ├── 08-energy/          # 省エネ・エネルギー管理（6ページ）
-│   ├── 09-hoantokei/       # 電気主任技術者業務（5ページ）
-│   ├── 10-safety/          # 安全管理・作業許可（5ページ）
-│   ├── 11-genai/           # 生成AI業務活用（7ページ）
+│   ├── 01-koatsu/          # 高圧受変電
+│   ├── 02-teiatsu/         # 低圧設備
+│   ├── 03-keiso/           # 計装・プロセス制御
+│   ├── 03-koji-kenshu/     # 工事・検収
+│   ├── 04-sekkei/          # 電気設計
+│   ├── 05-hozen/           # 保全・点検
+│   ├── 06-trouble/         # トラブルシューティング
+│   ├── 07-site/            # 自工場固有
+│   ├── 08-energy/          # 省エネ・エネルギー管理
+│   ├── 09-hoantokei/       # 電気主任技術者業務
+│   ├── 10-safety/          # 安全管理・作業許可
+│   ├── 11-genai/           # 生成AI業務活用
+│   ├── guidelines/         # 現場作業ガイドライン・チェックリスト
 │   ├── reference/          # 用語集・規格一覧・計算ツール
 │   ├── templates/          # ページテンプレート（reference/procedure/trouble）
 │   ├── includes/           # abbreviations.md（略語ツールチップ、全ページ自動付与）
@@ -105,6 +108,7 @@ last_verified: 2026-01-15
 
 - ファイル名: ケバブケース（例: `motor-control.md`）
 - フォルダ: 2桁プレフィックス+英語名（例: `01-koatsu`）
+- `03-keiso` と `03-koji-kenshu` はプレフィックスが重複しているが、公開URL維持のため既知のまま許容する
 - ブランチ: `feature/ページ名` または `fix/修正内容`
 - コミット: 日本語可。`add:`, `fix:`, `update:`, `feat:` プレフィックス推奨
 
