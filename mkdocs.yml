@@ -52,7 +52,7 @@ not_in_nav: |
   includes/abbreviations.md
 
 # 公開ビルド除外。`.*` と /templates/ はMkDocsデフォルト除外の明示維持（exclude_docs設定時はデフォルトが上書きされるため）。
-# /07-site/ は自工場固有の保安情報のため非公開化（2026-06-11 AI社員諮問全員一致）。閲覧はローカル mkdocs serve。
+# /07-site/ の実体は private repo ei-wiki-private へ退避済み（2026-06-11）。この行は誤って再追加された場合の公開事故ガードとして残置。
 exclude_docs: |
   .*
   /templates/
