@@ -260,10 +260,6 @@ last_verified: 2026-05-20
 
     ### 法規対応
 
-    !!! info "自工場固有の規制を含みます"
-        コンビナート法対応は当工場固有の運用です。
-        他拠点の方は規格一覧のみ参照してください。
-
     <div class="grid cards" markdown>
 
     - :fontawesome-solid-book: **規格一覧**
@@ -273,14 +269,6 @@ last_verified: 2026-05-20
         JIS・JEC・NECA・IEC の適用範囲まとめ。
 
         [:octicons-arrow-right-24: reference/standards-list.md](reference/standards-list.md)
-
-    - :fontawesome-solid-industry: **石油コンビナート法対応**
-
-        ---
-
-        特定防災施設・電気設備の届出・検査ポイント。
-
-        [:octicons-arrow-right-24: 04-sekkei/standards.md](04-sekkei/standards.md)
 
     </div>
 
