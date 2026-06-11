@@ -33,7 +33,7 @@ ei-wiki/
 │   ├── 04-sekkei/          # 電気設計
 │   ├── 05-hozen/           # 保全・点検
 │   ├── 06-trouble/         # トラブルシューティング
-│   ├── 07-site/            # 自工場固有
+│   ├── 07-site/            # 自工場固有（公開ビルド除外＝mkdocs.yml exclude_docs・ローカルserveのみ）
 │   ├── 08-energy/          # 省エネ・エネルギー管理
 │   ├── 09-hoantokei/       # 電気主任技術者業務
 │   ├── 10-safety/          # 安全管理・作業許可

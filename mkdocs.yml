@@ -51,6 +51,13 @@ validation:
 not_in_nav: |
   includes/abbreviations.md
 
+# 公開ビルド除外。`.*` と /templates/ はMkDocsデフォルト除外の明示維持（exclude_docs設定時はデフォルトが上書きされるため）。
+# /07-site/ は自工場固有の保安情報のため非公開化（2026-06-11 AI社員諮問全員一致）。閲覧はローカル mkdocs serve。
+exclude_docs: |
+  .*
+  /templates/
+  /07-site/
+
 plugins:
   - search:
       lang: ja
@@ -210,12 +217,6 @@ nav:
       - ケーブルトレイ施工: guidelines/cable-tray.md
       - トラブル初動対応: guidelines/trouble-first-response.md
       - 作業許可証(PTW): guidelines/work-permit.md
-    - 自工場固有:
-      - 07-site/index.md
-      - 塩害・腐食環境: 07-site/salt-damage.md
-      - コンビナート法対応: 07-site/combinat-law.md
-      - プロセス特性: 07-site/process-chars.md
-      - 接地・腐食対策: 07-site/grounding-coastal.md
     - 省エネ:
       - 08-energy/index.md
       - 省エネ法対応: 08-energy/energy-law.md
