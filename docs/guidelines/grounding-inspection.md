@@ -170,5 +170,4 @@ last_verified: 2026-05-20
 
 - [接地（高圧）](../01-koatsu/grounding-hv.md)
 - [接地（低圧）](../02-teiatsu/grounding-lv.md)
-- [接地・腐食対策（自工場固有）](../07-site/grounding-coastal.md)
 - [測定器の使い方](../05-hozen/instruments.md)
