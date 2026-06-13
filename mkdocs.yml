@@ -219,6 +219,7 @@ nav:
       - ケーブルトレイ施工: guidelines/cable-tray.md
       - トラブル初動対応: guidelines/trouble-first-response.md
       - 作業許可証(PTW): guidelines/work-permit.md
+      - 制御盤撤去工事ガイドライン: guidelines/seigyoban-tekkyo-guideline.md
     - 省エネ:
       - 08-energy/index.md
       - 省エネ法対応: 08-energy/energy-law.md
