@@ -102,6 +102,7 @@ status: published
 
 ## 関連ページ
 
+- [JIS規格マップ（計装）](../03-keiso/jis-standards.md) — 計装工事で押さえるJISの使いどころ（温度センサ・流量・IPコード・図記号）
 - [設備投資フロー](investment-flow.md) — 法規確認（高圧ガス保安法・電気事業法届出）を含む投資フロー
 - [仕様書の書き方](spec-writing.md) — 仕様書に記載する防爆・接地・通信の規格根拠
 - [短絡電流計算](fault-current.md) — 電技解釈・内線規程を根拠とした遮断容量確認
