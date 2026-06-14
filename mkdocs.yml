@@ -139,6 +139,7 @@ nav:
   - 計装:
     - 03-keiso/index.md
     - 計装基礎: 03-keiso/basics.md
+    - JIS規格マップ: 03-keiso/jis-standards.md
     - 温度計測: 03-keiso/temperature.md
     - 圧力計測: 03-keiso/pressure.md
     - 流量計測: 03-keiso/flow.md
