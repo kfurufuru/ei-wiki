@@ -116,7 +116,18 @@ extra:
 
 nav:
   - Home: index.md
-  - 症状逆引き: 06-trouble/index.md
+  - 症状逆引き:
+    - 06-trouble/index.md
+    - トラブル対応の基本: 06-trouble/basics.md
+    - 電源トラブル: 06-trouble/power.md
+    - モータートラブル: 06-trouble/motor.md
+    - インバータトラブル: 06-trouble/inverter.md
+    - 計装信号トラブル: 06-trouble/signal.md
+    - 制御弁トラブル: 06-trouble/valve.md
+    - PLC/DCSトラブル: 06-trouble/plc-dcs.md
+    - 接地・ノイズ: 06-trouble/grounding-noise.md
+    - 保護装置誤動作: 06-trouble/protection.md
+    - 非定常時の判断フレーム: 06-trouble/abnormal-situation.md
   - 高圧:
     - 01-koatsu/index.md
     - 受変電設備概論: 01-koatsu/juhenden.md
@@ -191,18 +202,6 @@ nav:
     - 工事・検収:
       - 03-koji-kenshu/index.md
       - フロー全体図: 03-koji-kenshu/flow-overview.md
-    - トラブル詳細:
-      - 06-trouble/index.md
-      - トラブル対応の基本: 06-trouble/basics.md
-      - 電源トラブル: 06-trouble/power.md
-      - モータートラブル: 06-trouble/motor.md
-      - インバータトラブル: 06-trouble/inverter.md
-      - 計装信号トラブル: 06-trouble/signal.md
-      - 制御弁トラブル: 06-trouble/valve.md
-      - PLC/DCSトラブル: 06-trouble/plc-dcs.md
-      - 接地・ノイズ: 06-trouble/grounding-noise.md
-      - 保護装置誤動作: 06-trouble/protection.md
-      - 非定常時の判断フレーム: 06-trouble/abnormal-situation.md
   - 業務:
     - 主任技術者業務:
       - 09-hoantokei/index.md

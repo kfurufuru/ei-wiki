@@ -10,8 +10,8 @@ hide:
 # 電気計装 実務Wiki
 
 > :material-lifebuoy: **困ったらここを見る** — 現場で即時に開けるフィールドリファレンス
-
-[:material-compass-outline: はじめての方へ — 読む順番ガイド](getting-started.md){ .ei-onboard }
+>
+> [:material-compass-outline: はじめての方へ — 読む順番ガイド](getting-started.md){ .ei-onboard }
 
 ## いま困っている？ — 症状TOP10
 

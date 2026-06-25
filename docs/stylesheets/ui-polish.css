@@ -383,3 +383,20 @@
   background: var(--ei-header-bg);
   border-color: var(--ei-header-bg);
 }
+
+/* P10. 初見導線ピルをヒーロー帯内に統合（視認性UP・#19/#1）。帯内では塗りCTAにして
+   現場の最初の一手を明確化し、帯下端の余白を整える。 */
+.md-typeset h1 + blockquote .ei-onboard {
+  margin: 0.75rem 0 0.1rem;
+  color: #fff;
+  background: var(--ei-header-bg);
+  border-color: var(--ei-header-bg);
+}
+.md-typeset h1 + blockquote .ei-onboard:hover,
+.md-typeset h1 + blockquote .ei-onboard:focus-visible {
+  background: color-mix(in srgb, var(--ei-header-bg) 82%, #000);
+  border-color: color-mix(in srgb, var(--ei-header-bg) 82%, #000);
+}
+.md-typeset h1 + blockquote > p:last-child {
+  margin-bottom: 0;
+}
