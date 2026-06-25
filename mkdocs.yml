@@ -93,10 +93,16 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/custom.css
+  - stylesheets/portal-nav.css
+  - stylesheets/color-switcher.css
+  - stylesheets/ui-polish.css
 
 extra_javascript:
   - javascripts/cable-calc.js
   - javascripts/verified-badge.js
+  - javascripts/color-switcher.js
+  - javascripts/a11y-fixups.js
+  - javascripts/table-filter.js
 
 extra:
   # OGP メタデータ（ChatGPT・SNS共有用）
