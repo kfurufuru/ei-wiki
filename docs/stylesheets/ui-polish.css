@@ -1,0 +1,385 @@
+/* ============================================================
+   ui-polish.css — UI/UX 改善（コントラスト・タイポ・テーブル・状態）
+   2026-06-25 UI監査（20項目→最低9点）対応。
+   配色は data-md-color-primary（カラースイッチャー）に追従するよう
+   color-mix(primary, black) で動的算出し、特定色をハードコードしない。
+   ============================================================ */
+
+/* ---- 0. 共有トークン ---------------------------------------------------- */
+:root {
+  /* 既存 custom.css が参照する未定義変数を補完（見出し区切り線が描画されない不具合の修正） */
+  --md-border-color: var(--md-default-fg-color--lightest);
+}
+/* ヘッダ／タブ／表ヘッダ用：選択 primary を十分暗くして白文字 4.5:1 を確保。
+   --md-primary-fg-color は <body data-md-color-primary> 上で定義されるため、
+   :root ではなく primary 属性を持つ要素（=body）で算出する。そうしないと
+   :root 既定(indigo)が混色されヘッダが意図せず紺色化し、かつ色切替にも追従しない。 */
+[data-md-color-primary] {
+  --ei-header-bg: color-mix(in srgb, var(--md-primary-fg-color) 58%, #001014);
+}
+
+/* ---- 1. ヘッダ／タブ背景を暗色化（WCAG AA：白文字 4.5:1）------------------ */
+.md-header,
+.md-tabs {
+  background-color: var(--ei-header-bg);
+}
+.md-header--shadow {
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.25), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.18);
+}
+
+/* ---- 2. 本文リンク色：ライトテーマは primary を暗くして 4.5:1 を確保。
+   ダーク(slate)は明るい primary のまま（暗背景で可読）------------------------ */
+[data-md-color-scheme="default"] {
+  --md-typeset-a-color: color-mix(in srgb, var(--md-primary-fg-color) 72%, #000);
+}
+[data-md-color-scheme="default"] .md-nav__link--active,
+[data-md-color-scheme="default"] .md-nav__item--active > .md-nav__link {
+  color: var(--md-typeset-a-color);
+}
+
+/* ---- 3. 本文中リンクに下線（色のみに依存しない判別性 = link-in-text-block 対策）-- */
+.md-typeset p a,
+.md-typeset li a,
+.md-typeset td a,
+.md-typeset dd a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+/* ボタン・カード・バッジ・脚注番号は下線なし */
+.md-typeset a.md-button,
+.md-typeset .grid.cards a,
+.md-typeset .footnote-ref,
+.md-typeset a.headerlink {
+  text-decoration: none;
+}
+
+/* ---- 4. テーブル可読性：ヘッダ強調＋ゼブラ＋行ホバー ---------------------- */
+.md-typeset table:not([class]) th {
+  background-color: var(--ei-header-bg);
+  color: #fff;
+  font-weight: 700;
+}
+.md-typeset table:not([class]) th a {
+  color: #fff;
+}
+[data-md-color-scheme="default"] .md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.025);
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.035);
+}
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: color-mix(in srgb, var(--md-primary-fg-color) 9%, transparent);
+}
+
+/* ---- 5. フッタ copyright のコントラスト ---------------------------------- */
+.md-copyright,
+.md-copyright__highlight {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ---- 6. キーボードフォーカスの可視化 ------------------------------------- */
+.md-typeset a:focus-visible,
+.md-nav__link:focus-visible,
+.md-tabs__link:focus-visible,
+.md-search__input:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---- 7. ホーム lead（H1 直下の引用）をヒーロー風に ------------------------ */
+.md-typeset h1 + blockquote {
+  border-left: 4px solid var(--md-primary-fg-color);
+  background: color-mix(in srgb, var(--md-primary-fg-color) 7%, transparent);
+  border-radius: 0 6px 6px 0;
+  padding: 0.7rem 1rem;
+  margin-top: 0.4rem;
+}
+
+/* ---- 8. カードの仕上げ（既存 grid.cards に微調整・ホバーで浮く）---------- */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > .card {
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > .card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+  transform: translateY(-2px);
+  border-left-color: var(--md-accent-fg-color);
+}
+
+/* ---- 8b. カテゴリ早送りチップ（症状逆引きの上部ジャンプ。モバイルで TOC が
+   畳まれてもカテゴリへ即移動できる）------------------------------------------ */
+.md-typeset .ei-jump,
+.md-typeset .ei-jump p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0.8rem 0 0;
+}
+.md-typeset .ei-jump a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 7px 13px;
+  border-radius: 14px;
+  color: var(--md-typeset-a-color);
+  background: color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 35%, transparent);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.md-typeset .ei-jump a:hover,
+.md-typeset .ei-jump a:focus-visible {
+  color: #fff;
+  background: var(--ei-header-bg);
+  border-color: var(--ei-header-bg);
+}
+
+/* ---- 9. md-button（CTA）をブランド塗りに（「全リストへ →」等）。
+   静止時の文字色は scheme 追従の --md-typeset-a-color（ライト=暗 / ダーク=明）で
+   どちらの背景でも 4.5:1 を確保。ホバー/primary は暗色塗り＋白文字。------------ */
+.md-typeset .md-button {
+  color: var(--md-typeset-a-color);
+  border-color: var(--md-typeset-a-color);
+}
+.md-typeset .md-button--primary,
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  background-color: var(--ei-header-bg);
+  border-color: var(--ei-header-bg);
+  color: #fff;
+}
+
+/* ============================================================
+   Pass 2 — 監査パネル指摘対応（密度・ダーク・ヒーロー・境界・絞り込み）
+   ============================================================ */
+
+/* P2-1. ダークモードはヘッダ/タブをさらに深い色に。ライトと同色だと暗背景で
+   帯だけ浮いて見えるため、slate では primary をより黒寄りに混色する。 */
+[data-md-color-scheme="slate"][data-md-color-primary] {
+  --ei-header-bg: color-mix(in srgb, var(--md-primary-fg-color) 38%, #00060a);
+}
+
+/* P2-2. テーブル：セル余白と行間を広げ、行罫線を明確化（2行折返しの窮屈さ解消）*/
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.72em 1em;
+  line-height: 1.6;
+}
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* P2-3. モバイル：幅広の参照表は潰さず横スクロール（Material の scrollwrap が
+   overflow-x を担う）。列が圧縮されて全セルが3行折返しになる窮屈さを回避。 */
+@media screen and (max-width: 700px) {
+  .md-typeset table:not([class]) {
+    min-width: 520px;
+  }
+}
+
+/* P2-4. セクション区切り線をやや明確化（custom.css の h2 上罫線を 1px・中間色へ）*/
+.md-typeset h2 {
+  border-top-width: 1px;
+  border-top-color: var(--md-default-fg-color--lighter);
+}
+
+/* P2-5. ヒーロー（H1 直下の lead）を主役として強調 */
+.md-typeset h1 + blockquote {
+  border-left-width: 5px;
+  background: color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent);
+  padding: 1.05rem 1.25rem;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  text-wrap: pretty;
+  color: var(--md-default-fg-color);
+}
+.md-typeset h1 + blockquote > p {
+  color: var(--md-default-fg-color);
+}
+.md-typeset h1 + blockquote > p:first-child {
+  margin-top: 0;
+}
+
+/* P2-6. ダークモードで面の分離を補強（カード境界）*/
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li,
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > .card {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-left: 4px solid var(--md-primary-fg-color);
+}
+
+/* P2-7. 症状逆引きの絞り込み入力（ページ内インクリメンタルフィルタ）*/
+.md-typeset .ei-tablefilter {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.6rem 0 0;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.92rem;
+  color: var(--md-default-fg-color);
+  background: var(--md-default-bg-color);
+  border: 1.5px solid color-mix(in srgb, var(--md-primary-fg-color) 40%, transparent);
+  border-radius: 8px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.md-typeset .ei-tablefilter:focus {
+  outline: none;
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-primary-fg-color) 22%, transparent);
+}
+.ei-filter-empty {
+  margin: 0.8rem 0;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--md-primary-fg-color) 6%, transparent);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.9rem;
+}
+.ei-filter-empty[hidden] { display: none; }
+
+/* ============================================================
+   Pass 3 — 監査2巡目対応（H1強調・ダーク見出し・検索ハイライト・チップ追従）
+   ============================================================ */
+
+/* P3-1. H1 を一段大きく、lead との級差を付ける */
+.md-typeset h1 {
+  font-size: 2.2rem;
+  line-height: 1.25;
+}
+
+/* P3-2. ダークモードで見出し/パンくずが沈むのを補正（フル濃度へ）*/
+/* ダークは slate の既定 fg が半透明グレーで最上位見出しが沈むため near-white に */
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  color: hsla(0, 0%, 100%, 0.95);
+}
+[data-md-color-scheme="slate"] .md-path__item,
+[data-md-color-scheme="slate"] .md-path__item a {
+  color: var(--md-default-fg-color--light);
+}
+
+/* P3-3. 検索ハイライトの彩度UP＋オーバーレイの分離強化 */
+.md-search-result mark {
+  background: color-mix(in srgb, var(--md-accent-fg-color) 34%, transparent);
+  color: var(--md-default-fg-color);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+.md-search__overlay {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* P3-4. カテゴリ早送りチップ：現在表示中カテゴリを塗りで明示（scrollspy）*/
+.md-typeset .ei-jump a.ei-jump-active {
+  color: #fff;
+  background: var(--ei-header-bg);
+  border-color: var(--ei-header-bg);
+}
+
+/* P3-5. ポータルバー：チップ間余白を確保し雑然さを緩和 */
+.ei-portal-bar {
+  gap: 8px;
+}
+
+/* P3-6. モバイル：lead を語句境界で改行（対応ブラウザのみ）・表幅・H1調整 */
+@media screen and (max-width: 700px) {
+  .md-typeset h1 + blockquote {
+    word-break: auto-phrase;
+  }
+  .md-typeset table:not([class]) {
+    min-width: 560px;
+  }
+  .md-typeset h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ============================================================
+   Pass 4 — 最終ポリッシュ（H1ウェイト・ヒーロー視覚フック・縦リズム・初見導線）
+   ============================================================ */
+
+/* P4-1 / P6 / P7. 見出しを太字＋フル濃度に。Material 既定の見出しは淡いグレー
+   (--md-default-fg-color--light) で存在感・階層段差が不足するため near-black に統一。
+   サイズで段、ウェイトで主従を作る（h1=h2=700 / h3=600）。 */
+.md-typeset h1 {
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+.md-typeset h2 {
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+.md-typeset h3 {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+/* 全角約物（「？」等）直後の間延びを詰める日本語メトリクス（見出し）*/
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-feature-settings: "palt" 1;
+}
+
+/* P9. ヒーロー周りの縦余白を圧縮しファーストビュー到達性を上げる（特にモバイルで
+   症状TOP10が画面外に押し下げられる問題）。ダークはヒーロー帯の地色を強め境界を明確化。 */
+.md-typeset h1 {
+  margin-bottom: 0.4rem;
+}
+.md-typeset h1 + blockquote {
+  margin-top: 0.3rem;
+}
+[data-md-color-scheme="slate"] .md-typeset h1 + blockquote {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 20%, transparent);
+  border-left-color: var(--md-primary-fg-color);
+}
+@media screen and (max-width: 700px) {
+  .md-typeset h1 + blockquote {
+    padding: 0.8rem 1rem;
+    font-size: 1.02rem;
+  }
+}
+
+/* P4-2. ヒーロー（H1直下 lead）の縦リズムを整える */
+.md-typeset h1 + blockquote {
+  margin-bottom: 1.2rem;
+}
+
+/* P4-3. ヒーロー内アイコン（markdown の :material-...: ）を見出し級に拡大して視覚フック化 */
+.md-typeset h1 + blockquote .twemoji,
+.md-typeset h1 + blockquote .twemoji svg {
+  width: 1.4em;
+  height: 1.4em;
+  vertical-align: -0.3em;
+}
+.md-typeset h1 + blockquote .twemoji {
+  color: var(--md-primary-fg-color);
+  margin-right: 0.25em;
+}
+
+/* P4-4. ホーム初見導線「はじめての方へ」（ヒーロー直下・ファーストビュー内）*/
+.md-typeset a.ei-onboard {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 1.2rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--md-typeset-a-color);
+  background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 30%, transparent);
+  border-radius: 18px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.md-typeset a.ei-onboard:hover,
+.md-typeset a.ei-onboard:focus-visible {
+  color: #fff;
+  background: var(--ei-header-bg);
+  border-color: var(--ei-header-bg);
+}

@@ -2,11 +2,16 @@
 title: 電気計装 実務Wiki
 description: 困ったらここを見る — 電気計装エンジニアのフィールドリファレンス
 last_verified: 2026-05-20
+hide:
+  - navigation
+  - toc
 ---
 
 # 電気計装 実務Wiki
 
-> **困ったらここを見る** — 現場で即時に開けるフィールドリファレンス
+> :material-lifebuoy: **困ったらここを見る** — 現場で即時に開けるフィールドリファレンス
+
+[:material-compass-outline: はじめての方へ — 読む順番ガイド](getting-started.md){ .ei-onboard }
 
 ## いま困っている？ — 症状TOP10
 

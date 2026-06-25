@@ -1,0 +1,114 @@
+/*
+ * ei-wiki color-switcher styles
+ * スコープは #ei-theme-switcher 配下に限定し、サイト他要素へ波及させない。
+ */
+
+#ei-theme-switcher .ei-cs-root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* ヘッダ（primary 背景・白文字）に馴染む白半透明トグル */
+#ei-theme-switcher .ei-cs-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+#ei-theme-switcher .ei-cs-toggle:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+#ei-theme-switcher .ei-cs-toggle:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+}
+
+/* ポップオーバー（白カード・影・角丸・ヘッダより上） */
+#ei-theme-switcher .ei-cs-popover {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 0.5rem;
+  padding: 0.6rem;
+  background: #fff;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+}
+
+#ei-theme-switcher .ei-cs-popover[hidden] {
+  display: none;
+}
+
+/* 円形スウォッチ */
+#ei-theme-switcher .ei-cs-swatch {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#ei-theme-switcher .ei-cs-swatch:hover {
+  transform: scale(1.12);
+}
+
+#ei-theme-switcher .ei-cs-swatch:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+/* 選択中はリング表示＋チェック風の二重枠 */
+#ei-theme-switcher .ei-cs-swatch.ei-cs-selected {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px #333, inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+#ei-theme-switcher .ei-cs-swatch.ei-cs-selected::after {
+  content: "✓";
+  display: block;
+  margin-top: -2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.65);
+}
+
+/* ダークモード（slate）でもポップオーバーが見えるよう配慮 */
+[data-md-color-scheme="slate"] #ei-theme-switcher .ei-cs-popover {
+  background: #2b2f33;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
+}
+
+[data-md-color-scheme="slate"] #ei-theme-switcher .ei-cs-swatch {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] #ei-theme-switcher .ei-cs-swatch.ei-cs-selected {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px #fff, inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}

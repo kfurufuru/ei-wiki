@@ -1,0 +1,133 @@
+/* ===================================================================
+   portal-nav.css — ヘッダ announce バーの他Wikiポータルナビ
+   配色は白半透明 / currentColor ベース（ヘッダ背景=テーマprimary色が
+   teal/藍/青/緑/橙/紫… と切り替わっても破綻しないよう特定色をハードコードしない）
+   =================================================================== */
+
+.ei-portal-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+/* 全ボタン共通: 高さ・padding・角丸・font-size を統一 */
+.ei-portal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 13px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* 帯を細く：ボタン高さ/フォントを抑え、サイトヘッダ(緑)と二重ヘッダ化しないように */
+.ei-portal-bar .ei-portal-btn {
+  height: 23px;
+  padding: 0 10px;
+  font-size: 0.78rem;
+}
+
+/* リンク色の上書き対策：announce バー内の <a> は Material のリンク色(primary)が
+   勝ってしまい白文字が teal 化してコントラスト不足になる。確実に白へ固定する。 */
+.ei-portal-bar a.ei-portal-btn,
+.ei-portal-bar a.ei-portal-btn:visited,
+.ei-portal-bar a.ei-portal-btn:hover,
+.ei-portal-bar a.ei-portal-btn:focus {
+  color: #fff;
+}
+
+.ei-portal-btn:hover,
+.ei-portal-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.40);
+  color: #fff;
+}
+
+/* ← ポータル: やや控えめ + 左に余白 */
+.ei-portal-btn--back {
+  margin-right: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.16);
+  font-weight: 500;
+}
+
+.ei-portal-btn--back:hover,
+.ei-portal-btn--back:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.30);
+}
+
+/* 現在地: 塗り（白背景 + 暗 primary 文字）で「今ここ」を明示。
+   文字は primary を黒寄りに暗くして白背景上で 4.5:1 を確保（switcher 追従）。 */
+.ei-portal-btn--current {
+  color: color-mix(in srgb, var(--md-primary-fg-color) 58%, #000);
+  background: #fff;
+  border-color: #fff;
+  font-weight: 700;
+  cursor: default;
+}
+
+/* グループラベル「電験3種 :」 */
+.ei-portal-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* 区切り | */
+.ei-portal-sep {
+  color: rgba(255, 255, 255, 0.45);
+  user-select: none;
+}
+
+/* カラーピッカーのマウント点（本体CSSは別エージェント担当のため最小指定のみ） */
+.ei-theme-switcher-mount {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* モバイル: 折返し（最大5行）で初画面を占有していたため、1行の横スクロール帯に変更。
+   右端フェードでスクロール可能を示唆。「← ポータル」を最左固定で常時見える。 */
+@media screen and (max-width: 700px) {
+  .ei-portal-bar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 5px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* 右端フェードでスクロール余地を示唆 */
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 18px), transparent);
+            mask-image: linear-gradient(to right, #000 calc(100% - 18px), transparent);
+  }
+  .ei-portal-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .ei-portal-btn,
+  .ei-portal-label,
+  .ei-portal-sep {
+    flex: 0 0 auto;
+  }
+  .ei-portal-btn {
+    height: 24px;
+    padding: 0 9px;
+    font-size: 0.76rem;
+  }
+  .ei-portal-label {
+    font-size: 0.72rem;
+  }
+}
