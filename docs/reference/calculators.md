@@ -81,6 +81,18 @@ Ib = 1,000,000 / (1.732 × 200) = 2,887 A
 Is3 = 2,887 × 100 / 5.5 = 52,490 A ≈ 52.5 kA
 ```
 
+```mermaid
+flowchart TD
+    A["%Z を基準容量に換算<br/>%Z系統 0.5% ＋ %Z変圧器 5%<br/>（＋%Zケーブル）"] --> B["%Z合計 = 5.5%"]
+    C["基準電流<br/>Ib = 2,887 A"] --> D
+    B --> D["短絡電流<br/>Is3 = Ib × 100 / %Z合計<br/>≈ 52.5 kA"]
+    D --> E{"MCCB 定格遮断電流<br/>≥ Is3 か？"}
+    E -->|Yes| F["その MCCB を選定可"]
+    E -->|No| G["高遮断容量 MCCB<br/>または限流ヒューズ<br/>（Is3 52.5kA は 50kA 境界超）"]
+```
+
+*%Z を直列に合算して基準電流から短絡電流 Is3 を求め、MCCB の定格遮断電流と比較する。Is3 52.5kA は 50kA を超えるため高遮断容量側へ進む。*
+
 ### 判定基準
 
 - MCCB の定格遮断電流 ≥ Is3 であること
@@ -174,6 +186,43 @@ Cv = 10 / √(1.0 / 1.0) = 10 / 1.0 = 10.0
 
 例: 受信抵抗（DCS 入力）250Ω + 配線抵抗 50Ω + 安全バリア 300Ω = 600Ω → ギリギリOK
 ```
+
+<svg viewBox="0 0 720 260" role="img" aria-label="4-20mAループの直列抵抗構成。電源24Vから伝送器、安全バリア300Ω、配線50Ω、DCS受信抵抗250Ωを直列に接続し、合計600Ωが最大ループ抵抗600Ω以下であることを示す" style="max-width:100%;height:auto;" fill="none" stroke="currentColor" stroke-width="1.5">
+  <!-- 電源 -->
+  <rect x="20" y="90" width="90" height="50" rx="4"/>
+  <text x="65" y="112" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">電源</text>
+  <text x="65" y="130" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">24V DC</text>
+  <!-- 伝送器 -->
+  <rect x="160" y="90" width="90" height="50" rx="4"/>
+  <text x="205" y="120" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">伝送器</text>
+  <!-- 安全バリア -->
+  <rect x="300" y="90" width="90" height="50" rx="4"/>
+  <text x="345" y="112" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">安全バリア</text>
+  <text x="345" y="130" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">300Ω</text>
+  <!-- 配線 -->
+  <rect x="440" y="90" width="90" height="50" rx="4"/>
+  <text x="485" y="112" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">配線</text>
+  <text x="485" y="130" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">50Ω</text>
+  <!-- 受信抵抗 -->
+  <rect x="580" y="90" width="110" height="50" rx="4"/>
+  <text x="635" y="112" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">DCS受信抵抗</text>
+  <text x="635" y="130" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">250Ω</text>
+  <!-- 直列接続線 -->
+  <line x1="110" y1="115" x2="160" y2="115"/>
+  <line x1="250" y1="115" x2="300" y2="115"/>
+  <line x1="390" y1="115" x2="440" y2="115"/>
+  <line x1="530" y1="115" x2="580" y2="115"/>
+  <!-- 電流の向きラベル -->
+  <text x="360" y="70" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">ループ電流（最大 20mA）が直列に流れる</text>
+  <!-- 合算範囲ブラケット -->
+  <line x1="300" y1="180" x2="690" y2="180"/>
+  <line x1="300" y1="180" x2="300" y2="150"/>
+  <line x1="690" y1="180" x2="690" y2="150"/>
+  <text x="495" y="205" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">負荷抵抗の合計 = 300 + 50 + 250 = 600Ω</text>
+  <text x="495" y="228" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">合計 ≤ 最大ループ抵抗 600Ω であること</text>
+</svg>
+
+*電源→伝送器→安全バリア→配線→DCS受信抵抗が直列に並び、負荷抵抗の合計（300 + 50 + 250 = 600Ω）が最大ループ抵抗 600Ω を超えないかを見る。*
 
 ### 判定基準
 

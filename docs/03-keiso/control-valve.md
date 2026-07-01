@@ -63,6 +63,40 @@ Cv = 18.2 / 0.865 = 21.0
     プロセス配管系ではポンプ吐出圧と配管圧損の関係で弁前後 ΔP が開度によって変化する。
     この変化をイコールパーセンテージ特性が補正し、実際の流量とリフトの関係をリニアに近づけてくれる。
 
+<svg viewBox="0 0 420 320" role="img" aria-label="開度に対する流量の3特性曲線。リニアは直線、イコールパーセンテージは開度後半で急増する凸曲線、クイックオープンは開き始めで急増する凹曲線。" style="max-width:100%;height:auto;">
+  <!-- 軸 -->
+  <line x1="60" y1="270" x2="390" y2="270" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="60" y1="270" x2="60" y2="30" stroke="currentColor" stroke-width="1.5"/>
+  <!-- 目盛 -->
+  <line x1="225" y1="270" x2="225" y2="274" stroke="currentColor" stroke-width="1"/>
+  <line x1="390" y1="270" x2="390" y2="274" stroke="currentColor" stroke-width="1"/>
+  <line x1="56" y1="150" x2="60" y2="150" stroke="currentColor" stroke-width="1"/>
+  <line x1="56" y1="30"  x2="60" y2="30"  stroke="currentColor" stroke-width="1"/>
+  <!-- 軸ラベル -->
+  <text x="225" y="300" fill="currentColor" font-size="13" text-anchor="middle">開度 %</text>
+  <text x="60"  y="288" fill="currentColor" font-size="11" text-anchor="middle">0</text>
+  <text x="390" y="288" fill="currentColor" font-size="11" text-anchor="middle">100</text>
+  <text x="52"  y="274" fill="currentColor" font-size="11" text-anchor="end">0</text>
+  <text x="52"  y="154" fill="currentColor" font-size="11" text-anchor="end">50</text>
+  <text x="52"  y="34"  fill="currentColor" font-size="11" text-anchor="end">100</text>
+  <text x="20"  y="150" fill="currentColor" font-size="13" text-anchor="middle" transform="rotate(-90 20 150)">流量 %</text>
+  <!-- クイックオープン: 開き始めで急増（凹） -->
+  <path d="M60,270 Q95,60 200,45 T390,30" fill="none" stroke="#e07a3c" stroke-width="2.5"/>
+  <!-- リニア: 直線 -->
+  <line x1="60" y1="270" x2="390" y2="30" stroke="#3c7ae0" stroke-width="2.5"/>
+  <!-- イコールパーセンテージ: 後半で急増（凸） -->
+  <path d="M60,270 Q260,255 330,150 T390,30" fill="none" stroke="#3ca55c" stroke-width="2.5"/>
+  <!-- 凡例（右下の空き領域） -->
+  <rect x="210" y="212" width="16" height="3" fill="#e07a3c"/>
+  <text x="232" y="217" fill="currentColor" font-size="11">クイックオープン</text>
+  <rect x="210" y="230" width="16" height="3" fill="#3c7ae0"/>
+  <text x="232" y="235" fill="currentColor" font-size="11">リニア</text>
+  <rect x="210" y="248" width="16" height="3" fill="#3ca55c"/>
+  <text x="232" y="253" fill="currentColor" font-size="11">イコールパーセンテージ</text>
+</svg>
+
+*3特性の開度-流量カーブ形状（縦横%軸の概念図）。クイックオープンは開き始めで急増、リニアは比例、イコールパーセンテージは開度後半で急増する。*
+
 ---
 
 ## フェールポジション（FC/FO/FL）

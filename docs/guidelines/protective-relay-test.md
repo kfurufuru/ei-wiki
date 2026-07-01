@@ -108,6 +108,36 @@ last_verified: 2026-05-20
 2. 電流入力から接点出力までの時間をタイマーで計測する
 3. 時限曲線（T-I特性図）と照合して許容範囲内であることを確認する
 
+<svg viewBox="0 0 480 300" role="img" aria-label="反限時特性のT-I曲線の模式図。横軸は電流倍数、縦軸は動作時間。電流倍数が大きいほど動作時間が短くなる反限時カーブに、整定点・200%・300%・瞬時要素の位置を示す。" style="max-width:100%;height:auto;">
+  <!-- 軸 -->
+  <line x1="70" y1="30" x2="70" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="250" x2="440" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <!-- 軸ラベル -->
+  <text x="20" y="140" fill="currentColor" font-size="13" transform="rotate(-90 20 140)" text-anchor="middle">動作時間（長 ↑）</text>
+  <text x="255" y="285" fill="currentColor" font-size="13" text-anchor="middle">電流倍数（整定値に対する比）</text>
+  <!-- 反限時カーブ（電流が大きいほど動作時間が短い） -->
+  <path d="M 110 55 C 150 130, 190 200, 300 228 L 360 236" fill="none" stroke="currentColor" stroke-width="2"/>
+  <!-- 瞬時要素（垂直に落ちる） -->
+  <line x1="360" y1="236" x2="360" y2="250" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- 整定点（100%＝動作の入口） -->
+  <circle cx="110" cy="55" r="4" fill="currentColor"/>
+  <text x="118" y="52" fill="currentColor" font-size="12">整定点（100%）</text>
+  <!-- 200% -->
+  <line x1="200" y1="247" x2="200" y2="253" stroke="currentColor" stroke-width="1.5"/>
+  <text x="200" y="268" fill="currentColor" font-size="12" text-anchor="middle">200%</text>
+  <circle cx="200" cy="193" r="3.5" fill="currentColor"/>
+  <line x1="200" y1="193" x2="70" y2="193" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <!-- 300% -->
+  <line x1="300" y1="247" x2="300" y2="253" stroke="currentColor" stroke-width="1.5"/>
+  <text x="300" y="268" fill="currentColor" font-size="12" text-anchor="middle">300%</text>
+  <circle cx="300" cy="228" r="3.5" fill="currentColor"/>
+  <line x1="300" y1="228" x2="70" y2="228" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <!-- 瞬時要素ラベル -->
+  <text x="356" y="225" fill="currentColor" font-size="12" text-anchor="end">瞬時要素</text>
+</svg>
+
+*図：反限時特性の模式図。電流倍数が大きいほど動作時間が短くなる。200%・300%点で動作時間を計測し、瞬時要素は整定値超過で即時動作する（縦軸の目盛値は機器依存のため示さない）。*
+
 !!! info "反限時と定限時"
     - **反限時（IDMT）**：電流が大きいほど動作時間が短い。IEC 60255規格の特性曲線で確認
     - **定限時**：電流値によらず整定時間で動作。直接整定値と比較

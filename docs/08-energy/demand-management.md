@@ -86,6 +86,45 @@ last_verified: 2026-04-04
     30分コマの後半（残り5分）で急激な負荷増加があると、コントローラが間に合わないことがある。
     警報設定値を低めに設定し、早期に手動対応できる体制を作るのが実務的。
 
+### 予測デマンドと設定値の時間応答
+
+<svg viewBox="0 0 640 360" role="img" aria-label="30分コマ内の経過時間に対する予測デマンドの上昇と、契約電力・警報設定値・遮断設定値の水平線、遮断による予測デマンドの低下を示す応答図" style="max-width:100%;height:auto;">
+  <!-- 軸 -->
+  <line x1="70" y1="300" x2="600" y2="300" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="40" x2="70" y2="300" stroke="currentColor" stroke-width="1.5"/>
+  <!-- 縦軸ラベル -->
+  <text x="70" y="28" fill="currentColor" font-size="13" text-anchor="middle">予測デマンド (kW)</text>
+  <!-- 横軸ラベル -->
+  <text x="335" y="345" fill="currentColor" font-size="13" text-anchor="middle">コマ内経過時間 (分)</text>
+  <!-- 横軸目盛 -->
+  <text x="70" y="318" fill="currentColor" font-size="11" text-anchor="middle">0</text>
+  <text x="335" y="318" fill="currentColor" font-size="11" text-anchor="middle">15</text>
+  <text x="600" y="318" fill="currentColor" font-size="11" text-anchor="middle">30</text>
+  <!-- 契約電力線 100% -->
+  <line x1="70" y1="70" x2="600" y2="70" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="596" y="64" fill="currentColor" font-size="11" text-anchor="end">契約電力 (100%)</text>
+  <!-- 遮断設定値 95〜98% -->
+  <line x1="70" y1="95" x2="600" y2="95" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="596" y="110" fill="currentColor" font-size="11" text-anchor="end">遮断設定値 (95〜98%)</text>
+  <!-- 警報設定値 90〜95% -->
+  <line x1="70" y1="125" x2="600" y2="125" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="596" y="140" fill="currentColor" font-size="11" text-anchor="end">警報設定値 (90〜95%)</text>
+  <!-- 予測デマンド：上昇→警報→遮断で低下 -->
+  <path d="M70,285 C170,250 250,190 330,140" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <path d="M330,140 C370,118 400,102 430,95" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <path d="M430,95 L455,150 C500,175 550,185 600,190" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <!-- 警報点 -->
+  <circle cx="360" cy="125" r="4" fill="currentColor"/>
+  <text x="360" y="118" fill="currentColor" font-size="11" text-anchor="middle">警報</text>
+  <!-- 遮断点 -->
+  <circle cx="430" cy="95" r="4" fill="currentColor"/>
+  <text x="440" y="88" fill="currentColor" font-size="11" text-anchor="start">遮断実施</text>
+  <!-- 低下の注記 -->
+  <text x="520" y="215" fill="currentColor" font-size="11" text-anchor="middle">負荷遮断で低下</text>
+</svg>
+
+*予測デマンドはコマ経過とともに上昇し、警報設定値・遮断設定値を順に上回る。コマ後半で急上昇すると遮断が間に合わず契約電力に迫るため、早期の警報対応が重要。*
+
 ---
 
 ## デマンド警報時の対応手順

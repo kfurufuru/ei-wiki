@@ -28,6 +28,39 @@ last_verified: 2026-04-04
 
 > **原油換算の計算**: 電力1kWh = 0.0258L（原油換算係数）。年間電力使用量から換算すると、約58GWhで1,500kL相当。
 
+<svg viewBox="0 0 720 300" role="img" aria-label="原油換算量による事業者区分と指定工場区分の閾値。1,500kLと3,000kLが境界。" style="max-width:100%;height:auto;font-family:sans-serif">
+  <!-- 縦の境界ガイド -->
+  <line x1="240" y1="40" x2="240" y2="250" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+  <line x1="480" y1="40" x2="480" y2="250" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+  <text x="240" y="30" text-anchor="middle" fill="currentColor" font-size="14" font-weight="bold">1,500kL</text>
+  <text x="480" y="30" text-anchor="middle" fill="currentColor" font-size="14" font-weight="bold">3,000kL</text>
+
+  <!-- 事業者全体で判定する軸 -->
+  <text x="20" y="70" fill="currentColor" font-size="13" font-weight="bold">事業者全体</text>
+  <line x1="40" y1="95" x2="700" y2="95" stroke="currentColor" stroke-width="2"/>
+  <text x="140" y="88" text-anchor="middle" fill="currentColor" font-size="12">非該当</text>
+  <text x="140" y="115" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.8">1,500kL未満</text>
+  <text x="470" y="88" text-anchor="middle" fill="currentColor" font-size="12" font-weight="bold">特定事業者</text>
+  <text x="470" y="115" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.8">1,500kL以上</text>
+  <text x="470" y="132" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.8">統括者・管理企画推進者を選任</text>
+
+  <!-- 工場単体で判定する軸 -->
+  <text x="20" y="185" fill="currentColor" font-size="13" font-weight="bold">工場単体</text>
+  <line x1="40" y1="210" x2="700" y2="210" stroke="currentColor" stroke-width="2"/>
+  <text x="140" y="203" text-anchor="middle" fill="currentColor" font-size="12">指定なし</text>
+  <text x="360" y="203" text-anchor="middle" fill="currentColor" font-size="12" font-weight="bold">第二種指定工場</text>
+  <text x="360" y="230" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.8">1,500kL以上3,000kL未満</text>
+  <text x="360" y="247" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.8">エネルギー管理員を選任</text>
+  <text x="590" y="203" text-anchor="middle" fill="currentColor" font-size="12" font-weight="bold">第一種指定工場</text>
+  <text x="590" y="230" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.8">3,000kL以上</text>
+  <text x="590" y="247" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.8">エネルギー管理士を選任</text>
+
+  <!-- 境界注記 -->
+  <text x="360" y="278" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.7">事業者区分は事業者全体、指定工場区分は工場単体で判定（判定基準が異なる）</text>
+</svg>
+
+*図: 原油換算量の閾値と区分。事業者全体で「特定事業者」を、工場単体で「第一種／第二種指定工場」を判定する（表と同じ数値・義務）。*
+
 ---
 
 ## エネルギー管理士の選任義務と職務

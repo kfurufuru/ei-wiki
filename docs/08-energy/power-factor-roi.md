@@ -83,6 +83,36 @@ tan(arccos 0.90) = tan 25.8° = 0.484
 
 （力率角θは θ = arccos（力率）で求め、そのtan値を用いる。上記の角度・tan値は表示のため丸めており、追試の際はtan値（1.020／0.484）で計算すると本文の補正量429kvarと一致する。）
 
+<svg viewBox="0 0 560 300" role="img" aria-label="電力三角形。有効電力Pを底辺、無効電力Qを縦、皮相電力Sを斜辺とし、改善前の角θ₁と改善後の角θ₂の差にあたる縦方向の量がコンデンサ補正量Qcにあたることを示す図" style="max-width:100%;height:auto;font-family:sans-serif">
+  <!-- P base (有効電力) -->
+  <line x1="80" y1="250" x2="440" y2="250" stroke="currentColor" stroke-width="2"/>
+  <!-- Q axis / right side (無効電力) -->
+  <line x1="440" y1="250" x2="440" y2="50" stroke="currentColor" stroke-width="1.5"/>
+  <!-- hypotenuse S1 (改善前 皮相電力) -->
+  <line x1="80" y1="250" x2="440" y2="50" stroke="currentColor" stroke-width="2"/>
+  <!-- hypotenuse S2 (改善後 皮相電力) -->
+  <line x1="80" y1="250" x2="440" y2="155" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"/>
+  <!-- right-angle marker -->
+  <path d="M 424 250 L 424 234 L 440 234" fill="none" stroke="currentColor" stroke-width="1"/>
+  <!-- Qc bracket (補正量) -->
+  <line x1="456" y1="50" x2="456" y2="155" stroke="currentColor" stroke-width="1"/>
+  <line x1="452" y1="50" x2="460" y2="50" stroke="currentColor" stroke-width="1"/>
+  <line x1="452" y1="155" x2="460" y2="155" stroke="currentColor" stroke-width="1"/>
+  <!-- angle labels -->
+  <text x="128" y="243" fill="currentColor" font-size="14" font-style="italic">θ₁</text>
+  <text x="150" y="256" fill="currentColor" font-size="14" font-style="italic">θ₂</text>
+  <!-- axis / side labels -->
+  <text x="240" y="272" fill="currentColor" font-size="14" text-anchor="middle">有効電力 P = 800kW</text>
+  <text x="250" y="130" fill="currentColor" font-size="14" transform="rotate(-29 250 130)">皮相電力 S₁（改善前）</text>
+  <text x="240" y="212" fill="currentColor" font-size="13" transform="rotate(-15 240 212)">S₂（改善後）</text>
+  <text x="468" y="106" fill="currentColor" font-size="13">Qc</text>
+  <text x="468" y="122" fill="currentColor" font-size="13">補正量</text>
+  <text x="404" y="205" fill="currentColor" font-size="12" text-anchor="end">Q₂</text>
+  <text x="404" y="46" fill="currentColor" font-size="12" text-anchor="end">Q₁</text>
+</svg>
+
+*電力三角形：底辺 P（有効電力）に対し、力率角 θ が小さいほど無効電力 Q が減る。進相コンデンサは改善前 Q₁ と改善後 Q₂ の差 Qc ＝ P(tan θ₁ − tan θ₂) を供給して力率を上げる。*
+
 ### コンデンサ設備費の目安
 
 | 容量 | 設備費（概算） | 備考 |

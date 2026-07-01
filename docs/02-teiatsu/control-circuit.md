@@ -43,6 +43,48 @@ status: active
 
 縦書きはラダー図とほぼ同じ構造。DCS・PLC のラダープログラムを読む際に必要。
 
+### 自己保持回路の例（基本素子の組み合わせ）
+
+上記の基本形を、実回路でよく使う自己保持回路に当てはめると次のようになる。停止 NC を直列に置き、起動 NO と並列に補助接点を入れることで、起動ボタンを離してもコイルが励磁を保持する。
+
+<svg viewBox="0 0 640 250" role="img" aria-label="自己保持回路の展開接続図。左母線から停止NC接点、起動NO接点、コイルを経て右母線へ至り、起動NOと並列に補助接点を配置する。" style="max-width:100%;height:auto" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <line x1="60" y1="40" x2="60" y2="220"/>
+    <line x1="600" y1="40" x2="600" y2="220"/>
+    <line x1="60" y1="100" x2="150" y2="100"/>
+    <line x1="150" y1="88" x2="150" y2="112"/>
+    <line x1="200" y1="88" x2="200" y2="112"/>
+    <line x1="150" y1="112" x2="200" y2="88"/>
+    <line x1="200" y1="100" x2="300" y2="100"/>
+    <line x1="300" y1="88" x2="300" y2="112"/>
+    <line x1="350" y1="88" x2="350" y2="112"/>
+    <line x1="350" y1="100" x2="450" y2="100"/>
+    <line x1="450" y1="100" x2="480" y2="100"/>
+    <ellipse cx="510" cy="100" rx="30" ry="18"/>
+    <line x1="540" y1="100" x2="600" y2="100"/>
+    <line x1="270" y1="100" x2="270" y2="170"/>
+    <line x1="270" y1="170" x2="300" y2="170"/>
+    <line x1="300" y1="158" x2="300" y2="182"/>
+    <line x1="350" y1="158" x2="350" y2="182"/>
+    <line x1="350" y1="170" x2="380" y2="170"/>
+    <line x1="380" y1="170" x2="380" y2="100"/>
+  </g>
+  <g fill="currentColor" stroke="none">
+    <circle cx="270" cy="100" r="4"/>
+    <circle cx="380" cy="100" r="4"/>
+  </g>
+  <g fill="currentColor" stroke="none" font-size="15" font-family="sans-serif">
+    <text x="60" y="32" text-anchor="middle">L（左母線）</text>
+    <text x="600" y="32" text-anchor="middle">N（右母線）</text>
+    <text x="175" y="78" text-anchor="middle">停止 NC</text>
+    <text x="325" y="78" text-anchor="middle">起動 NO</text>
+    <text x="510" y="105" text-anchor="middle">コイル</text>
+    <text x="325" y="205" text-anchor="middle">補助接点（自己保持）</text>
+  </g>
+</svg>
+
+*停止 NC を直列、起動 NO と並列に補助接点を置いた最小の自己保持回路。*
+
 ---
 
 ## 基本素子一覧
