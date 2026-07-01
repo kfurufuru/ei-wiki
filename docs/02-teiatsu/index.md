@@ -11,6 +11,8 @@ status: published
 
 対象: 電気担当 / 保全担当
 
+まず読むなら: [低圧配電](distribution.md) → [モーター制御](motor-control.md)
+
 ## このカテゴリの記事
 
 | 記事 | 概要 |

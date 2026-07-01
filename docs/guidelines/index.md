@@ -11,6 +11,12 @@ last_verified: 2026-05-20
 電気計装チームの現場作業・試験・安全手続きに関する実務マニュアルです。  
 若手エンジニアが**現場でスマホを見ながら使う**ことを想定して作成しています。
 
+!!! abstract "30秒まとめ"
+    - **試験・検査系**（[ループチェック](loop-check.md) / [保護リレー試験](protective-relay-test.md) / [接地抵抗測定](grounding-inspection.md)）
+    - **施工・配線系**（[盤内配線](panel-wiring.md) / [ケーブルトレイ](cable-tray.md)）
+    - **安全・手続き系**（[トラブル初動](trouble-first-response.md) / [PTW発行](work-permit.md) / [制御盤撤去](seigyoban-tekkyo-guideline.md)）
+    - 共通導線：**まず[PTW（作業許可証）](work-permit.md)を取得 → 該当マニュアルの手順へ**
+
 ---
 
 ## このセクションの使い方
@@ -61,7 +67,7 @@ last_verified: 2026-05-20
 
 !!! info "改訂履歴"
     マニュアルの内容に誤り・変更がある場合は電計チームリーダーに報告してください。  
-    最終更新: 2026-04-20
+    改訂日: 2026-04-20（本文の最終改訂日。ページの内容確認日は frontmatter の last_verified を参照）
 
 ---
 

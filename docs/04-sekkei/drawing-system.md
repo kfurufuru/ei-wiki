@@ -8,10 +8,12 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-04-04
-status: active
+status: published
 ---
 
 # 図面体系
+
+対象: 電気担当
 
 ## 30秒まとめ
 
