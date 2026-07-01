@@ -133,6 +133,35 @@ Asset: 当工場
 今週値 > μ + 3σ → 赤色警告（要調査）
 ```
 
+<svg viewBox="0 0 640 300" role="img" aria-label="標準偏差管理の管理図。中心線μ、上方管理限界μ+2σ（黄色）、μ+3σ（赤色）の水平線と週ごとのプロット点を示す。μ+2σ超過点は黄、μ+3σ超過点は赤で強調。" style="max-width:100%;height:auto;">
+  <!-- 軸 -->
+  <line x1="70" y1="30" x2="70" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="250" x2="470" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <!-- 軸ラベル -->
+  <text x="16" y="145" fill="currentColor" font-size="12" transform="rotate(-90 16 145)">日次平均電力量</text>
+  <text x="270" y="285" fill="currentColor" font-size="12" text-anchor="middle">週（同曜日）</text>
+  <!-- μ+3σ（赤・上方管理限界） -->
+  <line x1="70" y1="60" x2="470" y2="60" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="478" y="64" fill="#d32f2f" font-size="12">μ+3σ（赤）</text>
+  <!-- μ+2σ（黄・警告限界） -->
+  <line x1="70" y1="110" x2="470" y2="110" stroke="#e6a700" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="478" y="114" fill="#e6a700" font-size="12">μ+2σ（黄）</text>
+  <!-- μ（中心線） -->
+  <line x1="70" y1="200" x2="470" y2="200" stroke="currentColor" stroke-width="1.5"/>
+  <text x="478" y="204" fill="currentColor" font-size="12">μ（中心線）</text>
+  <!-- プロット点と折れ線 -->
+  <polyline points="105,205 160,192 215,210 270,188 325,104 380,196 435,52" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+  <circle cx="105" cy="205" r="4" fill="currentColor"/>
+  <circle cx="160" cy="192" r="4" fill="currentColor"/>
+  <circle cx="215" cy="210" r="4" fill="currentColor"/>
+  <circle cx="270" cy="188" r="4" fill="currentColor"/>
+  <circle cx="325" cy="104" r="5" fill="#e6a700" stroke="currentColor" stroke-width="1"/>
+  <circle cx="380" cy="196" r="4" fill="currentColor"/>
+  <circle cx="435" cy="52" r="5" fill="#d32f2f" stroke="currentColor" stroke-width="1"/>
+</svg>
+
+*管理図の考え方: 中心線μを基準に、μ+2σを超えた点（黄）は警告、μ+3σを超えた点（赤）は要調査。*
+
 ### 異常消費の主な原因と発見方法
 
 | 原因 | 発見方法 |
@@ -142,6 +171,19 @@ Asset: 当工場
 | コンプレッサーの吸気フィルター詰まり | 消費電力増加・吐出圧低下 |
 | スチームトラップ開固着（蒸気ダダ漏れ） | 蒸気積算量の増加 |
 | 照明・電熱の付けっぱなし | 深夜・休日の電力量が通常より高い |
+
+### 異常検知後の報告・エスカレーション
+
+赤色警告（μ+3σ）またはスチームトラップ開固着の疑いを検知したら、放置せず担当者へつなぐ。目安のフローは以下（時間・順序は社内規定を優先）。
+
+| 順序 | 担当 | アクション | 目安タイミング |
+|------|------|-----------|---------------|
+| 1 | 設備担当 | 検知内容を確認し、当該系統を現場確認 | 当日中 |
+| 2 | 設備担当 → 製造課 | 蒸気漏れ等が確定したら製造課へ連絡し、隔離可否を判断 | 漏れ確定後すみやかに |
+| 3 | 設備担当 → エネルギー管理担当 | 対応結果を報告し、記録（発生日時・原因・処置）を残す | 処置後 |
+
+!!! warning "大漏れは安全・コスト影響が大きい"
+    生蒸気の大量放出は火傷・設備損傷のリスクとコスト損失（前掲の金額換算参照）が大きい。赤色警告や開固着疑いは「様子見」せず、社内規定に従って速やかにエスカレーションする。
 
 ---
 

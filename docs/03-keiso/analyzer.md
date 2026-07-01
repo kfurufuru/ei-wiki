@@ -29,6 +29,52 @@ pH計はガラス電極（測定極）と比較電極（参照極）の電位差
 計測電位差（mV）→ pH値に換算（Nernst式：59.16 mV/pH（25℃時））
 ```
 
+<svg viewBox="0 0 660 320" role="img" aria-label="pH電極の構造断面図。ガラス電極と比較電極を測定液に浸し、両電極間の電位差を計測する。" style="max-width:100%;height:auto;" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor" stroke-width="1.5">
+    <!-- 測定液の容器 -->
+    <path d="M110 100 L110 290 L560 290 L560 100" />
+    <line x1="110" y1="160" x2="560" y2="160" stroke-dasharray="5 5" />
+    <!-- ガラス電極（測定極） -->
+    <path d="M215 46 L215 236 Q235 264 255 236 L255 46" />
+    <path d="M215 236 Q235 264 255 236 Z" fill="currentColor" fill-opacity="0.12" />
+    <!-- 比較電極（参照極） -->
+    <rect x="415" y="46" width="42" height="212" rx="4" />
+    <line x1="436" y1="66" x2="436" y2="240" />
+    <!-- 電位差計 -->
+    <rect x="300" y="12" width="72" height="34" rx="4" />
+    <line x1="235" y1="46" x2="235" y2="29" />
+    <line x1="235" y1="29" x2="300" y2="29" />
+    <line x1="436" y1="46" x2="436" y2="29" />
+    <line x1="436" y1="29" x2="372" y2="29" />
+    <!-- ガラス薄膜への引き出し線 -->
+    <line x1="235" y1="252" x2="235" y2="278" />
+  </g>
+  <g fill="currentColor" font-size="14" font-family="sans-serif">
+    <text x="336" y="34" text-anchor="middle">電位差 (mV)</text>
+    <text x="235" y="84" text-anchor="middle">ガラス電極</text>
+    <text x="235" y="102" text-anchor="middle" font-size="12">（測定極）</text>
+    <text x="436" y="84" text-anchor="middle">比較電極</text>
+    <text x="436" y="102" text-anchor="middle" font-size="12">（参照極）</text>
+    <text x="235" y="294" text-anchor="middle" font-size="12">ガラス薄膜</text>
+    <text x="436" y="212" text-anchor="middle" font-size="11">塩化銀 /</text>
+    <text x="436" y="227" text-anchor="middle" font-size="11">塩化カリウム</text>
+    <text x="548" y="150" text-anchor="end" font-size="12">測定液</text>
+    <text x="272" y="208" font-size="13">H⁺</text>
+    <text x="198" y="208" text-anchor="end" font-size="13">H⁺</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1">
+    <path d="M204 204 L215 204" marker-end="url(#kae)" />
+    <path d="M266 204 L255 204" marker-end="url(#kae)" />
+  </g>
+  <defs>
+    <marker id="kae" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="currentColor" />
+    </marker>
+  </defs>
+</svg>
+
+*ガラス薄膜の両側の H⁺ 濃度差で生じる電位を、比較電極の基準電位を基準に電位差として計測し pH に換算する。*
+
 ### 2点校正手順
 
 校正は少なくとも**2種類の標準緩衝液**を使う。
@@ -41,6 +87,9 @@ pH計はガラス電極（測定極）と比較電極（参照極）の電位差
 4. スロープ値を確認（95〜105% が正常。95% 未満は電極劣化）
 5. 校正結果を記録（日時・標準液ロット番号・スロープ値）
 ```
+
+!!! tip "スパン用緩衝液の選び方"
+    スパン用の第2緩衝液は、実際の測定 pH 域を挟む側を選ぶ（酸性域を測るなら pH 4.00、アルカリ域を測るなら pH 9.18）。測定範囲外の緩衝液で校正すると外挿誤差が大きくなる。
 
 !!! warning "温度補償の確認"
     pH の Nernst 勾配は温度によって変化する（25℃：59.16 mV/pH、0℃：54.20 mV/pH）。

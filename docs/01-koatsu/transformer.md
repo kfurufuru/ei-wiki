@@ -69,6 +69,52 @@ status: published
 | 1段（警報） | 軽微なガス発生 | 運転継続しながら点検 |
 | 2段（トリップ） | 大量のガス・油流 | 即時遮断 |
 
+<svg viewBox="0 0 660 300" role="img" aria-label="ブッフホルツ継電器の配管断面図。本体タンクとコンサベータをつなぐ配管の途中にブッフホルツ継電器があり、上部のガス溜まりと上フロートが1段警報、下部フラップが2段トリップに対応する。" style="max-width:100%;height:auto;color:currentColor">
+  <g fill="none" stroke="currentColor" stroke-width="2">
+    <!-- 本体タンク -->
+    <rect x="20" y="150" width="150" height="120" rx="6"/>
+    <!-- コンサベータ（上方に配置） -->
+    <ellipse cx="580" cy="70" rx="55" ry="26"/>
+    <!-- 本体タンク → ブッフホルツ の配管 -->
+    <line x1="170" y1="180" x2="270" y2="180"/>
+    <!-- ブッフホルツ → コンサベータ の配管（上り勾配） -->
+    <line x1="490" y1="150" x2="560" y2="92"/>
+    <!-- ブッフホルツ継電器 本体 -->
+    <rect x="270" y="120" width="220" height="90" rx="8"/>
+    <!-- 内部のガス溜まり境界（上部の空間） -->
+    <line x1="270" y1="150" x2="490" y2="150" stroke-dasharray="5 4"/>
+  </g>
+  <!-- 上フロート（1段：警報） -->
+  <circle cx="325" cy="140" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
+  <!-- 下フラップ（2段：トリップ）：油流を受ける板 -->
+  <line x1="430" y1="165" x2="430" y2="200" stroke="currentColor" stroke-width="3"/>
+  <!-- ガス気泡（本体タンクから上昇） -->
+  <g fill="none" stroke="currentColor" stroke-width="1.5">
+    <circle cx="205" cy="172" r="4"/>
+    <circle cx="225" cy="165" r="3"/>
+    <circle cx="245" cy="160" r="4"/>
+  </g>
+  <!-- 油流の向き矢印（下フラップへ） -->
+  <g stroke="currentColor" stroke-width="2" fill="none">
+    <line x1="360" y1="190" x2="415" y2="190"/>
+    <path d="M408 185 L418 190 L408 195"/>
+  </g>
+  <!-- ラベル -->
+  <g fill="currentColor" font-size="14" font-family="sans-serif">
+    <text x="95" y="215" text-anchor="middle">本体タンク</text>
+    <text x="580" y="74" text-anchor="middle">コンサベータ</text>
+    <text x="380" y="112" text-anchor="middle">ブッフホルツ継電器</text>
+    <text x="325" y="168" text-anchor="middle" font-size="12">上フロート</text>
+    <text x="325" y="184" text-anchor="middle" font-size="12">1段：警報</text>
+    <text x="440" y="140" text-anchor="middle" font-size="12">下フラップ</text>
+    <text x="440" y="128" text-anchor="middle" font-size="12">2段：トリップ</text>
+    <text x="225" y="150" text-anchor="middle" font-size="12">ガス浮上</text>
+    <text x="388" y="208" text-anchor="middle" font-size="12">油流</text>
+  </g>
+</svg>
+
+*本体タンクとコンサベータをつなぐ配管の途中にブッフホルツ継電器があり、ガス浮上で上フロートが傾動して1段（警報）、急激な油流で下フラップが動作して2段（トリップ）となる。*
+
 !!! note "ガスの採取と分析"
     ブッフホルツ継電器で採取したガスを分析することで内部故障の種類を推定できる。
     水素（H₂）：電気アーク、アセチレン（C₂H₂）：高温アーク、メタン（CH₄）：局所過熱
@@ -102,6 +148,8 @@ status: published
 定格電流 = 1000kVA / (√3 × 0.44kV) = 1312 A
 短絡電流 = 1312 / 0.05 = 26,240 A
 ```
+
+この短絡電流は系統側（電源）のインピーダンスを無視し、変圧器%Z のみで計算した変圧器直下の最大値（上限側）である。実際には電源側%Z が加わるため、短絡電流はこれより小さくなる。
 
 %Z が小さいほど短絡電流が大きくなり、保護機器（遮断器・ヒューズ）の遮断容量の確認が重要になる。
 

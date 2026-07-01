@@ -29,6 +29,8 @@ A〜D種接地の目的と抵抗基準値を正確に覚えることが基本。
 
 Ig = 1線地絡電流（A）。B種は系統の1線地絡電流から算出する。
 
+> 出典（接地工事の種類・抵抗値）: 電技解釈第17条
+
 !!! note "C 種・D 種の特例（漏電遮断器付き）"
     漏電遮断器（感度電流 30mA 以下、動作時間 0.1秒以内）が設置されている場合、
     C 種・D 種の抵抗値は 500 Ω 以下に緩和される（電技解釈 第17条）。
@@ -97,6 +99,38 @@ C: P からさらに 10m 程度離した補助電流極（E から 20〜30m）
 ## 接地電位上昇と感電保護
 
 地絡事故発生時、接地極周辺に電位勾配が生じる（ステップ電圧）。足の位置によって電位差が生じ感電する危険がある。
+
+<svg viewBox="0 0 640 320" role="img" aria-label="接地極からの距離に対する地表電位分布曲線。接地極付近ほど勾配が急でステップ電圧が大きく、等電位メッシュ施工時は勾配が平坦化する。" style="max-width:100%;height:auto;" xmlns="http://www.w3.org/2000/svg">
+  <!-- 軸 -->
+  <line x1="70" y1="40" x2="70" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="250" x2="600" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <text x="70" y="30" fill="currentColor" font-size="13" text-anchor="middle">対地電位</text>
+  <text x="600" y="275" fill="currentColor" font-size="13" text-anchor="end">接地極からの距離</text>
+  <!-- 接地極 -->
+  <line x1="70" y1="250" x2="70" y2="270" stroke="currentColor" stroke-width="3"/>
+  <text x="70" y="288" fill="currentColor" font-size="12" text-anchor="middle">接地極</text>
+  <!-- 急峻な電位分布曲線（未施工） -->
+  <path d="M70 55 C 110 90, 150 175, 230 210 S 400 245, 600 249" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="250" y="150" fill="currentColor" font-size="12">地表電位分布（未施工）</text>
+  <!-- 等電位メッシュ施工時：勾配が平坦化 -->
+  <path d="M70 200 C 200 215, 400 235, 600 249" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="360" y="205" fill="currentColor" font-size="12">等電位メッシュ施工時（勾配が平坦化）</text>
+  <!-- 両足位置とステップ電圧 -->
+  <line x1="120" y1="250" x2="120" y2="82" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="165" y1="250" x2="165" y2="150" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="120" cy="250" r="4" fill="currentColor"/>
+  <circle cx="165" cy="250" r="4" fill="currentColor"/>
+  <text x="143" y="266" fill="currentColor" font-size="11" text-anchor="middle">両足間隔</text>
+  <line x1="185" y1="82" x2="185" y2="150" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="181" y1="82" x2="189" y2="82" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="181" y1="150" x2="189" y2="150" stroke="currentColor" stroke-width="1.5"/>
+  <text x="196" y="120" fill="currentColor" font-size="12">ステップ電圧</text>
+  <!-- 2m 以内 立入禁止マーカー -->
+  <line x1="215" y1="45" x2="215" y2="250" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4"/>
+  <text x="219" y="60" fill="currentColor" font-size="11">2m 以内に近づかない</text>
+</svg>
+
+*接地極に近いほど勾配が急でステップ電圧が大きい。接地極から 2m 以内に近づかず、等電位メッシュ施工で勾配を平坦化する。*
 
 ### 対策
 

@@ -50,11 +50,11 @@ last_verified: 2026-04-04
 
 **判定の目安**
 
-| リスクレベル | 対応 |
-|-----------|------|
-| 最高・高 | 作業を中止し、リスク低減措置なしに作業開始禁止 |
-| 中 | リスク低減措置を実施してから作業開始 |
-| 低・最低 | 通常の安全手順を守って作業可能 |
+| リスクレベル | 判定者・承認 | 対応 |
+|-----------|-----------|------|
+| 最高・高 | 監督者が作業中止を判断し、設備管理者の承認を得る | 作業を中止し、リスク低減措置なしに作業開始禁止 |
+| 中 | 監督者が低減措置を確認（措置内容を書面化） | リスク低減措置を実施してから作業開始 |
+| 低・最低 | 作業者の判断で可（標準手順に従う） | 通常の安全手順を守って作業可能 |
 
 ### ステップ3：リスク低減対策の検討
 
@@ -77,9 +77,54 @@ last_verified: 2026-04-04
    例：絶縁手袋・顔面シールド（アーク対応）
 ```
 
+上位（除去）ほど効果が高く、下位（PPE）は残ったリスクを人が防ぐ最終手段。次のピラミッドで優先順位を示す。
+
+<svg viewBox="0 0 640 320" role="img" aria-label="リスク低減対策の優先順位ピラミッド。上から順に、除去、代替、工学的対策、管理的対策、保護具（PPE）。上位ほど効果が高い。" style="max-width:100%;height:auto;font-family:sans-serif;">
+  <!-- effect arrow -->
+  <line x1="20" y1="40" x2="20" y2="280" stroke="currentColor" stroke-width="1.5" marker-end="url(#raArrow)"/>
+  <defs>
+    <marker id="raArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <text x="34" y="52" font-size="12" fill="currentColor">効果 大（本質安全）</text>
+  <text x="34" y="272" font-size="12" fill="currentColor">効果 小（人に依存）</text>
+
+  <!-- pyramid bands: top = narrow, bottom = wide -->
+  <!-- ① 除去 -->
+  <polygon points="290,50 350,50 366,96 274,96" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1"/>
+  <text x="320" y="78" font-size="13" text-anchor="middle" fill="currentColor">① 除去</text>
+  <text x="392" y="78" font-size="11" fill="currentColor">危険源そのものをなくす（例：回路の廃棄撤去）</text>
+
+  <!-- ② 代替 -->
+  <polygon points="274,98 366,98 382,144 258,144" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1"/>
+  <text x="320" y="126" font-size="13" text-anchor="middle" fill="currentColor">② 代替</text>
+  <text x="392" y="126" font-size="11" fill="currentColor">危険の少ない方法へ（例：高圧を低圧に降圧）</text>
+
+  <!-- ③ 工学的対策 -->
+  <polygon points="258,146 382,146 398,192 242,192" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-width="1"/>
+  <text x="320" y="174" font-size="13" text-anchor="middle" fill="currentColor">③ 工学的対策</text>
+  <text x="392" y="174" font-size="11" fill="currentColor">隔離・インターロック等</text>
+
+  <!-- ④ 管理的対策 -->
+  <polygon points="242,194 398,194 414,240 226,240" fill="currentColor" fill-opacity="0.10" stroke="currentColor" stroke-width="1"/>
+  <text x="320" y="222" font-size="13" text-anchor="middle" fill="currentColor">④ 管理的対策</text>
+  <text x="392" y="222" font-size="11" fill="currentColor">手順・訓練・許可制度（LOTO・PTW）</text>
+
+  <!-- ⑤ 保護具（PPE） -->
+  <polygon points="226,242 414,242 430,288 210,288" fill="currentColor" fill-opacity="0.05" stroke="currentColor" stroke-width="1"/>
+  <text x="320" y="270" font-size="13" text-anchor="middle" fill="currentColor">⑤ 保護具（PPE）</text>
+  <text x="392" y="270" font-size="11" fill="currentColor">絶縁手袋・顔面シールド（アーク対応）</text>
+</svg>
+
+*上位の対策ほどリスク低減効果が高く、PPEは他の対策で残ったリスクへの最終防御。*
+
 ### ステップ4：残留リスクの確認
 
 対策実施後に残るリスクが許容可能かを再評価。許容できない場合は再度ステップ3へ。
+
+!!! danger "低減できない「高」以上のリスクは着手前にエスカレーション"
+    残留リスクが「高」以上で低減できない場合は作業を保留し、監督者経由で設備管理者・安全衛生担当へその日のうちに報告する。代替工法・工程変更を[変更管理（MOC）](#変更管理mocでのリスクアセスメント)で再検討し、許容レベルまで下げられることを確認するまで作業に着手しない。
 
 ---
 

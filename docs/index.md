@@ -21,7 +21,7 @@ hide:
 | 地絡警報が出た | GR/DGRの動作表示・構外地絡か構内かを判定 | [保護継電器（GR/DGR）](01-koatsu/relay.md) |
 | モーターが起動しない | 現場盤のサーマルリレーとMCの動作確認 | [モータートラブル](06-trouble/motor.md) |
 | インバータがエラーコードを表示する | エラーコードをマニュアルで確認・過電流か過電圧かを判定 | [インバータトラブル](06-trouble/inverter.md) |
-| 4-20mAが振り切れる（0mA / 20mA以上） | 0mAなら断線疑い、20mA以上なら電源側を確認 | [計装信号トラブル](06-trouble/signal.md) |
+| 4-20mAが振り切れる（0mA / 20mA以上） | 0mAは断線疑い。20mA超（約21mA）はバーンアウト高またはレンジオーバー疑いで、伝送器のプロセス値・レンジ設定・センサ側を先に確認 | [計装信号トラブル](06-trouble/signal.md) |
 | 温度指示が実際と合わない | 基準接点補償回路の動作とTC/RTD断線アラームを確認 | [計装信号トラブル](06-trouble/signal.md) |
 | 制御弁が動かない（全開/全閉固着） | エア圧力（0.14MPa以上）とI/P出力信号を確認 | [制御弁トラブル](06-trouble/valve.md) |
 | PLC/DCSとの通信が切れた | 通信ケーブルの物理接続とリンクLEDの状態を確認 | [PLC/DCSトラブル](06-trouble/plc-dcs.md) |
@@ -32,6 +32,12 @@ hide:
 
 !!! tip "まず何をすべきか迷ったら"
     症状が特定できない・どこから手をつけるか迷う場合は [トラブル初動対応フロー](guidelines/trouble-first-response.md) を開いてください。安全確保から切り分けまでの初動手順を現場でそのまま追えます。
+
+## 記事の見方
+
+- :material-account-hard-hat: `対象: 電気担当` — 電気主任・電計エンジニア向け
+- :material-account-wrench: `対象: 保全担当` — 保全作業者向け
+- :material-account: `対象: 製造担当` — 運転オペレーター向け（専門用語を最小化）
 
 ## 仕事から探す
 
@@ -98,12 +104,6 @@ hide:
 ## リファレンス
 
 [用語集](reference/glossary.md) ・ [規格一覧](reference/standards-list.md) ・ [計算ツール](reference/calculators.md) ・ [読む順番ガイド](getting-started.md)
-
-## 記事の見方
-
-- :material-account-hard-hat: `対象: 電気担当` — 電気主任・電計エンジニア向け
-- :material-account-wrench: `対象: 保全担当` — 保全作業者向け
-- :material-account: `対象: 製造担当` — 運転オペレーター向け（専門用語を最小化）
 
 ---
 

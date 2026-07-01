@@ -9,6 +9,13 @@ last_verified: 2026-05-19
 
 設計検討・現場確認で開く速引き集。
 
+!!! abstract "30秒まとめ（対象者: 電気・計装担当）"
+    引きたいものから3ハブを使い分ける。
+
+    - **用語の意味を知りたい** → [用語集](glossary.md)
+    - **規格番号・入手先を知りたい** → [規格一覧](standards-list.md)
+    - **現場の計算式を使いたい** → [計算ツール](calculators.md)
+
 ## ハブ一覧
 
 <div class="grid cards" markdown>

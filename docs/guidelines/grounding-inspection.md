@@ -43,6 +43,8 @@ last_verified: 2026-05-20
 | C種接地工事 | 300V超の低圧機器外箱 | **10Ω以下**（漏電遮断器設置時は500Ω以下） |
 | D種接地工事 | 300V以下の低圧機器外箱 | **100Ω以下**（漏電遮断器設置時は500Ω以下） |
 
+> 出典: 接地工事の種類・抵抗値、および0.5秒以内に動作する漏電遮断器設置時の500Ω緩和は電技解釈第17条。
+
 !!! info "B種接地抵抗の計算"
     B種接地抵抗 = 150 ÷ Ig  
     例：Ig = 5A → 150 ÷ 5 = 30Ω以下  
@@ -63,6 +65,36 @@ last_verified: 2026-05-20
 - E（被測定接地極）〜P（電位補助）〜C（電流補助）を**一直線上**に配置
 - E〜C間：**20m以上**（推奨）
 - E〜P間：E〜C間の**50%の位置**
+
+<svg viewBox="0 0 480 300" role="img" aria-label="電位降下法の模式図。横軸はE極からP極までの距離、縦軸は測定抵抗値。曲線はE極とC極の近くで急変し、中央付近で平坦になる。この平坦部が真の接地抵抗を示し、P極はE〜C間の50%付近に置く。" style="max-width:100%;height:auto;">
+  <!-- axes -->
+  <line x1="60" y1="40" x2="60" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="60" y1="250" x2="450" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <!-- axis labels -->
+  <text x="20" y="46" fill="currentColor" font-size="12">測定</text>
+  <text x="20" y="62" fill="currentColor" font-size="12">抵抗値</text>
+  <text x="300" y="288" fill="currentColor" font-size="12">P極の位置（E極からの距離）</text>
+  <!-- electrode ticks on x-axis: E at 60, P/50% at 250, C at 440 -->
+  <line x1="60" y1="250" x2="60" y2="258" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="250" y1="250" x2="250" y2="258" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="440" y1="250" x2="440" y2="258" stroke="currentColor" stroke-width="1.5"/>
+  <text x="55" y="272" fill="currentColor" font-size="13" font-weight="bold">E</text>
+  <text x="435" y="272" fill="currentColor" font-size="13" font-weight="bold">C</text>
+  <text x="222" y="272" fill="currentColor" font-size="11">50%付近</text>
+  <!-- plateau guide (true resistance level) -->
+  <line x1="60" y1="150" x2="250" y2="150" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+  <text x="64" y="144" fill="currentColor" font-size="11">真の接地抵抗</text>
+  <!-- fall-of-potential curve: steep rise near E, flat plateau mid, steep rise near C -->
+  <path d="M 60 225 C 110 150, 150 150, 190 150 L 310 150 C 350 150, 390 150, 440 70" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <!-- P at 50% marker on the plateau -->
+  <line x1="250" y1="150" x2="250" y2="250" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+  <circle cx="250" cy="150" r="4" fill="currentColor"/>
+  <text x="240" y="140" fill="currentColor" font-size="13" font-weight="bold">P</text>
+  <!-- flat region label -->
+  <text x="196" y="172" fill="currentColor" font-size="11">平坦部＝読み取り域</text>
+</svg>
+
+*P極をE〜C間の50%付近（平坦部）に置くと、電位降下カーブが平らになり真の接地抵抗を読み取れる。E極やC極に寄せると値が急変し誤差が大きくなる。*
 
 ### 手順
 

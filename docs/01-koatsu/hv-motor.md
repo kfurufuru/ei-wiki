@@ -27,10 +27,54 @@ status: published
 | コンドルファ始動 | 33〜50% | 33〜50% | スターデルタ原理で電流・トルクを低減 |
 | インバータ始動（VFD） | 定格の 100〜150% 制御可 | 定格トルク確保 | 最も制御性が良い。高コスト |
 
+<svg viewBox="0 0 560 430" role="img" aria-label="始動方式の始動電流と始動トルクのトレードオフ散布図。直入れ・リアクトル始動・コンドルファ始動を対直入れ比でプロット" style="max-width:100%;height:auto;" xmlns="http://www.w3.org/2000/svg">
+  <!-- 軸 -->
+  <line x1="70" y1="360" x2="520" y2="360" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="360" x2="70" y2="40" stroke="currentColor" stroke-width="1.5"/>
+  <!-- 軸ラベル -->
+  <text x="295" y="405" fill="currentColor" font-size="14" text-anchor="middle">始動電流（対直入れ %）</text>
+  <text x="24" y="200" fill="currentColor" font-size="14" text-anchor="middle" transform="rotate(-90 24 200)">始動トルク（対直入れ %）</text>
+  <!-- 目盛 X -->
+  <g fill="currentColor" font-size="11" text-anchor="middle">
+    <line x1="70" y1="360" x2="70" y2="365" stroke="currentColor"/><text x="70" y="378">0</text>
+    <line x1="295" y1="360" x2="295" y2="365" stroke="currentColor"/><text x="295" y="378">50</text>
+    <line x1="520" y1="360" x2="520" y2="365" stroke="currentColor"/><text x="520" y="378">100</text>
+  </g>
+  <!-- 目盛 Y -->
+  <g fill="currentColor" font-size="11" text-anchor="end">
+    <line x1="65" y1="360" x2="70" y2="360" stroke="currentColor"/><text x="62" y="364">0</text>
+    <line x1="65" y1="200" x2="70" y2="200" stroke="currentColor"/><text x="62" y="204">50</text>
+    <line x1="65" y1="40" x2="70" y2="40" stroke="currentColor"/><text x="62" y="44">100</text>
+  </g>
+  <!-- コンドルファ 33〜50% × 33〜50%（範囲ボックス） -->
+  <rect x="218.5" y="254.4" width="76.5" height="54.4" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="1"/>
+  <text x="256.75" y="326" fill="currentColor" font-size="12" text-anchor="middle">コンドルファ</text>
+  <!-- リアクトル 65〜75% × 42〜56%（範囲ボックス） -->
+  <rect x="362.5" y="180.8" width="45" height="44.8" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="1"/>
+  <text x="385" y="170" fill="currentColor" font-size="12" text-anchor="middle">リアクトル</text>
+  <!-- 直入れ DOL 100% × 100%（点） -->
+  <circle cx="520" cy="40" r="5" fill="currentColor"/>
+  <text x="512" y="34" fill="currentColor" font-size="12" text-anchor="end">直入れ（DOL）</text>
+  <!-- 方向注記 -->
+  <text x="452" y="360" fill="currentColor" font-size="11" fill-opacity="0.75" text-anchor="middle">大電流・大トルク →</text>
+  <!-- VFD 注記（対直入れではなく対定格基準のため軸外で注記） -->
+  <text x="150" y="60" fill="currentColor" font-size="11" fill-opacity="0.8" text-anchor="middle">VFD は基準が「対定格」で</text>
+  <text x="150" y="76" fill="currentColor" font-size="11" fill-opacity="0.8" text-anchor="middle">異なるため軸上に非表示</text>
+</svg>
+
+*始動電流を絞るほど始動トルクも下がる（左下＝小電流・小トルク／右上＝直入れ）。数値は上表の対直入れ比。VFD は基準が対定格で異なるため軸上にはプロットしていない。*
+
 !!! tip "インバータ始動が最良だが"
     インバータ（VFD）始動は始動電流・始動ショックが最小で速度制御も可能。
     ただし高調波発生・絶縁への影響（サージ電圧）があるため、既設モーターに追加する場合は
-    絶縁確認と入力フィルタ（または出力リアクトル）の設置を検討する。
+    絶縁確認とフィルタ設置が必要になる。フィルタは対策する現象で選ぶ。
+
+    - **入力側（高調波抑制）**：ACリアクトル（3〜5%）または受動LCフィルタ。より厳しい規制値には
+      アクティブフィルタを併用する。
+    - **出力側（サージ・dV/dt 抑制）**：出力リアクトルまたはサインウェーブフィルタ。ケーブルが長い
+      場合は反射サージによる端子電圧上昇が問題になるため優先度が高い。
+    - **既設モーター**：まず端子のサージ耐量を確認し、耐量が不足する、またはインバータからの
+      ケーブルが長い場合は反射サージ対策（出力側フィルタ）を優先する。
 
 ---
 
@@ -104,6 +148,8 @@ PI = 10分後の絶縁抵抗値 / 1分後の絶縁抵抗値
 | 振動測定 | ISO 10816 基準。速度 RMS 2.8 mm/s 以下（良好） | 月次またはオンライン監視 |
 | 温度測定 | ベアリング外輪温度 80℃以下（目安） | 月次または定期点検時 |
 | 異音確認 | 聴音棒・振動センサで確認 | 月次 |
+
+> 参照: 回転機械の振動評価（速度実効値）は ISO 20816（旧 ISO 10816）。同規格は機械区分ごとにゾーン境界（A/B/C/D）が異なるため、適用値は対象機の機械群・支持条件で確認する。
 
 !!! warning "グリスの入れ過ぎに注意"
     グリスを入れ過ぎると撹拌発熱でかえって軸受を傷める。

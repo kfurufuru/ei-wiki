@@ -139,6 +139,63 @@ last_verified: 2026-05-20
     - 動力線と信号線は**別ダクトに収める**（ノイズ分離）
 3. 余長は無理なく曲げてまとめる（曲げ半径：電線外径の5倍以上）
 
+<svg viewBox="0 0 640 300" role="img" aria-label="盤内配線ダクト断面の概念図。動力ダクトと信号ダクトを別ダクトに分離し、充填率80%以下ライン、曲げ半径は電線外径の5倍以上を示す。" style="max-width:100%;height:auto;">
+  <g fill="none" stroke="currentColor" stroke-width="2">
+    <!-- 動力ダクト -->
+    <rect x="40" y="40" width="150" height="180"/>
+    <!-- 充填率80%ライン -->
+    <line x1="40" y1="76" x2="190" y2="76" stroke-dasharray="6 5"/>
+    <!-- 信号ダクト -->
+    <rect x="260" y="40" width="150" height="180"/>
+    <line x1="260" y1="76" x2="410" y2="76" stroke-dasharray="6 5"/>
+  </g>
+  <!-- 動力線（束・下側80%内） -->
+  <g fill="currentColor" stroke="none">
+    <circle cx="72" cy="185" r="13"/>
+    <circle cx="105" cy="190" r="13"/>
+    <circle cx="140" cy="180" r="13"/>
+    <circle cx="90" cy="150" r="13"/>
+    <circle cx="130" cy="145" r="13"/>
+  </g>
+  <!-- 信号線（束・下側80%内） -->
+  <g fill="currentColor" stroke="none">
+    <circle cx="292" cy="192" r="8"/>
+    <circle cx="315" cy="185" r="8"/>
+    <circle cx="338" cy="193" r="8"/>
+    <circle cx="360" cy="184" r="8"/>
+    <circle cx="383" cy="192" r="8"/>
+    <circle cx="305" cy="165" r="8"/>
+    <circle cx="345" cy="168" r="8"/>
+    <circle cx="375" cy="163" r="8"/>
+  </g>
+  <g fill="currentColor" stroke="none" font-size="15" text-anchor="middle">
+    <text x="115" y="30">動力ダクト</text>
+    <text x="335" y="30">信号ダクト（別ダクト）</text>
+  </g>
+  <g fill="currentColor" stroke="none" font-size="13">
+    <text x="196" y="72">充填率80%以下</text>
+    <text x="416" y="72">充填率80%以下</text>
+  </g>
+  <!-- 分離＝ノイズ分離 注記 -->
+  <g fill="currentColor" stroke="none" font-size="13" text-anchor="middle">
+    <text x="225" y="245">別ダクト＝ノイズ分離</text>
+  </g>
+  <!-- 曲げ半径の概念 -->
+  <g fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M470 210 L470 130 A50 50 0 0 1 520 80 L600 80"/>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="520" y1="130" x2="470" y2="130"/>
+    <line x1="520" y1="130" x2="520" y2="80"/>
+  </g>
+  <g fill="currentColor" stroke="none" font-size="13">
+    <text x="472" y="126">R</text>
+    <text x="450" y="255">曲げ半径 R ≥ 外径 × 5</text>
+  </g>
+</svg>
+
+*盤内ダクトは動力／信号を別ダクトに分離（ノイズ分離）し、各ダクトは充填率80%以下、余長の曲げ半径は電線外径の5倍以上とする。*
+
 ---
 
 ## 配線完了後の確認
@@ -154,6 +211,9 @@ last_verified: 2026-05-20
 1. 電源を入れる前に、DC500Vメガーで絶縁抵抗を測定する
 2. 確認対象：各回路〜アース間
 3. **基準値：10MΩ以上**（低い場合は配線を見直す）
+
+!!! note "10MΩと法定最低値は別物"
+    ここでの10MΩ以上は施工受入れ用の基準であり、法令上の絶縁抵抗の最低値（低圧電路で対地電圧別に0.1／0.2／0.4MΩ以上、電技省令第58条）とは別である。法定値を満たすだけでなく、施工基準の10MΩ以上を確認する。
 
 ---
 

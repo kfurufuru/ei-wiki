@@ -71,6 +71,9 @@ N₂ : 変更後の回転数
 投資回収年数 = 200万円 ÷ 352万円/年 ≈ 0.57年（約7か月）
 ```
 
+!!! note "この試算は3乗則による概算"
+    上記は回転数の3乗則による概算値。実際の運転点は流量-揚程曲線とシステム抵抗曲線の交点で決まるため、弁で絞った現状運転点からインバータ制御へ置換したときの効果は、この単純計算より小さくなる場合がある。個別設備では実運転点を踏まえて検証すること。
+
 > この例では7か月で回収完了。ポンプ・ファンへのインバータ導入はROIが非常に高い案件が多い。
 
 ---
@@ -112,6 +115,47 @@ N₂ : 変更後の回転数
 弁制御: ポンプ（高電力） → バルブ（圧損で捨てる） → 必要流量
 VFD制御: ポンプ（低電力で適切な回転数） → 必要流量
 ```
+
+<svg viewBox="0 0 560 380" role="img" aria-label="流量-揚程平面での運転点移動。弁制御は定格回転のポンプ曲線上で運転点が左上に動き余剰揚程を圧損として捨てる。VFD制御はポンプ曲線を低回転側へ下げ同じ必要流量を低い揚程・低い電力で得る。" style="max-width:100%; height:auto; font-family:sans-serif;">
+  <!-- 軸 -->
+  <line x1="70" y1="330" x2="530" y2="330" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="330" x2="70" y2="30" stroke="currentColor" stroke-width="1.5"/>
+  <polygon points="530,330 520,326 520,334" fill="currentColor"/>
+  <polygon points="70,30 66,40 74,40" fill="currentColor"/>
+  <text x="500" y="352" fill="currentColor" font-size="13">流量 Q</text>
+  <text x="18" y="30" fill="currentColor" font-size="13">揚程 H</text>
+
+  <!-- 定格回転のポンプ性能曲線（右下がり） -->
+  <path d="M 80 90 Q 260 120 500 270" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="360" y="150" fill="currentColor" font-size="12" font-style="italic">ポンプ曲線（定格回転）</text>
+
+  <!-- VFD低回転のポンプ性能曲線（下方へ平行的に低下） -->
+  <path d="M 80 200 Q 220 225 380 320" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="250" y="300" fill="currentColor" font-size="12" font-style="italic">VFD低回転曲線</text>
+
+  <!-- 弁制御時のシステム抵抗曲線（絞りで急峻・原点付近から立ち上がり点Aへ） -->
+  <path d="M 70 330 Q 150 300 235 115" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 4"/>
+  <text x="120" y="230" fill="currentColor" font-size="11">弁制御の抵抗曲線</text>
+
+  <!-- 必要流量の垂線 -->
+  <line x1="235" y1="330" x2="235" y2="115" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="212" y="348" fill="currentColor" font-size="12">必要流量</text>
+
+  <!-- 運転点A：弁制御（定格曲線上、高揚程） -->
+  <circle cx="235" cy="115" r="5" fill="currentColor"/>
+  <text x="245" y="110" fill="currentColor" font-size="12" font-weight="bold">A 弁制御</text>
+
+  <!-- 運転点B：VFD（低回転曲線上、低揚程） -->
+  <circle cx="235" cy="218" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="245" y="235" fill="currentColor" font-size="12" font-weight="bold">B VFD制御</text>
+
+  <!-- 揚程差＝弁で捨てている圧損 -->
+  <line x1="235" y1="115" x2="235" y2="218" stroke="currentColor" stroke-width="3"/>
+  <text x="90" y="170" fill="currentColor" font-size="11">A→B の揚程差</text>
+  <text x="90" y="185" fill="currentColor" font-size="11">＝弁で捨てる圧損</text>
+</svg>
+
+*同じ必要流量でも、弁制御は定格曲線上の点A（高揚程・高電力）で運転し余剰揚程を圧損として捨てる。VFDはポンプ曲線を下げて点B（低揚程・低電力）で運転する（軸方向は定性的な模式図）。*
 
 ### 効果が大きい設備の特徴
 

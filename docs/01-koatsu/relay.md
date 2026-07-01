@@ -57,6 +57,46 @@ CT 二次換算電流 = 変圧器定格電流（A） / CT 変流比
 | 誤動作 | 他回線地絡で誤動作の可能性あり | 他回線地絡での誤動作を防げる |
 | 使用箇所 | 単一フィーダー | 複数フィーダーが並列の系統 |
 
+<svg viewBox="0 0 560 320" role="img" aria-label="零相電圧V0を基準軸とし、自回線地絡時と他回線地絡時の零相電流I0ベクトルを位相で描き分けた図。DGRの動作領域を扇形で示す。" style="max-width:100%;height:auto;font-family:sans-serif">
+  <!-- reference axis V0 (horizontal) -->
+  <line x1="280" y1="160" x2="530" y2="160" stroke="currentColor" stroke-width="1.5"/>
+  <polygon points="530,160 520,155 520,165" fill="currentColor"/>
+  <text x="534" y="164" fill="currentColor" font-size="15" font-weight="bold">V₀</text>
+  <text x="332" y="152" fill="currentColor" font-size="11" opacity="0.75">基準軸（零相電圧）</text>
+  <!-- vertical guide -->
+  <line x1="280" y1="30" x2="280" y2="300" stroke="currentColor" stroke-width="0.7" stroke-dasharray="3 4" opacity="0.4"/>
+  <text x="280" y="24" fill="currentColor" font-size="11" text-anchor="middle" opacity="0.6">同一母線・共通基準</text>
+
+  <!-- DGR operating region: fan sector around V0 axis (self-line side) -->
+  <path d="M280,160 L500,90 A233,233 0 0,1 500,230 Z" fill="currentColor" opacity="0.12"/>
+  <text x="470" y="200" fill="currentColor" font-size="12" text-anchor="middle" opacity="0.8">DGR 動作領域</text>
+  <text x="470" y="216" fill="currentColor" font-size="10" text-anchor="middle" opacity="0.6">（位相角 θ の範囲）</text>
+
+  <!-- I0 self-line fault: within operating region -->
+  <line x1="280" y1="160" x2="465" y2="118" stroke="currentColor" stroke-width="2.5"/>
+  <polygon points="465,118 453,117 458,128" fill="currentColor"/>
+  <text x="352" y="100" fill="currentColor" font-size="13" font-weight="bold">I₀（自回線地絡）</text>
+  <text x="352" y="116" fill="currentColor" font-size="10" opacity="0.7">V₀ と特定の位相関係 → 動作</text>
+
+  <!-- I0 other-line fault: opposite direction, outside operating region -->
+  <line x1="280" y1="160" x2="90" y2="220" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <polygon points="90,220 102,219 95,209" fill="currentColor"/>
+  <text x="20" y="248" fill="currentColor" font-size="13" font-weight="bold">I₀（他回線地絡）</text>
+  <text x="20" y="264" fill="currentColor" font-size="10" opacity="0.7">位相が逆側 → 不動作</text>
+
+  <!-- angle arc marker at origin -->
+  <path d="M320,160 A40,40 0 0,0 306,132" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+  <text x="322" y="138" fill="currentColor" font-size="12" opacity="0.8">θ</text>
+
+  <!-- origin dot -->
+  <circle cx="280" cy="160" r="3" fill="currentColor"/>
+
+  <!-- GR note: magnitude only -->
+  <text x="20" y="300" fill="currentColor" font-size="11" opacity="0.85">GR：I₀ の大きさのみ判定 → 自回線・他回線を区別できず、他回線地絡でも誤動作しうる</text>
+</svg>
+
+*V₀ を基準軸に I₀ の位相を見るのが DGR。自回線地絡と他回線地絡で I₀ の向きが逆側になり、動作領域（位相角 θ の範囲）の内か外かで判別する。GR は I₀ の大きさしか見ないため両者を区別できない。*
+
 !!! tip "化学プラントでの選定"
     複数の 6.6kV フィーダーが同一母線から出ている場合は DGR を採用し、
     他回線地絡による不必要停電を防止する。
@@ -109,6 +149,23 @@ CT 二次換算電流 = 変圧器定格電流（A） / CT 変流比
 !!! note "無電圧試験（継電器単体試験）"
     VCB のトリップ回路を含めた一連の動作確認を「トリップ試験」と呼ぶ。
     継電器単体の特性確認だけでなく、トリップコイル・VCB 機構部も含めた総合確認が重要。
+
+!!! warning "試験前の連絡と異常時の報告フロー"
+    注入試験は誤トリップ・波及停電・感電のリスクを伴うため、実施前後の連絡と異常時の報告経路を定めておく。
+
+    **試験前（事前連絡・承認）**
+
+    - 停電範囲・時間帯・対象フィーダーを運転部門へ通知する
+    - 電気主任技術者（試験責任者）の立会または承認を得る
+
+    **異常発生時（誤操作・感電・意図せぬ波及停電）**
+
+    1. 直ちに電流注入を停止する
+    2. CT 二次側は短絡端子で短絡し、開路状態を残さない
+    3. 試験責任者（電気主任技術者）へ即報し、作業を中断する
+    4. 波及停電が生じた場合は、社内規定に従い運転部門・電力会社・保安監督部門へ速やかに連絡する
+
+    連絡先・順序・時限は社内規定および各事業場の保安規程に従う。
 
 ---
 

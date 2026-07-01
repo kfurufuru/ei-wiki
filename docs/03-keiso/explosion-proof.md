@@ -72,7 +72,7 @@ IEC 60079 / TIIS（電気機械器具防爆構造規格）による分類。
 
 ```mermaid
 flowchart TD
-    A[設置場所の Zone 区域確認] --> B[対象可燃性ガスの EPL グループ確認\nIIA / IIB / IIC]
+    A[設置場所の Zone 区域確認] --> B[対象可燃性ガスのガスグループ（爆発等級）確認\nIIA / IIB / IIC]
     B --> C[温度クラス確認\nT1〜T6]
     C --> D[必要な防爆構造を選定]
     D --> E[機器の Ex 認証マークを確認\nTIIS / ATEX / IECEx]
