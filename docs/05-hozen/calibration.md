@@ -3,8 +3,7 @@ title: "校正"
 description: "伝送器の校正手順・校正機器一覧・トレーサビリティ・校正周期・ループ校正"
 tags:
   - 保全
-  - 校正
-  - 計装
+  - 計装信号
 audience:
   - 電気担当
 last_verified: 2026-04-16

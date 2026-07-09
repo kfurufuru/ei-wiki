@@ -1,7 +1,9 @@
 ---
 title: 保護装置誤動作
 description: 不要動作（誤トリップ）・不動作の原因分析、OCR/GR/ELCB の確認手順と整定見直し
-tags: [保護継電器, OCR, GR, DGR, ELCB, 誤動作, 不動作, トラブル]
+tags:
+  - トラブル
+  - 保護継電器
 audience: [電気担当, 保全担当]
 last_verified: 2026-04-04
 ---

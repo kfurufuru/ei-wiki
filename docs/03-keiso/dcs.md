@@ -3,7 +3,7 @@ title: "DCS"
 description: "DCS構成・タグ命名・設定変更手順"
 tags:
   - 計装
-  - DCS
+  - DCS・PLC
 audience:
   - 電気担当
 last_verified: 2026-04-04

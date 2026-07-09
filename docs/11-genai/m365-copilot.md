@@ -1,7 +1,8 @@
 ---
 title: M365 Copilot活用
 description: Teams・Outlook・Excel・WordでのM365 Copilot実践ガイド。電気計装業務での具体的な活用例付き。
-tags: [生成AI, M365 Copilot, Teams, Outlook, Excel, Word]
+tags:
+  - 生成AI
 last_verified: 2026-04-04
 ---
 

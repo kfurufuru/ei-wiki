@@ -3,8 +3,7 @@ title: "規格・法規"
 description: "化学プラントに特有の法規制・規格一覧"
 tags:
   - 設計
-  - 法規
-  - 規格
+  - 逆引き
 audience:
   - 電気担当
 last_verified: 2026-07-09

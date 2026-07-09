@@ -3,7 +3,7 @@ title: "耐圧試験・絶縁診断"
 description: "試験手順・判定基準・部分放電試験"
 tags:
   - 高圧
-  - 絶縁診断
+  - 絶縁
 audience:
   - 電気担当
 last_verified: 2026-07-09

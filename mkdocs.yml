@@ -63,7 +63,40 @@ exclude_docs: |
 plugins:
   - search:
       lang: ja
-  - tags
+  - tags:
+      # 統制語彙30語のみ許可（Phase 2-K4）。未登録タグはビルドエラー＝新語追加ガード。
+      # 一覧は reference/tags.md（本文の material/tags ディレクティブで全タグを列挙）。
+      tags_allowed:
+        - 高圧
+        - 低圧
+        - 計装
+        - 設計
+        - 保全
+        - トラブル
+        - 工事管理
+        - 安全
+        - 法規・保安
+        - 省エネ
+        - 生成AI
+        - 接地
+        - 絶縁
+        - 保護継電器
+        - 保護協調
+        - モーター
+        - インバータ
+        - ケーブル
+        - 変圧器・受変電
+        - UPS・電源
+        - 制御弁
+        - DCS・PLC
+        - 計装信号
+        - 防爆
+        - ノイズ・EMC
+        - 手順書
+        - チェックリスト
+        - 計算
+        - 逆引き
+        - 入門
 
 markdown_extensions:
   - admonition
@@ -245,6 +278,7 @@ nav:
       - 注意事項・情報セキュリティ: 11-genai/security.md
   - リファレンス:
     - reference/index.md
+    - タグ一覧: reference/tags.md
     - 用語集: reference/glossary.md
     - 規格一覧: reference/standards-list.md
     - 計算ツール集: reference/calculators.md

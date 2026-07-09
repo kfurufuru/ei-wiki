@@ -2,8 +2,7 @@
 title: "規格一覧"
 description: "電気・計装・防爆・安全計装の主要規格を表形式で整理"
 tags:
-  - リファレンス
-  - 規格
+  - 逆引き
 audience:
   - 電気担当
 last_verified: 2026-04-04

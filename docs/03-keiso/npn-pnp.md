@@ -3,9 +3,8 @@ title: "NPN/PNP選定"
 description: "センサ出力タイプの違いと計器選定・PLC接続の実務判断"
 tags:
   - 計装
-  - センサ
-  - PLC
-  - DI入力
+  - DCS・PLC
+  - 計装信号
 audience:
   - 電気担当
 last_verified: 2026-04-15

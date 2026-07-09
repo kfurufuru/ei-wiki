@@ -3,7 +3,6 @@ title: "力率改善"
 description: "進相コンデンサ・自動力率調整"
 tags:
   - 高圧
-  - 力率
 audience:
   - 電気担当
 last_verified: 2026-04-04

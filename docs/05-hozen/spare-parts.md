@@ -3,7 +3,6 @@ title: "予備品管理"
 description: "予備品選定基準・推奨予備品リスト・保管条件・在庫管理ルール"
 tags:
   - 保全
-  - 予備品管理
 audience:
   - 電気担当
 last_verified: 2026-04-16

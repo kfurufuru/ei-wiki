@@ -3,8 +3,8 @@ title: "短絡電流計算"
 description: "%インピーダンス法・系統Zの取得・遮断容量確認"
 tags:
   - 設計
-  - 短絡電流
   - 保護協調
+  - 計算
 audience:
   - 電気担当
 last_verified: 2026-07-09

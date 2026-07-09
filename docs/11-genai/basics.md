@@ -1,7 +1,9 @@
 ---
 title: 生成AIの基本（初心者向け）
 description: ChatGPT・Copilotとは何か。できること・できないこと・ハルシネーション。AI未経験者向けの入門ガイド。
-tags: [生成AI, 入門, ChatGPT, Copilot, ハルシネーション]
+tags:
+  - 生成AI
+  - 入門
 last_verified: 2026-04-04
 ---
 

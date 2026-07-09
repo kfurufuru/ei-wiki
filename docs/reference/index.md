@@ -1,7 +1,8 @@
 ---
 title: リファレンス
 description: 用語・規格・計算ツールの速引き集
-tags: [リファレンス]
+tags:
+  - 逆引き
 last_verified: 2026-05-19
 ---
 

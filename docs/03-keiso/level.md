@@ -3,7 +3,7 @@ title: "レベル計測"
 description: "差圧式・超音波・レーダ式の選定"
 tags:
   - 計装
-  - 液位
+  - 計装信号
 audience:
   - 電気担当
 last_verified: 2026-04-04

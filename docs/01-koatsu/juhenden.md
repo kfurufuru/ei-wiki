@@ -3,7 +3,7 @@ title: "受変電設備概論"
 description: "単線結線図の読み方・系統構成・主要機器の役割"
 tags:
   - 高圧
-  - 受変電
+  - 変圧器・受変電
 audience:
   - 電気担当
 last_verified: 2026-07-09

@@ -4,8 +4,7 @@ description: "GNDとアースの違い・グランドの種類（FG/SG/AGND/DGND
 tags:
   - 計装
   - 接地
-  - グランド
-  - ノイズ
+  - ノイズ・EMC
 audience:
   - 電気担当
   - 保全担当

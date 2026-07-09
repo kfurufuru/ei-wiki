@@ -1,7 +1,9 @@
 ---
 title: 作業許可制度（PTW）
 description: Permit to Work（作業許可制度）の目的・フロー・必須記載事項と自工場での実運用ポイント。
-tags: [安全, PTW, 作業許可, 停電作業]
+tags:
+  - 安全
+  - 手順書
 last_verified: 2026-04-04
 ---
 

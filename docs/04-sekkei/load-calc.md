@@ -3,7 +3,7 @@ title: "負荷計算"
 description: "需要率・需要電力・変圧器容量算定・将来負荷の見込み"
 tags:
   - 設計
-  - 負荷計算
+  - 計算
 audience:
   - 電気担当
 last_verified: 2026-07-09

@@ -3,8 +3,6 @@ title: "仕様書の書き方"
 description: "電気・計装仕様書の必須項目・曖昧仕様の教訓・RFQのポイント"
 tags:
   - 設計
-  - 仕様書
-  - 調達
 audience:
   - 電気担当
 last_verified: 2026-07-09

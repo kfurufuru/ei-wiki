@@ -3,7 +3,7 @@ title: "変圧器"
 description: "種類・選定・保護・油管理"
 tags:
   - 高圧
-  - 変圧器
+  - 変圧器・受変電
 audience:
   - 電気担当
 last_verified: 2026-07-09

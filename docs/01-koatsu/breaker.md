@@ -3,7 +3,6 @@ title: "遮断器・断路器"
 description: "VCB/GCB選定・開閉サージ・操作手順"
 tags:
   - 高圧
-  - 遮断器
 audience:
   - 電気担当
 last_verified: 2026-07-09

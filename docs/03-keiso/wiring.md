@@ -3,7 +3,7 @@ title: "計装配線"
 description: "シールド処理・配管・マルチペアケーブル"
 tags:
   - 計装
-  - 配線
+  - ケーブル
 audience:
   - 電気担当
 last_verified: 2026-07-09

@@ -1,7 +1,8 @@
 ---
 title: 工事フロー全体図
 description: 工事企画から検収・引継ぎまでの 6段階フロー（Mermaid図版）
-tags: [工事管理, 工事フロー, 検収, 試運転, 可視化]
+tags:
+  - 工事管理
 audience: [電気担当, 計装担当]
 last_verified: 2026-07-09
 status: published

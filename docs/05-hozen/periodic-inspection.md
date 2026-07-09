@@ -3,7 +3,6 @@ title: "定期点検"
 description: "高圧年次点検・低圧月次点検・判定基準・高圧ガス自主検査記録"
 tags:
   - 保全
-  - 定期点検
 audience:
   - 電気担当
 last_verified: 2026-07-09

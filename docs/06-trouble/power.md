@@ -1,7 +1,9 @@
 ---
 title: 電源トラブル
 description: 全停電・部分停電・瞬停・遮断器トリップの原因切り分けと復電手順
-tags: [電源, 停電, MCCB, UPS, トラブル]
+tags:
+  - トラブル
+  - UPS・電源
 audience: [電気担当, 保全担当, 製造担当]
 last_verified: 2026-04-04
 ---

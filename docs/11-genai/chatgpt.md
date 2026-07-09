@@ -1,7 +1,8 @@
 ---
 title: ChatGPT活用
 description: ChatGPT・Claude の基本操作と電気計装エンジニア向けの業務活用例。プロンプト例付き。
-tags: [生成AI, ChatGPT, Claude, 業務活用, プロンプト]
+tags:
+  - 生成AI
 last_verified: 2026-04-04
 ---
 

@@ -5,6 +5,9 @@ last_verified: 2026-05-20
 hide:
   - navigation
   - toc
+tags:
+  - 入門
+  - 逆引き
 ---
 
 # 電気計装 実務Wiki

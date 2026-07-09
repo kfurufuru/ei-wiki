@@ -1,7 +1,9 @@
 ---
 title: トラブル対応の基本
 description: 化学プラントでのトラブル対応4ステップ — 安全確保から根本原因特定まで
-tags: [トラブル, 基本]
+tags:
+  - トラブル
+  - 入門
 audience: [電気担当, 保全担当, 製造担当]
 last_verified: 2026-07-09
 search:

@@ -3,8 +3,7 @@ title: "PLC基礎"
 description: "構成・I/O割付・ラダー命令・通信・バックアップ・変更管理"
 tags:
   - 低圧
-  - PLC
-  - 制御
+  - DCS・PLC
 audience:
   - 電気担当
 last_verified: 2026-04-16

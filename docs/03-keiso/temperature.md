@@ -3,7 +3,7 @@ title: "温度計測"
 description: "RTD・熱電対・補償導線の選定と配線"
 tags:
   - 計装
-  - 温度
+  - 計装信号
 audience:
   - 電気担当
 last_verified: 2026-07-09

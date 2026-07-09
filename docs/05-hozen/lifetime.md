@@ -3,8 +3,6 @@ title: "寿命管理"
 description: "主要部品の寿命目安・劣化判定・計画交換vs状態監視・廃番品の代替調査"
 tags:
   - 保全
-  - 寿命管理
-  - 更新計画
 audience:
   - 電気担当
 last_verified: 2026-04-16

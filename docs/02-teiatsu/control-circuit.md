@@ -3,8 +3,7 @@ title: "制御回路"
 description: "展開接続図の読み方・基本素子・インターロック設計・制御電源"
 tags:
   - 低圧
-  - 制御回路
-  - シーケンス
+  - DCS・PLC
 audience:
   - 電気担当
 last_verified: 2026-07-09

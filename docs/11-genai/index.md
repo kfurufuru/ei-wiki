@@ -1,7 +1,8 @@
 ---
 title: 生成AI業務活用
 description: M365 Copilot・ChatGPT・Claude の電気計装業務での活用方法。チーム教育資料兼用。
-tags: [生成AI, Copilot, ChatGPT, DX, 業務改善]
+tags:
+  - 生成AI
 last_verified: 2026-04-04
 ---
 

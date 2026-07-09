@@ -1,7 +1,8 @@
 ---
 title: プロンプトの書き方
 description: 生成AIへの良い指示の出し方。4要素・Before/After例・電気計装業務用テンプレート集。
-tags: [生成AI, プロンプト, プロンプトエンジニアリング, 業務改善]
+tags:
+  - 生成AI
 last_verified: 2026-04-04
 ---
 

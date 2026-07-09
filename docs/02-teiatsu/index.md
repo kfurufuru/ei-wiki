@@ -1,7 +1,10 @@
 ---
 title: 低圧
 description: 低圧配電・モーター制御・インバータ・PLC
-tags: [低圧, モーター, インバータ, PLC]
+tags:
+  - 低圧
+  - モーター
+  - インバータ
 audience: [電気担当, 保全担当]
 last_verified: 2026-04-16
 status: published

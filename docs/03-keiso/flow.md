@@ -3,7 +3,7 @@ title: "流量計測"
 description: "差圧式・電磁式・コリオリ式の特徴と選定"
 tags:
   - 計装
-  - 流量
+  - 計装信号
 audience:
   - 電気担当
 last_verified: 2026-07-09
