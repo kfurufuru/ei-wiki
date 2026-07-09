@@ -116,8 +116,10 @@ extra:
 
 nav:
   - Home: index.md
+  - はじめに: getting-started.md
   - 症状逆引き:
     - 06-trouble/index.md
+    - トラブル初動対応フロー: guidelines/trouble-first-response.md
     - トラブル対応の基本: 06-trouble/basics.md
     - 電源トラブル: 06-trouble/power.md
     - モータートラブル: 06-trouble/motor.md
@@ -171,7 +173,6 @@ nav:
     - グランドと接地: 03-keiso/grounding-gnd.md
     - 計装配線: 03-keiso/wiring.md
     - NPN/PNP選定: 03-keiso/npn-pnp.md
-    - 工事完了後の受入実務: 03-keiso/koji-kanryo.md
   - 設計・保全:
     - 設計:
       - 04-sekkei/index.md
@@ -202,13 +203,17 @@ nav:
     - 工事・検収:
       - 03-koji-kenshu/index.md
       - フロー全体図: 03-koji-kenshu/flow-overview.md
-  - 業務:
-    - 主任技術者業務:
-      - 09-hoantokei/index.md
-      - 法定業務一覧: 09-hoantokei/legal-duties.md
-      - 保安規程の管理: 09-hoantokei/hoan-kisoku.md
-      - 電力会社との窓口: 09-hoantokei/denryoku-toiawase.md
-      - 電気事故対応と報告: 09-hoantokei/jiko-taiou.md
+      - 工事完了後の受入実務: 03-keiso/koji-kanryo.md
+  - 現場手順:
+    - ガイドライン一覧: guidelines/index.md
+    - 計装ループチェック: guidelines/loop-check.md
+    - 保護リレー試験: guidelines/protective-relay-test.md
+    - 接地抵抗測定: guidelines/grounding-inspection.md
+    - 盤内配線作業要領: guidelines/panel-wiring.md
+    - ケーブルトレイ施工: guidelines/cable-tray.md
+    - 作業許可証(PTW): guidelines/work-permit.md
+    - 制御盤撤去工事ガイドライン: guidelines/seigyoban-tekkyo-guideline.md
+  - 安全・保安:
     - 安全管理:
       - 10-safety/index.md
       - 作業許可制度（PTW）: 10-safety/ptw.md
@@ -216,16 +221,13 @@ nav:
       - LOTO（ロックアウト）: 10-safety/lockout-tagout.md
       - リスクアセスメント: 10-safety/risk-assessment.md
       - よくあるミス・ヒヤリハット集: 10-safety/near-miss.md
-    - 業務マニュアル:
-      - ガイドライン一覧: guidelines/index.md
-      - 計装ループチェック: guidelines/loop-check.md
-      - 保護リレー試験: guidelines/protective-relay-test.md
-      - 接地抵抗測定: guidelines/grounding-inspection.md
-      - 盤内配線作業要領: guidelines/panel-wiring.md
-      - ケーブルトレイ施工: guidelines/cable-tray.md
-      - トラブル初動対応: guidelines/trouble-first-response.md
-      - 作業許可証(PTW): guidelines/work-permit.md
-      - 制御盤撤去工事ガイドライン: guidelines/seigyoban-tekkyo-guideline.md
+    - 主任技術者業務:
+      - 09-hoantokei/index.md
+      - 法定業務一覧: 09-hoantokei/legal-duties.md
+      - 保安規程の管理: 09-hoantokei/hoan-kisoku.md
+      - 電力会社との窓口: 09-hoantokei/denryoku-toiawase.md
+      - 電気事故対応と報告: 09-hoantokei/jiko-taiou.md
+  - 省エネ・AI:
     - 省エネ:
       - 08-energy/index.md
       - 省エネ法対応: 08-energy/energy-law.md
@@ -241,7 +243,6 @@ nav:
       - プロンプトの書き方: 11-genai/prompt-writing.md
       - 電気計装業務への応用: 11-genai/ei-applications.md
       - 注意事項・情報セキュリティ: 11-genai/security.md
-    - はじめての方へ: getting-started.md
   - リファレンス:
     - reference/index.md
     - 用語集: reference/glossary.md
