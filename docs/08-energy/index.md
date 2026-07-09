@@ -4,6 +4,9 @@ description: 省エネ法対応・デマンド管理・VVVF省エネ計算・力
 tags:
   - 省エネ
 last_verified: 2026-04-04
+audience:
+  - 電気担当
+  - 保全担当
 ---
 
 # 08 省エネ・エネルギー管理

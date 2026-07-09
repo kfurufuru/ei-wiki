@@ -1,6 +1,8 @@
 ---
 title: PLC/DCS トラブル
 description: 通信断・I/O 点異常・プログラム不動作・バッテリー交換・SIS との違い
+search:
+  boost: 2
 tags:
   - トラブル
   - DCS・PLC

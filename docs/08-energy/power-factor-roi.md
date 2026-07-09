@@ -5,6 +5,9 @@ tags:
   - 省エネ
   - ノイズ・EMC
 last_verified: 2026-07-09
+audience:
+  - 電気担当
+  - 保全担当
 ---
 
 # 力率改善ROI

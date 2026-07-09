@@ -4,6 +4,10 @@ description: エネルギー隔離によるLOTO手順・複数作業者管理・
 tags:
   - 安全
 last_verified: 2026-04-04
+audience:
+  - 電気担当
+  - 保全担当
+  - 製造担当
 ---
 
 # LOTO（ロックアウト / タグアウト）

@@ -1,6 +1,8 @@
 ---
 title: 計装信号トラブル
 description: 4-20mA断線・ドリフト・ノイズ・HART通信不良の診断と対処
+search:
+  boost: 2
 tags:
   - トラブル
   - 計装信号

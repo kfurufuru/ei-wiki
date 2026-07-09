@@ -6,6 +6,9 @@ tags:
   - DCS・PLC
   - 計装信号
 last_verified: 2026-05-20
+audience:
+  - 電気担当
+  - 計装担当
 ---
 
 # 計装

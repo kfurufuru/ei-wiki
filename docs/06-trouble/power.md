@@ -1,6 +1,8 @@
 ---
 title: 電源トラブル
 description: 全停電・部分停電・瞬停・遮断器トリップの原因切り分けと復電手順
+search:
+  boost: 2
 tags:
   - トラブル
   - UPS・電源

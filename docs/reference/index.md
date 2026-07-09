@@ -4,6 +4,10 @@ description: 用語・規格・計算ツールの速引き集
 tags:
   - 逆引き
 last_verified: 2026-05-19
+audience:
+  - 電気担当
+  - 保全担当
+  - 計装担当
 ---
 
 # リファレンス

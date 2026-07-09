@@ -5,6 +5,9 @@ tags:
   - 省エネ
   - DCS・PLC
 last_verified: 2026-04-04
+audience:
+  - 電気担当
+  - 保全担当
 ---
 
 # エネルギー監視
