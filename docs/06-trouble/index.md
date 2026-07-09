@@ -11,14 +11,14 @@ last_verified: 2026-05-20
 
 # 症状逆引きインデックス
 
-> :material-magnify: **症状・現象から記事を探す**。下の絞り込み入力にキーワード（例: トリップ）を入れるか、カテゴリチップで移動。
+> :material-magnify: **症状・現象から記事を探す**。まず下のカテゴリチップで該当分類へ移動（印刷・オフラインでも動作）。ブラウザ閲覧時はキーワード絞り込み入力（例: トリップ）も併用できる。
 > トラブル対応の基本手順は [トラブル対応の基本](basics.md) を先に確認すること。
 
 <nav class="ei-jump" aria-label="カテゴリへ移動" markdown>
 [電源・受変電](#power) [モーター・インバータ](#motor) [計装信号](#signal) [制御弁](#valve) [PLC/DCS](#plc-dcs) [接地・ノイズ](#noise) [保護装置](#protection)
 </nav>
 
-<input type="search" class="ei-tablefilter" placeholder="症状キーワードで絞り込む（例: トリップ / ノイズ / 振動）" aria-label="症状で絞り込む">
+<input type="search" class="ei-tablefilter" placeholder="症状キーワードで絞り込む（例: トリップ / ノイズ / 振動）" aria-label="症状で絞り込む" hidden>
 
 ---
 

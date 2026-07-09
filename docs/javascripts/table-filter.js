@@ -20,6 +20,9 @@
     var input = document.querySelector('.ei-tablefilter');
     if (!input || input.dataset.eiWired === '1') { return; }
     input.dataset.eiWired = '1';
+    // JS無効時は入力欄を隠しておき（HTMLに hidden 属性）、配線できた時のみ表示する。
+    // これで非JS/印刷/オフラインでは死んだ入力欄が出ず、アンカーチップが主導線になる。
+    input.hidden = false;
 
     var tables = Array.prototype.slice.call(
       document.querySelectorAll('.md-typeset table')
