@@ -27,6 +27,7 @@ last_verified: 2026-05-20
 | [計装空気](instrument-air.md) | 系統構成・品質3要素（露点・油分・粉塵）・空気源喪失時のフェール挙動 |
 | [PID制御](pid.md) | PID パラメータ整定・オートチューニング |
 | [DCS](dcs.md) | DCS 構成・タグ命名・設定変更手順 |
+| [機能安全（SIS/SIL）](sis-sil.md) | 安全計装システム・SIL定義・投票構成・プルーフテスト |
 | [調節計・記録計](controller.md) | 単ループ調節計の設定・配線 |
 | [防爆](explosion-proof.md) | 防爆構造の種類・エリア区分・認証 |
 | [グランドと接地](grounding-gnd.md) | GNDとアースの違い・グランド/接地の種類（FG/SG/AGND/DGND/PGND） |

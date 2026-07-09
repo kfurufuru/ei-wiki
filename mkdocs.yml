@@ -158,7 +158,9 @@ nav:
     - モータートラブル: 06-trouble/motor.md
     - インバータトラブル: 06-trouble/inverter.md
     - 計装信号トラブル: 06-trouble/signal.md
+    - 分析計トラブル: 06-trouble/analyzer.md
     - 制御弁トラブル: 06-trouble/valve.md
+    - 計装空気トラブル: 06-trouble/instrument-air.md
     - PLC/DCSトラブル: 06-trouble/plc-dcs.md
     - 接地・ノイズ: 06-trouble/grounding-noise.md
     - 保護装置誤動作: 06-trouble/protection.md
@@ -201,6 +203,7 @@ nav:
     - 計装空気: 03-keiso/instrument-air.md
     - PID制御: 03-keiso/pid.md
     - DCS: 03-keiso/dcs.md
+    - 機能安全（SIS/SIL）: 03-keiso/sis-sil.md
     - 調節計・記録計: 03-keiso/controller.md
     - 防爆: 03-keiso/explosion-proof.md
     - グランドと接地: 03-keiso/grounding-gnd.md
@@ -282,4 +285,5 @@ nav:
     - 用語集: reference/glossary.md
     - 規格一覧: reference/standards-list.md
     - 計算ツール集: reference/calculators.md
+    - ケーブル許容電流表: reference/ampacity.md
     - 記事鮮度監査: reference/audit-status.md
