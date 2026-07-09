@@ -3,7 +3,6 @@ title: "照明・コンセント"
 description: "防爆照明・非常照明・LED化注意点・コンセント容量選定"
 tags:
   - 低圧
-  - 照明
   - 防爆
 audience:
   - 電気担当

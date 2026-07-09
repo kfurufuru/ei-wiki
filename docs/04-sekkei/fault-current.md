@@ -3,11 +3,11 @@ title: "短絡電流計算"
 description: "%インピーダンス法・系統Zの取得・遮断容量確認"
 tags:
   - 設計
-  - 短絡電流
   - 保護協調
+  - 計算
 audience:
   - 電気担当
-last_verified: 2026-04-16
+last_verified: 2026-07-09
 status: published
 ---
 
@@ -42,10 +42,14 @@ status: published
 
 系統（電力会社）%Z（問い合わせ値）→ 基準容量で統一
 
-ケーブル %Z:
-  %R = R × Ib² / Pb × 100  [%]
-  %X = X × Ib² / Pb × 100  [%]
-  （R, X は Ω 値）
+ケーブル %Z（Z = R + jX [Ω]、Pb: 基準容量 [VA]、Vb: 基準線間電圧 [V]）:
+  %Z = Z × Pb / Vb² × 100  [%]
+  %R = R × Pb / Vb² × 100  [%]
+  %X = X × Pb / Vb² × 100  [%]
+
+  導出: %Z = √3 × Ib × Z / Vb × 100 に Ib = Pb / (√3 × Vb) を代入
+        → %Z = Z × Pb / Vb² × 100
+  ※ Pb は VA、Vb は V で計算する（kVA・kV を使う場合は単位換算に注意）
 ```
 
 ### 三相短絡電流計算

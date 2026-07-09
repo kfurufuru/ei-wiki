@@ -4,7 +4,6 @@ description: "漏洩電流の常時監視・Io/Ior方式の違い・化学プラ
 tags:
   - 低圧
   - 絶縁
-  - 保全
 audience:
   - 電気担当
   - 保全担当

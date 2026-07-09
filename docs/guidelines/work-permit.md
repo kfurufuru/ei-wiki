@@ -1,7 +1,9 @@
 ---
 title: 作業許可証（PTW）発行手順
 description: 作業許可証の申請・発行・完了の手続き手順
-tags: [業務マニュアル]
+tags:
+  - 安全
+  - チェックリスト
 audience: [電気担当, 保全担当, 製造担当]
 last_verified: 2026-05-20
 ---

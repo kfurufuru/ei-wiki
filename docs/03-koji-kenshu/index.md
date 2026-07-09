@@ -1,7 +1,9 @@
 ---
 title: 工事・検収・試運転フロー
 description: 工事企画から竣工・検収まで — 発注者側の実務チェックリスト
-tags: [工事管理, 検収, 試運転, 工事フロー, 実務]
+tags:
+  - 工事管理
+  - 手順書
 audience: [電気担当, 計装担当]
 last_verified: 2026-04-15
 status: published

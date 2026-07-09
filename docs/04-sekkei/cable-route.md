@@ -4,7 +4,6 @@ description: "ケーブルラック選定・強弱電分離・管路配線・防
 tags:
   - 設計
   - ケーブル
-  - 電路
 audience:
   - 電気担当
 last_verified: 2026-04-16

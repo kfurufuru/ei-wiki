@@ -1,8 +1,13 @@
 ---
 title: 生成AIの基本（初心者向け）
 description: ChatGPT・Copilotとは何か。できること・できないこと・ハルシネーション。AI未経験者向けの入門ガイド。
-tags: [生成AI, 入門, ChatGPT, Copilot, ハルシネーション]
-last_verified: 2026-04-04
+tags:
+  - 生成AI
+  - 入門
+last_verified: 2026-07-09
+audience:
+  - 電気担当
+  - 計装担当
 ---
 
 # 生成AIの基本（初心者向け）
@@ -23,7 +28,7 @@ last_verified: 2026-04-04
 
 | ツール | 提供元 | 使える場面 | 特徴 |
 |--------|--------|-----------|------|
-| ChatGPT | OpenAI（米国） | ブラウザ・スマホアプリ | 最も普及。日本語対応。無料版（GPT-4o mini）あり |
+| ChatGPT | OpenAI（米国） | ブラウザ・スマホアプリ | 最も普及。日本語対応。無料版モデルあり |
 | Claude | Anthropic（米国） | ブラウザ（claude.ai）・API | 長文・文書作成が得意。指示への忠実度が高い |
 | M365 Copilot | Microsoft | Teams・Outlook・Excel・Word | 社内ツールと連携。会社契約で使用可能 |
 | Copilot（Bing） | Microsoft | Microsoft Edgeブラウザ | 無料。Web検索と連携して最新情報も参照できる |
@@ -85,8 +90,8 @@ last_verified: 2026-04-04
 
 1. `chat.openai.com` にアクセス
 2. 「Sign up」からアカウント作成（メールアドレスまたはGoogleアカウント）
-3. 無料プランで GPT-4o mini が使える
-4. 有料プラン（ChatGPT Plus, 月額20ドル）でGPT-4oが使用可能
+3. 無料プランでも無料版モデルが使える
+4. 有料プラン（ChatGPT Plus, 月額20ドル）で有料版の高性能モデルが使用可能
 
 ### M365 Copilotの場合
 

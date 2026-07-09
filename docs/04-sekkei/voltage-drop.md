@@ -3,8 +3,8 @@ title: "電圧降下計算"
 description: "三相電圧降下計算式・許容値・始動時確認・太線化判断"
 tags:
   - 設計
-  - 電圧降下
   - ケーブル
+  - 計算
 audience:
   - 電気担当
 last_verified: 2026-04-16

@@ -5,6 +5,13 @@ last_verified: 2026-05-20
 hide:
   - navigation
   - toc
+tags:
+  - 入門
+  - 逆引き
+audience:
+  - 電気担当
+  - 保全担当
+  - 計装担当
 ---
 
 # 電気計装 実務Wiki

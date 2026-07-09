@@ -2,9 +2,8 @@
 title: "計算ツール集"
 description: "電圧降下・短絡電流・Cv値・変圧器容量・4-20mA負荷抵抗・力率改善計算"
 tags:
-  - リファレンス
   - 計算
-  - ツール
+  - 逆引き
 audience:
   - 電気担当
 last_verified: 2026-04-04

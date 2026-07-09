@@ -2,8 +2,8 @@
 title: "用語集"
 description: "電気系・計装系・防爆用語の日英略語対応表"
 tags:
-  - リファレンス
-  - 用語集
+  - 逆引き
+  - 入門
 audience:
   - 電気担当
 last_verified: 2026-06-10

@@ -2,8 +2,9 @@
 title: "[作業名] — 手順"
 description: "[作業の1行説明]"
 tags:
-  - 手順
-  - [カテゴリ]
+  - 計装
+  - 計装信号
+  - 手順書
 audience:
   - 電気担当
 last_verified: YYYY-MM-DD

@@ -3,8 +3,11 @@ title: "記事鮮度監査ダッシュボード"
 description: "last_verified による記事鮮度の3バケット運用と CI 連動の仕組み"
 last_verified: 2026-05-19
 tags:
-  - リファレンス
-  - 監査
+  - 逆引き
+audience:
+  - 電気担当
+  - 保全担当
+  - 計装担当
 ---
 
 # 記事鮮度監査ダッシュボード

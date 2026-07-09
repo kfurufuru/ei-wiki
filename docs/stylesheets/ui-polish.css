@@ -400,3 +400,26 @@
 .md-typeset h1 + blockquote > p:last-child {
   margin-bottom: 0;
 }
+
+/* ============================================================
+   Pass 5 — 症状逆引きのJS非依存化（印刷/オフライン対応・K5）
+   JS由来のUI（絞り込み入力・ヒット0案内）は印刷時に隠し、
+   フィルタ適用中でも全行を出力。オフライン/印刷では素のリンク
+   .ei-jump（アンカーチップ）が主導線として機能する。
+   ============================================================ */
+@media print {
+  .md-typeset .ei-tablefilter,
+  .md-typeset .ei-filter-empty,
+  .md-typeset .ei-jump {
+    display: none !important;
+  }
+  .md-typeset table tr {
+    display: table-row !important;
+  }
+  .md-typeset table,
+  .md-typeset .md-typeset__scrollwrap,
+  .md-typeset h2,
+  .md-typeset h3 {
+    display: revert !important;
+  }
+}

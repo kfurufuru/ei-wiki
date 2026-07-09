@@ -3,8 +3,7 @@ title: "操作盤・表示灯"
 description: "操作ボタン配色・表示灯色規格・HMI設計・IP等級・防爆"
 tags:
   - 低圧
-  - 操作盤
-  - HMI
+  - DCS・PLC
 audience:
   - 電気担当
 last_verified: 2026-04-04

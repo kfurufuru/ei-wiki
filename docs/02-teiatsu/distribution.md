@@ -3,7 +3,7 @@ title: "低圧配電"
 description: "分電盤構成・MCCB/ELCB選定・幹線サイズ計算"
 tags:
   - 低圧
-  - 配電
+  - 変圧器・受変電
 audience:
   - 電気担当
 last_verified: 2026-06-10

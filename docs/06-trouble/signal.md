@@ -1,7 +1,12 @@
 ---
 title: 計装信号トラブル
 description: 4-20mA断線・ドリフト・ノイズ・HART通信不良の診断と対処
-tags: [計装, 4-20mA, HART, ドリフト, ノイズ, SIS, トラブル]
+search:
+  boost: 2
+tags:
+  - トラブル
+  - 計装信号
+  - ノイズ・EMC
 audience: [電気担当, 保全担当]
 last_verified: 2026-04-04
 ---

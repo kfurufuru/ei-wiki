@@ -3,7 +3,6 @@ title: "保全体系"
 description: "TBM/CBM/予知保全/事後保全の比較・設備重要度・MTBF活用・ターンアラウンド"
 tags:
   - 保全
-  - 保全体系
 audience:
   - 電気担当
 last_verified: 2026-04-16

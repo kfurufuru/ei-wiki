@@ -3,8 +3,7 @@ title: "停電作業"
 description: "停電作業手順・LOTO・検電・復電前チェック・高圧ガス保安法の届出"
 tags:
   - 保全
-  - 停電作業
-  - 安全
+  - 手順書
 audience:
   - 電気担当
 last_verified: 2026-04-16

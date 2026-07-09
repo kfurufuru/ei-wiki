@@ -54,16 +54,45 @@ window.switchAmpTable = function (type) {
 
   function g(id) { return document.getElementById(id); }
 
+  // 入力エラーを結果欄に表示（サイレント失敗を防ぐ）
+  function showError(msg) {
+    var wrap       = g('cc_result');
+    var resultMain = g('cc_result_main');
+    var resultSize = g('cc_result_size');
+    var resultSub  = g('cc_result_sub');
+    var tbody      = g('cc_result_tbody');
+    if (tbody) tbody.innerHTML = '';
+    if (resultMain) {
+      resultMain.style.borderLeftColor = '#e53935';
+      resultMain.style.background       = '#ffebee';
+    }
+    if (resultSize) {
+      resultSize.style.color   = '#b71c1c';
+      resultSize.style.fontSize = '1rem';
+      resultSize.textContent   = '入力エラー';
+    }
+    if (resultSub) resultSub.textContent = msg;
+    if (wrap) wrap.style.display = 'block';
+  }
+
   window.calcCable = function () {
     var I      = parseFloat(g('cc_current').value);
-    var L      = parseFloat(g('cc_length').value) / 1000;
+    var Lraw   = parseFloat(g('cc_length').value);
+    var L      = Lraw / 1000;
     var vSel   = g('cc_voltage').value;
     var inst   = g('cc_install').value;
     var pf     = parseFloat(g('cc_pf').value);
     var vdLim  = parseFloat(g('cc_vd_limit').value);
     var ctype  = g('cc_ctype').value;
 
-    if (!I || !L || !pf || !vdLim) return;
+    // 入力バリデーション（空・0・不正値は無反応にせずメッセージ表示）
+    if (isNaN(I) || I <= 0)       { showError('負荷電流を 1 以上の数値で入力してください。'); return; }
+    if (isNaN(Lraw) || Lraw <= 0) { showError('ケーブル長を 1 以上の数値で入力してください。'); return; }
+    if (isNaN(pf) || pf <= 0 || pf > 1) { showError('負荷力率 cosθ は 0 超〜1.0 の範囲で入力してください。'); return; }
+    if (isNaN(vdLim) || vdLim <= 0) { showError('許容電圧降下率を 1 以上の数値で入力してください。'); return; }
+
+    // 結果欄の枠色を通常に戻す（前回エラー表示のリセット）
+    g('cc_result_size').style.fontSize = '1.4rem';
 
     var CABLE_DATA = CABLE_DB[ctype];
     var instIdx    = { conduit: 0, air: 1, rack: 2 }[inst];
@@ -129,6 +158,20 @@ window.switchAmpTable = function (type) {
       resultSize.textContent = '最大サイズ超 — 要別途検討';
       resultSub.textContent  = '表内サイズで条件を満たせません。並列敷設または電圧昇圧を検討してください。';
     }
+
+    // 補正係数の警告（許容電流は基準値。温度補正・多条低減は未考慮）
+    var warn = g('cc_result_warn');
+    if (!warn) {
+      warn = document.createElement('div');
+      warn.id = 'cc_result_warn';
+      warn.style.cssText = 'border-left:4px solid #fb8c00;background:#fff8e1;border-radius:4px;padding:0.6rem 0.9rem;margin-top:0.8rem;font-size:0.8rem;line-height:1.5';
+      g('cc_result').appendChild(warn);
+    }
+    warn.innerHTML =
+      '⚠ このツールの許容電流は <b>40℃ 基準・単独条布設の基準値</b>です。' +
+      '周囲温度補正・多条布設低減は<b>含まれていません</b>。' +
+      '実際の許容電流は「実許容電流 = 基準許容電流 × 周囲温度補正係数 × 多条布設低減係数」で必ず補正してください。' +
+      '係数はリファレンス「ケーブル許容電流と補正係数」を参照。';
 
     g('cc_result').style.display = 'block';
   };

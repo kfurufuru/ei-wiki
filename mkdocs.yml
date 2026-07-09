@@ -63,7 +63,40 @@ exclude_docs: |
 plugins:
   - search:
       lang: ja
-  - tags
+  - tags:
+      # 統制語彙30語のみ許可（Phase 2-K4）。未登録タグはビルドエラー＝新語追加ガード。
+      # 一覧は reference/tags.md（本文の material/tags ディレクティブで全タグを列挙）。
+      tags_allowed:
+        - 高圧
+        - 低圧
+        - 計装
+        - 設計
+        - 保全
+        - トラブル
+        - 工事管理
+        - 安全
+        - 法規・保安
+        - 省エネ
+        - 生成AI
+        - 接地
+        - 絶縁
+        - 保護継電器
+        - 保護協調
+        - モーター
+        - インバータ
+        - ケーブル
+        - 変圧器・受変電
+        - UPS・電源
+        - 制御弁
+        - DCS・PLC
+        - 計装信号
+        - 防爆
+        - ノイズ・EMC
+        - 手順書
+        - チェックリスト
+        - 計算
+        - 逆引き
+        - 入門
 
 markdown_extensions:
   - admonition
@@ -116,14 +149,18 @@ extra:
 
 nav:
   - Home: index.md
+  - はじめに: getting-started.md
   - 症状逆引き:
     - 06-trouble/index.md
+    - トラブル初動対応フロー: guidelines/trouble-first-response.md
     - トラブル対応の基本: 06-trouble/basics.md
     - 電源トラブル: 06-trouble/power.md
     - モータートラブル: 06-trouble/motor.md
     - インバータトラブル: 06-trouble/inverter.md
     - 計装信号トラブル: 06-trouble/signal.md
+    - 分析計トラブル: 06-trouble/analyzer.md
     - 制御弁トラブル: 06-trouble/valve.md
+    - 計装空気トラブル: 06-trouble/instrument-air.md
     - PLC/DCSトラブル: 06-trouble/plc-dcs.md
     - 接地・ノイズ: 06-trouble/grounding-noise.md
     - 保護装置誤動作: 06-trouble/protection.md
@@ -166,12 +203,12 @@ nav:
     - 計装空気: 03-keiso/instrument-air.md
     - PID制御: 03-keiso/pid.md
     - DCS: 03-keiso/dcs.md
+    - 機能安全（SIS/SIL）: 03-keiso/sis-sil.md
     - 調節計・記録計: 03-keiso/controller.md
     - 防爆: 03-keiso/explosion-proof.md
     - グランドと接地: 03-keiso/grounding-gnd.md
     - 計装配線: 03-keiso/wiring.md
     - NPN/PNP選定: 03-keiso/npn-pnp.md
-    - 工事完了後の受入実務: 03-keiso/koji-kanryo.md
   - 設計・保全:
     - 設計:
       - 04-sekkei/index.md
@@ -202,13 +239,17 @@ nav:
     - 工事・検収:
       - 03-koji-kenshu/index.md
       - フロー全体図: 03-koji-kenshu/flow-overview.md
-  - 業務:
-    - 主任技術者業務:
-      - 09-hoantokei/index.md
-      - 法定業務一覧: 09-hoantokei/legal-duties.md
-      - 保安規程の管理: 09-hoantokei/hoan-kisoku.md
-      - 電力会社との窓口: 09-hoantokei/denryoku-toiawase.md
-      - 電気事故対応と報告: 09-hoantokei/jiko-taiou.md
+      - 工事完了後の受入実務: 03-keiso/koji-kanryo.md
+  - 現場手順:
+    - ガイドライン一覧: guidelines/index.md
+    - 計装ループチェック: guidelines/loop-check.md
+    - 保護リレー試験: guidelines/protective-relay-test.md
+    - 接地抵抗測定: guidelines/grounding-inspection.md
+    - 盤内配線作業要領: guidelines/panel-wiring.md
+    - ケーブルトレイ施工: guidelines/cable-tray.md
+    - 作業許可証(PTW): guidelines/work-permit.md
+    - 制御盤撤去工事ガイドライン: guidelines/seigyoban-tekkyo-guideline.md
+  - 安全・保安:
     - 安全管理:
       - 10-safety/index.md
       - 作業許可制度（PTW）: 10-safety/ptw.md
@@ -216,16 +257,13 @@ nav:
       - LOTO（ロックアウト）: 10-safety/lockout-tagout.md
       - リスクアセスメント: 10-safety/risk-assessment.md
       - よくあるミス・ヒヤリハット集: 10-safety/near-miss.md
-    - 業務マニュアル:
-      - ガイドライン一覧: guidelines/index.md
-      - 計装ループチェック: guidelines/loop-check.md
-      - 保護リレー試験: guidelines/protective-relay-test.md
-      - 接地抵抗測定: guidelines/grounding-inspection.md
-      - 盤内配線作業要領: guidelines/panel-wiring.md
-      - ケーブルトレイ施工: guidelines/cable-tray.md
-      - トラブル初動対応: guidelines/trouble-first-response.md
-      - 作業許可証(PTW): guidelines/work-permit.md
-      - 制御盤撤去工事ガイドライン: guidelines/seigyoban-tekkyo-guideline.md
+    - 主任技術者業務:
+      - 09-hoantokei/index.md
+      - 法定業務一覧: 09-hoantokei/legal-duties.md
+      - 保安規程の管理: 09-hoantokei/hoan-kisoku.md
+      - 電力会社との窓口: 09-hoantokei/denryoku-toiawase.md
+      - 電気事故対応と報告: 09-hoantokei/jiko-taiou.md
+  - 省エネ・AI:
     - 省エネ:
       - 08-energy/index.md
       - 省エネ法対応: 08-energy/energy-law.md
@@ -241,10 +279,11 @@ nav:
       - プロンプトの書き方: 11-genai/prompt-writing.md
       - 電気計装業務への応用: 11-genai/ei-applications.md
       - 注意事項・情報セキュリティ: 11-genai/security.md
-    - はじめての方へ: getting-started.md
   - リファレンス:
     - reference/index.md
+    - タグ一覧: reference/tags.md
     - 用語集: reference/glossary.md
     - 規格一覧: reference/standards-list.md
     - 計算ツール集: reference/calculators.md
+    - ケーブル許容電流表: reference/ampacity.md
     - 記事鮮度監査: reference/audit-status.md

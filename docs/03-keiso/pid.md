@@ -3,7 +3,7 @@ title: "PID制御"
 description: "PIDパラメータ整定・オートチューニング"
 tags:
   - 計装
-  - PID制御
+  - DCS・PLC
 audience:
   - 電気担当
 last_verified: 2026-04-04

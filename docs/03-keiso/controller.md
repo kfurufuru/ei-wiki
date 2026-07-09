@@ -3,7 +3,7 @@ title: "調節計・記録計"
 description: "単ループ調節計の設定・配線"
 tags:
   - 計装
-  - 調節計
+  - 計装信号
 audience:
   - 電気担当
 last_verified: 2026-04-04

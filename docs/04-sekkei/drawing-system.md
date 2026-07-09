@@ -3,8 +3,6 @@ title: "図面体系"
 description: "電気・計装図面の種類と用途・図面管理・変更管理"
 tags:
   - 設計
-  - 図面
-  - 変更管理
 audience:
   - 電気担当
 last_verified: 2026-04-04

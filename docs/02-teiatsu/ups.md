@@ -3,8 +3,7 @@ title: "UPS・非常電源"
 description: "UPS種類比較・バッテリー容量計算・定期点検・非常用発電機との連携"
 tags:
   - 低圧
-  - UPS
-  - 非常電源
+  - UPS・電源
 audience:
   - 電気担当
 last_verified: 2026-04-04

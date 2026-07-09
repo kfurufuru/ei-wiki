@@ -3,7 +3,6 @@ title: "盤設計"
 description: "盤サイズ選定・端子台配列・配線ダクト充填率・温度上昇計算・防塵防水等級"
 tags:
   - 設計
-  - 制御盤
 audience:
   - 電気担当
 last_verified: 2026-04-16
