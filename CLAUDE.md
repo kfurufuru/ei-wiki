@@ -48,7 +48,7 @@ ei-wiki/
 ├── .github/workflows/deploy.yml
 └── .claude/
     ├── commands/           # add-wiki-page, add-calculator, deploy-wiki
-    └── rules/              # japanese-content, mkdocs-rules
+    └── rules/              # feedback-rules（確定ルール集。旧3ファイルを2026-07-09統合）
 ```
 
 ## よく使うコマンド
