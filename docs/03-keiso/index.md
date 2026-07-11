@@ -5,7 +5,7 @@ tags:
   - 計装
   - DCS・PLC
   - 計装信号
-last_verified: 2026-05-20
+last_verified: 2026-07-11
 audience:
   - 電気担当
   - 計装担当
@@ -31,6 +31,7 @@ audience:
 | [PID制御](pid.md) | PID パラメータ整定・オートチューニング |
 | [DCS](dcs.md) | DCS 構成・タグ命名・設定変更手順 |
 | [機能安全（SIS/SIL）](sis-sil.md) | 安全計装システム・SIL定義・投票構成・プルーフテスト |
+| [アラーム管理](alarm-management.md) | 規格体系（EEMUA 191/ISA-18.2）・ベンチマーク指標・合理化・不良アラーム対策 |
 | [調節計・記録計](controller.md) | 単ループ調節計の設定・配線 |
 | [防爆](explosion-proof.md) | 防爆構造の種類・エリア区分・認証 |
 | [グランドと接地](grounding-gnd.md) | GNDとアースの違い・グランド/接地の種類（FG/SG/AGND/DGND/PGND） |
