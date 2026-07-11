@@ -3,7 +3,7 @@ title: 電気主任技術者業務
 description: 電気事業法に基づく自家用電気工作物の保安監督業務・法定点検・事故報告・電力会社窓口業務の実務リファレンス
 tags:
   - 法規・保安
-last_verified: 2026-04-04
+last_verified: 2026-07-11
 audience:
   - 電気主任
   - 電気担当
@@ -18,12 +18,14 @@ audience:
 | 記事 | ファイル | 対象業務 |
 |------|---------|---------|
 | 法定業務一覧 | [legal-duties.md](legal-duties.md) | 電気事業法の義務・法定点検・事故報告 |
+| 工事の法令手続き | [koji-tetsuzuki.md](koji-tetsuzuki.md) | 工事フェーズ×法令の時系列マップ（逆引きハブ） |
 | 保安規程の管理 | [hoan-kisoku.md](hoan-kisoku.md) | 保安規程の作成・変更届出・実態整合 |
 | 電力会社との窓口 | [denryoku-toiawase.md](denryoku-toiawase.md) | 設備変更連絡・停電申請・受電点確認 |
 | 電気事故対応と報告 | [jiko-taiou.md](jiko-taiou.md) | 事故定義・速報/確報・社内報告フロー |
 
 ## このセクションの使い方
 
+- **工事をやることになった** → [koji-tetsuzuki.md](koji-tetsuzuki.md) で工事フェーズ別の法令手続きを俯瞰
 - **何を届け出ればいいか分からない** → [legal-duties.md](legal-duties.md) で工事計画届出の要否を確認
 - **保安規程を変更したい** → [hoan-kisoku.md](hoan-kisoku.md) の変更届出区分を確認
 - **電力会社に設備変更を連絡する必要があるか** → [denryoku-toiawase.md](denryoku-toiawase.md) を参照

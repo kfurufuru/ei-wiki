@@ -5,7 +5,7 @@ tags:
   - 設計
 audience:
   - 電気担当
-last_verified: 2026-04-16
+last_verified: 2026-07-11
 status: published
 ---
 
@@ -108,5 +108,6 @@ flowchart TD
 - [規格・法規](standards.md) — 届出に必要な法規制（高圧ガス保安法・電気事業法）の整理
 - [盤設計](panel-design.md) — 基本設計フェーズで必要な盤設計の考え方
 - [改造・更新設計の注意点](renovation-design.md) — 新設ではなく改造・更新で進める場合の注意事項
+- [工事の法令手続きガイド](../09-hoantokei/koji-tetsuzuki.md) — 工事フェーズ×法令の時系列マップ（届出・検査の逆引き）
 - [保全体系](../05-hozen/maintenance-system.md) — 竣工引継後の保全計画策定に必要な考え方
 - [停電作業](../05-hozen/outage-work.md) — 施工・試運転フェーズでの停電手順

@@ -6,7 +6,7 @@ tags:
 audience:
   - 電気担当
   - 設計担当
-last_verified: 2026-07-09
+last_verified: 2026-07-11
 status: published
 ---
 
@@ -223,3 +223,4 @@ status: published
 - [規格・法規](standards.md) — 変更工事に関わる届出義務（電気事業法・高圧ガス保安法）
 - [保全体系](../05-hozen/maintenance-system.md) — 改造後の保全計画見直しと重要度再評価
 - [他部門調整ノウハウ](../05-hozen/coordination.md) — MOC 申請・製造課への停電調整の進め方
+- [工事の法令手続きガイド](../09-hoantokei/koji-tetsuzuki.md) — 工事フェーズ×法令の時系列マップ（届出・検査の逆引き）

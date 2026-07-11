@@ -6,7 +6,7 @@ tags:
   - 逆引き
 audience:
   - 電気担当
-last_verified: 2026-07-09
+last_verified: 2026-07-11
 status: published
 ---
 
@@ -111,4 +111,5 @@ status: published
 - [電圧降下計算](voltage-drop.md) — 内線規程 JEAC8001 に基づく電圧降下許容値
 - [改造・更新設計の注意点](renovation-design.md) — 変更工事の届出義務と MOC プロセス
 - [定期点検](../05-hozen/periodic-inspection.md) — 電気事業法・高圧ガス保安法の自主検査記録要件
+- [工事の法令手続きガイド](../09-hoantokei/koji-tetsuzuki.md) — 工事フェーズ×法令の時系列マップ（届出・検査の逆引き）
 - [停電作業](../05-hozen/outage-work.md) — 労働安全衛生法に基づく停電作業の安全基準
