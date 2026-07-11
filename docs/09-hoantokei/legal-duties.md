@@ -3,7 +3,7 @@ title: 法定業務一覧
 description: 電気事業法に基づく電気主任技術者の法定義務・月次/年次点検・電気事故報告・工事計画届出の要否
 tags:
   - 法規・保安
-last_verified: 2026-07-09
+last_verified: 2026-07-11
 audience:
   - 電気主任
   - 電気担当
@@ -155,6 +155,7 @@ audience:
 
 ## 関連記事
 
+- [koji-tetsuzuki.md](koji-tetsuzuki.md) — 電気計装工事の法令手続きガイド（工事フェーズ×法令の逆引きハブ）
 - [hoan-kisoku.md](hoan-kisoku.md) — 保安規程の管理
 - [denryoku-toiawase.md](denryoku-toiawase.md) — 電力会社との手続き
 - [jiko-taiou.md](jiko-taiou.md) — 電気事故の報告手順

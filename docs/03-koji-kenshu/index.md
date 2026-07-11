@@ -5,7 +5,7 @@ tags:
   - 工事管理
   - 手順書
 audience: [電気担当, 計装担当]
-last_verified: 2026-04-15
+last_verified: 2026-07-11
 status: published
 ---
 
@@ -58,6 +58,7 @@ status: published
 | 記事 | 概要 |
 |------|------|
 | [工事フロー全体図](flow-overview.md) | 企画〜検収〜引継ぎの 6段階フロー（Mermaid図版） |
+| [工事の法令手続きガイド](../09-hoantokei/koji-tetsuzuki.md) | 工事フェーズ×法令（電気事業法・高圧ガス・消防・労安）の時系列マップ |
 
 ---
 

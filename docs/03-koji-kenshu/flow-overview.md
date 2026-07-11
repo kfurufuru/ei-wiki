@@ -4,7 +4,7 @@ description: 工事企画から検収・引継ぎまでの 6段階フロー（Me
 tags:
   - 工事管理
 audience: [電気担当, 計装担当]
-last_verified: 2026-07-09
+last_verified: 2026-07-11
 status: published
 ---
 
@@ -135,4 +135,5 @@ graph TD
 - [工事・検収・試運転フロー（ハブページ）](index.md)
 - [工事完了後の受入実務](../03-keiso/koji-kanryo.md)
 - [設備投資フロー](../04-sekkei/investment-flow.md)
+- [工事の法令手続きガイド](../09-hoantokei/koji-tetsuzuki.md) — 工事フェーズ×法令の時系列マップ（逆引き）
 - [計装工事の施工・試運転](../03-keiso/index.md)

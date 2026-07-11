@@ -27,8 +27,13 @@ jobs:
           python-version: '3.x'
       - run: pip install -r requirements.txt
       - run: mkdocs build --strict
-      # deploy ゲート: 検出器の生存証明（--self-test）→ site/ 漏えい検査。
+      # deploy ゲート: 検出器の生存証明（--self-test）→ 本走査。
       # どちらか失敗で build job が落ち、deploy job まで到達しない（fail-closed）
+      # 数値矛盾lint: main直push（PRを経ないマージ・hotfix・revert）でも
+      # pr-check.yml と同じ検査を deploy 経路でも通し、公開前に必ず走らせる。
+      - run: python scripts/check_content_rules.py --self-test
+      - run: python scripts/check_content_rules.py
+      # 漏えい検査（site/ 走査。build 済みの site を対象）
       - run: python scripts/check_public_leak.py --self-test
       - run: python scripts/check_public_leak.py
       - uses: actions/upload-pages-artifact@v3
