@@ -5,7 +5,7 @@ tags:
   - 逆引き
 audience:
   - 電気担当
-last_verified: 2026-04-04
+last_verified: 2026-07-11
 status: active
 ---
 
@@ -64,7 +64,7 @@ status: active
 |---------|---------|---------|-------|
 | ISA-5.1 | Instrumentation Symbols and Identification | P&ID の計装記号 | ISA（有償） |
 | ISA-5.4 | Instrument Loop Diagrams | ループ図の作成標準 | ISA（有償） |
-| ISA-18.2 | Management of Alarm Systems | アラーム管理 | ISA（有償） |
+| ISA-18.2 | Management of Alarm Systems | アラーム管理（実務は [アラーム管理](../03-keiso/alarm-management.md)） | ISA（有償） |
 | ISA-88 | Batch Control | バッチプロセス制御 | ISA（有償） |
 | NAMUR NE 43 | Standardization of Signal Level | 4-20mA の障害検出信号（3.6/21mA） | NAMUR（無料） |
 | NAMUR NE 107 | Self-monitoring and Diagnosis | HART 機器の診断情報活用 | NAMUR（無料） |

@@ -6,7 +6,7 @@ tags:
   - 保護継電器
   - 変圧器・受変電
 audience: [電気担当, 保全担当]
-last_verified: 2026-04-16
+last_verified: 2026-07-11
 status: published
 ---
 
@@ -26,5 +26,6 @@ status: published
 | [高圧ケーブル](hv-cable.md) | CVケーブル仕様・敷設・接続 |
 | [高圧モーター](hv-motor.md) | 高圧誘導電動機の仕様・絶縁管理 |
 | [力率改善](power-factor.md) | 進相コンデンサの選定・設置 |
+| [高調波対策](harmonics.md) | 発生源・障害・抑制ガイドライン・流出電流計算 |
 | [接地（高圧）](grounding-hv.md) | 高圧系統の接地方式・施工 |
 | [耐圧試験・絶縁診断](insulation-test.md) | AC耐圧・絶縁抵抗・部分放電試験 |
