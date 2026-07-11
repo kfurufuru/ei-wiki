@@ -210,6 +210,7 @@ nav:
     - 防爆: 03-keiso/explosion-proof.md
     - グランドと接地: 03-keiso/grounding-gnd.md
     - 計装配線: 03-keiso/wiring.md
+    - 雷・サージ保護: 03-keiso/lightning-surge.md
     - NPN/PNP選定: 03-keiso/npn-pnp.md
   - 設計・保全:
     - 設計:
