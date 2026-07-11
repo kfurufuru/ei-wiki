@@ -103,8 +103,10 @@ last_verified: 2026-01-15
 ### 記事メタ・数値の運用ルール（Phase 4 清算で確立）
 - **last_verified運用**: 実際に内容を検証・修正したページのみ当日日付に更新する。日付の機械的な一括書き換えは禁止（鮮度監査の信頼性のため）
 - **数値の正典（SSOT）**: 接地抵抗・絶縁判定・メガー電圧・耐圧試験電圧等の重要数値は正典ページを唯一の情報源とし、他ページは参照する。過去に修正した誤り値は `scripts/check_content_rules.py` の数値矛盾lintがCIで再発を防ぐ
-- **lint-ok運用**: 教育的に誤り値へ言及する正当な行のみ `<!-- lint-ok: <ID> 理由 -->` で免除する。安易な付与は禁止
+- **lint-ok運用**: 教育的に誤り値へ言及する正当な行のみ `<!-- lint-ok: <ID> 理由 -->` で免除する。安易な付与は禁止。四半期ごと（または正典値変更時）に既存のlint-ok行を棚卸しし、免除理由が今も正当かを確認する
 - **frontmatter必須5キー**（title/description/tags/audience/last_verified）と **06-trouble の search.boost≥2** はCIで必須
+- **lintは2経路で走る**: `pr-check.yml`（PR時）と `deploy.yml`（main push時）の両方で `check_content_rules.py --self-test`→本走査を実行する。PRを経ないmain直push・hotfix・revertでも公開前に必ず検査される（fail-closed）
+- **lintを育てる（重要）**: 新たに誤り値を発見・修正したら、その場で `scripts/check_content_rules.py` の `FORBIDDEN` に禁止パターンを1件追加する（`(id, matcher, 説明, 検出必須sample)` の4つ組。sample未定義は不可）。修正しただけでlintに登録しないと同じ誤りが将来再発する。追加後は `--self-test` が緑になることを確認。ブラックリスト方式のため**既知の誤り値しか止められない**点を自覚し、正典値そのものの黙った改変は `canary`（正典ページの正しい値を消すと赤くなる番兵）で守る
 
 ### HTMLツール（計算機等）
 - docs内にHTML/JS/CSS埋め込み（単一ファイル完結）
