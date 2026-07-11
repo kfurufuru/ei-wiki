@@ -122,4 +122,5 @@ flowchart TD
 - [計装配線](wiring.md) — シールドの片端接地・離隔・ループ抵抗の実務
 - [接地・ノイズトラブル](../06-trouble/grounding-noise.md) — グラウンドループ・ノイズ3種の対策
 - [接地（低圧）](../02-teiatsu/grounding-lv.md) — A/B/C/D 種接地・等電位ボンディング
+- [雷・サージ保護](lightning-surge.md) — SPD の接地・等電位ボンディング・誘導雷対策
 - [計装基礎](basics.md) — 4-20mA・HART・フィールドバスの基礎
