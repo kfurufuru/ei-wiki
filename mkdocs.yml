@@ -175,6 +175,7 @@ nav:
     - 高圧ケーブル: 01-koatsu/hv-cable.md
     - 高圧モーター: 01-koatsu/hv-motor.md
     - 力率改善: 01-koatsu/power-factor.md
+    - 高調波対策: 01-koatsu/harmonics.md
     - 接地（高圧）: 01-koatsu/grounding-hv.md
     - 耐圧試験・絶縁診断: 01-koatsu/insulation-test.md
   - 低圧:
@@ -203,6 +204,7 @@ nav:
     - 計装空気: 03-keiso/instrument-air.md
     - PID制御: 03-keiso/pid.md
     - DCS: 03-keiso/dcs.md
+    - アラーム管理: 03-keiso/alarm-management.md
     - 機能安全（SIS/SIL）: 03-keiso/sis-sil.md
     - 調節計・記録計: 03-keiso/controller.md
     - 防爆: 03-keiso/explosion-proof.md

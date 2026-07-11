@@ -262,6 +262,13 @@ def check_boost(docs):
     return fails
 
 
+# コードブロック言語未指定の総数ラチェット基準。
+# 既存の裸フェンス（ASCII図・数式ブロックの慣行）は R30（一括自動変換の教訓）を
+# 避けて据え置くが、この基準を超える＝新規ページ/加筆で裸フェンスを増やしたら FAIL。
+# 既存分は免罪しつつ増加だけを止める。既存を`text`化して減らしたらこの値も下げてよい。
+CODEBLOCK_WARN_BASELINE = 242
+
+
 def warn_codeblocks(docs):
     """検査4: コードブロック言語未指定を数える（WARN・exit 非影響）。
     開始/終了フェンスをトグルで追跡し、終了フェンスを開始と誤認しない。
@@ -369,14 +376,21 @@ def run_all():
     for msg in boost_fails:
         print(f"[FAIL] {msg}")
 
-    # 検査4: WARN
+    # 検査4: WARN（既存の裸フェンスは免罪）＋総数ラチェット（増加は FAIL）
     if warn_total:
         print(f"\n[WARN] コードブロック言語未指定: {warn_total}箇所 / {len(warn_files)}ファイル")
         top = sorted(warn_files.items(), key=lambda kv: (-kv[1], kv[0]))[:10]
         for rel, n in top:
             print(f"    {rel}: {n}箇所")
+    ratchet_fail = warn_total > CODEBLOCK_WARN_BASELINE
+    if ratchet_fail:
+        print(
+            f"\n[FAIL] コードブロック言語未指定が基準を超過: {warn_total} > "
+            f"{CODEBLOCK_WARN_BASELINE}（基準）。新規/加筆の裸フェンスに言語指定を付けること"
+            f"（ASCII図・数式は ```text）。"
+        )
 
-    total_fail = len(forbidden) + len(fm_fails) + len(boost_fails)
+    total_fail = len(forbidden) + len(fm_fails) + len(boost_fails) + (1 if ratchet_fail else 0)
     print("\n==== サマリ ====")
     print(f"  検査1 数値矛盾:        {len(forbidden)} 件")
     print(f"  検査2 frontmatter:    {len(fm_fails)} 件")
