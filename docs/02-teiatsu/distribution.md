@@ -161,6 +161,7 @@ L   : 片道距離 [km]
 ## 関連ページ
 
 - [幹線サイズと過電流遮断器](../04-sekkei/feeder-breaker-sizing.md) — 電動機を含む幹線の許容電流・MCCB 定格の詳細計算式（内線規程／電技解釈第148条）
+- [分岐回路の施設](../04-sekkei/branch-circuit-sizing.md) — 分岐回路の過電流遮断器の位置（3m/8m）・電線太さ（電技解釈第149条）
 - [モーター制御](motor-control.md) — 分岐回路・MC 保護の関連性
 - [インバータ](inverter.md) — 低圧幹線からの給電・フィルタ設置
 - [PLC基礎](plc.md) — DI/DO 給電・計装電源分離

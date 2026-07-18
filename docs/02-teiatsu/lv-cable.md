@@ -228,6 +228,7 @@ flowchart TD
 ## 関連ページ
 
 - [幹線サイズと過電流遮断器](../04-sekkei/feeder-breaker-sizing.md) — 電動機を含む幹線の許容電流と過電流遮断器（MCCB）定格の求めかた
+- [分岐回路の施設](../04-sekkei/branch-circuit-sizing.md) — 分岐回路の過電流遮断器の位置・149-1表の電線太さ
 - [電圧降下計算](../04-sekkei/voltage-drop.md) — 三相／単相の電圧降下計算式・許容値
 - [短絡電流計算](../04-sekkei/fault-current.md) — MCCB 遮断容量の確認に使う短絡電流の算定
 - [低圧配電](distribution.md) — 分電盤構成・MCCB/ELCB 選定・保護協調

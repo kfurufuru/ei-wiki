@@ -221,6 +221,7 @@ nav:
       - 電路設計: 04-sekkei/cable-route.md
       - 負荷計算: 04-sekkei/load-calc.md
       - 幹線サイズと過電流遮断器: 04-sekkei/feeder-breaker-sizing.md
+      - 分岐回路の施設: 04-sekkei/branch-circuit-sizing.md
       - 短絡電流計算: 04-sekkei/fault-current.md
       - 電圧降下計算: 04-sekkei/voltage-drop.md
       - 図面体系: 04-sekkei/drawing-system.md
