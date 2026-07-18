@@ -117,6 +117,7 @@ Step 4: 将来余裕 20% を確保
 
 - [短絡電流計算](fault-current.md) — 変圧器二次側の遮断容量確認に必要な短絡電流の算定
 - [電圧降下計算](voltage-drop.md) — 負荷電流を基にしたケーブルサイズ選定の確認
+- [幹線サイズと過電流遮断器](feeder-breaker-sizing.md) — 集計した ΣI_M・ΣI_H から幹線太さと MCCB 定格を求める次段
 - [盤設計](panel-design.md) — 算定した負荷電流をもとにした MCCB・MCC の設計
 - [仕様書の書き方](spec-writing.md) — 負荷計算結果を反映した電源仕様書の書き方
 - [寿命管理](../05-hozen/lifetime.md) — 変圧器の寿命目安と更新計画の考え方

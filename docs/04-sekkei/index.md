@@ -22,6 +22,7 @@ status: published
 | [盤設計](panel-design.md) | 制御盤・動力盤の設計手順・レイアウト |
 | [電路設計](cable-route.md) | ケーブルラック・配管ルートの考え方 |
 | [負荷計算](load-calc.md) | 需要率・負荷率・変圧器容量の計算手順 |
+| [幹線サイズと過電流遮断器](feeder-breaker-sizing.md) | 電動機を含む幹線の許容電流と過電流遮断器（MCCB）定格の求めかた |
 | [短絡電流計算](fault-current.md) | 遮断容量の確認・計算方法 |
 | [電圧降下計算](voltage-drop.md) | 許容電圧降下・ケーブルサイズ選定 |
 | [図面体系](drawing-system.md) | 単線結線図・展開図・計装図の体系 |
