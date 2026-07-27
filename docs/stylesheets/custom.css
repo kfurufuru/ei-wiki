@@ -111,3 +111,14 @@
   color: var(--md-default-fg-color--light);
 }
 
+/* 図の意味色（危険/注意）。図の地の色ではなく "ページ背景の上に直接置く文字" 用。
+   ライト用は既存図で使われていた値、ダーク用は暗い背景で 4.5:1 以上になる明色に振る。 */
+:root {
+  --ei-fig-danger: #c62828;
+  --ei-fig-warn: #b35300;
+}
+[data-md-color-scheme="slate"] {
+  --ei-fig-danger: #ff8a80;
+  --ei-fig-warn: #ffb74d;
+}
+
