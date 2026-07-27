@@ -266,8 +266,9 @@ def check_boost(docs):
 # 既存の裸フェンス（ASCII図・数式ブロックの慣行）は R30（一括自動変換の教訓）を
 # 避けて据え置くが、この基準を超える＝新規ページ/加筆で裸フェンスを増やしたら FAIL。
 # 既存分は免罪しつつ増加だけを止める。既存を`text`化して減らしたらこの値も下げてよい。
-# 2026-07-28: 図解パイロット（ASCII図→SVG/mermaid）で 242→237 に減ったので基準も下げる。
-CODEBLOCK_WARN_BASELINE = 237
+# 2026-07-28: 図解パイロット（ASCII図→SVG/mermaid）で 242→237、
+# 続く 06-trouble 3ページの mermaid 化で 237→235 に減ったので基準も下げる。
+CODEBLOCK_WARN_BASELINE = 235
 
 
 def warn_codeblocks(docs):
