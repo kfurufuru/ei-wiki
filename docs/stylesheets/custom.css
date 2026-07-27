@@ -91,3 +91,23 @@
   }
 }
 
+/* === 図（インラインSVG）===
+   テーマ既定に無い / 既定が日本語に合わない部分だけを上書きする。
+   figure の margin・text-align・max-width、svg の max-width:100%・height:auto は
+   Material 既定が持っているのでここには書かない（重複させない）。
+
+   注意（実測 2026-07-28）:
+   - SVG は viewBox と width/height を必ず両方書く。viewBox だけだと
+     Material の .md-typeset figure{width:fit-content} と固有寸法なしSVGの
+     組合せで figure 幅が解決できず約26pxに潰れる。
+   - 線・文字の色は --md-default-fg-color / --md-default-fg-color--light のみ。
+     --md-primary-fg-color は color-switcher.js の8色×2スキーム16通り中4通りで、
+     --md-accent-fg-color はライトで、コントラストが 3:1 を下回る。
+   詳細と機械検査は scripts/check_content_rules.py の検査5 を参照。 */
+.md-typeset figcaption {
+  font-style: normal;   /* 既定 italic は日本語の可読性が落ちる */
+  max-width: none;      /* 既定 480px だと広い図の下でキャプションだけ折り返す */
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+}
+
