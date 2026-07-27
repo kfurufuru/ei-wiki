@@ -310,9 +310,14 @@ flowchart TD
 
 ### 4-4. 図解: 札付けのイメージ
 
+<!-- lint-ok: SVG5 本図は札の色（赤=活線／橙=不明／白=死線／緑=残置）そのものが情報の
+     図で、色を CSS 変数に置換すると凡例と札の対応が壊れる。塗り面は自前の配色を保持し、
+     ページ背景の上に直接置く文字（表題・警告2箇所・ケーブル名）だけを 2026-07-28 に
+     テーマ変数へ移行済み（それ以前はダークモードで表題が不可視だった）。
+     図は <figure> ではなく <div> 配下のため width/height 省略でも潰れない。 -->
 <div>
 <svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="制御盤撤去の札付けイメージ図">
-  <text x="20" y="26" font-size="15" font-weight="bold" fill="#263238" font-family="sans-serif">札付けイメージ — 盤に出入りする全ケーブルを見える化する</text>
+  <text x="20" y="26" font-size="15" font-weight="bold" style="fill: var(--md-default-fg-color)" font-family="sans-serif">札付けイメージ — 盤に出入りする全ケーブルを見える化する</text>
 
   <!-- 電源元盤 -->
   <rect x="30" y="60" width="150" height="130" fill="#eceff1" stroke="#546e7a" stroke-width="1.5" rx="4"/>
@@ -324,7 +329,7 @@ flowchart TD
 
   <!-- 電源ケーブル -->
   <line x1="180" y1="110" x2="320" y2="110" stroke="#37474f" stroke-width="3"/>
-  <text x="250" y="95" font-size="11" fill="#455a64" text-anchor="middle" font-family="sans-serif">電源ケーブル</text>
+  <text x="250" y="95" font-size="11" style="fill: var(--md-default-fg-color--light)" text-anchor="middle" font-family="sans-serif">電源ケーブル</text>
   <rect x="225" y="115" width="52" height="18" fill="#ffffff" stroke="#607d8b" stroke-width="1.5" rx="2"/>
   <text x="251" y="128" font-size="10" fill="#37474f" text-anchor="middle" font-family="sans-serif">死線札</text>
 
@@ -351,7 +356,7 @@ flowchart TD
   <line x1="500" y1="250" x2="640" y2="280" stroke="#37474f" stroke-width="2.5"/>
   <rect x="545" y="240" width="52" height="18" fill="#f9a825" rx="2"/>
   <text x="571" y="253" font-size="10" fill="#263238" text-anchor="middle" font-family="sans-serif">不明札</text>
-  <text x="660" y="295" font-size="12" font-weight="bold" fill="#e65100" font-family="sans-serif">行先不明？ → 切断禁止</text>
+  <text x="660" y="295" font-size="12" font-weight="bold" style="fill: var(--ei-fig-warn)" font-family="sans-serif">行先不明？ → 切断禁止</text>
 
   <!-- 渡り制御線 -->
   <rect x="40" y="330" width="160" height="70" fill="#eceff1" stroke="#546e7a" stroke-width="1.5" rx="4"/>
@@ -360,7 +365,7 @@ flowchart TD
   <line x1="200" y1="355" x2="370" y2="315" stroke="#c62828" stroke-width="2.5" stroke-dasharray="6 4"/>
   <rect x="255" y="345" width="52" height="18" fill="#c62828" rx="2"/>
   <text x="281" y="358" font-size="10" fill="#ffffff" text-anchor="middle" font-family="sans-serif">活線札</text>
-  <text x="230" y="425" font-size="12" font-weight="bold" fill="#c62828" font-family="sans-serif">★渡り制御線（AC100 V）— 主幹MCCBを切っても生きている！</text>
+  <text x="230" y="425" font-size="12" font-weight="bold" style="fill: var(--ei-fig-danger)" font-family="sans-serif">★渡り制御線（AC100 V）— 主幹MCCBを切っても生きている！</text>
 
   <!-- 凡例 -->
   <rect x="540" y="330" width="245" height="130" fill="#fafafa" stroke="#90a4ae" stroke-width="1" rx="4"/>

@@ -22,16 +22,52 @@ status: published
 
 ### 展開接続図（横書き）
 
-```
-制御電源 L1 ─────────────────────────────── L2
-
-         [停止 NC]  [起動 NO]
-L1 ─────┤        ├─┤        ├──┬──[MC コイル]── L2
-                               │
-                          [MC 補助 NO]（自己保持）
-                               │
-L1 ───────────────────────────┘
-```
+<figure>
+<svg viewBox="0 0 420 210" width="420" height="210" role="img"
+     aria-labelledby="fig-mc-selfhold-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-mc-selfhold-title">MC 自己保持回路の展開接続図。停止PB（b接点）が自己保持ループの上流にあり、自己保持接点は起動PB（a接点）と並列に接続されている。</title>
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="2" stroke-linecap="round">
+    <!-- 母線 L1 / L2 -->
+    <line x1="28" y1="40" x2="28" y2="176"/>
+    <line x1="392" y1="40" x2="392" y2="176"/>
+    <!-- 主ラング: L1 → 停止NC → 節点A → 起動NO → 節点B → コイル → L2 -->
+    <line x1="28" y1="80" x2="82" y2="80"/>
+    <line x1="118" y1="80" x2="192" y2="80"/>
+    <line x1="228" y1="80" x2="292" y2="80"/>
+    <line x1="328" y1="80" x2="392" y2="80"/>
+    <!-- 停止 PB（b接点）: 2本の縦棒＋斜線 -->
+    <line x1="82" y1="66" x2="82" y2="94"/>
+    <line x1="118" y1="66" x2="118" y2="94"/>
+    <line x1="76" y1="96" x2="124" y2="64"/>
+    <!-- 起動 PB（a接点）: 2本の縦棒のみ -->
+    <line x1="192" y1="66" x2="192" y2="94"/>
+    <line x1="228" y1="66" x2="228" y2="94"/>
+    <!-- MC コイル -->
+    <circle cx="310" cy="80" r="18"/>
+    <!-- 自己保持分岐: 節点A(160,80) → 下 → MC補助a接点 → 節点B(260,80) -->
+    <line x1="160" y1="80" x2="160" y2="140"/>
+    <line x1="160" y1="140" x2="192" y2="140"/>
+    <line x1="228" y1="140" x2="260" y2="140"/>
+    <line x1="260" y1="140" x2="260" y2="80"/>
+    <line x1="192" y1="126" x2="192" y2="154"/>
+    <line x1="228" y1="126" x2="228" y2="154"/>
+  </g>
+  <!-- 節点（接続点の黒丸） -->
+  <g style="fill: var(--md-default-fg-color); stroke: none">
+    <circle cx="160" cy="80" r="4"/>
+    <circle cx="260" cy="80" r="4"/>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" font-size="17" text-anchor="middle">
+    <text x="28" y="30">L1</text>
+    <text x="392" y="30">L2</text>
+    <text x="100" y="56">停止 PB</text>
+    <text x="210" y="56">起動 PB</text>
+    <text x="310" y="46">MC コイル</text>
+    <text x="210" y="180">MC 補助 a接点（自己保持）</text>
+  </g>
+</svg>
+<figcaption>自己保持接点は<strong>起動 PB と並列</strong>にする。停止 PB を自己保持ループより電源側（上流）に置くことで、停止 PB を押すとループ全体が開放される。</figcaption>
+</figure>
 
 **動作フロー：**
 

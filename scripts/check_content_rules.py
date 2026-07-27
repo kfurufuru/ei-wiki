@@ -266,7 +266,8 @@ def check_boost(docs):
 # 既存の裸フェンス（ASCII図・数式ブロックの慣行）は R30（一括自動変換の教訓）を
 # 避けて据え置くが、この基準を超える＝新規ページ/加筆で裸フェンスを増やしたら FAIL。
 # 既存分は免罪しつつ増加だけを止める。既存を`text`化して減らしたらこの値も下げてよい。
-CODEBLOCK_WARN_BASELINE = 242
+# 2026-07-28: 図解パイロット（ASCII図→SVG/mermaid）で 242→237 に減ったので基準も下げる。
+CODEBLOCK_WARN_BASELINE = 237
 
 
 def warn_codeblocks(docs):
@@ -290,6 +291,65 @@ def warn_codeblocks(docs):
             else:
                 in_block = False  # 終了フェンス（トークンは無視）
     return total, per_file
+
+
+# ---------------------------------------------------------------------------
+# 検査5: インライン SVG の記法規約
+# ---------------------------------------------------------------------------
+# 規約の根拠（いずれも 2026-07-28 に公開サイト/隔離ビルドで実測）:
+#  - width/height を省くと Material の .md-typeset figure{width:fit-content} と
+#    固有寸法なし SVG の組合せで figure 幅が解決できず約26pxに潰れる。
+#  - --md-primary-fg-color は color-switcher.js の8色 x 2スキーム16通り中4通りで、
+#    --md-accent-fg-color はライトで、背景とのコントラストが 3:1 を下回る。
+#    情報を担う線・文字は --md-default-fg-color(--light) のみ使う。
+#  - 色のハードコードはダークモードで見えなくなる（seigyoban-tekkyo の実害あり）。
+#    意味色が要る場合は custom.css の --ei-fig-* トークンを使う。
+#  - <figure markdown="..."> は SVG 内テキストを Markdown 処理して壊す。属性を付けない。
+SVG_BANNED_VARS = ("--md-primary-fg-color", "--md-accent-fg-color",
+                   "--md-default-fg-color--lighter")
+_SVG_OPEN = re.compile(r"<svg\b[^>]*>", re.I)
+_SVG_BLOCK = re.compile(r"<svg\b.*?</svg>", re.I | re.S)
+_HEXCOLOR = re.compile(r'(?:fill|stroke|stop-color|color)\s*[:=]\s*"?\s*(#[0-9a-fA-F]{3,8})')
+_FIGURE_MD = re.compile(r"<figure\b[^>]*\bmarkdown\s*=", re.I)
+_TITLE_ID = re.compile(r'<title\b[^>]*\bid\s*=\s*"([^"]+)"', re.I)
+
+
+def check_svg(docs):
+    """インライン SVG の記法規約。違反メッセージのリストを返す（FAIL）。"""
+    fails = []
+    for rel, lines in docs:
+        text = "\n".join(lines)
+        if "<svg" not in text:
+            continue
+        # lint-ok: SVG5 を書いた行は当該ファイルの検査5を免除（理由をコメントで残す運用）
+        if re.search(r"lint-ok:\s*SVG5", text):
+            continue
+        if _FIGURE_MD.search(text):
+            fails.append(f"{rel}: <figure> に markdown 属性がある"
+                         f"（SVG内テキストがMarkdown処理され壊れる）")
+        ids = []
+        for block in _SVG_BLOCK.findall(text):
+            open_tag = _SVG_OPEN.search(block)
+            open_tag = open_tag.group(0) if open_tag else "<svg>"
+            if not re.search(r'\bwidth\s*=', open_tag) or not re.search(r'\bheight\s*=', open_tag):
+                fails.append(f"{rel}: <svg> に width/height が無い"
+                             f"（figure{{width:fit-content}} で約26pxに潰れる）")
+            if 'role="img"' not in open_tag.replace("'", '"'):
+                fails.append(f"{rel}: <svg> に role=\"img\" が無い")
+            if "<title" not in block:
+                fails.append(f"{rel}: <svg> に <title> が無い（支援技術で内容が読めない）")
+            for var in SVG_BANNED_VARS:
+                if var in block:
+                    fails.append(f"{rel}: SVG が {var} を使っている"
+                                 f"（配色切替/ダークでコントラスト 3:1 未満になる組合せがある）")
+            for hexval in _HEXCOLOR.findall(block):
+                fails.append(f"{rel}: SVG で色をハードコードしている（{hexval}）"
+                             f"。--md-default-fg-color 系または --ei-fig-* トークンを使う")
+            ids += _TITLE_ID.findall(block)
+        dupes = {i for i in ids if ids.count(i) > 1}
+        for dup in sorted(dupes):
+            fails.append(f"{rel}: <title id=\"{dup}\"> がページ内で重複している")
+    return fails
 
 
 # ---------------------------------------------------------------------------
@@ -319,6 +379,45 @@ def self_test():
     b = ["D種接地は10Ω以下 <!-- lint-ok: N2 -->"]
     if not any(v[1] == "N1" for v in scan_lines(b)):
         failures.append("負対照(b): lint-ok: N2 が N1 を誤って免除している（ID照合破綻）")
+
+    # 3b) 検査5 正対照: 各 SVG 規約違反を検出できること（検出器の生存証明）
+    svg_cases = [
+        ("width/height 欠落",
+         '<svg viewBox="0 0 10 10" role="img"><title id="a">t</title></svg>', "width/height"),
+        ("role=img 欠落",
+         '<svg viewBox="0 0 10 10" width="10" height="10"><title id="a">t</title></svg>', 'role="img"'),
+        ("<title> 欠落",
+         '<svg viewBox="0 0 10 10" width="10" height="10" role="img"></svg>', "<title>"),
+        ("禁止変数",
+         '<svg viewBox="0 0 10 10" width="10" height="10" role="img"><title id="a">t</title>'
+         '<path style="stroke: var(--md-primary-fg-color)"/></svg>', "--md-primary-fg-color"),
+        ("色ハードコード",
+         '<svg viewBox="0 0 10 10" width="10" height="10" role="img"><title id="a">t</title>'
+         '<path fill="#c62828"/></svg>', "ハードコード"),
+        ("figure markdown 属性",
+         '<figure markdown="span">\n<svg viewBox="0 0 10 10" width="10" height="10" role="img">'
+         '<title id="a">t</title></svg>\n</figure>', "markdown 属性"),
+        ("title id 重複",
+         '<svg viewBox="0 0 10 10" width="10" height="10" role="img"><title id="dup">t</title></svg>\n'
+         '<svg viewBox="0 0 10 10" width="10" height="10" role="img"><title id="dup">t</title></svg>',
+         "重複"),
+    ]
+    for label, sample, needle in svg_cases:
+        msgs = check_svg([("_svgtest.md", sample.split("\n"))])
+        if not any(needle in m for m in msgs):
+            failures.append(f"検査5 正対照 {label}: 違反サンプルを検出できない（検出器故障）")
+    # 3c) 検査5 負対照: 規約に適合した SVG を誤検出しないこと
+    good = ('<figure>\n<svg viewBox="0 0 10 10" width="10" height="10" role="img" '
+            'aria-labelledby="x"><title id="x">t</title>'
+            '<path style="stroke: var(--md-default-fg-color)"/></svg>\n'
+            '<figcaption>c</figcaption>\n</figure>')
+    msgs = check_svg([("_svgtest.md", good.split("\n"))])
+    if msgs:
+        failures.append(f"検査5 負対照: 適合SVGを誤検出している -> {msgs}")
+    # 3d) 検査5 免除: lint-ok: SVG5 でファイル単位に免除できること
+    exempt = '<!-- lint-ok: SVG5 理由 -->\n<svg viewBox="0 0 10 10"></svg>'
+    if check_svg([("_svgtest.md", exempt.split("\n"))]):
+        failures.append("検査5 免除: lint-ok: SVG5 が効いていない")
 
     # 4) canary: 正典値の黙った削除検知
     for rel, needle, why in CANARIES:
@@ -362,6 +461,7 @@ def run_all():
     forbidden = check_forbidden(docs)
     fm_fails = check_frontmatter(docs)
     boost_fails = check_boost(docs)
+    svg_fails = check_svg(docs)
     warn_total, warn_files = warn_codeblocks(docs)
 
     print("")
@@ -374,6 +474,9 @@ def run_all():
         print(f"[FAIL] {msg}")
     # 検査3: boost
     for msg in boost_fails:
+        print(f"[FAIL] {msg}")
+    # 検査5: インラインSVGの記法規約
+    for msg in svg_fails:
         print(f"[FAIL] {msg}")
 
     # 検査4: WARN（既存の裸フェンスは免罪）＋総数ラチェット（増加は FAIL）
@@ -390,12 +493,14 @@ def run_all():
             f"（ASCII図・数式は ```text）。"
         )
 
-    total_fail = len(forbidden) + len(fm_fails) + len(boost_fails) + (1 if ratchet_fail else 0)
+    total_fail = (len(forbidden) + len(fm_fails) + len(boost_fails) + len(svg_fails)
+                  + (1 if ratchet_fail else 0))
     print("\n==== サマリ ====")
     print(f"  検査1 数値矛盾:        {len(forbidden)} 件")
     print(f"  検査2 frontmatter:    {len(fm_fails)} 件")
     print(f"  検査3 06-trouble boost: {len(boost_fails)} 件")
     print(f"  検査4 コードブロック(WARN): {warn_total} 箇所 / {len(warn_files)} ファイル")
+    print(f"  検査5 インラインSVG:    {len(svg_fails)} 件")
     if total_fail:
         print(f"[NG] FAIL 合計 {total_fail} 件。")
         return 1

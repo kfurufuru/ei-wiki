@@ -68,27 +68,21 @@ NPN・PNPはトランジスタの型名であり、センサの**出力信号の
 
 === "既設PLC"
 
+    ```mermaid
+    flowchart TD
+        S["① DI 入力ユニット仕様書で<br>入力タイプを確認"]
+        S --> T["② 上の対応表でセンサ出力を決める<br>＋COM → NPN ／ −COM → PNP<br>両対応 → NPN 優先"]
+        T --> C["③ センサカタログで<br>出力タイプを確認"]
+        C --> M["④ 混在する場合は<br>リレー or フォトカプラで変換"]
     ```
-    ① PLCのDI入力ユニット仕様書を確認
-          ↓
-       ソース型入力（+COM）？ → NPN出力センサを選定
-       シンク型入力（-COM）？ → PNP出力センサを選定
-       NPN/PNP両対応？      → NPN優先で選定
-          ↓
-    ② センサカタログで出力タイプ（NPN/PNP）を確認
-          ↓
-    ③ 混在が発生する場合 → リレー or フォトカプラで変換
-    ```
+
+    既設側の DI 入力タイプが先に決まっているため、**センサを PLC に合わせる**のが原則です。
 
 === "新設PLC（推奨手順）"
 
-    ```
-    ① PLCのDI入力ユニットを「NPN/PNP両対応タイプ」で指定する
-          ↓
-    ② センサはNPN出力で統一する
-          ↓
-    ③ 将来PNP機器が混入してもCOM配線変更のみで対応可能
-    ```
+    1. PLC の DI 入力ユニットを「NPN/PNP 両対応タイプ」で指定する
+    2. センサは NPN 出力で統一する
+    3. 将来 PNP 機器が混入しても COM 配線の変更のみで対応できる
 
     !!! tip "仕様書への明記"
         発注仕様書に「DI入力：NPN/PNP両対応、DC24V、16点」と明記する。
@@ -127,35 +121,113 @@ NPN・PNPはトランジスタの型名であり、センサの**出力信号の
 
 ## 配線例
 
-=== "NPN出力 ＋ ソース型DI入力（国内標準）"
+2つの図の違いは **COM をどちらの電位につなぐか**、そしてその結果 **信号線を流れる電流がどちら向きになるか** の一点です。
 
-    ```
-    センサ        PLC DI入力（ソース型）
-    +24V ──────── センサ電源(+)
-    OUT  ────────┐
-                 ├── DI端子（IN）
-                 │   (内部: +24V → DI端子 → IN回路 → COM)
-    GND  ──────── センサ電源(-)
-                     COM（+24V接続 ＝ +COM）
-    ```
+### NPN出力 ＋ ソース型DI入力（国内標準）
 
-    - DI入力の COM は +24V に接続（ソース型の特徴）
-    - センサON時：OUT端子がGND電位になり電流が流れてON判定
+<figure>
+<svg viewBox="0 0 420 250" width="420" height="250" role="img"
+     aria-labelledby="fig-npn-wiring-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-npn-wiring-title">NPN出力センサとソース型DI入力（+COM）の結線。COMを+24Vにつなぐため、電流はPLCのDI端子から信号線を通ってセンサへ流れ込み、センサ内部のトランジスタで0Vへ抜ける。</title>
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.8" stroke-linecap="round">
+    <!-- 電源レール -->
+    <line x1="44" y1="44" x2="392" y2="44"/>
+    <line x1="44" y1="212" x2="392" y2="212"/>
+    <!-- 筐体 -->
+    <rect x="60" y="76" width="118" height="104" rx="4"/>
+    <rect x="254" y="76" width="130" height="104" rx="4"/>
+    <!-- センサ電源 -->
+    <line x1="100" y1="44" x2="100" y2="76"/>
+    <line x1="100" y1="180" x2="100" y2="212"/>
+    <!-- センサ内部: OUT → Tr → 0V側 -->
+    <line x1="178" y1="140" x2="146" y2="140"/>
+    <line x1="146" y1="140" x2="146" y2="150"/>
+    <line x1="146" y1="166" x2="146" y2="172"/>
+    <line x1="146" y1="172" x2="100" y2="172"/>
+    <rect x="132" y="150" width="28" height="16" rx="2"/>
+    <!-- 信号線 -->
+    <line x1="178" y1="140" x2="254" y2="140"/>
+    <!-- PLC内部: COM(+24V) → IN回路 → DI端子 -->
+    <line x1="340" y1="44" x2="340" y2="140"/>
+    <line x1="340" y1="140" x2="322" y2="140"/>
+    <line x1="286" y1="140" x2="254" y2="140"/>
+    <rect x="286" y="126" width="36" height="28" rx="2"/>
+  </g>
+  <!-- 電流の向き（PLC → センサ） -->
+  <g style="stroke: var(--md-default-fg-color); fill: var(--md-default-fg-color)" stroke-width="1.8">
+    <path d="M 228,128 L 204,128" fill="none"/>
+    <path d="M 204,128 L 212,123 L 212,133 Z" stroke="none"/>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" font-size="15">
+    <text x="44" y="36">＋24 V</text>
+    <text x="44" y="230">0 V</text>
+    <text x="119" y="68" text-anchor="middle">センサ（NPN出力）</text>
+    <text x="319" y="68" text-anchor="middle">PLC DI（ソース型）</text>
+    <text x="126" y="163" text-anchor="end">Tr</text>
+    <text x="174" y="132" text-anchor="end">OUT</text>
+    <text x="258" y="132" text-anchor="start">DI</text>
+    <text x="346" y="100" text-anchor="start">COM</text>
+    <text x="216" y="116" text-anchor="middle">電流</text>
+  </g>
+</svg>
+<figcaption>COM を ＋24 V につなぐ（＝ ＋COM）。電流は PLC の DI 端子から信号線を通ってセンサへ流れ込み、センサ内部のトランジスタで 0 V へ抜ける。ON 時に OUT 端子が 0 V 電位になる。</figcaption>
+</figure>
 
-=== "PNP出力 ＋ シンク型DI入力（欧州機器の場合）"
+- DI入力の COM は ＋24 V に接続（ソース型の特徴）
+- PLC 内部の電流は **COM（＋24 V）→ IN回路 → DI端子** の向きに流れ、DI端子から外へ出てセンサに吸い込まれる
 
-    ```
-    センサ        PLC DI入力（シンク型）
-    +24V ──────── センサ電源(+)
-    OUT  ────────┐
-                 ├── DI端子（IN）
-                 │   (内部: COM → IN回路 → DI端子)
-    GND  ──────── センサ電源(-)
-                     COM（GND接続 ＝ -COM）
-    ```
+### PNP出力 ＋ シンク型DI入力（欧州機器の場合）
 
-    - DI入力の COM は GND に接続（シンク型の特徴）
-    - センサON時：OUT端子が+24V電位になり電流が流れてON判定
+<figure>
+<svg viewBox="0 0 420 250" width="420" height="250" role="img"
+     aria-labelledby="fig-pnp-wiring-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-pnp-wiring-title">PNP出力センサとシンク型DI入力（−COM）の結線。COMを0Vにつなぐため、電流はセンサ内部のトランジスタから信号線を通ってPLCのDI端子へ流れ込み、COMから0Vへ抜ける。</title>
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.8" stroke-linecap="round">
+    <!-- 電源レール -->
+    <line x1="44" y1="44" x2="392" y2="44"/>
+    <line x1="44" y1="212" x2="392" y2="212"/>
+    <!-- 筐体 -->
+    <rect x="60" y="76" width="118" height="104" rx="4"/>
+    <rect x="254" y="76" width="130" height="104" rx="4"/>
+    <!-- センサ電源 -->
+    <line x1="100" y1="44" x2="100" y2="76"/>
+    <line x1="100" y1="180" x2="100" y2="212"/>
+    <!-- センサ内部: ＋24V側 → Tr → OUT -->
+    <line x1="100" y1="96" x2="146" y2="96"/>
+    <line x1="146" y1="96" x2="146" y2="112"/>
+    <line x1="146" y1="128" x2="146" y2="140"/>
+    <line x1="146" y1="140" x2="178" y2="140"/>
+    <rect x="132" y="112" width="28" height="16" rx="2"/>
+    <!-- 信号線 -->
+    <line x1="178" y1="140" x2="254" y2="140"/>
+    <!-- PLC内部: DI端子 → IN回路 → COM(0V) -->
+    <line x1="254" y1="140" x2="286" y2="140"/>
+    <line x1="322" y1="140" x2="340" y2="140"/>
+    <line x1="340" y1="140" x2="340" y2="212"/>
+    <rect x="286" y="126" width="36" height="28" rx="2"/>
+  </g>
+  <!-- 電流の向き（センサ → PLC） -->
+  <g style="stroke: var(--md-default-fg-color); fill: var(--md-default-fg-color)" stroke-width="1.8">
+    <path d="M 204,128 L 228,128" fill="none"/>
+    <path d="M 228,128 L 220,123 L 220,133 Z" stroke="none"/>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" font-size="15">
+    <text x="44" y="36">＋24 V</text>
+    <text x="44" y="230">0 V</text>
+    <text x="119" y="68" text-anchor="middle">センサ（PNP出力）</text>
+    <text x="319" y="68" text-anchor="middle">PLC DI（シンク型）</text>
+    <text x="126" y="125" text-anchor="end">Tr</text>
+    <text x="174" y="160" text-anchor="end">OUT</text>
+    <text x="258" y="132" text-anchor="start">DI</text>
+    <text x="346" y="196" text-anchor="start">COM</text>
+    <text x="216" y="116" text-anchor="middle">電流</text>
+  </g>
+</svg>
+<figcaption>COM を 0 V につなぐ（＝ −COM）。電流はセンサ内部のトランジスタから信号線を通って PLC の DI 端子へ流れ込み、COM から 0 V へ抜ける。ON 時に OUT 端子が ＋24 V 電位になる。</figcaption>
+</figure>
+
+- DI入力の COM は 0 V に接続（シンク型の特徴）
+- PLC 内部の電流は **DI端子 → IN回路 → COM（0 V）** の向きに流れ、センサから押し込まれる
 
 ---
 

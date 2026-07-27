@@ -53,6 +53,55 @@ Cv = 18.2 / 0.865 = 21.0
 
 弁の開度（リフト）と流量の関係。
 
+<figure>
+<svg viewBox="0 0 420 320" width="420" height="320" role="img"
+     aria-labelledby="fig-valve-char-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-valve-char-title">制御弁の固有流量特性。横軸が開度、縦軸が最大流量に対する流量比。リニアは直線、イコールパーセンテージは低開度で寝て高開度で立つ指数曲線、クイックオープンは低開度で急に立ち上がる曲線。</title>
+  <!-- 目盛グリッド -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="0.5" stroke-dasharray="3 3">
+    <line x1="62" y1="202" x2="396" y2="202"/><line x1="62" y1="146" x2="396" y2="146"/><line x1="62" y1="90" x2="396" y2="90"/>
+    <line x1="145.5" y1="34" x2="145.5" y2="258"/><line x1="229" y1="34" x2="229" y2="258"/><line x1="312.5" y1="34" x2="312.5" y2="258"/>
+  </g>
+  <!-- 軸 -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.5">
+    <line x1="62" y1="34" x2="62" y2="258"/>
+    <line x1="62" y1="258" x2="396" y2="258"/>
+  </g>
+  <!-- 曲線（系列は色でなく線種で区別）: scripts/gen_figure_paths.py valve の出力 -->
+  <g style="fill: none; stroke: var(--md-default-fg-color)" stroke-width="2.2" stroke-linejoin="round">
+    <!-- リニア（実線） -->
+    <path d="M 62.0,258.0 L 128.8,213.2 L 195.6,168.4 L 262.4,123.6 L 329.2,78.8 L 396.0,34.0"/>
+    <!-- イコールパーセンテージ（破線・R=50） -->
+    <path stroke-dasharray="8 5" d="M 62.0,253.5 L 88.7,251.9 L 115.4,249.6 L 142.2,246.5 L 168.9,242.3 L 195.6,236.6 L 222.3,228.7 L 249.0,217.9 L 275.8,203.2 L 302.5,183.1 L 315.8,170.4 L 329.2,155.6 L 342.6,138.2 L 355.9,117.9 L 369.3,94.2 L 382.6,66.4 L 396.0,34.0"/>
+    <!-- クイックオープン（点線） -->
+    <path stroke-dasharray="2 4" d="M 62.0,258.0 L 75.4,213.2 L 88.7,194.6 L 102.1,180.4 L 115.4,168.4 L 142.2,148.3 L 168.9,131.3 L 195.6,116.3 L 222.3,102.8 L 249.0,90.4 L 275.8,78.8 L 302.5,67.9 L 329.2,57.6 L 355.9,47.9 L 396.0,34.0"/>
+  </g>
+  <!-- 軸ラベル・目盛 -->
+  <g style="fill: var(--md-default-fg-color--light)" font-size="15">
+    <text x="54" y="263" text-anchor="end">0</text>
+    <text x="54" y="151" text-anchor="end">50</text>
+    <text x="54" y="39" text-anchor="end">100</text>
+    <text x="62" y="280" text-anchor="middle">0</text>
+    <text x="229" y="280" text-anchor="middle">50</text>
+    <text x="396" y="280" text-anchor="middle">100</text>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" font-size="16">
+    <text x="229" y="303" text-anchor="middle">開度（％）</text>
+    <text x="22" y="146" text-anchor="middle" transform="rotate(-90 22 146)">流量比（％）</text>
+  </g>
+  <!-- 曲線の直接ラベル（凡例を別置きしない）。
+       曲線と重なっても読めるよう、背景色のストロークで縁取りしてから塗る
+       （paint-order=stroke）。ライト/ダークとも --md-default-bg-color に追従する。 -->
+  <g style="fill: var(--md-default-fg-color); stroke: var(--md-default-bg-color)"
+     stroke-width="4" paint-order="stroke" stroke-linejoin="round" font-size="15">
+    <text x="300" y="100" text-anchor="end">クイックオープン</text>
+    <text x="252" y="152" text-anchor="start">リニア</text>
+    <text x="330" y="215" text-anchor="middle">イコール％</text>
+  </g>
+</svg>
+<figcaption>固有流量特性（弁前後の差圧が一定のときの開度-流量関係）。イコールパーセンテージ曲線はレンジアビリティ R=50 の代表例で、規格で一意に決まる値ではない。曲線は <code>scripts/gen_figure_paths.py valve</code> が定義式から生成。</figcaption>
+</figure>
+
 | 特性 | 開度-流量関係 | 使い分け |
 |------|------------|---------|
 | リニア | 開度に比例して流量増加 | ΔP が一定（ポンプ制御等） |
