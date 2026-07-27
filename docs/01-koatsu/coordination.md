@@ -44,6 +44,78 @@ status: published
 
 TCC（Time-Current Curve）は、横軸に電流、縦軸に動作時間をとった両対数（対数-対数）グラフです。横軸は整定電流（ピックアップ電流）に対する倍数 M で読むと機器間の比較がしやすくなります。
 
+!!! warning "倍数 M を横軸にできるのは整定電流が同じときだけ"
+    整定電流 Ip が異なる上位・下位を1枚の TCC に重ねるときは、**横軸を一次電流 [A] にします**。倍数 M = I / Ip は機器ごとに基準が違うため、Ip の異なる曲線を同じ M 軸に並べると、同じ横位置が別々の電流を指してしまい協調判定を誤ります。
+
+<figure>
+<svg viewBox="0 0 420 330" width="420" height="330" role="img"
+     aria-labelledby="fig-tcc-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-tcc-title">保護協調が成立している TCC の例。両対数グラフ上で、上位（母線）の曲線が下位（フィーダ）の曲線より常に上（動作時間が長い側）にあり、短絡電流1094Aの垂線上で約0.34秒の時限差が確保されている。</title>
+  <!-- グリッド -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="0.5" stroke-dasharray="3 3">
+    <line x1="142.4" y1="34" x2="142.4" y2="262"/>
+    <line x1="243.3" y1="34" x2="243.3" y2="262"/>
+    <line x1="319.6" y1="34" x2="319.6" y2="262"/>
+    <line x1="66" y1="232.2" x2="396" y2="232.2"/>
+    <line x1="66" y1="162.9" x2="396" y2="162.9"/>
+    <line x1="66" y1="133.1" x2="396" y2="133.1"/>
+    <line x1="66" y1="63.8" x2="396" y2="63.8"/>
+  </g>
+  <!-- 軸 -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.5">
+    <line x1="66" y1="34" x2="66" y2="262"/>
+    <line x1="66" y1="262" x2="396" y2="262"/>
+  </g>
+  <!-- 短絡電流 1094 A の垂線と時限差 -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.2" stroke-dasharray="5 4">
+    <line x1="329.5" y1="34" x2="329.5" y2="262"/>
+  </g>
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.6">
+    <line x1="352" y1="185.2" x2="352" y2="152.2"/>
+    <path d="M 348,181 L 352,185.5 L 356,181"/>
+    <path d="M 348,156.4 L 352,151.9 L 356,156.4"/>
+  </g>
+  <!-- 動作点 -->
+  <g style="fill: var(--md-default-fg-color); stroke: none">
+    <circle cx="329.5" cy="185.2" r="3.5"/>
+    <circle cx="329.5" cy="152.2" r="3.5"/>
+  </g>
+  <!-- 曲線: scripts/gen_figure_paths.py tcc の出力（M>1 の領域のみ） -->
+  <g style="fill: none; stroke: var(--md-default-fg-color)" stroke-width="2.2" stroke-linejoin="round">
+    <!-- 下位（フィーダ） Ip=110A TMS=0.10（実線） -->
+    <path d="M 87.7,50.0 L 108.9,96.0 L 130.2,117.7 L 151.5,132.2 L 172.7,143.0 L 194.0,151.7 L 215.3,158.9 L 236.5,165.1 L 257.8,170.6 L 279.1,175.4 L 300.3,179.8 L 321.6,183.8 L 342.8,187.5 L 364.1,190.9 L 385.4,194.0 L 396.0,195.5"/>
+    <!-- 上位（母線） Ip=300A TMS=0.12（破線） -->
+    <path stroke-dasharray="8 5" d="M 198.0,41.4 L 211.9,76.6 L 225.8,95.8 L 239.7,109.0 L 253.6,119.2 L 267.5,127.4 L 281.4,134.3 L 295.3,140.3 L 309.2,145.5 L 323.0,150.2 L 336.9,154.4 L 350.8,158.3 L 364.7,161.9 L 378.6,165.2 L 392.5,168.2 L 396.0,169.0"/>
+  </g>
+  <!-- 目盛 -->
+  <g style="fill: var(--md-default-fg-color--light)" font-size="14">
+    <text x="66" y="281" text-anchor="middle">100</text>
+    <text x="142.4" y="281" text-anchor="middle">200</text>
+    <text x="243.3" y="281" text-anchor="middle">500</text>
+    <text x="319.6" y="281" text-anchor="middle">1k</text>
+    <text x="396" y="281" text-anchor="middle">2k</text>
+    <text x="58" y="237" text-anchor="end">0.1</text>
+    <text x="58" y="167.9" text-anchor="end">0.5</text>
+    <text x="58" y="138.1" text-anchor="end">1</text>
+    <text x="58" y="68.8" text-anchor="end">5</text>
+    <text x="58" y="39" text-anchor="end">10</text>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" font-size="16">
+    <text x="231" y="305" text-anchor="middle">一次電流（A・対数）</text>
+    <text x="20" y="148" text-anchor="middle" transform="rotate(-90 20 148)">動作時間（秒・対数）</text>
+  </g>
+  <!-- 直接ラベル（背景色の縁取りで曲線と重なっても読めるようにする） -->
+  <g style="fill: var(--md-default-fg-color); stroke: var(--md-default-bg-color)"
+     stroke-width="4" paint-order="stroke" stroke-linejoin="round" font-size="14">
+    <text x="100" y="192" text-anchor="start">下位（フィーダ）</text>
+    <text x="245" y="85" text-anchor="start">上位（母線）</text>
+    <text x="329.5" y="46" text-anchor="middle">短絡 1094 A</text>
+    <text x="362" y="172" text-anchor="start">0.34 秒</text>
+  </g>
+</svg>
+<figcaption>協調が成立している TCC の例。上位（破線）が下位（実線）より常に上にあり、短絡電流 1094 A の垂線上で時限差 0.34 秒（0.64 − 0.30 秒）が確保されている。曲線は本ページの整定例と <code>t = 0.14/(M<sup>0.02</sup>−1)×TMS</code> から <code>scripts/gen_figure_paths.py tcc</code> が生成（交差しないことを断定できるのは、この図の電流範囲 100〜2000 A の内側だけです）。</figcaption>
+</figure>
+
 ### グラフ上で何を見るか
 
 - **縦方向の位置関係**: ある電流値に垂直線を立てたとき、上位機器の曲線が下位機器の曲線より **上（動作時間が長い）** にあれば、その電流では下位が先に動作します。
