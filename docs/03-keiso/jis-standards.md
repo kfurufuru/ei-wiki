@@ -8,7 +8,6 @@ audience:
   - 電気担当
   - 保全担当
 last_verified: 2026-07-11
-status: published
 ---
 
 # 電気計装工事で押さえるJIS規格

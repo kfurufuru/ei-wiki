@@ -6,7 +6,6 @@ tags:
   - 手順書
 audience: [電気担当, 計装担当]
 last_verified: 2026-07-11
-status: published
 ---
 
 # 工事・検収・試運転フロー

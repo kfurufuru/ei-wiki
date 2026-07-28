@@ -7,7 +7,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-04-16
-status: published
 ---
 
 # PLC 基礎

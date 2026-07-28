@@ -9,7 +9,6 @@ audience:
   - 電気担当
   - 計装担当
 last_verified: 2026-07-11
-status: published
 ---
 
 # 雷・サージ保護

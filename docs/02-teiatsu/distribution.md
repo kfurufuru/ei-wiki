@@ -7,7 +7,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-06-10
-status: published
 ---
 
 # 低圧配電

@@ -8,7 +8,6 @@ tags:
 audience:
   - 計装担当
 last_verified: 2026-07-11
-status: published
 ---
 
 # 機能安全（SIS/SIL）

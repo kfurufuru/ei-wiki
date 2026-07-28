@@ -6,7 +6,6 @@ tags:
   - 計算
 audience: [電気担当]
 last_verified: 2026-04-16
-status: published
 ---
 
 # 設計

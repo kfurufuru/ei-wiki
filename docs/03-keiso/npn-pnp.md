@@ -8,7 +8,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-04-15
-status: published
 ---
 
 # NPN/PNP 選定

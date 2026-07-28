@@ -7,7 +7,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-07-11
-status: published
 ---
 
 # 規格・法規

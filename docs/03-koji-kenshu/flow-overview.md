@@ -5,7 +5,6 @@ tags:
   - 工事管理
 audience: [電気担当, 計装担当]
 last_verified: 2026-07-11
-status: published
 ---
 
 # 工事フロー全体図

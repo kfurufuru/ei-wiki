@@ -10,7 +10,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-07-18
-status: published
 ---
 
 # 低圧分岐回路の施設（過電流遮断器の位置・電線太さ）

@@ -7,7 +7,6 @@ tags:
   - 変圧器・受変電
 audience: [電気担当, 保全担当]
 last_verified: 2026-07-11
-status: published
 ---
 
 # 高圧

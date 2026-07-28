@@ -8,7 +8,6 @@ audience:
   - 計装担当
   - 製造担当
 last_verified: 2026-07-11
-status: published
 ---
 
 # アラーム管理

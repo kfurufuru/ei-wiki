@@ -7,7 +7,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-07-11
-status: published
 ---
 
 # 耐圧試験・絶縁診断
