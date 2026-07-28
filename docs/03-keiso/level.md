@@ -106,3 +106,9 @@ status: published
 
     防爆機器は**Ex認証（TIIS/ATEX/IECEx）**を確認し、EPLグループ（IIA/IIB/IIC）が
     対象ガスに対応していることを必ず確認する。
+
+## 関連ページ
+
+- [圧力計測](pressure.md) — 差圧式レベル計の差圧測定側
+- [計装基礎](basics.md) — 測定原理と信号伝送の共通事項
+- [計装カテゴリ](index.md) — より広い計装知識へ

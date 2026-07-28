@@ -122,3 +122,9 @@ status: active
 | 本質安全防爆 | Intrinsic Safety | Ex ia/ib | 回路エネルギーを点火能力以下に制限する方式 |
 | 温度クラス | Temperature Class | T1〜T6 | 機器表面の最高温度を分類（T6 が最も低温：85℃） |
 | ガスグループ | Gas Group | IIA/IIB/IIC | 爆発性ガスを最小点火エネルギーで分類。IIC が最も危険 |
+
+## 関連ページ
+
+- [規格一覧](standards-list.md) — 用語の根拠となる規格を引く
+- [読む順番ガイド](../getting-started.md) — 初めての人はここから
+- [リファレンス](index.md) — 他の参照資料へ
