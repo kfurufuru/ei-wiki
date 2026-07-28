@@ -8,6 +8,7 @@
 使い方:
     python scripts/gen_figure_paths.py valve   # 制御弁の固有流量特性
     python scripts/gen_figure_paths.py tcc     # 保護協調 TCC 曲線
+    python scripts/gen_figure_paths.py trend   # 絶縁抵抗トレンド（形状の例示）
     python scripts/gen_figure_paths.py --check # 生成値と記事の数値表の突合
 
 典拠:
@@ -159,11 +160,53 @@ def check():
     return 0 if ok else 1
 
 
+
+
+# ---------------------------------------------------------------- 絶縁トレンド
+
+# 絶縁抵抗トレンド図（片対数）のプロット領域（viewBox 420x300 内）
+TR_LEFT, TR_RIGHT, TR_TOP, TR_BOTTOM = 70.0, 396.0, 34.0, 232.0
+TR_YEARS = 5
+TR_VMIN, TR_VMAX = 0.1, 100.0     # 縦軸 [MΩ]（片対数・3ディケード）
+# 1 MΩ の「要注意の目安」線を軸から離して描くため、下端を 0.1 まで伸ばす。
+# こうしないと目安線が x 軸と重なり、しきい値として読めない。
+
+# 良好/危険の2曲線は「形状の例示」であって実測データではない。
+# 数値を読み取られないよう、図には目盛だけ置き点マーカーは打たない。
+TREND_GOOD = [100, 95, 88, 80, 72, 65]
+TREND_BAD = [100, 55, 22, 7.5, 2.6, 0.6]   # 末尾は目安 1 MΩ を割り込ませる
+
+
+def tr_x(year: float) -> float:
+    return TR_LEFT + (TR_RIGHT - TR_LEFT) * (year / TR_YEARS)
+
+
+def tr_y(v: float) -> float:
+    r = (math.log10(v) - math.log10(TR_VMIN)) / (math.log10(TR_VMAX) - math.log10(TR_VMIN))
+    return TR_BOTTOM - (TR_BOTTOM - TR_TOP) * r
+
+
+def gen_trend():
+    print("# 絶縁抵抗トレンド（viewBox 420x300・縦軸片対数 0.1-100 MΩ・横軸 0-5年）")
+    print("# 注意: 2曲線は形状の例示であり実測値ではない（figcaption に明記すること）")
+    for name, series in (("良好", TREND_GOOD), ("危険", TREND_BAD)):
+        pts = " L ".join(f"{tr_x(i):.1f},{tr_y(v):.1f}" for i, v in enumerate(series))
+        print(f'\n<!-- {name}なトレンド -->')
+        print(f'd="M {pts}"')
+    print("\n<!-- 目盛位置 -->")
+    for v in (0.1, 1, 10, 100):
+        print(f"  {v}MΩ -> y={tr_y(v):.1f}")
+    for y in range(0, TR_YEARS + 1):
+        print(f"  {y}年 -> x={tr_x(y):.1f}")
+
+
 if __name__ == "__main__":
     arg = sys.argv[1] if len(sys.argv) > 1 else "--check"
     if arg == "valve":
         gen_valve()
     elif arg == "tcc":
         gen_tcc()
+    elif arg == "trend":
+        gen_trend()
     else:
         sys.exit(check())

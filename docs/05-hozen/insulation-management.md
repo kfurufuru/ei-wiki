@@ -131,27 +131,58 @@ K_T : 温度補正係数
 
 絶縁管理で最も重要なのは単点の合否判定ではなく、経年変化（トレンド）の監視。
 
-```
-良好なトレンド:
-絶縁抵抗
-    │
-100MΩ ─┼────────── ← 比較的安定
-        │  微緩やかに低下
- 10MΩ ─┼──────────
-        │
-  1MΩ ─┼──────────
-        └─────────────── 年数（点検ごと）
-
-危険なトレンド（交換・修理を検討）:
-絶縁抵抗
-    │
-100MΩ ─┼──
-        │   ↘
- 10MΩ ─┼     ↘  ← 急激な低下傾向 → 劣化進行中
-        │       ↘
-  1MΩ ─┼────────↘← 要注意ライン
-        └─────────────── 年数
-```
+<figure>
+<svg viewBox="0 0 420 300" width="420" height="300" role="img"
+     aria-labelledby="fig-ir-trend-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-ir-trend-title">絶縁抵抗の経年トレンドの例。縦軸は片対数。良好なトレンドはほぼ横ばいで緩やかに低下するのに対し、危険なトレンドは右下がりに急降下し要注意の目安を割り込む。</title>
+  <!-- グリッド -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="0.5" stroke-dasharray="3 3">
+    <line x1="70" y1="100" x2="396" y2="100"/>
+    <line x1="70" y1="166" x2="396" y2="166"/>
+    <line x1="135.2" y1="34" x2="135.2" y2="232"/>
+    <line x1="200.4" y1="34" x2="200.4" y2="232"/>
+    <line x1="265.6" y1="34" x2="265.6" y2="232"/>
+    <line x1="330.8" y1="34" x2="330.8" y2="232"/>
+  </g>
+  <!-- 軸 -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.5">
+    <line x1="70" y1="34" x2="70" y2="232"/>
+    <line x1="70" y1="232" x2="396" y2="232"/>
+  </g>
+  <!-- 要注意の目安（1 MΩ・実務目安であって法定値ではない） -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.2" stroke-dasharray="6 4">
+    <line x1="70" y1="166" x2="396" y2="166"/>
+  </g>
+  <!-- 曲線: scripts/gen_figure_paths.py trend の出力（形状の例示） -->
+  <g style="fill: none; stroke: var(--md-default-fg-color)" stroke-width="2.4" stroke-linejoin="round">
+    <path d="M 70.0,34.0 L 135.2,35.5 L 200.4,37.7 L 265.6,40.4 L 330.8,43.4 L 396.0,46.3"/>
+    <path stroke-dasharray="8 5" d="M 70.0,34.0 L 135.2,51.1 L 200.4,77.4 L 265.6,108.2 L 330.8,138.6 L 396.0,180.6"/>
+  </g>
+  <!-- 目盛 -->
+  <g style="fill: var(--md-default-fg-color--light)" font-size="14">
+    <text x="62" y="39" text-anchor="end">100</text>
+    <text x="62" y="105" text-anchor="end">10</text>
+    <text x="62" y="171" text-anchor="end">1</text>
+    <text x="62" y="237" text-anchor="end">0.1</text>
+    <text x="70" y="252" text-anchor="middle">0</text>
+    <text x="200.4" y="252" text-anchor="middle">2</text>
+    <text x="330.8" y="252" text-anchor="middle">4</text>
+    <text x="396" y="252" text-anchor="middle">5</text>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" font-size="16">
+    <text x="233" y="276" text-anchor="middle">点検回数（年）</text>
+    <text x="18" y="133" text-anchor="middle" transform="rotate(-90 18 133)">絶縁抵抗（MΩ・対数）</text>
+  </g>
+  <!-- 直接ラベル -->
+  <g style="fill: var(--md-default-fg-color); stroke: var(--md-default-bg-color)"
+     stroke-width="4" paint-order="stroke" stroke-linejoin="round" font-size="14">
+    <text x="250" y="36" text-anchor="start">良好（ほぼ横ばい）</text>
+    <text x="150" y="100" text-anchor="start">危険（急降下）</text>
+    <text x="392" y="160" text-anchor="end">要注意の目安 1 MΩ</text>
+  </g>
+</svg>
+<figcaption><strong>2本の曲線は形状の例示であり、実測データではありません。</strong>絶対値そのものより、右下がりの傾きが続いているかを見ます。なお 1 MΩ は実務上の目安であって法定値ではありません（法定値は上表の 0.1 / 0.2 / 0.4 MΩ）。</figcaption>
+</figure>
 
 !!! tip "トレンドグラフの更新"
     測定ごとにグラフ（または表）に追記する。「前回比 50% 以上低下」が見られたら交換・点検を計画する。絶対値が良好でも急激な低下は要注意のサイン。
