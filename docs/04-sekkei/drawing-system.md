@@ -6,7 +6,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-04-04
-status: active
 ---
 
 # 図面体系

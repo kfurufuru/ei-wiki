@@ -10,7 +10,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-07-18
-status: published
 ---
 
 # 幹線サイズと過電流遮断器の定格選定

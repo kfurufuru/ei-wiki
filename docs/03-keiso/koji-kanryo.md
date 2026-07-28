@@ -7,7 +7,6 @@ audience:
   - 電気担当
   - 計装担当
 last_verified: 2026-07-11
-status: published
 ---
 
 # 工事完了後の受入実務

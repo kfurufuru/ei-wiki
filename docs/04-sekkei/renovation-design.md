@@ -7,7 +7,6 @@ audience:
   - 電気担当
   - 設計担当
 last_verified: 2026-07-11
-status: published
 ---
 
 # 改造・更新設計の注意点

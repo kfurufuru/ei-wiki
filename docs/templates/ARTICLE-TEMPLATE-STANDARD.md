@@ -6,7 +6,6 @@ tags:
   - 入門
 audience: [編集担当, 記事執筆者]
 last_verified: 2026-04-15
-status: published
 ---
 
 # 記事執筆テンプレート標準
@@ -50,7 +49,6 @@ audience:          # 対象者（複数可）
   - 保全担当       # 保全作業者向け
   - 製造担当       # 運転オペレーター向け
 last_verified: YYYY-MM-DD
-status: published  # published / draft / archived
 ---
 ```
 
@@ -259,7 +257,6 @@ description: "準備から確認まで — 実務チェックリスト"
 tags: [計装, 計装信号, 手順書]
 audience: [電気担当, 保全担当]
 last_verified: YYYY-MM-DD
-status: published
 ---
 
 # 〇〇の実施手順
@@ -334,7 +331,6 @@ description: "種類・精度・コストのトレードオフ"
 tags: [計装, 計装信号, 逆引き]
 audience: [電気担当, 計装担当]
 last_verified: YYYY-MM-DD
-status: published
 ---
 
 # 〇〇センサの選定基準
@@ -391,7 +387,6 @@ description: "症状から原因を特定し、対応する"
 tags: [トラブル, 保護継電器, 逆引き]
 audience: [電気担当, 保全担当, 製造担当]
 last_verified: YYYY-MM-DD
-status: published
 ---
 
 # 〇〇トラブル対応ガイド

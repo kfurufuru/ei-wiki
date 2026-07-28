@@ -8,7 +8,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-07-09
-status: active
 ---
 
 # 接地（低圧）

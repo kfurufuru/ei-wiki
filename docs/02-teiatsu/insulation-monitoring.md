@@ -8,7 +8,6 @@ audience:
   - 電気担当
   - 保全担当
 last_verified: 2026-06-11
-status: active
 ---
 
 # 絶縁監視装置（常時監視・Ior方式）

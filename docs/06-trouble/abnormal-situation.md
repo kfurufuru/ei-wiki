@@ -10,7 +10,6 @@ audience:
   - 保全担当
   - 電気主任
 last_verified: 2026-04-07
-status: active
 ---
 
 # 非定常時の判断フレーム

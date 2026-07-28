@@ -8,7 +8,6 @@ audience:
   - 保全担当
   - 電気主任
 last_verified: 2026-04-16
-status: published
 ---
 
 # 他部門調整ノウハウ

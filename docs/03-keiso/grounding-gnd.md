@@ -9,7 +9,6 @@ audience:
   - 電気担当
   - 保全担当
 last_verified: 2026-06-05
-status: published
 ---
 
 # グランド（GND）と接地（アース）

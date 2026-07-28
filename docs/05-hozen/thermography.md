@@ -8,7 +8,6 @@ audience:
   - 保全担当
   - 電気主任
 last_verified: 2026-06-11
-status: published
 ---
 
 # サーモグラフィ診断（赤外線熱画像）

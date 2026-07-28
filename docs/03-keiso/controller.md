@@ -7,7 +7,6 @@ tags:
 audience:
   - 電気担当
 last_verified: 2026-04-04
-status: published
 ---
 
 # 調節計・記録計

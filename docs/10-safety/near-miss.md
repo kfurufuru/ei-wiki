@@ -8,7 +8,6 @@ audience:
   - 電気担当
   - 保全担当
 last_verified: 2026-04-07
-status: active
 ---
 
 # よくあるミス・ヒヤリハット集

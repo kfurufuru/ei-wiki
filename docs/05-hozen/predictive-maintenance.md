@@ -9,7 +9,6 @@ audience:
   - 保全担当
   - 電気主任
 last_verified: 2026-07-09
-status: published
 ---
 
 # データ活用・予兆保全
