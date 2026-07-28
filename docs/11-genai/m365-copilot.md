@@ -11,6 +11,12 @@ audience:
 
 # M365 Copilot活用
 
+## 30秒まとめ
+
+M365 Copilot は Teams・Outlook・Excel 等に組み込まれたAIアシスタントで、最大の特徴は社内データと連携できること。議事録要約やメール下書きなど、既存の業務データを前提とした作業で効果が出る。
+
+---
+
 ## M365 Copilotとは
 
 Microsoft 365（Teams・Outlook・Excel・Word・PowerPoint）に組み込まれたAIアシスタント。

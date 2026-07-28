@@ -354,6 +354,37 @@ def check_svg(docs):
 
 
 # ---------------------------------------------------------------------------
+# 検査6: 想定外スクリプトの混入（生成テキストの取り違え検知）
+# ---------------------------------------------------------------------------
+# 本 Wiki は日本語＋ラテン文字＋記号で書かれる。キリル・ハングル・タイ等が
+# 本文に現れたら、ほぼ確実に生成・コピペ時の混入事故。
+# 実事案 2026-07-28: 30秒まとめの一括追加でロシア語断片が1ページに混入した
+# （目視では気づきにくく、ビルドも lint も通ってしまった）。
+_UNEXPECTED_SCRIPT = re.compile(
+    r"[Ѐ-ӿ"      # キリル
+    r"가-힯"       # ハングル音節
+    r"฀-๿"       # タイ
+    r"؀-ۿ"       # アラビア
+    r"֐-׿"       # ヘブライ
+    r"ऀ-ॿ]"      # デーヴァナーガリー
+)
+
+
+def check_unexpected_script(docs):
+    """検査6: 想定外スクリプトの混入。違反メッセージのリストを返す（FAIL）。"""
+    fails = []
+    for rel, lines in docs:
+        for i, line in enumerate(lines):
+            if "lint-ok: SCRIPT6" in line:
+                continue
+            m = _UNEXPECTED_SCRIPT.search(line)
+            if m:
+                fails.append(f"{rel}:{i+1}: 想定外スクリプトの混入（{m.group(0)!r}）"
+                             f"— 生成/コピペ事故の可能性。意図的なら lint-ok: SCRIPT6")
+    return fails
+
+
+# ---------------------------------------------------------------------------
 # self-test（正対照・負対照・canary）
 # ---------------------------------------------------------------------------
 def self_test():
@@ -420,6 +451,14 @@ def self_test():
     if check_svg([("_svgtest.md", exempt.split("\n"))]):
         failures.append("検査5 免除: lint-ok: SVG5 が効いていない")
 
+    # 3e) 検査6 正対照/負対照: 想定外スクリプト検出の生存証明
+    if not check_unexpected_script([("_t.md", ["原単位で操業度の влияние を切り分ける"])]):
+        failures.append("検査6 正対照: キリル文字の混入を検出できない（検出器故障）")
+    if check_unexpected_script([("_t.md", ["原単位で操業度の変動を切り分ける（ASCII ok）"])]):
+        failures.append("検査6 負対照: 正常な日本語を誤検出している")
+    if check_unexpected_script([("_t.md", ["Привет <!-- lint-ok: SCRIPT6 引用 -->"])]):
+        failures.append("検査6 免除: lint-ok: SCRIPT6 が効いていない")
+
     # 4) canary: 正典値の黙った削除検知
     for rel, needle, why in CANARIES:
         p = ROOT / rel
@@ -463,6 +502,7 @@ def run_all():
     fm_fails = check_frontmatter(docs)
     boost_fails = check_boost(docs)
     svg_fails = check_svg(docs)
+    script_fails = check_unexpected_script(docs)
     warn_total, warn_files = warn_codeblocks(docs)
 
     print("")
@@ -478,6 +518,9 @@ def run_all():
         print(f"[FAIL] {msg}")
     # 検査5: インラインSVGの記法規約
     for msg in svg_fails:
+        print(f"[FAIL] {msg}")
+    # 検査6: 想定外スクリプトの混入
+    for msg in script_fails:
         print(f"[FAIL] {msg}")
 
     # 検査4: WARN（既存の裸フェンスは免罪）＋総数ラチェット（増加は FAIL）
@@ -495,13 +538,14 @@ def run_all():
         )
 
     total_fail = (len(forbidden) + len(fm_fails) + len(boost_fails) + len(svg_fails)
-                  + (1 if ratchet_fail else 0))
+                  + len(script_fails) + (1 if ratchet_fail else 0))
     print("\n==== サマリ ====")
     print(f"  検査1 数値矛盾:        {len(forbidden)} 件")
     print(f"  検査2 frontmatter:    {len(fm_fails)} 件")
     print(f"  検査3 06-trouble boost: {len(boost_fails)} 件")
     print(f"  検査4 コードブロック(WARN): {warn_total} 箇所 / {len(warn_files)} ファイル")
     print(f"  検査5 インラインSVG:    {len(svg_fails)} 件")
+    print(f"  検査6 想定外スクリプト: {len(script_fails)} 件")
     if total_fail:
         print(f"[NG] FAIL 合計 {total_fail} 件。")
         return 1
