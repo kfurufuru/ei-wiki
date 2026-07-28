@@ -164,3 +164,12 @@ HART（Highway Addressable Remote Transducer）通信は 4-20mA に重畳した�
     SIS バイパス中は安全機能が一部無効になる。
     バイパス時間を最小限にし、バイパス中は別の安全対策（人による監視など）を実施する。
     バイパスの開始・解除は必ず記録に残す（高圧ガス保安法の管理記録）。
+
+## 関連ページ
+
+- [計装基礎](../03-keiso/basics.md) — 4-20mA・NAMUR NE43 の正常/異常範囲の定義
+- [計装配線](../03-keiso/wiring.md) — ループ抵抗・シールド処理・配線起因の異常
+- [温度計測](../03-keiso/temperature.md) — TC/RTD の断線検出と基準接点補償
+- [接地・ノイズトラブル](grounding-noise.md) — ノイズ由来で信号が暴れる場合
+- [ループチェック](../guidelines/loop-check.md) — 健全性を手順で確認する
+- [症状逆引きインデックス](index.md) — 他の症状から探す

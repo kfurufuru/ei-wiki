@@ -119,3 +119,10 @@ flowchart LR
     比例帯 PB（%）= 100 / Kp
     PB が小さいほどゲインが高い（応答が敏感）。
     例：PB=50% → Kp=2.0
+
+## 関連ページ
+
+- [調節計・記録計](controller.md) — PID を実装する機器側の設定
+- [制御弁](control-valve.md) — PID 出力を受ける最終操作端
+- [DCS](dcs.md) — DCS 上での PID ブロックと運用
+- [計装カテゴリ](index.md) — より広い計装知識へ
