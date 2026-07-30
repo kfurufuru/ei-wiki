@@ -354,7 +354,8 @@ def check_boost(docs):
 # 続く 06-trouble 3ページの mermaid 化で 237→235、
 # 絶縁トレンド図の SVG 化で 235→234 に減ったので基準も下げる。
 # 2026-07-30: 工事計画届出フローの裸フェンスを ```text 化して 234→233。
-CODEBLOCK_WARN_BASELINE = 233
+# 2026-07-30: wiring のシールド接地 ASCII 図を SVG 化して 233→232。
+CODEBLOCK_WARN_BASELINE = 232
 
 
 def warn_codeblocks(docs):
