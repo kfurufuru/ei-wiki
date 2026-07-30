@@ -327,6 +327,12 @@ def warn_codeblocks(docs):
 #  - 色のハードコードはダークモードで見えなくなる（seigyoban-tekkyo の実害あり）。
 #    意味色が要る場合は custom.css の --ei-fig-* トークンを使う。
 #  - <figure markdown="..."> は SVG 内テキストを Markdown 処理して壊す。属性を付けない。
+#  - <svg> は必ず <figure> で包む（2026-07-30 実測）。python-markdown は <svg> を
+#    ブロック要素として認識しないため、生の <svg> はインラインHTML扱いで <p> に
+#    包まれ、内部の HTML コメントや空行のたびに <p> が分割されて SVG がバラバラに
+#    なる（ビルド後HTMLに <p><line .../> が並び、図の中身が丸ごと失われる）。
+#    <figure> はブロック要素として認識されるので中身が raw のまま通る。
+#    lint も mkdocs build --strict も緑のまま素通りする種類の事故なので機械化した。
 SVG_BANNED_VARS = ("--md-primary-fg-color", "--md-accent-fg-color",
                    "--md-default-fg-color--lighter")
 _SVG_OPEN = re.compile(r"<svg\b[^>]*>", re.I)
@@ -334,6 +340,8 @@ _SVG_BLOCK = re.compile(r"<svg\b.*?</svg>", re.I | re.S)
 _HEXCOLOR = re.compile(r'(?:fill|stroke|stop-color|color)\s*[:=]\s*"?\s*(#[0-9a-fA-F]{3,8})')
 _FIGURE_MD = re.compile(r"<figure\b[^>]*\bmarkdown\s*=", re.I)
 _TITLE_ID = re.compile(r'<title\b[^>]*\bid\s*=\s*"([^"]+)"', re.I)
+# <figure> ... <svg>…</svg> ... </figure>（figcaption を挟んでもよい）
+_SVG_WRAPPED = re.compile(r"<figure\b[^>]*>\s*<svg\b.*?</svg>.*?</figure>", re.I | re.S)
 
 
 def check_svg(docs):
@@ -349,6 +357,11 @@ def check_svg(docs):
         if _FIGURE_MD.search(text):
             fails.append(f"{rel}: <figure> に markdown 属性がある"
                          f"（SVG内テキストがMarkdown処理され壊れる）")
+        # <svg> の直前が <figure> で、</svg> の直後が </figure> であること。
+        # 生の <svg> は python-markdown に <p> で分割され、図の中身が失われる。
+        if len(_SVG_WRAPPED.findall(text)) != len(_SVG_BLOCK.findall(text)):
+            fails.append(f"{rel}: <svg> が <figure> で包まれていない"
+                         f"（python-markdown が <p> で分割し、ビルド後HTMLで図の中身が消える）")
         ids = []
         for block in _SVG_BLOCK.findall(text):
             open_tag = _SVG_OPEN.search(block)
@@ -454,6 +467,15 @@ def self_test():
          '<svg viewBox="0 0 10 10" width="10" height="10" role="img"><title id="dup">t</title></svg>\n'
          '<svg viewBox="0 0 10 10" width="10" height="10" role="img"><title id="dup">t</title></svg>',
          "重複"),
+        ("figure 包み無し（生の svg）",
+         '<svg viewBox="0 0 10 10" width="10" height="10" role="img">\n'
+         '<title id="a">t</title>\n<!-- コメント -->\n<line x1="0" y1="0" x2="9" y2="9"/>\n</svg>',
+         "<figure> で包まれていない"),
+        ("2枚のうち1枚だけ figure 包み",
+         '<figure>\n<svg viewBox="0 0 10 10" width="10" height="10" role="img">'
+         '<title id="a">t</title></svg>\n</figure>\n\n'
+         '<svg viewBox="0 0 10 10" width="10" height="10" role="img"><title id="b">t</title></svg>',
+         "<figure> で包まれていない"),
     ]
     for label, sample, needle in svg_cases:
         msgs = check_svg([("_svgtest.md", sample.split("\n"))])
