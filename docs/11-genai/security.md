@@ -58,6 +58,86 @@ audience:
 
 ## ツール別の情報管理ルール
 
+ルールが分かれる理由は一つで、**入力したデータが会社の管理下に留まるか、社外のサーバーへ出るか**です。
+
+<figure>
+<svg viewBox="0 0 720 414" width="720" height="414" role="img"
+     aria-labelledby="fig-genai-boundary-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-genai-boundary-title">生成AIツールごとの入力データの行き先。M365 Copilot（会社契約）とローカルLLMは社内に留まるため社内情報の入力が可能。ChatGPT・Claude.ai・Bing Copilotの個人アカウントは社外のサーバーへ送信されるため原則禁止、Claude CodeはAPI経由でAnthropicへ送信されるため要IT確認。</title>
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.5">
+    <!-- 入力元 -->
+    <rect x="280" y="14" width="160" height="38" rx="6"/>
+    <!-- 分岐 -->
+    <line x1="360" y1="52" x2="360" y2="70"/>
+    <line x1="180" y1="70" x2="540" y2="70"/>
+    <line x1="180" y1="70" x2="180" y2="78"/>
+    <line x1="540" y1="70" x2="540" y2="78"/>
+  </g>
+  <g style="stroke: none; fill: var(--md-default-fg-color)">
+    <path d="M 180,88 L 174,77 L 186,77 Z"/>
+    <path d="M 540,88 L 534,77 L 546,77 Z"/>
+  </g>
+  <!-- 社内 / 社外 の境界 -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.8">
+    <rect x="16" y="88" width="328" height="180" rx="8"/>
+  </g>
+  <g style="stroke: var(--ei-fig-danger); fill: none" stroke-width="1.8" stroke-dasharray="7 4">
+    <rect x="376" y="88" width="328" height="316" rx="8"/>
+  </g>
+  <!-- ツール枠 -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.2">
+    <rect x="32" y="128" width="296" height="56" rx="4"/>
+    <rect x="32" y="196" width="296" height="56" rx="4"/>
+    <rect x="392" y="128" width="296" height="56" rx="4"/>
+    <rect x="392" y="196" width="296" height="56" rx="4"/>
+    <rect x="392" y="264" width="296" height="56" rx="4"/>
+    <rect x="392" y="332" width="296" height="56" rx="4"/>
+  </g>
+  <!-- 見出し -->
+  <g style="fill: var(--md-default-fg-color)" font-size="13">
+    <text x="360" y="39" text-anchor="middle">社内情報を入力</text>
+    <text x="180" y="106" text-anchor="middle">社内に留まる（会社の管理下）</text>
+  </g>
+  <g font-size="13">
+    <text x="540" y="106" text-anchor="middle" style="fill: var(--ei-fig-danger)">社外のサーバーへ送信される</text>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" font-size="10">
+    <text x="328" y="122" text-anchor="end">社内情報の入力</text>
+    <text x="688" y="122" text-anchor="end">社内情報の入力</text>
+  </g>
+  <!-- ツール名 -->
+  <g style="fill: var(--md-default-fg-color)" font-size="12">
+    <text x="44" y="152">M365 Copilot（会社契約）</text>
+    <text x="44" y="220">ローカルLLM（社内サーバー等）</text>
+    <text x="404" y="152">ChatGPT（個人アカウント）</text>
+    <text x="404" y="220">Claude.ai（個人アカウント）</text>
+    <text x="404" y="288">Bing Copilot（Edgeブラウザ）</text>
+    <text x="404" y="356">Claude Code（APIキー使用）</text>
+  </g>
+  <!-- 行き先 -->
+  <g style="fill: var(--md-default-fg-color--light)" font-size="11">
+    <text x="44" y="172">Microsoft 365 テナント内</text>
+    <text x="44" y="240">社内サーバー内</text>
+    <text x="404" y="172">OpenAI（米国）のサーバーへ</text>
+    <text x="404" y="240">Anthropic（米国）のサーバーへ</text>
+    <text x="404" y="308">Microsoft（個人向けサービス扱い）</text>
+    <text x="404" y="376">API 経由で Anthropic へ</text>
+  </g>
+  <!-- 判断 -->
+  <g style="fill: var(--md-default-fg-color)" font-size="12">
+    <text x="316" y="152" text-anchor="end">可</text>
+    <text x="316" y="220" text-anchor="end">可（IT許可後）</text>
+  </g>
+  <g font-size="12">
+    <text x="676" y="152" text-anchor="end" style="fill: var(--ei-fig-danger)">原則禁止</text>
+    <text x="676" y="220" text-anchor="end" style="fill: var(--ei-fig-danger)">原則禁止</text>
+    <text x="676" y="288" text-anchor="end" style="fill: var(--ei-fig-danger)">原則禁止</text>
+    <text x="676" y="356" text-anchor="end" style="fill: var(--ei-fig-warn)">要IT確認</text>
+  </g>
+</svg>
+<figcaption>ツール別ルールの根拠は「データの行き先」。実線の枠内は会社の管理下に留まるため社内情報を入力でき、破線の枠内は社外のサーバーへ出るため原則禁止。右端は下表の「社内情報の入力」欄と同じ判断。Bing Copilot は会社契約版が別扱いになる点に注意。</figcaption>
+</figure>
+
 | ツール | 社内情報の入力 | データの行き先 | 判断 |
 |--------|------------|--------------|------|
 | M365 Copilot（会社契約） | 可 | 社内Microsoft 365テナント内に留まる | 社内文書・業務情報は入力OK |
