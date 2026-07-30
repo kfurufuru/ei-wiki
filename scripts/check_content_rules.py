@@ -251,6 +251,29 @@ FORBIDDEN = [
      "回転機（モーター）の耐圧試験の根拠は解釈第16条第2項・16-2表。"
      "第15条は電路（ケーブル等）の規定でありモーターは対象外",
      "6.6kV モーターの耐圧試験電圧は電技解釈 第15条に基づく法定値"),
+    # 20260730-*: 2026-07-30 の 03-keiso 根拠節整備（temperature.md）で一次照合して確定。
+    # ID は YYYYMMDD-slug 形式（連番 N# は並列PRで衝突するため 2026-07-30 に廃止）。
+    # JIS C 1602:2015 表2 の許容差はクラス2=±2.5℃（333℃未満）/0.75%、クラス1=±1.5℃
+    # （375℃未満）/0.4%。±2.2℃/±1.1℃ は ASTM E230（旧 ANSI MC96.1）系の値であり、
+    # ASTM の値として正しく説明する行（ASTM/ANSI/E230 を含む行）は負ガードで除外する。
+    ("20260730-tc-class2-tolerance",
+     _both_unless(r"±\s*2\.2\s*℃", r"(熱電対|K\s*型|J\s*型|クラス)", r"ASTM|ANSI|E230"),
+     "熱電対クラス2の許容差 ±2.2℃ は誤り（JIS C 1602:2015 表2 はクラス2=±2.5℃ または"
+     " ±0.75%。±2.2℃ は ASTM E230 系の値）",
+     "K熱電対 クラス2 の許容差は ±2.2℃ または ±0.75% です"),
+    ("20260730-tc-class1-tolerance",
+     _both_unless(r"±\s*1\.1\s*℃", r"(熱電対|K\s*型|高精度|クラス)", r"ASTM|ANSI|E230"),
+     "熱電対クラス1（高精度品）の許容差 ±1.1℃ は誤り（JIS C 1602:2015 表2 はクラス1="
+     "±1.5℃ または ±0.4%。±1.1℃ は ASTM E230 系の値）",
+     "K型熱電対の高精度品は ±1.1℃ または ±0.4% です"),
+    # 現行 JIS C 1610:2012 表9 の補償導線識別色は ＋側=種類色（K=緑・J=黒・T=茶）／−側=白。
+    # 赤/白 は旧JIS（1981年版・1995年版区分2）の極性色。新旧併記の行（旧/1981 や現行の
+    # 種類色を含む行）は負ガードで除外する。
+    ("20260730-hosho-kx-color",
+     _both_unless(r"[KJT]X", r"赤\s*[/／]\s*白", r"旧|1981|ANSI|緑|黒|茶"),
+     "補償導線の現行JIS識別色を赤/白と書くのは誤り（JIS C 1610:2012 表9 は＋側=種類色"
+     "（K=緑・J=黒・T=茶）／−側=白。赤/白は旧JIS 1981年版の極性色）",
+     "| KX | K型（延長形） | 0〜200℃ | 赤/白 |"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -261,6 +284,19 @@ EXTRA_POSITIVE = [
     ("20260710-ocr-shunji-150pct", "瞬時要素は150%〜200%"),        # %を各数値に付す位置違いでのすり抜け
     ("20260710-is-setchi-40ohm", "IS接地抵抗は40オーム以下"),    # 同上（Ω→オーム）
     ("20260710-cable-katamichi-28ohm", "1.25sqは片道28オーム/km"),     # 同上（Ω→オーム）
+]
+
+# 負対照 fixture: 是正後の「正しい説明文」を誤検出しないことの回帰証明。
+# 負ガード付きパターン（_both_unless 系）は、誤り値に言及しつつ正しく説明する行を
+# 巻き込みやすいため、実際に docs に書いた説明文の代表例をここに登録して守る。
+# (id, その ID が検出してはならないサンプル)
+NEGATIVE_FIXTURES = [
+    ("20260730-tc-class2-tolerance",
+     "輸入品カタログで見る「±2.2℃／±1.1℃」は ASTM E230（旧 ANSI MC96.1）系の許容差で、"),
+    ("20260730-tc-class1-tolerance",
+     "輸入品カタログで見る「±2.2℃／±1.1℃」は ASTM E230（旧 ANSI MC96.1）系の許容差で、"),
+    ("20260730-hosho-kx-color",
+     "| KX | K型（延長形） | 緑/白 | 赤/白・青（旧JIS） |"),
 ]
 
 # canary: これらの正典値が消えていたら FAIL（黙った削除の検知）。
@@ -615,6 +651,11 @@ def self_test():
         if hits & {"20260730-kaitenki-dc-2bai", "20260730-motor-taiatsu-15jo"}:
             failures.append(f"20260730-kaitenki-dc-2bai/20260730-motor-taiatsu-15jo 負対照: 正しい説明文 {s!r} を誤検出（{hits & {'20260730-kaitenki-dc-2bai', '20260730-motor-taiatsu-15jo'}}）")
 
+    # 3a2) 負対照 fixture: 是正後の正しい説明文を誤検出しないこと（負ガードの生存証明）
+    for pid, sample in NEGATIVE_FIXTURES:
+        if any(v[1] == pid for v in scan_lines([sample])):
+            failures.append(f"負対照fixture {pid}: 正しい説明文を誤検出している: {sample!r}")
+
     # 3b) 検査5 正対照: 各 SVG 規約違反を検出できること（検出器の生存証明）
     svg_cases = [
         ("width/height 欠落",
@@ -688,7 +729,7 @@ def self_test():
         print(f"[NG] self-test: 検出器故障 {len(failures)} 件。この結果は信頼できません。")
         return 1
     print(f"[OK] self-test: 正対照{len(FORBIDDEN)} + 追加正対照{len(EXTRA_POSITIVE)} "
-          f"+ 負対照2 + canary{len(CANARIES)} パス")
+          f"+ 負対照{2 + len(NEGATIVE_FIXTURES)} + canary{len(CANARIES)} パス")
     return 0
 
 
