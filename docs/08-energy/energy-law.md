@@ -46,6 +46,53 @@ audience:
 
 > **原油換算の計算**: 電力1kWh = 0.0258L（原油換算係数）。年間電力使用量から換算すると、約58GWhで1,500kL相当。
 
+<figure>
+<svg viewBox="0 0 720 320" width="720" height="320" role="img"
+     aria-labelledby="fig-energylaw-shitei-map-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-energylaw-shitei-map-title">省エネ法の指定区分のしきい値マップ。横軸は年間エネルギー使用量（原油換算）で、1,500kLと3,000kLに区切りがある。上段は工場等のエネルギー使用量で判定する特定事業者（1,500kL以上）、下段は工場単体の使用量で判定する第二種エネルギー管理指定工場（1,500kL以上3,000kL未満）と第一種エネルギー管理指定工場（3,000kL以上）。</title>
+  <!-- 上段: 事業者単位の判定 -->
+  <g style="fill: var(--md-default-fg-color--light)" font-size="11">
+    <text x="70" y="42">工場等のエネルギー使用量</text>
+    <text x="70" y="152">工場単体のエネルギー使用量</text>
+  </g>
+  <g style="fill: none; stroke: var(--md-default-fg-color)" stroke-width="1.5">
+    <rect x="280" y="50" width="390" height="70"/>
+    <rect x="280" y="160" width="210" height="90"/>
+    <rect x="490" y="160" width="180" height="90"/>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" text-anchor="middle">
+    <text x="475" y="74" font-size="12">特定事業者</text>
+    <text x="475" y="96" font-size="10">エネルギー管理統括者・管理企画推進者の選任</text>
+    <text x="475" y="112" font-size="10">定期報告・中長期計画の提出</text>
+    <text x="385" y="184" font-size="11">第二種</text>
+    <text x="385" y="200" font-size="10">エネルギー管理指定工場</text>
+    <text x="385" y="226" font-size="10">エネルギー管理員の選任</text>
+    <text x="580" y="184" font-size="11">第一種</text>
+    <text x="580" y="200" font-size="10">エネルギー管理指定工場</text>
+    <text x="580" y="224" font-size="10">エネルギー管理士の選任</text>
+    <text x="580" y="240" font-size="10">（電気・熱それぞれ）</text>
+  </g>
+  <!-- しきい値の破線コネクタと軸 -->
+  <g style="fill: none; stroke: var(--md-default-fg-color--light)" stroke-width="1" stroke-dasharray="4 3">
+    <line x1="280" y1="250" x2="280" y2="268"/>
+    <line x1="490" y1="250" x2="490" y2="268"/>
+  </g>
+  <g style="fill: none; stroke: var(--md-default-fg-color)" stroke-width="1.5">
+    <line x1="70" y1="270" x2="680" y2="270"/>
+    <line x1="672" y1="266" x2="680" y2="270"/>
+    <line x1="672" y1="274" x2="680" y2="270"/>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" font-size="10" text-anchor="middle">
+    <text x="70" y="288">0</text>
+    <text x="280" y="288">1,500kL</text>
+    <text x="490" y="288">3,000kL</text>
+  </g>
+  <text x="680" y="308" font-size="10" text-anchor="end"
+        style="fill: var(--md-default-fg-color--light)">年間エネルギー使用量（原油換算）</text>
+</svg>
+<figcaption>特定事業者・エネルギー管理指定工場のしきい値マップ。上段は工場等のエネルギー使用量、下段は工場単体の使用量で判定します（区分と義務は上の表のとおり）。電力使用量から換算すると約58GWhで1,500kL相当です。横軸の 0〜3,000 kL は等間隔で取っています。3,000 kL 超は上限が無いため右端を矢印で省略しており、その先へ伸びる帯（特定事業者・第一種）の長さ自体に意味はありません。</figcaption>
+</figure>
+
 ---
 
 ## エネルギー管理士の選任義務と職務
