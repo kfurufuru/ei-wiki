@@ -92,6 +92,79 @@ audience:
 | 警報設定値 | 契約電力の90〜95% | 現場への警告・手動対応の起動 |
 | 遮断設定値 | 契約電力の95〜98% | 自動負荷遮断の起動 |
 
+### 1コマの中で予測デマンドがどう動くか
+
+<figure>
+<svg viewBox="0 0 640 340" width="640" height="340" role="img"
+     aria-labelledby="fig-demand-block-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-demand-block-title">30分コマ内における予測デマンドの推移。予測デマンドは経過とともに上昇し、警報設定値（契約電力の90〜95パーセント）を超えると警報を出力、遮断設定値（95〜98パーセント）を超えると優先順位に従って負荷を遮断する。遮断後は平均値が下がり、契約電力に達しないままコマが終了してリセットされる。</title>
+  <!-- 軸 -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.4">
+    <line x1="80" y1="50" x2="80" y2="260"/>
+    <line x1="80" y1="260" x2="580" y2="260"/>
+  </g>
+  <!-- 目盛 -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1">
+    <line x1="76" y1="207.5" x2="80" y2="207.5"/>
+    <line x1="76" y1="155" x2="80" y2="155"/>
+    <line x1="76" y1="102.5" x2="80" y2="102.5"/>
+    <line x1="76" y1="50" x2="80" y2="50"/>
+    <line x1="163.3" y1="260" x2="163.3" y2="264"/>
+    <line x1="246.7" y1="260" x2="246.7" y2="264"/>
+    <line x1="330" y1="260" x2="330" y2="264"/>
+    <line x1="413.3" y1="260" x2="413.3" y2="264"/>
+    <line x1="496.7" y1="260" x2="496.7" y2="264"/>
+    <line x1="580" y1="260" x2="580" y2="264"/>
+  </g>
+  <!-- 契約電力（実線）と2つの設定値（破線） -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.6">
+    <line x1="80" y1="102.5" x2="580" y2="102.5"/>
+  </g>
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.4" stroke-dasharray="6 4">
+    <line x1="80" y1="118.3" x2="580" y2="118.3"/>
+    <line x1="80" y1="144.5" x2="580" y2="144.5"/>
+  </g>
+  <!-- 残り5分の境界 -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.2" stroke-dasharray="3 3">
+    <line x1="496.7" y1="50" x2="496.7" y2="260"/>
+  </g>
+  <!-- 予測デマンドの推移 -->
+  <polyline points="113.3,186.5 146.7,181.3 180,176 213.3,168.1 246.7,162.9 280,155 313.3,144.5 346.7,134 380,123.5 396.7,118.3 413.3,115.1 446.7,117.2 480,121.4 513.3,125.6 546.7,129.8 580,132.9"
+            style="stroke: var(--md-default-fg-color); fill: none"
+            stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 警報点・遮断点 -->
+  <circle cx="313.3" cy="144.5" r="5" style="fill: var(--ei-fig-warn); stroke: none"/>
+  <circle cx="396.7" cy="118.3" r="5" style="fill: var(--ei-fig-danger); stroke: none"/>
+  <!-- 文字 -->
+  <g style="fill: var(--md-default-fg-color)" font-size="12">
+    <text x="72" y="264" text-anchor="end">70</text>
+    <text x="72" y="211.5" text-anchor="end">80</text>
+    <text x="72" y="159" text-anchor="end">90</text>
+    <text x="72" y="106.5" text-anchor="end">100</text>
+    <text x="72" y="54" text-anchor="end">110</text>
+    <text x="80" y="280" text-anchor="middle">0</text>
+    <text x="163.3" y="280" text-anchor="middle">5</text>
+    <text x="246.7" y="280" text-anchor="middle">10</text>
+    <text x="330" y="280" text-anchor="middle">15</text>
+    <text x="413.3" y="280" text-anchor="middle">20</text>
+    <text x="496.7" y="280" text-anchor="middle">25</text>
+    <text x="580" y="280" text-anchor="middle">30</text>
+    <text x="330" y="304" text-anchor="middle">30分コマ内の経過時間（分）</text>
+    <text x="26" y="155" text-anchor="middle" transform="rotate(-90 26 155)">予測デマンド（契約電力比 %）</text>
+    <text x="576" y="96" text-anchor="end">契約電力（100 %）</text>
+    <text x="86" y="114" text-anchor="start">遮断設定値（95〜98 %）</text>
+    <text x="86" y="140" text-anchor="start">警報設定値（90〜95 %）</text>
+    <text x="576" y="44" text-anchor="end">コマ終了 → 積算リセット</text>
+    <text x="502" y="250" text-anchor="start">残り5分</text>
+  </g>
+  <g font-size="12">
+    <text x="302" y="172" text-anchor="start" style="fill: var(--ei-fig-warn)">① 警報出力</text>
+    <text x="404" y="136" text-anchor="start" style="fill: var(--ei-fig-danger)">② 負荷遮断</text>
+  </g>
+</svg>
+<figcaption>予測デマンド（＝ 電力量 ÷ 経過時間 × 60）は、コマの経過とともに上昇して ① 警報設定値、② 遮断設定値を順に超える。②で負荷を遮断すると平均値が下がり始め、契約電力に届かないままコマが終了して積算がリセットされる。破線位置は表の目安（警報 90〜95 %、遮断 95〜98 %）の範囲内に置いた代表値。</figcaption>
+</figure>
+
 !!! tip "設定値は余裕を持たせる"
     30分コマの後半（残り5分）で急激な負荷増加があると、コントローラが間に合わないことがある。
     警報設定値を低めに設定し、早期に手動対応できる体制を作るのが実務的。
