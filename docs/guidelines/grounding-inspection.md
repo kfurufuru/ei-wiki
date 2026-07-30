@@ -69,6 +69,37 @@ last_verified: 2026-05-20
 [測定対象接地極 E] ←── 10m ──→ [補助P極] ←── 10m ──→ [補助C極]
 ```
 
+<figure>
+<svg viewBox="0 0 480 300" width="480" height="300" role="img" aria-labelledby="fig-grounding-inspection-title" style="max-width:100%;height:auto;">
+  <title id="fig-grounding-inspection-title">電位降下法の模式図。横軸はE極からP極までの距離、縦軸は測定抵抗値。曲線はE極とC極の近くで急変し、中央付近で平坦になる。この平坦部が真の接地抵抗を示し、P極はE〜C間の50%付近に置く。</title>
+  <!-- axes -->
+  <line x1="60" y1="40" x2="60" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="60" y1="250" x2="450" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <!-- axis labels -->
+  <text x="20" y="46" fill="currentColor" font-size="12">測定</text>
+  <text x="20" y="62" fill="currentColor" font-size="12">抵抗値</text>
+  <text x="300" y="288" fill="currentColor" font-size="12">P極の位置（E極からの距離）</text>
+  <!-- electrode ticks on x-axis: E at 60, P/50% at 250, C at 440 -->
+  <line x1="60" y1="250" x2="60" y2="258" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="250" y1="250" x2="250" y2="258" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="440" y1="250" x2="440" y2="258" stroke="currentColor" stroke-width="1.5"/>
+  <text x="55" y="272" fill="currentColor" font-size="13" font-weight="bold">E</text>
+  <text x="435" y="272" fill="currentColor" font-size="13" font-weight="bold">C</text>
+  <text x="222" y="272" fill="currentColor" font-size="11">50%付近</text>
+  <!-- plateau guide (true resistance level) -->
+  <line x1="60" y1="150" x2="250" y2="150" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+  <text x="64" y="144" fill="currentColor" font-size="11">真の接地抵抗</text>
+  <!-- fall-of-potential curve: steep rise near E, flat plateau mid, steep rise near C -->
+  <path d="M 60 225 C 110 150, 150 150, 190 150 L 310 150 C 350 150, 390 150, 440 70" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <!-- P at 50% marker on the plateau -->
+  <line x1="250" y1="150" x2="250" y2="250" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+  <circle cx="250" cy="150" r="4" fill="currentColor"/>
+  <text x="240" y="140" fill="currentColor" font-size="13" font-weight="bold">P</text>
+  <!-- flat region label -->
+  <text x="196" y="172" fill="currentColor" font-size="11">平坦部＝読み取り域</text>
+</svg>
+</figure>
+
 - E（被測定接地極）〜P（電位補助）〜C（電流補助）を**一直線上**に配置
 - E〜C間：**20m以上**（推奨）
 - E〜P間：E〜C間の**50%の位置**

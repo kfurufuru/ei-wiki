@@ -132,6 +132,36 @@ Asset: 当工場
 
 **前週比較（シンプル版）**:
 
+<figure>
+<svg viewBox="0 0 640 300" width="640" height="300" role="img" aria-labelledby="fig-energy-monitoring-title" style="max-width:100%;height:auto;">
+  <title id="fig-energy-monitoring-title">標準偏差管理の管理図。中心線μ、上方管理限界μ+2σ（黄色）、μ+3σ（赤色）の水平線と週ごとのプロット点を示す。μ+2σ超過点は黄、μ+3σ超過点は赤で強調。</title>
+  <!-- 軸 -->
+  <line x1="70" y1="30" x2="70" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="250" x2="470" y2="250" stroke="currentColor" stroke-width="1.5"/>
+  <!-- 軸ラベル -->
+  <text x="16" y="145" fill="currentColor" font-size="12" transform="rotate(-90 16 145)">日次平均電力量</text>
+  <text x="270" y="285" fill="currentColor" font-size="12" text-anchor="middle">週（同曜日）</text>
+  <!-- μ+3σ（赤・上方管理限界） -->
+  <line x1="70" y1="60" x2="470" y2="60" stroke="var(--ei-fig-danger)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="478" y="64" fill="var(--ei-fig-danger)" font-size="12">μ+3σ（赤）</text>
+  <!-- μ+2σ（黄・警告限界） -->
+  <line x1="70" y1="110" x2="470" y2="110" stroke="var(--ei-fig-warn)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="478" y="114" fill="var(--ei-fig-warn)" font-size="12">μ+2σ（黄）</text>
+  <!-- μ（中心線） -->
+  <line x1="70" y1="200" x2="470" y2="200" stroke="currentColor" stroke-width="1.5"/>
+  <text x="478" y="204" fill="currentColor" font-size="12">μ（中心線）</text>
+  <!-- プロット点と折れ線 -->
+  <polyline points="105,205 160,192 215,210 270,188 325,104 380,196 435,52" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+  <circle cx="105" cy="205" r="4" fill="currentColor"/>
+  <circle cx="160" cy="192" r="4" fill="currentColor"/>
+  <circle cx="215" cy="210" r="4" fill="currentColor"/>
+  <circle cx="270" cy="188" r="4" fill="currentColor"/>
+  <circle cx="325" cy="104" r="5" fill="var(--ei-fig-warn)" stroke="currentColor" stroke-width="1"/>
+  <circle cx="380" cy="196" r="4" fill="currentColor"/>
+  <circle cx="435" cy="52" r="5" fill="var(--ei-fig-danger)" stroke="currentColor" stroke-width="1"/>
+</svg>
+</figure>
+
 ```
 異常判定: 今週の日次平均電力量 > 先週の日次平均電力量 × 110%
 ```

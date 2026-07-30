@@ -61,6 +61,45 @@ tan φ₂ = tan(arccos 0.95) = 0.3287
 Qc = 500 × (0.8819 - 0.3287) = 500 × 0.5532 = 276.6 kvar ≒ 280 kvar
 ```
 
+<figure>
+<svg viewBox="0 0 640 360" width="640" height="360" role="img" aria-labelledby="fig-power-factor-title" style="max-width:100%;height:auto;font-family:sans-serif;">
+  <title id="fig-power-factor-title">力率改善の電力三角形。有効電力Pを固定し、コンデンサQcで無効電力をQ1からQ2へ押し下げると、力率角がφ1からφ2へ小さくなり、皮相電力がS1からS2へ縮む。</title>
+  <!-- P (horizontal, fixed) -->
+  <line x1="100" y1="310" x2="400" y2="310" stroke="currentColor" stroke-width="2"/>
+  <!-- Q1 (before, tall) : right edge, dashed -->
+  <line x1="400" y1="310" x2="400" y2="45" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <!-- Q2 (after) portion, solid -->
+  <line x1="400" y1="310" x2="400" y2="212" stroke="currentColor" stroke-width="2"/>
+  <!-- S1 (before) hypotenuse -->
+  <line x1="100" y1="310" x2="400" y2="45" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <!-- S2 (after) hypotenuse -->
+  <line x1="100" y1="310" x2="400" y2="212" stroke="currentColor" stroke-width="2.5"/>
+  <!-- Qc segment (the part removed by capacitor) highlighted on the Q axis -->
+  <line x1="400" y1="212" x2="400" y2="45" stroke="currentColor" stroke-width="5" opacity="0.3"/>
+  <!-- Qc bracket to the right -->
+  <line x1="470" y1="212" x2="470" y2="45" stroke="currentColor" stroke-width="1"/>
+  <line x1="465" y1="212" x2="475" y2="212" stroke="currentColor" stroke-width="1"/>
+  <line x1="465" y1="45" x2="475" y2="45" stroke="currentColor" stroke-width="1"/>
+  <line x1="405" y1="212" x2="470" y2="212" stroke="currentColor" stroke-width="0.7" opacity="0.5" stroke-dasharray="3 3"/>
+  <line x1="405" y1="45" x2="470" y2="45" stroke="currentColor" stroke-width="0.7" opacity="0.5" stroke-dasharray="3 3"/>
+  <!-- origin dot -->
+  <circle cx="100" cy="310" r="3" fill="currentColor"/>
+  <!-- angle arcs -->
+  <path d="M 150 310 A 50 50 0 0 0 138 275" fill="none" stroke="currentColor" stroke-width="1"/>
+  <path d="M 180 310 A 80 80 0 0 0 176 296" fill="none" stroke="currentColor" stroke-width="1"/>
+  <!-- labels -->
+  <text x="250" y="332" fill="currentColor" font-size="15" text-anchor="middle">P（有効電力）= 500 kW</text>
+  <text x="410" y="130" fill="currentColor" font-size="13" text-anchor="start">Q₁（改善前）</text>
+  <text x="410" y="270" fill="currentColor" font-size="13" text-anchor="start">Q₂（改善後）</text>
+  <text x="484" y="134" fill="currentColor" font-size="14" text-anchor="start">Qc ≒ 280 kvar</text>
+  <text x="200" y="150" fill="currentColor" font-size="14" text-anchor="middle" transform="rotate(-41 200 150)">S₁（改善前）</text>
+  <text x="235" y="255" fill="currentColor" font-size="14" text-anchor="middle" transform="rotate(-18 235 255)">S₂（改善後）</text>
+  <text x="158" y="303" fill="currentColor" font-size="13" text-anchor="start">φ₁</text>
+  <text x="187" y="306" fill="currentColor" font-size="12" text-anchor="start">φ₂</text>
+  <text x="20" y="350" fill="currentColor" font-size="12" text-anchor="start" opacity="0.85">cos φ₁=0.75 → cos φ₂=0.95（φ₁ &gt; φ₂）</text>
+</svg>
+</figure>
+
 ---
 
 ## 高調波とコンデンサ損傷リスク

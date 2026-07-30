@@ -70,6 +70,60 @@ LOTO はエネルギー源を物理的に遮断・施錠し、タグで他者に
 | 1人の錠だけ → その人が先に終わって施錠解除 | 残りの作業者が作業中に通電される |
 | 全員が個人錠 → 全員が解錠するまで設備は動かない | 最後の1人が解錠するまで安全が保証される |
 
+<figure>
+<svg viewBox="0 0 640 300" width="640" height="300" role="img" aria-labelledby="fig-lockout-tagout-title" style="max-width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
+  <title id="fig-lockout-tagout-title">遮断器のハンドルにロックアウトハスプを掛け、作業者A・B・Cの個人錠を追加した模式図。全員が解錠するまで遮断器は投入できない。</title>
+  <!-- 遮断器本体 -->
+  <rect x="30" y="90" width="120" height="120" rx="6" stroke-width="2"/>
+  <text x="90" y="130" text-anchor="middle" fill="currentColor" stroke="none" font-size="15">遮断器</text>
+  <text x="90" y="152" text-anchor="middle" fill="currentColor" stroke="none" font-size="14">ハンドル</text>
+  <!-- OFF位置のハンドル -->
+  <circle cx="90" cy="180" r="8" fill="currentColor" stroke="none"/>
+  <line x1="90" y1="180" x2="70" y2="196" stroke-width="3"/>
+  <text x="60" y="230" text-anchor="middle" fill="currentColor" stroke="none" font-size="13">OFF（遮断）</text>
+
+  <!-- ハスプ -->
+  <rect x="200" y="110" width="90" height="80" rx="6" stroke-width="2"/>
+  <text x="245" y="100" text-anchor="middle" fill="currentColor" stroke="none" font-size="13">ロックアウト</text>
+  <text x="245" y="205" text-anchor="middle" fill="currentColor" stroke="none" font-size="13">ハスプ</text>
+  <!-- ハスプの複数錠穴 -->
+  <circle cx="245" cy="132" r="7" stroke-width="2"/>
+  <circle cx="245" cy="150" r="7" stroke-width="2"/>
+  <circle cx="245" cy="168" r="7" stroke-width="2"/>
+
+  <!-- 接続線: 遮断器→ハスプ -->
+  <line x1="150" y1="150" x2="200" y2="150" stroke-width="2"/>
+
+  <!-- 個人錠 A/B/C -->
+  <g>
+    <!-- 錠A -->
+    <path d="M360 122 v-10 a12 12 0 0 1 24 0 v10" stroke-width="2"/>
+    <rect x="352" y="122" width="40" height="30" rx="4" stroke-width="2"/>
+    <text x="372" y="142" text-anchor="middle" fill="currentColor" stroke="none" font-size="13">A</text>
+    <line x1="290" y1="132" x2="352" y2="137" stroke-width="2"/>
+    <text x="470" y="142" text-anchor="start" fill="currentColor" stroke="none" font-size="14">作業者A の個人錠</text>
+    <!-- 錠B -->
+    <path d="M360 156 v-10 a12 12 0 0 1 24 0 v10" stroke-width="2"/>
+    <rect x="352" y="156" width="40" height="30" rx="4" stroke-width="2"/>
+    <text x="372" y="176" text-anchor="middle" fill="currentColor" stroke="none" font-size="13">B</text>
+    <line x1="290" y1="150" x2="352" y2="171" stroke-width="2"/>
+    <text x="470" y="176" text-anchor="start" fill="currentColor" stroke="none" font-size="14">作業者B の個人錠</text>
+    <!-- 錠C -->
+    <path d="M360 190 v-10 a12 12 0 0 1 24 0 v10" stroke-width="2"/>
+    <rect x="352" y="190" width="40" height="30" rx="4" stroke-width="2"/>
+    <text x="372" y="210" text-anchor="middle" fill="currentColor" stroke="none" font-size="13">C</text>
+    <line x1="290" y1="168" x2="352" y2="205" stroke-width="2"/>
+    <text x="470" y="210" text-anchor="start" fill="currentColor" stroke="none" font-size="14">作業者C の個人錠</text>
+  </g>
+  <line x1="410" y1="137" x2="460" y2="137" stroke-width="1.5"/>
+  <line x1="410" y1="171" x2="460" y2="171" stroke-width="1.5"/>
+  <line x1="410" y1="205" x2="460" y2="205" stroke-width="1.5"/>
+
+  <!-- 注記 -->
+  <text x="320" y="270" text-anchor="middle" fill="currentColor" stroke="none" font-size="14">全員が個人錠を外すまで、ハンドルはOFFのまま＝遮断器を投入できない</text>
+</svg>
+</figure>
+
 !!! tip "LOTOステーション"
     複数人作業では「LOTOステーション」（ロックアウトボックス）を使う。
     遮断器のキーをボックスに入れ鍵を掛け、各自が個人錠をボックスに追加掛けする方式。

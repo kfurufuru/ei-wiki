@@ -128,6 +128,33 @@ last_verified: 2026-05-20
 |------|------|------|
 | 計装・信号線 | 制御ケーブル | 動力ケーブル |
 
+<figure>
+<svg viewBox="0 0 440 320" width="440" height="320" role="img" aria-labelledby="fig-cable-tray-title" style="max-width:100%;height:auto;">
+  <title id="fig-cable-tray-title">ケーブルトレイ断面図。上段=計装・信号線、中段=制御ケーブル、下段=動力ケーブル。動力と信号の間に金属セパレータを設け、離隔150mm以上を確保する。</title>
+  <!-- トレイ外枠（底＋両側壁、上部開放） -->
+  <path d="M 60 30 L 60 280 L 300 280 L 300 30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <!-- 上段：計装・信号線 -->
+  <text x="180" y="62" fill="currentColor" font-size="14" text-anchor="middle">上段：計装・信号線</text>
+  <line x1="60" y1="80" x2="300" y2="80" stroke="currentColor" stroke-width="1" stroke-dasharray="5 4"/>
+  <!-- 中段：制御ケーブル -->
+  <text x="180" y="112" fill="currentColor" font-size="14" text-anchor="middle">中段：制御ケーブル</text>
+  <!-- 金属セパレータ（信号群と動力を分離する厚い帯） -->
+  <line x1="60" y1="150" x2="300" y2="150" stroke="currentColor" stroke-width="4"/>
+  <text x="180" y="142" fill="currentColor" font-size="12" text-anchor="middle">金属セパレータ</text>
+  <!-- 下段：動力ケーブル -->
+  <text x="180" y="225" fill="currentColor" font-size="14" text-anchor="middle">下段：動力ケーブル</text>
+  <!-- 離隔150mm以上 寸法線（動力ケーブル〜信号線 = セパレータをまたぐ間隔） -->
+  <line x1="330" y1="80" x2="330" y2="225" stroke="currentColor" stroke-width="1"/>
+  <line x1="323" y1="80" x2="337" y2="80" stroke="currentColor" stroke-width="1"/>
+  <line x1="323" y1="225" x2="337" y2="225" stroke="currentColor" stroke-width="1"/>
+  <text x="344" y="150" fill="currentColor" font-size="13" text-anchor="start">離隔</text>
+  <text x="344" y="167" fill="currentColor" font-size="13" text-anchor="start">150mm</text>
+  <text x="344" y="184" fill="currentColor" font-size="13" text-anchor="start">以上</text>
+  <!-- トレイ幅キャプション -->
+  <text x="180" y="305" fill="currentColor" font-size="12" text-anchor="middle">充填はトレイ幅の80%以下</text>
+</svg>
+</figure>
+
 （セパレータで分離する場合は同段でも可）
 
 4. ケーブルに**ケーブルタグ**を取り付ける

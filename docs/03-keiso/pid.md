@@ -51,6 +51,62 @@ P は現在の偏差に反応、I は過去の積み上がりを解消、D は�
 5. Ziegler-Nichols 式でパラメータ計算
 ```
 
+<figure>
+<svg viewBox="0 0 640 360" width="640" height="360" role="img" aria-labelledby="fig-pid-title" style="max-width:100%;height:auto;font-family:sans-serif;font-size:13px;">
+  <title id="fig-pid-title">ステップ応答曲線からむだ時間L・時定数T（63.2%到達点）・プロセスゲインを読み取る図</title>
+  <!-- 軸 -->
+  <line x1="70" y1="40" x2="70" y2="230" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="230" x2="610" y2="230" stroke="currentColor" stroke-width="1.5"/>
+  <text x="70" y="28" fill="currentColor" text-anchor="middle">PV（測定値）</text>
+  <text x="600" y="250" fill="currentColor" text-anchor="end">時間 →</text>
+
+  <!-- ステップ入力の起点（縦破線） -->
+  <line x1="130" y1="40" x2="130" y2="245" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+  <text x="130" y="258" fill="currentColor" text-anchor="middle">MV ステップ</text>
+
+  <!-- 初期値・最終値の水平基準線 -->
+  <line x1="70" y1="210" x2="600" y2="210" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+  <line x1="70" y1="70" x2="600" y2="70" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+  <text x="66" y="214" fill="currentColor" text-anchor="end">初期値</text>
+  <text x="66" y="74" fill="currentColor" text-anchor="end">最終値</text>
+
+  <!-- 63.2% ライン -->
+  <line x1="70" y1="121" x2="330" y2="121" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.7"/>
+  <text x="66" y="125" fill="currentColor" text-anchor="end">63.2%</text>
+
+  <!-- 応答曲線：反応開始まで平坦（むだ時間）→ 一次遅れ状に立ち上がり -->
+  <path d="M70,210 L210,210 C260,210 300,150 330,121 C380,95 470,74 600,71" fill="none" stroke="currentColor" stroke-width="2.5"/>
+
+  <!-- 反応開始点 -->
+  <line x1="210" y1="40" x2="210" y2="235" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+  <text x="210" y="258" fill="currentColor" text-anchor="middle">反応開始</text>
+
+  <!-- 63.2%到達点（T の終点） -->
+  <line x1="330" y1="121" x2="330" y2="235" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+  <circle cx="330" cy="121" r="3.5" fill="currentColor"/>
+
+  <!-- むだ時間 L：ステップ〜反応開始 -->
+  <line x1="130" y1="290" x2="210" y2="290" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="130" y1="285" x2="130" y2="295" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="210" y1="285" x2="210" y2="295" stroke="currentColor" stroke-width="1.5"/>
+  <text x="170" y="283" fill="currentColor" text-anchor="middle">むだ時間 L</text>
+
+  <!-- 時定数 T：反応開始〜63.2%到達 -->
+  <line x1="210" y1="320" x2="330" y2="320" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="210" y1="315" x2="210" y2="325" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="330" y1="315" x2="330" y2="325" stroke="currentColor" stroke-width="1.5"/>
+  <text x="270" y="338" fill="currentColor" text-anchor="middle">時定数 T（63.2%到達まで）</text>
+
+  <!-- プロセスゲイン：最終変化量 ΔPV -->
+  <line x1="560" y1="70" x2="560" y2="210" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="555" y1="70" x2="565" y2="70" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="555" y1="210" x2="565" y2="210" stroke="currentColor" stroke-width="1.5"/>
+  <text x="572" y="135" fill="currentColor" text-anchor="start">ΔPV</text>
+  <text x="572" y="152" fill="currentColor" text-anchor="start">ゲイン=</text>
+  <text x="572" y="169" fill="currentColor" text-anchor="start">ΔPV/ΔMV</text>
+</svg>
+</figure>
+
 ### Ziegler-Nichols ステップ応答法（参考値）
 
 | 制御 | Kp | Ti | Td |

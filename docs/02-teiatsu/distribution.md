@@ -49,6 +49,40 @@ last_verified: 2026-06-10
 3. **極数**：単相2線＝2P、単相3線＝3P、三相3線＝3P、三相4線＝4P
 4. **フレームサイズ（AF）**：定格電流に対し過不足なく選定（将来増設代は次フレームサイズで検討）
 
+<figure>
+<svg viewBox="0 0 520 360" width="520" height="360" role="img" aria-labelledby="fig-distribution-title" style="max-width:100%; height:auto;">
+  <title id="fig-distribution-title">保護協調カーブ概念図。横軸が電流、縦軸が動作時間。左に下位MCCB、右に上位MCCB、両者の右側に電線許容電流ラインが並び、動作時間は電流が大きいほど短くなる。</title>
+  <!-- 軸 -->
+  <line x1="70" y1="30" x2="70" y2="300" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="300" x2="490" y2="300" stroke="currentColor" stroke-width="1.5"/>
+  <!-- 軸矢印 -->
+  <path d="M70 30 l-4 8 h8 z" fill="currentColor"/>
+  <path d="M490 300 l-8 -4 v8 z" fill="currentColor"/>
+  <!-- 軸ラベル -->
+  <text x="60" y="26" font-size="13" fill="currentColor" text-anchor="end">動作時間（長）</text>
+  <text x="60" y="298" font-size="13" fill="currentColor" text-anchor="end">（短）</text>
+  <text x="482" y="322" font-size="13" fill="currentColor" text-anchor="end">電流（大）→</text>
+  <text x="78" y="322" font-size="13" fill="currentColor" text-anchor="start">小</text>
+
+  <!-- 下位MCCB特性（左・破線）過負荷域はゆるやか→短絡域で急降下 -->
+  <path d="M120 60 C 150 130, 175 200, 190 250 L 200 300" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="112" y="70" font-size="12" fill="currentColor" text-anchor="end">下位 MCCB</text>
+
+  <!-- 上位MCCB特性（右・実線）下位より右かつ上（遅い） -->
+  <path d="M210 70 C 250 150, 290 220, 315 260 L 330 300" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="322" y="66" font-size="12" fill="currentColor" text-anchor="start">上位 MCCB</text>
+
+  <!-- 電線許容電流ライン（縦点線・各MCCBのATより右） -->
+  <line x1="400" y1="45" x2="400" y2="300" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 4"/>
+  <text x="404" y="58" font-size="12" fill="currentColor" text-anchor="start">電線許容電流</text>
+  <text x="404" y="74" font-size="11" fill="currentColor" text-anchor="start">（AT はこの左側）</text>
+
+  <!-- 協調の向き注記 -->
+  <text x="150" y="332" font-size="11" fill="currentColor" text-anchor="middle">先に動作</text>
+  <text x="300" y="332" font-size="11" fill="currentColor" text-anchor="middle">残す（波及させない）</text>
+</svg>
+</figure>
+
 ### AF と AT（フレームサイズと定格電流）
 
 MCCB の銘板・型式に出てくる「AF」「AT」は選定・更新の基本用語です。

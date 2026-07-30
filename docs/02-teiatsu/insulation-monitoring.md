@@ -98,6 +98,40 @@ Ior 方式（抵抗分検出方式）は、対地電圧の位相を基準に漏�
 | 注意（第1段） | 平常値からの上昇傾向を早期に検知 | トレンド確認・点検計画への反映 |
 | 警報（第2段） | 明確な劣化・無視できない上昇を通知 | 停止時の精密測定・原因調査 |
 
+<figure>
+<svg viewBox="0 0 640 320" width="640" height="320" role="img" aria-labelledby="fig-insulation-monitoring-title" style="max-width:100%;height:auto;" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-insulation-monitoring-title">Ior のトレンド線に対し、平常値の2〜3倍を注意、さらに上を警報とする2段しきい値と対応アクションを示した時間軸グラフ</title>
+  <!-- 軸 -->
+  <line x1="70" y1="30" x2="70" y2="270" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="70" y1="270" x2="610" y2="270" stroke="currentColor" stroke-width="1.5"/>
+  <text x="40" y="150" fill="currentColor" font-size="13" text-anchor="middle" transform="rotate(-90 40 150)">Ior</text>
+  <text x="340" y="298" fill="currentColor" font-size="13" text-anchor="middle">時間（トレンド）</text>
+
+  <!-- 平常値（ベースライン） -->
+  <line x1="70" y1="240" x2="610" y2="240" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.6"/>
+  <text x="78" y="235" fill="currentColor" font-size="12" opacity="0.8">平常値（ベースライン）</text>
+
+  <!-- 注意ライン（平常値の2〜3倍） -->
+  <line x1="70" y1="160" x2="610" y2="160" stroke="currentColor" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="600" y="153" fill="currentColor" font-size="12" text-anchor="end">注意（平常値の2〜3倍）</text>
+
+  <!-- 警報ライン（さらに上の水準） -->
+  <line x1="70" y1="90" x2="610" y2="90" stroke="currentColor" stroke-width="1.5"/>
+  <text x="600" y="83" fill="currentColor" font-size="12" text-anchor="end">警報（さらに上の水準）</text>
+
+  <!-- Ior 上昇トレンド線 -->
+  <path d="M 80 242 C 200 238, 300 205, 380 160 S 520 105, 590 78" fill="none" stroke="currentColor" stroke-width="2.5"/>
+
+  <!-- 注意到達点 -->
+  <circle cx="380" cy="160" r="4.5" fill="currentColor"/>
+  <text x="380" y="185" fill="currentColor" font-size="11.5" text-anchor="middle">→ トレンド確認・点検計画へ反映</text>
+
+  <!-- 警報到達点 -->
+  <circle cx="560" cy="90" r="4.5" fill="currentColor"/>
+  <text x="558" y="118" fill="currentColor" font-size="11.5" text-anchor="middle">→ 停止時の精密測定・原因調査</text>
+</svg>
+</figure>
+
 2 段にすることで、「すぐ対応すべき劣化」と「監視を強める段階」を分けて運用できます。
 
 !!! note "具体的なしきい値は回路条件に依存する"

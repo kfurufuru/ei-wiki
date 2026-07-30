@@ -79,6 +79,27 @@ E：誘起電圧、B：磁束密度、D：管径、v：流速
 
 オリフィス前後の差圧（ΔP）と流量（Q）の関係：
 
+<figure>
+<svg viewBox="0 0 420 280" width="420" height="280" role="img" aria-labelledby="fig-flow-title" style="max-width:100%;height:auto;">
+  <title id="fig-flow-title">差圧ΔPと流量Qの平方根特性カーブ。Qは√ΔPに比例するため、低流量域ほど傾きが急でΔP分解能あたりの流量変化が小さく、レンジアビリティが悪化する。</title>
+  <!-- axes -->
+  <line x1="60" y1="240" x2="380" y2="240" stroke="currentColor" stroke-width="1"/>
+  <line x1="60" y1="240" x2="60" y2="30" stroke="currentColor" stroke-width="1"/>
+  <!-- axis labels -->
+  <text x="220" y="270" fill="currentColor" font-size="13" text-anchor="middle">差圧 ΔP</text>
+  <text x="20" y="135" fill="currentColor" font-size="13" text-anchor="middle" transform="rotate(-90 20 135)">流量 Q</text>
+  <!-- square-root curve Q ∝ √ΔP -->
+  <path d="M60,240 L92,174.6 L124,146.1 L156,124.9 L188,107.3 L220,91.5 L252,77.2 L284,64.2 L316,52.2 L348,40.7 L380,30"
+        fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="330" y="52" fill="currentColor" font-size="12" text-anchor="end">Q ∝ √ΔP</text>
+  <!-- low-flow region marker -->
+  <line x1="124" y1="240" x2="124" y2="146.1" stroke="currentColor" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <line x1="60" y1="146.1" x2="124" y2="146.1" stroke="currentColor" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <text x="128" y="232" fill="currentColor" font-size="11">低流量域は傾き急</text>
+  <text x="128" y="220" fill="currentColor" font-size="11">＝分解能が悪化</text>
+</svg>
+</figure>
+
 ```
 Q = Cd × A × √(2ΔP / ρ)
 
