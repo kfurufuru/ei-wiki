@@ -3,7 +3,7 @@ title: 注意事項・情報セキュリティ
 description: 生成AI利用時の情報セキュリティルール。入力禁止情報・ツール別の判断・AI出力の検証義務。
 tags:
   - 生成AI
-last_verified: 2026-04-04
+last_verified: 2026-07-30
 audience:
   - 電気担当
   - 計装担当
