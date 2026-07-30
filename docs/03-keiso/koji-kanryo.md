@@ -209,6 +209,67 @@ No. | 是正内容 | 対応期限 | 担当（ベンダー/自社） | 確認日 
 
 よくある混同：「工事完了報告 = 検収合格」と勘違いされることがあります。
 
+<figure>
+<svg viewBox="0 0 700 400" width="700" height="400" role="img"
+     aria-labelledby="fig-kanryo-kenshu-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-kanryo-kenshu-title">工事完了報告と検収判断の位置関係。ベンダーの施工が終わって工事完了報告が出た時点から設備技術部の受入確認（①〜⑦）が始まり、現場・性能・書類・残件の4点がすべてOKになって初めて検収判断に至る。検収後に保全部門へ移管し支払連携を行う。</title>
+  <!-- 3つの区間 -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.5">
+    <rect x="32" y="76" width="180" height="48" rx="5"/>
+    <rect x="228" y="76" width="272" height="48" rx="5"/>
+    <rect x="516" y="76" width="152" height="48" rx="5"/>
+  </g>
+  <!-- 節目1: 工事完了報告（単なる区切り） -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.4" stroke-dasharray="5 4">
+    <line x1="220" y1="54" x2="220" y2="140"/>
+  </g>
+  <!-- 節目2: 検収判断（4点の合流点） -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.6">
+    <line x1="508" y1="62" x2="508" y2="348"/>
+    <line x1="484" y1="216" x2="508" y2="216"/>
+    <line x1="484" y1="260" x2="508" y2="260"/>
+    <line x1="484" y1="304" x2="508" y2="304"/>
+    <line x1="484" y1="348" x2="508" y2="348"/>
+  </g>
+  <g style="stroke: none; fill: var(--md-default-fg-color)">
+    <path d="M 508,54 L 502,66 L 514,66 Z"/>
+  </g>
+  <!-- 4条件 -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.2">
+    <rect x="248" y="200" width="236" height="32" rx="4"/>
+    <rect x="248" y="244" width="236" height="32" rx="4"/>
+    <rect x="248" y="288" width="236" height="32" rx="4"/>
+    <rect x="248" y="332" width="236" height="32" rx="4"/>
+  </g>
+  <!-- 節目のラベル -->
+  <g style="fill: var(--md-default-fg-color)" font-size="13">
+    <text x="220" y="44" text-anchor="middle">工事完了報告</text>
+    <text x="508" y="44" text-anchor="middle">検収判断</text>
+  </g>
+  <!-- 区間のラベル -->
+  <g style="fill: var(--md-default-fg-color)" font-size="12">
+    <text x="122" y="98" text-anchor="middle">ベンダーの施工</text>
+    <text x="364" y="98" text-anchor="middle">設備技術部の受入確認 ①〜⑦</text>
+    <text x="592" y="98" text-anchor="middle">保全部門へ移管・支払</text>
+  </g>
+  <g style="fill: var(--md-default-fg-color--light)" font-size="10">
+    <text x="122" y="115" text-anchor="middle">主体: ベンダー（施工者）</text>
+    <text x="364" y="115" text-anchor="middle">主体: 設備技術部（発注者）</text>
+    <text x="592" y="115" text-anchor="middle">以降の責任: 自社</text>
+  </g>
+  <!-- 注記と4条件 -->
+  <g style="fill: var(--md-default-fg-color)" font-size="11">
+    <text x="32" y="166" text-anchor="start">ベンダーの「完了宣言」＝ 設備技術部の確認が始まる合図</text>
+    <text x="248" y="188" text-anchor="start">この4点がそろって初めて「検収可」</text>
+    <text x="262" y="221">現場OK：施工品質・外観</text>
+    <text x="262" y="265">性能OK：試運転・動作確認</text>
+    <text x="262" y="309">書類OK：図面・記録・マニュアル</text>
+    <text x="262" y="353">残件OK：是正完了・引継ぎ完了</text>
+  </g>
+</svg>
+<figcaption>「工事完了報告」は区切りにすぎず、そこから設備技術部の受入確認（①〜⑦）が始まる。検収判断は現場・性能・書類・残件の4点がすべて OK になって初めて成立するゲートで、ここを通ってから経理・購買へ検収連絡を行う。</figcaption>
+</figure>
+
 | 観点 | 工事完了報告 | 検収判断 |
 |-----|-----------|--------|
 | **主体** | ベンダー（施工者） | 設備技術部（発注者） |
