@@ -106,6 +106,7 @@ last_verified: 2026-01-15
 - **lint-ok運用**: 教育的に誤り値へ言及する正当な行のみ `<!-- lint-ok: <ID> 理由 -->` で免除する。安易な付与は禁止。四半期ごと（または正典値変更時）に既存のlint-ok行を棚卸しし、免除理由が今も正当かを確認する
 - **frontmatter必須5キー**（title/description/tags/audience/last_verified）と **06-trouble の search.boost≥2** はCIで必須
 - **lintは2経路で走る**: `pr-check.yml`（PR時）と `deploy.yml`（main push時）の両方で `check_content_rules.py --self-test`→本走査を実行する。PRを経ないmain直push・hotfix・revertでも公開前に必ず検査される（fail-closed）
+- **lintのID採番**: `FORBIDDEN` の ID は **`YYYYMMDD-slug`**（登録日＋内容スラッグ。例: `20260730-ocr-chiraku`）。**連番（N1, N2, …）は禁止**——並列PRが同じ番号を取り合い、後からマージする側が毎回リベースで採番し直す羽目になる（2026-07-30 に4回衝突）。日付＋内容なら他ブランチを見ずに採れて一意になる。`--self-test` が書式と重複を検査し、連番を書くと fail-closed で止まる
 - **lintを育てる（重要）**: 新たに誤り値を発見・修正したら、その場で `scripts/check_content_rules.py` の `FORBIDDEN` に禁止パターンを1件追加する（`(id, matcher, 説明, 検出必須sample)` の4つ組。sample未定義は不可）。修正しただけでlintに登録しないと同じ誤りが将来再発する。追加後は `--self-test` が緑になることを確認。ブラックリスト方式のため**既知の誤り値しか止められない**点を自覚し、正典値そのものの黙った改変は `canary`（正典ページの正しい値を消すと赤くなる番兵）で守る
 
 ### HTMLツール（計算機等）
