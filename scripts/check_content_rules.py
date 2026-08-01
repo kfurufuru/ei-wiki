@@ -703,7 +703,8 @@ def check_boost(docs):
 # 絶縁トレンド図の SVG 化で 235→234 に減ったので基準も下げる。
 # 2026-07-30: 工事計画届出フローの裸フェンスを ```text 化して 234→233。
 # 2026-08-01: panel-hmi の表示灯配置例を ```text 化（＋他PRの削減分）で実測 230 に低下したため追随。
-CODEBLOCK_WARN_BASELINE = 230
+# 2026-08-01: panel-design の充填率ブロックを ```text 化して 230→229。
+CODEBLOCK_WARN_BASELINE = 229
 
 
 def warn_codeblocks(docs):
