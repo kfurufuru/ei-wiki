@@ -40,46 +40,50 @@ last_verified: 2026-08-02
 <table id="amp-table-cv" style="width:100%;border-collapse:collapse">
 <thead><tr style="background:var(--md-primary-fg-color,#00897b);color:#fff">
 <th style="padding:0.4rem 0.8rem;text-align:left">断面積 [mm²]</th>
-<th style="padding:0.4rem 0.8rem;text-align:right">管路敷設 [A]</th>
-<th style="padding:0.4rem 0.8rem;text-align:right">気中敷設 [A]</th>
-<th style="padding:0.4rem 0.8rem;text-align:right">ケーブルラック [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">電線管布設 [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">気中・暗渠布設 [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">ケーブルラック単条 [A]</th>
 </tr></thead>
 <tbody>
-<tr><td style="padding:0.3rem 0.8rem">2.0</td><td style="text-align:right;padding:0.3rem 0.8rem">19</td><td style="text-align:right;padding:0.3rem 0.8rem">26</td><td style="text-align:right;padding:0.3rem 0.8rem">24</td></tr>
-<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">3.5</td><td style="text-align:right;padding:0.3rem 0.8rem">26</td><td style="text-align:right;padding:0.3rem 0.8rem">36</td><td style="text-align:right;padding:0.3rem 0.8rem">33</td></tr>
-<tr><td style="padding:0.3rem 0.8rem">5.5</td><td style="text-align:right;padding:0.3rem 0.8rem">34</td><td style="text-align:right;padding:0.3rem 0.8rem">47</td><td style="text-align:right;padding:0.3rem 0.8rem">43</td></tr>
-<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">8</td><td style="text-align:right;padding:0.3rem 0.8rem">42</td><td style="text-align:right;padding:0.3rem 0.8rem">58</td><td style="text-align:right;padding:0.3rem 0.8rem">53</td></tr>
-<tr><td style="padding:0.3rem 0.8rem">14</td><td style="text-align:right;padding:0.3rem 0.8rem">61</td><td style="text-align:right;padding:0.3rem 0.8rem">84</td><td style="text-align:right;padding:0.3rem 0.8rem">77</td></tr>
-<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">22</td><td style="text-align:right;padding:0.3rem 0.8rem">78</td><td style="text-align:right;padding:0.3rem 0.8rem">107</td><td style="text-align:right;padding:0.3rem 0.8rem">98</td></tr>
-<tr><td style="padding:0.3rem 0.8rem">38</td><td style="text-align:right;padding:0.3rem 0.8rem">105</td><td style="text-align:right;padding:0.3rem 0.8rem">144</td><td style="text-align:right;padding:0.3rem 0.8rem">132</td></tr>
-<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">60</td><td style="text-align:right;padding:0.3rem 0.8rem">135</td><td style="text-align:right;padding:0.3rem 0.8rem">185</td><td style="text-align:right;padding:0.3rem 0.8rem">170</td></tr>
-<tr><td style="padding:0.3rem 0.8rem">100</td><td style="text-align:right;padding:0.3rem 0.8rem">175</td><td style="text-align:right;padding:0.3rem 0.8rem">240</td><td style="text-align:right;padding:0.3rem 0.8rem">220</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">2.0</td><td style="text-align:right;padding:0.3rem 0.8rem">19</td><td style="text-align:right;padding:0.3rem 0.8rem">23</td><td style="text-align:right;padding:0.3rem 0.8rem">23</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">3.5</td><td style="text-align:right;padding:0.3rem 0.8rem">26</td><td style="text-align:right;padding:0.3rem 0.8rem">33</td><td style="text-align:right;padding:0.3rem 0.8rem">33</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">5.5</td><td style="text-align:right;padding:0.3rem 0.8rem">35</td><td style="text-align:right;padding:0.3rem 0.8rem">44</td><td style="text-align:right;padding:0.3rem 0.8rem">44</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">8</td><td style="text-align:right;padding:0.3rem 0.8rem">43</td><td style="text-align:right;padding:0.3rem 0.8rem">54</td><td style="text-align:right;padding:0.3rem 0.8rem">54</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">14</td><td style="text-align:right;padding:0.3rem 0.8rem">59</td><td style="text-align:right;padding:0.3rem 0.8rem">76</td><td style="text-align:right;padding:0.3rem 0.8rem">76</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">22</td><td style="text-align:right;padding:0.3rem 0.8rem">77</td><td style="text-align:right;padding:0.3rem 0.8rem">100</td><td style="text-align:right;padding:0.3rem 0.8rem">100</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">38</td><td style="text-align:right;padding:0.3rem 0.8rem">110</td><td style="text-align:right;padding:0.3rem 0.8rem">140</td><td style="text-align:right;padding:0.3rem 0.8rem">140</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">60</td><td style="text-align:right;padding:0.3rem 0.8rem">150</td><td style="text-align:right;padding:0.3rem 0.8rem">190</td><td style="text-align:right;padding:0.3rem 0.8rem">190</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">100</td><td style="text-align:right;padding:0.3rem 0.8rem">210</td><td style="text-align:right;padding:0.3rem 0.8rem">260</td><td style="text-align:right;padding:0.3rem 0.8rem">260</td></tr>
 </tbody>
 </table>
 
 <table id="amp-table-cvt" style="width:100%;border-collapse:collapse;display:none">
 <thead><tr style="background:var(--md-primary-fg-color,#00897b);color:#fff">
 <th style="padding:0.4rem 0.8rem;text-align:left">断面積 [mm²]</th>
-<th style="padding:0.4rem 0.8rem;text-align:right">管路敷設 [A]</th>
-<th style="padding:0.4rem 0.8rem;text-align:right">気中敷設 [A]</th>
-<th style="padding:0.4rem 0.8rem;text-align:right">ケーブルラック [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">電線管布設 [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">気中・暗渠布設 [A]</th>
+<th style="padding:0.4rem 0.8rem;text-align:right">ケーブルラック単条 [A]</th>
 </tr></thead>
 <tbody>
-<tr><td style="padding:0.3rem 0.8rem">14</td><td style="text-align:right;padding:0.3rem 0.8rem">61</td><td style="text-align:right;padding:0.3rem 0.8rem">88</td><td style="text-align:right;padding:0.3rem 0.8rem">80</td></tr>
-<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">22</td><td style="text-align:right;padding:0.3rem 0.8rem">78</td><td style="text-align:right;padding:0.3rem 0.8rem">112</td><td style="text-align:right;padding:0.3rem 0.8rem">103</td></tr>
-<tr><td style="padding:0.3rem 0.8rem">38</td><td style="text-align:right;padding:0.3rem 0.8rem">105</td><td style="text-align:right;padding:0.3rem 0.8rem">152</td><td style="text-align:right;padding:0.3rem 0.8rem">139</td></tr>
-<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">60</td><td style="text-align:right;padding:0.3rem 0.8rem">135</td><td style="text-align:right;padding:0.3rem 0.8rem">194</td><td style="text-align:right;padding:0.3rem 0.8rem">178</td></tr>
-<tr><td style="padding:0.3rem 0.8rem">100</td><td style="text-align:right;padding:0.3rem 0.8rem">175</td><td style="text-align:right;padding:0.3rem 0.8rem">252</td><td style="text-align:right;padding:0.3rem 0.8rem">231</td></tr>
-<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">150</td><td style="text-align:right;padding:0.3rem 0.8rem">210</td><td style="text-align:right;padding:0.3rem 0.8rem">302</td><td style="text-align:right;padding:0.3rem 0.8rem">277</td></tr>
-<tr><td style="padding:0.3rem 0.8rem">200</td><td style="text-align:right;padding:0.3rem 0.8rem">240</td><td style="text-align:right;padding:0.3rem 0.8rem">346</td><td style="text-align:right;padding:0.3rem 0.8rem">317</td></tr>
-<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">250</td><td style="text-align:right;padding:0.3rem 0.8rem">270</td><td style="text-align:right;padding:0.3rem 0.8rem">385</td><td style="text-align:right;padding:0.3rem 0.8rem">353</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">14</td><td style="text-align:right;padding:0.3rem 0.8rem">63</td><td style="text-align:right;padding:0.3rem 0.8rem">86</td><td style="text-align:right;padding:0.3rem 0.8rem">86</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">22</td><td style="text-align:right;padding:0.3rem 0.8rem">82</td><td style="text-align:right;padding:0.3rem 0.8rem">110</td><td style="text-align:right;padding:0.3rem 0.8rem">110</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">38</td><td style="text-align:right;padding:0.3rem 0.8rem">110</td><td style="text-align:right;padding:0.3rem 0.8rem">155</td><td style="text-align:right;padding:0.3rem 0.8rem">155</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">60</td><td style="text-align:right;padding:0.3rem 0.8rem">150</td><td style="text-align:right;padding:0.3rem 0.8rem">210</td><td style="text-align:right;padding:0.3rem 0.8rem">210</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">100</td><td style="text-align:right;padding:0.3rem 0.8rem">215</td><td style="text-align:right;padding:0.3rem 0.8rem">290</td><td style="text-align:right;padding:0.3rem 0.8rem">290</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">150</td><td style="text-align:right;padding:0.3rem 0.8rem">275</td><td style="text-align:right;padding:0.3rem 0.8rem">380</td><td style="text-align:right;padding:0.3rem 0.8rem">380</td></tr>
+<tr><td style="padding:0.3rem 0.8rem">200</td><td style="text-align:right;padding:0.3rem 0.8rem">340</td><td style="text-align:right;padding:0.3rem 0.8rem">465</td><td style="text-align:right;padding:0.3rem 0.8rem">465</td></tr>
+<tr style="background:var(--md-default-bg-color,#fff)"><td style="padding:0.3rem 0.8rem">250</td><td style="text-align:right;padding:0.3rem 0.8rem">395</td><td style="text-align:right;padding:0.3rem 0.8rem">535</td><td style="text-align:right;padding:0.3rem 0.8rem">535</td></tr>
 </tbody>
 </table>
 
+上表は **JCS 0168-2 の 600V CV／CVT 許容電流**（周囲温度 40 ℃、絶縁体許容温度 90 ℃、**1条布設**）です。CV は「3心1条」、CVT は「単心3個より1条」の値で、CVT は撚合せのぶん CV 3芯より大きくなります。ケーブルラックは規格に独立した列がなく、**ラック上の単条は気中・暗渠と同一条件**のため同値としています（多条・多段の低減は下記のとおり別途乗じます）。詳細は「根拠」を参照してください。
+
 !!! warning "補正係数を忘れずに"
     - 周囲温度 40℃ 超：温度補正係数を乗じる（40℃ 基準値）
-    - 管路内多条：本数に応じた低減係数を適用
+    - 電線管内・ラック上の多条：条数・離隔・段数に応じた低減率を適用（ラックは実運用ではほぼ多条のため、上表の値をそのまま使わない）
     - 太陽直射：直射補正係数（気中値より低下）
+
+    係数は [許容電流の補正](../reference/ampacity.md) を参照してください。
 
 ---
 
@@ -167,9 +171,9 @@ V0 : 基準とする公称線間電圧 [V]（200V または 400V）
 <div>
 <label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">敷設方法</label>
 <select id="cc_install" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
-<option value="conduit">管路敷設</option>
-<option value="air">空中（気中）敷設</option>
-<option value="rack">ケーブルラック</option>
+<option value="conduit">電線管布設（1条）</option>
+<option value="air">気中・暗渠布設（1条）</option>
+<option value="rack">ケーブルラック（単条＝気中と同値）</option>
 </select>
 </div>
 
@@ -235,15 +239,39 @@ flowchart TD
 
 ### 許容電流表の位置づけ
 
-本ページの許容電流表と選定ツールは、**同じデータ（`docs/javascripts/cable-calc.js` の `CABLE_DB`）を参照**しています。表とツールの値が食い違わないことを 2026-08-01 に全数照合しました（CV 9 サイズ・CVT 8 サイズ × 管路／気中／ラックの計 51 値）。
+本ページの許容電流表と選定ツールは、**同じデータ（`docs/javascripts/cable-calc.js` の `CABLE_DB`）を参照**しています。表とツールの値が食い違わないことを 2026-08-02 に全数照合しました（CV 9 サイズ・CVT 8 サイズ × 電線管／気中・暗渠／ラックの計 51 値）。
 
-**この表の数値は法令が定めた値ではありません。** 出典は JIS C 3605 および内線規程の参考値とされますが、**いずれも原本を照合していません**（JIS・内線規程とも有償）。したがって本 Wiki では**規格の表番号・版年を挙げません**。
+#### 出典は JCS 0168-2（2026-08-02 にメーカー技術資料で確定）
 
-**調達・施工の判断には使わないでください。** 実際の許容電流は、使用するケーブルの**メーカーカタログ値**と、次の補正を反映した値が正です。
+数値は **JCS 0168-2（日本電線工業会規格）の 600V CV・CVT 許容電流**です。布設条件は **周囲温度 40 ℃・絶縁体許容温度 90 ℃・1条布設**で、CV は「3心1条」、CVT は「単心3個より1条」の列を採っています。
+
+**JCS 原本は有償のため照合していません。** ただし同規格を出典として明記した公開のメーカー技術資料・カタログで全値を照合し、一致を確認しました。
+
+| 条件 | 照合したメーカー資料 | 結果 |
+|---|---|---|
+| 気中・暗渠布設（CV 3心1条） | フジクラ・ダイヤケーブル 600V CV カタログ／SWCC 技術資料「許容電流」／電材商社カタログ附録（いずれも「JCS 0168-2より」と明記） | 3資料の全サイズが完全一致 |
+| 気中・暗渠布設（CVT 単心3個より1条） | フジクラ・ダイヤケーブル 600V CVD・CVT・CVQ カタログ／SWCC 技術資料 | 2社の全サイズが完全一致 |
+| 電線管布設（CV 3心・CVT 単心3個より） | SWCC 技術資料「許容電流」／矢崎エナジーシステム 許容電流表 | 2社の全サイズが完全一致 |
+
+#### 旧値は全サイズが出所不明だったため差し替えました
+
+2026-08-02 以前の表は「JIS C 3605／内線規程の参考値」とされていましたが、上記どの資料とも一致せず、**小さいサイズでは規格値より高い（＝危険側）値**でした。単調な換算では説明できない食い違い方であり出所を特定できないため、全 51 値を規格値に差し替えています。差の例（CV 気中）: 2.0 mm² 26 → 23 A、14 mm² 84 → 76 A、100 mm² 240 → 260 A。
+
+CVT についても「保守的に CV 3芯と同値」としていた運用をやめました。CVT は撚合せにより放熱が有利で、**規格上も CV 3心と別値**です（14 mm² 気中で CVT 86 A・CV 3心 76 A）。
+
+#### ケーブルラック列の扱い
+
+JCS 0168-2 にケーブルラック専用の列はありません。**ラック上に単条で置いたケーブルは気中・暗渠と同一条件**であり、同規格の気中多条布設低減率も 1 条では 1.00 です。このため本表のラック列は気中・暗渠と同値としています。旧表はラックを気中の約 0.92 倍に落としていましたが、この係数にも出所がありませんでした。
+
+**実際のラックは多条・多段が普通です。** 密着単層 6 条なら低減率は 0.70、2 段積みならさらに下がります。ラック列の値をそのまま使わず、[許容電流の補正](../reference/ampacity.md) の低減率を必ず乗じてください。
+
+#### 変わらない限界
+
+**この表の数値は法令が定めた値ではありません。調達・施工の判断には使わないでください。** 実際の許容電流は、採用するケーブルの**メーカーカタログ値**と、次の補正を反映した値が正です。
 
 - 周囲温度（表は 40 ℃ 基準）
-- 管路内・ラック上の多条布設による低減
-- 直射日光
+- 電線管内・ラック上の多条布設による低減
+- 直射日光（本表は「日射の影響なし」の値）
 
 補正係数の考え方は [許容電流の補正](../reference/ampacity.md) を参照してください。
 
@@ -269,7 +297,7 @@ flowchart TD
 
 低圧配線の施設方法（金属ダクト工事の充填率など）・過電流遮断器との組み合わせ・接地は、それぞれ [盤設計](../04-sekkei/panel-design.md)・[幹線サイズと過電流遮断器](../04-sekkei/feeder-breaker-sizing.md)・[分岐回路の施設](../04-sekkei/branch-circuit-sizing.md)・[接地（低圧）](grounding-lv.md) が正典です。本ページはケーブル自体の選定に絞っています。
 
-照合日: 2026-08-01。
+照合日: 2026-08-02（許容電流表の出典確定）。それ以外の記述の照合日は 2026-08-01。
 
 ---
 

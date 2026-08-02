@@ -80,6 +80,45 @@ def _both_unless(pat_a: str, pat_b: str, neg: str):
 _OHM = r"(?:Ω|オーム)"
 
 
+# --- 600V CV/CVT 許容電流（2026-08-02 確定）の旧値検出 -----------------------
+# 旧表の 17 行を (電線管, 気中, ラック) の 3 つ組で完全列挙する。個々の値だけを見ると
+# 新表の隣接セルと衝突するため（旧気中26 と 旧ラック33 の並びは新 3.5mm² 行の
+# 「26, 33」と同形）、3 セル連続の一致でしか当たらないようにしている。
+_OLD_AMP_ROWS = [
+    (19, 26, 24), (26, 36, 33), (34, 47, 43), (42, 58, 53), (61, 84, 77),
+    (78, 107, 98), (105, 144, 132), (135, 185, 170), (175, 240, 220),
+    (61, 88, 80), (78, 112, 103), (105, 152, 139), (135, 194, 178),
+    (175, 252, 231), (210, 302, 277), (240, 346, 317), (270, 385, 353),
+]
+_TD_SEP = r"</td>\s*<td[^>]*>\s*"
+_OLD_AMP_ROW_RE = re.compile("|".join(
+    rf">\s*{a}\s*{_TD_SEP}{b}\s*{_TD_SEP}{c}\s*</td>" for a, b, c in _OLD_AMP_ROWS))
+
+
+def _old_amp_row(line: str) -> bool:
+    """lv-cable.md の許容電流表で旧行（3セル並び）が復活していれば True。"""
+    return bool(_OLD_AMP_ROW_RE.search(line))
+
+
+# 散文引用（他ページの計算例など）用。断面積と旧値の共起で当てる。
+_OLD_AMP_PROSE = [
+    (r"(?<![0-9.])5\.5\s*(?:sq|mm²|mm2)", r"(?<![0-9.])(?:34|47|43)\s*A"),
+    (r"(?<![0-9.])14\s*(?:sq|mm²|mm2)", r"(?<![0-9.])(?:61|84|77)\s*A"),
+    (r"(?<![0-9.])22\s*(?:sq|mm²|mm2)", r"(?<![0-9.])(?:78|107|98)\s*A"),
+    (r"(?<![0-9.])38\s*(?:sq|mm²|mm2)", r"(?<![0-9.])(?:105|144|132)\s*A"),
+]
+_OLD_AMP_PROSE_RE = [(re.compile(a), re.compile(b)) for a, b in _OLD_AMP_PROSE]
+# 是正の経緯を説明する行（旧値を引用する解説）は負ガードで除外する。
+_OLD_AMP_NEG = re.compile(r"是正|誤り|かつて|旧|出所不明|不整合|解消|差し替え")
+
+
+def _old_amp_prose(line: str) -> bool:
+    """散文中で旧許容電流を引用していれば True（是正解説行は除外）。"""
+    if _OLD_AMP_NEG.search(line):
+        return False
+    return any(ra.search(line) and rb.search(line) for ra, rb in _OLD_AMP_PROSE_RE)
+
+
 FORBIDDEN = [
     ("20260710-dshu-setchi-10ohm", _both(r"D\s*種", r"(?<![0-9])10(?![0-9])\s*" + _OHM),
      "D種接地は100Ω以下（10Ωは誤り）", "D種接地は10Ω以下"),
@@ -663,6 +702,38 @@ FORBIDDEN = [
      "いずれも出所不明の誤り。正しくは JIS C 3605 の 9.42/5.30/3.40/2.36/1.34/0.849/0.491/"
      "0.311/0.187/0.124/0.0933/0.0754（正典 docs/04-sekkei/voltage-drop.md）",
      "| 14 sq | 1.32 |"),
+    # 以下2件: 2026-08-02 に 600V CV/CVT の許容電流を確定し、旧値（出所不明）を止める。
+    # 確定値は JCS 0168-2（周囲温度40℃・絶縁体許容温度90℃・1条布設）。JCS 原本は有償で
+    # 未照合だが、同規格を出典に明記した公開のメーカー資料で全値を照合した:
+    #   気中・暗渠 CV 3心   … フジクラ・ダイヤ／SWCC 技術資料／電材商社カタログ附録（3資料一致）
+    #   気中・暗渠 CVT      … フジクラ・ダイヤ／SWCC 技術資料（2社一致）
+    #   電線管 CV 3心・CVT … SWCC 技術資料／矢崎エナジーシステム 許容電流表（2社一致）
+    # 旧値はどの資料とも一致せず、小サイズでは規格値より高い（＝危険側）だった。
+    # 正典は docs/javascripts/cable-calc.js の CABLE_DB（表示は docs/02-teiatsu/lv-cable.md）。
+    # 20260802-cv-kyoyou-denryu-hyou: lv-cable.md の HTML 表で旧行が復活するのを止める。
+    # 旧17行の「3セル並び」を丸ごと列挙する。列の値だけを見ると新表の
+    # （電線管, 気中）の組と衝突する（例: 旧気中26 + 旧ラック33 ≡ 新3.5行の 26,33）ため、
+    # 3 連セルの完全一致でしか当たらない形にしてある。
+    ("20260802-cv-kyoyou-denryu-hyou", _old_amp_row,
+     "600V CV/CVT 許容電流表の旧行（CV 19/26/24・26/36/33・34/47/43・42/58/53・"
+     "61/84/77・78/107/98・105/144/132・135/185/170・175/240/220、CVT 61/88/80・"
+     "78/112/103・105/152/139・135/194/178・175/252/231・210/302/277・240/346/317・"
+     "270/385/353）は出所不明。正しくは JCS 0168-2 の値（CV 3心 19/23/23・26/33/33・"
+     "35/44/44・43/54/54・59/76/76・77/100/100・110/140/140・150/190/190・210/260/260、"
+     "CVT 63/86/86・82/110/110・110/155/155・150/210/210・215/290/290・275/380/380・"
+     "340/465/465・395/535/535）",
+     '<td style="padding:0.3rem 0.8rem">14</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">61</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">84</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">77</td>'),
+    # 20260802-cv-kyoyou-denryu-sanbun: 他ページが散文で旧許容電流を引用するのを止める。
+    # 断面積と旧値が同一行に共起したときだけ当てる（是正の経緯を書く行は負ガードで除外）。
+    ("20260802-cv-kyoyou-denryu-sanbun", _old_amp_prose,
+     "散文で引用する 600V CV 許容電流の旧値（5.5mm² 34/47/43・14mm² 61/84/77・"
+     "22mm² 78/107/98・38mm² 105/144/132）は出所不明。正しくは JCS 0168-2 の"
+     "5.5mm² 35/44/44・14mm² 59/76/76・22mm² 77/100/100・38mm² 110/140/140"
+     "（電線管／気中・暗渠／ラック単条。正典 docs/02-teiatsu/lv-cable.md）",
+     "基準許容電流: CV 38sq 管路敷設 = 105 A（40℃ 基準）"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -858,6 +929,25 @@ NEGATIVE_FIXTURES = [
      "CV 14sq（R = 1.34 Ω/km、X = 0.083 Ω/km）、I = 30A、cosθ = 0.85、L = 80m"),
     ("20260802-cv-doutai-teiko-hyou", "| 14 sq | 1.34 |"),
     ("20260802-cv-doutai-teiko-hyou", "| 200 sq | 0.0933 |"),
+    # 2026-08-02 許容電流の是正後の行（実際に docs に書いた行）。
+    # 新表の CV 3.5mm² 行は「26, 33」を含み、旧気中26＋旧ラック33 の並びと同形になる。
+    # 3 セル一致に限定した _old_amp_row がこれを誤検出しないことを毎回証明する。
+    ("20260802-cv-kyoyou-denryu-hyou",
+     '<td style="padding:0.3rem 0.8rem">3.5</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">26</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">33</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">33</td>'),
+    ("20260802-cv-kyoyou-denryu-hyou",
+     '<td style="padding:0.3rem 0.8rem">14</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">59</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">76</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">76</td>'),
+    ("20260802-cv-kyoyou-denryu-sanbun",
+     "基準許容電流: CV 38sq 電線管布設（1条）= 110 A（40℃ 基準）"),
+    ("20260802-cv-kyoyou-denryu-sanbun",
+     "分岐電線 5.5mm²(気中・暗渠 1条 許容 44A・lv-cable.md 表)"),
+    ("20260802-cv-kyoyou-denryu-sanbun",
+     "差の例（CV 気中）: 14 mm² 84 → 76 A は旧値からの是正"),
 ]
 
 # canary: これらの正典値が消えていたら FAIL（黙った削除の検知）。
@@ -871,6 +961,18 @@ CANARIES = [
     # 両方に canary を置いて、片方だけ黙って書き換わる（＝手計算とツールが再び食い違う）のを検知する。
     ("docs/04-sekkei/voltage-drop.md", "| 14 sq | 1.34 |", "CV 14mm² 導体抵抗(20℃)の正典値"),
     ("docs/javascripts/cable-calc.js", "R: 1.34", "選定ツール側の CV/CVT 14mm² 導体抵抗(20℃)"),
+    # 許容電流も同じ二重実体（Markdown の表と JS の CABLE_DB）で、FORBIDDEN は
+    # docs/**/*.md しか走査しない。両方に canary を置き、片方だけ黙って書き換わる
+    # （＝表とツールが再び食い違う）のを検知する。値は JCS 0168-2・40℃・1条。
+    ("docs/javascripts/cable-calc.js", "amp: [59,  76,  76]",
+     "選定ツール CV 3心 14mm² 許容電流(電線管/気中・暗渠/ラック単条)"),
+    ("docs/javascripts/cable-calc.js", "amp: [63,  86,  86]",
+     "選定ツール CVT 14mm² 許容電流(電線管/気中・暗渠/ラック単条)"),
+    ("docs/02-teiatsu/lv-cable.md",
+     '<td style="text-align:right;padding:0.3rem 0.8rem">59</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">76</td>'
+     '<td style="text-align:right;padding:0.3rem 0.8rem">76</td>',
+     "許容電流表 CV 3心 14mm² 行の正典値"),
 ]
 
 _LINTOK = re.compile(r"<!--\s*lint-ok:\s*([\w,\-]+)")
