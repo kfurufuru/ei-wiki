@@ -97,7 +97,7 @@ e = √3 × I × (R cosθ + X sinθ) × L
 e     : 電圧降下 [V]
 I     : 電流 [A]
 R     : 導体抵抗 [Ω/km]
-X     : リアクタンス [Ω/km]（ケーブルカタログ値）
+X     : リアクタンス [Ω/km]（サイズ・種別・周波数で決まる。[R・X 表](../04-sekkei/voltage-drop.md)参照）
 cosθ  : 負荷力率（電動機は 0.8 が目安）
 L     : 片道ケーブル長 [km]
 ```
@@ -178,6 +178,14 @@ V0 : 基準とする公称線間電圧 [V]（200V または 400V）
 </div>
 
 <div>
+<label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">周波数</label>
+<select id="cc_freq" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
+<option value="60">60 Hz（西日本）</option>
+<option value="50">50 Hz（東日本）</option>
+</select>
+</div>
+
+<div>
 <label style="display:block;font-size:0.82rem;color:#666;margin-bottom:0.2rem">負荷力率 cosθ</label>
 <input id="cc_pf" type="number" value="0.85" min="0.1" max="1.0" step="0.01" style="width:100%;padding:0.4rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:0.95rem;box-sizing:border-box">
 </div>
@@ -208,7 +216,7 @@ V0 : 基準とする公称線間電圧 [V]（200V または 400V）
 </tr></thead>
 <tbody id="cc_result_tbody"></tbody>
 </table>
-<p style="font-size:0.78rem;color:#888;margin-top:0.5rem">※ CV 3芯 600V 基準。温度・多条補正係数は別途適用すること。リアクタンス X = 0.09 Ω/km（固定値）。</p>
+<p style="font-size:0.78rem;color:#888;margin-top:0.5rem">※ CV 3芯 600V 基準。温度・多条補正係数は別途適用すること。リアクタンス X はサイズ・種別・周波数ごとの規格値（技資第103号B）を使用。</p>
 </div>
 
 </div>
@@ -284,7 +292,10 @@ JCS 0168-2 にケーブルラック専用の列はありません。**ラック�
 
 ### 選定ツールの前提
 
-- **リアクタンス X = 0.09 Ω/km 固定**です。実際のリアクタンスはケーブル構成・サイズで変わるため、精算にはカタログ値を使ってください。**X は R と違い出所を照合できていません**（実務慣行の代表値）
+- **リアクタンス X** は **日本電線工業会 技資第103号B「低圧電線・ケーブルのインピーダンス」(2024年6月)** の規格値を、**サイズ・種別（CV 3心／CVT）・周波数（50/60 Hz）ごと**に使います。同資料は無償公開で 2026-08-02 に原本 PDF を直接照合しました（照合経路は [電圧降下計算](../04-sekkei/voltage-drop.md) の「根拠」が正典）
+- **周波数の選択を必ず合わせてください**。X は周波数に比例し、14 sq CV で 50 Hz 0.0828 → 60 Hz 0.0994 と約 2 割変わります。既定は保守側の 60 Hz です
+- **CVT の X は CV 3 心より 2〜3 割大きい**です（14 sq・50 Hz で 0.107 対 0.0828）。許容電流は CVT が有利、リアクタンスは CV 3 心が有利という逆向きの関係になります
+- かつては **X = 0.09 Ω/km の全サイズ固定**でしたが、この値は全サイズ・両種別・両周波数のどれとも一致せず出所不明だったため 2026-08-02 に差し替えました
 - **導体抵抗 R** は JIS C 3605 の最大導体抵抗（20 ℃、多心 CV・CVT）です。2026-08-02 にメーカーカタログ3社で全サイズ照合し、[電圧降下計算](../04-sekkei/voltage-drop.md) の R 表と同一値に統一しました（照合経路は同ページの「根拠」が正典）。**単心は別値**（14 sq で 1.31 Ω/km）で、本ツールは扱いません
 - R は 20 ℃ の値です。運転温度が上がれば抵抗も上がります（CV の最高許容温度 90 ℃ で 20 ℃ 値の約 1.28 倍）
 - ツールは**温度・多条の補正を行いません**（結果欄にも注記しています）
