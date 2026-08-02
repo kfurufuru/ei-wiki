@@ -619,15 +619,24 @@ FORBIDDEN = [
      "受電端電圧が要る場合は Vr = V0 - e として別に求める）",
      "| V0 | V | 受電端電圧（200V または 400V） |"),
     # 20260801-cv-kv-tan-i: Cv は US 単位系（US gal/min・psi）、Kv はメトリック系
-    # （m3/h・bar）で定義が異なり、Cv ≒ 1.17 × Kv。換算係数のない同一の式に
+    # （m3/h・bar）で定義が異なり、Cv ≒ 1.156 × Kv（Kv = 0.865 × Cv）。換算係数のない同一の式に
     # 「m3/h」と「US gal/min」を併記できない。単位系を併記した記述を止める。
     # 「Cv」自体は別行にあるため行単位では拾えない。同一行での単位系の併記を狙う。
     ("20260801-cv-kv-tan-i",
      _both_unless(r"m³/h|m3/h", r"US\s*gal",
-                  r"1\.17|Kv|単位系|是正|誤り|換算"),
+                  r"1\.15|0\.865|0\.227|Kv|単位系|是正|誤り|換算"),
      "流量の単位に m³/h と US gal/min を同じ式の変数説明として併記しない"
-     "（Cv は US 単位系、Kv はメトリック系で定義が異なる。Cv ≒ 1.17 × Kv）",
+     "（Cv は US 単位系、Kv はメトリック系で定義が異なる。Cv ≒ 1.156 × Kv（Kv = 0.865 × Cv））",
      "Q   : 流量 [m³/h]（または US gal/min）"),
+    # 20260801-cv-kv-kansan-117: Cv/Kv の換算係数は単位定義から Kv = 0.865 × Cv
+    # （Cv = 1.156 × Kv）。1.17 は誤り（本 repo でも 2026-08-01 に一度書いて是正した）。
+    # 是正の経緯を説明する行は負ガードで除外する。
+    ("20260801-cv-kv-kansan-117",
+     _both_unless(r"Cv", r"1\.17\s*[×x]\s*Kv|Kv.{0,8}1\.17\s*倍",
+                  r"0\.865|1\.15|是正|誤り"),
+     "Cv/Kv の換算係数を 1.17 と書かない（単位定義から Kv = 0.865 × Cv、"
+     "すなわち Cv = 1.156 × Kv。正典 docs/03-keiso/control-valve.md）",
+     "Cv（US 単位系）に直す場合: Cv ≒ 1.17 × Kv"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -808,6 +817,13 @@ NEGATIVE_FIXTURES = [
     ("20260801-cv-kv-tan-i",
      "**Cv は US 単位系**（流量 US gal/min、差圧 psi）で定義されるため、"
      "**同じ式に m³/h と US gal/min を併記することはできません**。"),
+    # 2026-08-01 control-valve / calculators の是正文（実際に docs に書いた行）。
+    ("20260801-cv-kv-kansan-117",
+     "Cv（US 単位系）に直す場合: Cv ≒ 1.156 × Kv（Kv = 0.865 × Cv）"),
+    ("20260801-cv-kv-kansan-117",
+     "Kv = 0.865 × Cv  （Cv ↔ Kv 換算）"),
+    ("20260801-cv-kv-tan-i",
+     "1 US gal/min = 0.2271247 m³/h、1 psi = 0.0689476 bar"),
 ]
 
 # canary: これらの正典値が消えていたら FAIL（黙った削除の検知）。
@@ -985,7 +1001,7 @@ def check_boost(docs):
 # 2026-07-30: 工事計画届出フローの裸フェンスを ```text 化して 234→233。
 # 2026-08-01: panel-hmi の表示灯配置例を ```text 化（＋他PRの削減分）で実測 230 に低下したため追随。
 # 2026-08-01: panel-design の充填率ブロックを ```text 化して 230→229。
-CODEBLOCK_WARN_BASELINE = 195
+CODEBLOCK_WARN_BASELINE = 191
 
 
 def warn_codeblocks(docs):
