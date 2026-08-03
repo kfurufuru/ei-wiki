@@ -46,6 +46,58 @@ N₂ : 変更後の回転数
 | 60%           | 21.6%          | 78%   |
 | 50%           | 12.5%          | 88%   |
 
+<figure>
+<svg viewBox="0 0 460 300" width="460" height="300" role="img"
+     aria-labelledby="fig-vfd-cube-law-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-vfd-cube-law-title">回転数比と消費電力比の関係を示す曲線グラフ。消費電力は回転数の3乗に比例するため、回転数比100%で消費電力比100%、90%で72.9%、80%で51.2%、70%で34.3%、60%で21.6%、50%で12.5%と、回転数を少し下げるだけで消費電力が急激に減少する。</title>
+  <!-- 軸 -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.5" stroke-linecap="round">
+    <line x1="80" y1="40" x2="80" y2="250"/>
+    <line x1="80" y1="250" x2="432" y2="250"/>
+    <!-- 横軸目盛 -->
+    <line x1="148" y1="250" x2="148" y2="255"/>
+    <line x1="216" y1="250" x2="216" y2="255"/>
+    <line x1="284" y1="250" x2="284" y2="255"/>
+    <line x1="352" y1="250" x2="352" y2="255"/>
+    <line x1="420" y1="250" x2="420" y2="255"/>
+  </g>
+  <!-- 補助線（100%レベルと80%運転点のガイド） -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="80" y1="50" x2="420" y2="50"/>
+    <line x1="80" y1="148" x2="284" y2="148"/>
+    <line x1="284" y1="148" x2="284" y2="250"/>
+  </g>
+  <!-- 3乗則の曲線 -->
+  <polyline points="80,225 114,217 148,207 182,195 216,181 250,166 284,148 318,127 352,104 386,79 420,50"
+            style="stroke: var(--md-default-fg-color); fill: none" stroke-width="2" stroke-linejoin="round"/>
+  <!-- 表の6点 -->
+  <g style="fill: var(--md-default-fg-color); stroke: none">
+    <circle cx="80" cy="225" r="3.5"/>
+    <circle cx="148" cy="207" r="3.5"/>
+    <circle cx="216" cy="181" r="3.5"/>
+    <circle cx="284" cy="148" r="4.5"/>
+    <circle cx="352" cy="104" r="3.5"/>
+    <circle cx="420" cy="50" r="3.5"/>
+  </g>
+  <!-- ラベル -->
+  <g style="fill: var(--md-default-fg-color)" font-size="13">
+    <text x="16" y="28">消費電力比 P₂/P₁（%）</text>
+    <text x="74" y="54" text-anchor="end">100</text>
+    <text x="74" y="152" text-anchor="end">51.2</text>
+    <text x="74" y="254" text-anchor="end">0</text>
+    <text x="80" y="272" text-anchor="middle">50</text>
+    <text x="148" y="272" text-anchor="middle">60</text>
+    <text x="216" y="272" text-anchor="middle">70</text>
+    <text x="284" y="272" text-anchor="middle">80</text>
+    <text x="352" y="272" text-anchor="middle">90</text>
+    <text x="420" y="272" text-anchor="middle">100</text>
+    <text x="255" y="294" text-anchor="middle">回転数比 N₂/N₁（%）</text>
+    <text x="270" y="134" text-anchor="end">80%で約半分</text>
+  </g>
+</svg>
+<figcaption>回転数の3乗則 P₂/P₁ = (N₂/N₁)³ のグラフです。回転数を定格の80%に落とすだけで消費電力比は51.2%（約半分）まで低下します。横軸は表の範囲に合わせて50%から表示しています。</figcaption>
+</figure>
+
 !!! tip "80%で約半分"
     回転数を定格の80%に落とすだけで消費電力は約51%に低下する。
     これが「インバータ省エネは大きい」と言われる理由。

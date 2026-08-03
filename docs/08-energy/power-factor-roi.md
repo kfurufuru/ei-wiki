@@ -50,6 +50,56 @@ audience:
 | 85%超 | 1%上昇するごとに基本料金が**0.5%割引** |
 | 100%（上限） | 最大7.5%割引（85〜100%の15%分×0.5） |
 
+<figure>
+<svg viewBox="0 0 560 330" width="560" height="330" role="img"
+     aria-labelledby="fig-pf-discount-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-pf-discount-title">力率と基本料金への影響の関係。85%を基準に、85%未満は1%低下するごとに基本料金が1%増額、85%超は1%上昇するごとに0.5%割引となり、上限100%で最大7.5%割引。力率70%では15%の割増となる。</title>
+  <!-- 軸 -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.5">
+    <line x1="110" y1="48" x2="110" y2="262"/>
+    <line x1="110" y1="262" x2="452" y2="262"/>
+  </g>
+  <g style="fill: var(--md-default-fg-color--light); stroke: none">
+    <polygon points="110,40 106,48 114,48"/>
+    <polygon points="460,262 452,258 452,266"/>
+  </g>
+  <!-- 基準線（±0）と補助線 -->
+  <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1" stroke-dasharray="4 3">
+    <line x1="110" y1="160" x2="455" y2="160"/>
+    <line x1="130" y1="59" x2="130" y2="262"/>
+    <line x1="280" y1="164" x2="280" y2="262"/>
+    <line x1="430" y1="217" x2="430" y2="262"/>
+  </g>
+  <!-- 割増側（85%未満）: 1%低下ごとに1%増額 -->
+  <line x1="130" y1="55" x2="280" y2="160"
+        style="stroke: var(--ei-fig-danger); fill: none" stroke-width="2.5"/>
+  <!-- 割引側（85%超）: 1%上昇ごとに0.5%割引 -->
+  <line x1="280" y1="160" x2="430" y2="212.5"
+        style="stroke: var(--md-default-fg-color); fill: none" stroke-width="2.5"/>
+  <!-- データ点 -->
+  <circle cx="130" cy="55" r="4" style="fill: var(--ei-fig-danger); stroke: none"/>
+  <circle cx="280" cy="160" r="4" style="fill: var(--md-default-fg-color); stroke: none"/>
+  <circle cx="430" cy="212.5" r="4" style="fill: var(--md-default-fg-color); stroke: none"/>
+  <!-- ラベル -->
+  <g style="fill: var(--md-default-fg-color)" font-size="12">
+    <text x="20" y="25" font-size="13">基本料金への影響</text>
+    <text x="100" y="101" text-anchor="end">割増</text>
+    <text x="100" y="164" text-anchor="end">基準</text>
+    <text x="100" y="219" text-anchor="end">割引</text>
+    <text x="215" y="96">1%低下ごとに1%増額</text>
+    <text x="355" y="232" text-anchor="middle">1%上昇ごとに</text>
+    <text x="355" y="248" text-anchor="middle">0.5%割引</text>
+    <text x="440" y="210">最大7.5%割引</text>
+    <text x="130" y="284" text-anchor="middle">70%</text>
+    <text x="280" y="284" text-anchor="middle">85%</text>
+    <text x="430" y="284" text-anchor="middle">100%（上限）</text>
+    <text x="285" y="308" text-anchor="middle">月間の平均力率</text>
+  </g>
+  <text x="142" y="50" font-size="12" style="fill: var(--ei-fig-danger)">15%のペナルティ</text>
+</svg>
+<figcaption>力率85%を境に傾きが変わる基本料金の割引・割増の仕組みです。85%未満は1%低下するごとに1%増額（力率70%なら15%のペナルティ）、85%超は1%上昇するごとに0.5%割引で、上限の100%でも最大7.5%割引にとどまります。割増側の傾きは割引側の2倍です。なお本図は旧一般電気事業者の伝統的な高圧料金メニューを前提としており、新電力や新しい料金メニューでは力率割引・割増制度自体が無い、または基準力率・割引率が異なる場合があります。</figcaption>
+</figure>
+
 ### 具体的な金額感
 
 **前提条件**: 契約電力1,000kW、基本料金単価1,600円/kW・月
@@ -60,10 +110,10 @@ audience:
 力率70%の場合（15%のペナルティ）:
   割増額 = 1,600,000円 × 15% = +240,000円/月 → 年間+288万円
 
-力率95%の場合（5%の割引）:
-  割引額 = 1,600,000円 × 5% × 0.5 = -40,000円/月 → 年間-48万円
+力率90%の場合（85%から5ポイント上昇 → 5 × 0.5% = 2.5%の割引）:
+  割引額 = 1,600,000円 × 2.5% = -40,000円/月 → 年間-48万円
 
-力率95%改善の経済効果（70%→95%）:
+力率改善の経済効果（70%→90%）:
   288万円 + 48万円 = 年間336万円のコスト改善
 ```
 
