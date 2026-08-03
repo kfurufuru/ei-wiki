@@ -1421,7 +1421,10 @@ def check_boost(docs):
 # 2026-07-30: 工事計画届出フローの裸フェンスを ```text 化して 234→233。
 # 2026-08-01: panel-hmi の表示灯配置例を ```text 化（＋他PRの削減分）で実測 230 に低下したため追随。
 # 2026-08-01: panel-design の充填率ブロックを ```text 化して 230→229。
-CODEBLOCK_WARN_BASELINE = 180
+# 2026-08-03: main（基準 180）と本ブランチ（基準 232）の衝突を、より厳しい main 側を
+# 起点に解消。本ブランチの wiring シールド接地 ASCII 図の SVG 化で実測 180→179 のため
+# ラチェット慣行どおり基準も 179 に下げる。
+CODEBLOCK_WARN_BASELINE = 179
 
 
 def warn_codeblocks(docs):

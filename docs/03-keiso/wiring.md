@@ -35,11 +35,92 @@ last_verified: 2026-07-09
     シールドを両端で接地すると、2つの接地点間の電位差が「グラウンドループ電流」として流れ、
     信号線にノイズとして重畳する。
 
-```
-正しい接地方法：
-    フィールド側  ────  DCS側
-    シールド未接地        シールド接地（IS アースまたは計装アース）
-```
+<figure>
+<svg viewBox="0 0 680 232" width="680" height="232" role="img"
+     aria-labelledby="fig-shield-ground-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-shield-ground-title">シールド接地の可否。両端接地では、シールドと大地が閉じた輪になり、2つの接地点間の電位差でグラウンドループ電流が環流して信号にノイズが重畳する。DCS側1点のみ接地しフィールド側を絶縁処理すると輪が開き、環流が生じない。</title>
+  <g transform="translate(0,0)">
+    <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.5">
+      <rect x="48" y="52" width="64" height="36" rx="4"/>
+      <rect x="208" y="52" width="64" height="36" rx="4"/>
+      <line x1="112" y1="62" x2="208" y2="62"/>
+      <line x1="112" y1="78" x2="208" y2="78"/>
+    </g>
+    <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.5" stroke-dasharray="5 3">
+      <line x1="24" y1="36" x2="296" y2="36"/>
+    </g>
+    <g style="stroke: var(--ei-fig-danger); fill: none" stroke-width="1.6">
+      <line x1="24" y1="36" x2="24" y2="140"/>
+      <line x1="296" y1="36" x2="296" y2="140"/>
+      <line x1="11" y1="140" x2="37" y2="140"/>
+      <line x1="15" y1="146" x2="33" y2="146"/>
+      <line x1="19" y1="152" x2="29" y2="152"/>
+      <line x1="283" y1="140" x2="309" y2="140"/>
+      <line x1="287" y1="146" x2="305" y2="146"/>
+      <line x1="291" y1="152" x2="301" y2="152"/>
+      <line x1="24" y1="152" x2="24" y2="172"/>
+      <line x1="296" y1="152" x2="296" y2="172"/>
+    </g>
+    <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.2" stroke-dasharray="4 4">
+      <line x1="10" y1="172" x2="310" y2="172"/>
+    </g>
+    <g style="stroke: none; fill: var(--ei-fig-danger)">
+      <path d="M 166,36 L 154,30 L 154,42 Z"/>
+      <path d="M 296,108 L 290,96 L 302,96 Z"/>
+      <path d="M 154,172 L 166,166 L 166,178 Z"/>
+      <path d="M 24,96 L 18,108 L 30,108 Z"/>
+    </g>
+    <g style="fill: var(--md-default-fg-color)" font-size="11">
+      <text x="80" y="74" text-anchor="middle">伝送器</text>
+      <text x="240" y="74" text-anchor="middle">DCS</text>
+      <text x="300" y="28" text-anchor="end">シールド</text>
+      <text x="10" y="190" text-anchor="start">大地</text>
+    </g>
+    <g font-size="12">
+      <text x="160" y="14" text-anchor="middle" style="fill: var(--ei-fig-danger)">NG：両端接地</text>
+    </g>
+    <g font-size="10">
+      <text x="160" y="160" text-anchor="middle" style="fill: var(--ei-fig-danger)">接地点間の電位差</text>
+    </g>
+    <g font-size="11">
+      <text x="160" y="212" text-anchor="middle" style="fill: var(--ei-fig-danger)">グラウンドループ電流が環流</text>
+    </g>
+  </g>
+  <g transform="translate(360,0)">
+    <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.5">
+      <rect x="48" y="52" width="64" height="36" rx="4"/>
+      <rect x="208" y="52" width="64" height="36" rx="4"/>
+      <line x1="112" y1="62" x2="208" y2="62"/>
+      <line x1="112" y1="78" x2="208" y2="78"/>
+    </g>
+    <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.5" stroke-dasharray="5 3">
+      <line x1="24" y1="36" x2="296" y2="36"/>
+    </g>
+    <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.6">
+      <line x1="24" y1="36" x2="24" y2="94"/>
+      <circle cx="24" cy="99" r="5"/>
+      <line x1="296" y1="36" x2="296" y2="140"/>
+      <line x1="283" y1="140" x2="309" y2="140"/>
+      <line x1="287" y1="146" x2="305" y2="146"/>
+      <line x1="291" y1="152" x2="301" y2="152"/>
+      <line x1="296" y1="152" x2="296" y2="172"/>
+    </g>
+    <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1.2" stroke-dasharray="4 4">
+      <line x1="10" y1="172" x2="310" y2="172"/>
+    </g>
+    <g style="fill: var(--md-default-fg-color)" font-size="11">
+      <text x="80" y="74" text-anchor="middle">伝送器</text>
+      <text x="240" y="74" text-anchor="middle">DCS</text>
+      <text x="300" y="28" text-anchor="end">シールド</text>
+      <text x="10" y="190" text-anchor="start">大地</text>
+      <text x="160" y="14" text-anchor="middle">OK：片端接地（DCS側の1点のみ）</text>
+      <text x="10" y="124" text-anchor="start">フィールド側は絶縁処理</text>
+      <text x="160" y="212" text-anchor="middle">経路が開くので環流しない</text>
+    </g>
+  </g>
+</svg>
+<figcaption>両端で接地すると「シールド → 接地点 → 大地 → 接地点 → シールド」が閉じた輪になり、2つの接地点の電位差でグラウンドループ電流が環流して信号にノイズが重畳する。接地を DCS 側の1点だけにしてフィールド側を絶縁処理すると輪が開き、環流経路そのものが無くなる。</figcaption>
+</figure>
 
 - 接地点は **DCS（制御盤）側の1点のみ**
 - フィールド側は絶縁テープ等でシールド端末を絶縁処理する

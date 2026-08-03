@@ -36,6 +36,86 @@ last_verified: 2026-07-11
     - 3.6〜3.8 mA・20.5〜21 mA は遷移域（通常は使用しない領域）。
     数字を混同しやすいので、「計測の有効範囲」か「故障検出の閾値」かを区別して扱います。
 
+<figure>
+<svg viewBox="0 0 560 412" width="560" height="412" role="img"
+     aria-labelledby="fig-420ma-bands-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-420ma-bands-title">4-20mA信号の電流帯の区分。下から、3.6mA以下は故障判定（フェイルロー方向）、3.6から3.8mAは遷移域、3.8から20.5mAが有効測定範囲でそのうち4から20mAが正常な信号範囲、20.5から21mAは遷移域、21mA以上は故障判定（フェイルハイ方向）。0mAは断線・電源失。</title>
+  <!-- 電流軸 -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.4">
+    <line x1="60" y1="40" x2="60" y2="388"/>
+    <line x1="54" y1="88" x2="60" y2="88"/>
+    <line x1="54" y1="124" x2="60" y2="124"/>
+    <line x1="54" y1="160" x2="60" y2="160"/>
+    <line x1="54" y1="268" x2="60" y2="268"/>
+    <line x1="54" y1="304" x2="60" y2="304"/>
+    <line x1="54" y1="340" x2="60" y2="340"/>
+    <line x1="54" y1="388" x2="60" y2="388"/>
+  </g>
+  <!-- 軸の省略記号（4〜20 mA の区間を圧縮している印） -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.2">
+    <line x1="53" y1="222" x2="67" y2="210"/>
+    <line x1="53" y1="230" x2="67" y2="218"/>
+  </g>
+  <!-- 有効測定範囲のブラケット -->
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.4">
+    <line x1="138" y1="124" x2="138" y2="304"/>
+    <line x1="138" y1="124" x2="146" y2="124"/>
+    <line x1="138" y1="304" x2="146" y2="304"/>
+  </g>
+  <!-- 帯 -->
+  <g style="stroke: var(--ei-fig-danger); fill: none" stroke-width="1.6">
+    <rect x="150" y="40" width="230" height="48"/>
+    <rect x="150" y="340" width="230" height="48"/>
+  </g>
+  <g style="stroke: var(--ei-fig-warn); fill: none" stroke-width="1.6">
+    <rect x="150" y="88" width="230" height="36"/>
+    <rect x="150" y="304" width="230" height="36"/>
+  </g>
+  <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.6">
+    <rect x="150" y="124" width="230" height="180"/>
+    <rect x="168" y="160" width="194" height="108" rx="4"/>
+  </g>
+  <!-- 軸の値 -->
+  <g style="fill: var(--md-default-fg-color)" font-size="11">
+    <text x="48" y="92" text-anchor="end">21</text>
+    <text x="48" y="128" text-anchor="end">20.5</text>
+    <text x="48" y="164" text-anchor="end">20</text>
+    <text x="48" y="272" text-anchor="end">4</text>
+    <text x="48" y="308" text-anchor="end">3.8</text>
+    <text x="48" y="344" text-anchor="end">3.6</text>
+    <text x="48" y="392" text-anchor="end">0</text>
+    <text x="26" y="214" text-anchor="middle" transform="rotate(-90 26 214)">電流 [mA]</text>
+  </g>
+  <!-- 有効測定範囲のラベル -->
+  <g style="fill: var(--md-default-fg-color)" font-size="11">
+    <text x="120" y="214" text-anchor="middle" transform="rotate(-90 120 214)">有効測定範囲（直線性を保証）</text>
+  </g>
+  <!-- 帯の中の文字 -->
+  <g font-size="11">
+    <text x="265" y="60" text-anchor="middle" style="fill: var(--ei-fig-danger)">故障判定（NAMUR NE43）</text>
+    <text x="265" y="78" text-anchor="middle" style="fill: var(--ei-fig-danger)">フェイルハイ方向</text>
+    <text x="265" y="110" text-anchor="middle" style="fill: var(--ei-fig-warn)">遷移域（通常は使用しない）</text>
+    <text x="265" y="326" text-anchor="middle" style="fill: var(--ei-fig-warn)">遷移域（通常は使用しない）</text>
+    <text x="265" y="360" text-anchor="middle" style="fill: var(--ei-fig-danger)">故障判定（NAMUR NE43）</text>
+    <text x="265" y="378" text-anchor="middle" style="fill: var(--ei-fig-danger)">フェイルロー方向</text>
+  </g>
+  <g style="fill: var(--md-default-fg-color)" font-size="12">
+    <text x="265" y="198" text-anchor="middle">正常な信号範囲</text>
+  </g>
+  <g style="fill: var(--md-default-fg-color--light)" font-size="10">
+    <text x="265" y="220" text-anchor="middle">4 mA ＝ ゼロスケール</text>
+    <text x="265" y="238" text-anchor="middle">20 mA ＝ フルスケール</text>
+  </g>
+  <!-- 右側の注記 -->
+  <g style="fill: var(--md-default-fg-color--light)" font-size="11">
+    <text x="394" y="68" text-anchor="start">センサ異常</text>
+    <text x="394" y="368" text-anchor="start">断線・センサ異常</text>
+    <text x="394" y="392" text-anchor="start">0 mA は断線・電源失</text>
+  </g>
+</svg>
+<figcaption>「計測の有効範囲（3.8〜20.5 mA）」と「故障検出の閾値（3.6 mA 以下／21 mA 以上）」は別物で、その間が遷移域。縦軸は 4〜20 mA の区間を圧縮しており等間隔ではない（軸の二重斜線が省略の印）。</figcaption>
+</figure>
+
 0mAを「生きている信号」として使わないことで、**断線と測定値ゼロを区別できる**。これが4-20mAの最大の利点。現場でアラームが出たとき、まず「0mAか否か」を確認する習慣をつける。
 
 ### ループの電流計算
