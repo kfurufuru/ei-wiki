@@ -1030,6 +1030,19 @@ FORBIDDEN = [
      "高圧の絶縁抵抗を「6.6kV は一律 10MΩ 以上」と回路電圧だけで切らない"
      "（設備種別で境界が変わる。正典 docs/05-hozen/insulation-management.md）",
      "| 6600V 高圧 | 5000V | 10MΩ 以上 | 1〜10MΩ | 1MΩ 未満 |"),
+    # 20260803-setchi-megger-torichigae: 2026-08-03 の docs/03-keiso/grounding-gnd.md
+    # 根拠節整備で確定。接地極と大地の間の抵抗を測るのは接地抵抗計（アーステスタ）で、
+    # 絶縁抵抗計（メガー）ではない。測る対象も判定値も別物
+    # （正典 docs/guidelines/grounding-inspection.md / docs/05-hozen/insulation-management.md）。
+    # 両者を対比して正しく書き分けている行・是正解説文は負ガードで除外する。
+    ("20260803-setchi-megger-torichigae",
+     _both_unless(r"保護接地|接地極|接地抵抗", r"メガー|絶縁抵抗計",
+                  r"ではありません|ではない|接地抵抗計|アーステスタ|是正|かつて|別物"),
+     "接地（接地抵抗）の確認をメガー（絶縁抵抗計）で行うと書かない。"
+     "接地極と大地の間の抵抗は接地抵抗計（アーステスタ）で測る"
+     "（正典 docs/guidelines/grounding-inspection.md）",
+     "機器の保護接地が確実に大地へ接続されているかを必ず確認してください"
+     "（測定は接地・ノイズトラブルのメガー手順を参照）。"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -1386,6 +1399,11 @@ NEGATIVE_FIXTURES = [
      "| 高圧ケーブル・設備（6.6kV） | 5000V | 10MΩ 以上 |"),
     ("20260803-koatsu-10mohm-ippanka",
      "| 6.6 kV はすべて 10 MΩ 以上が良 | 10 MΩ 以上は**高圧ケーブル（使用中）**の値。"),
+    # 2026-08-03 03-keiso/grounding-gnd.md 根拠節整備の是正文（実際に docs に書いた行）。
+    ("20260803-setchi-megger-torichigae",
+     "    **確認に使うのは接地抵抗計（アーステスタ）**で、絶縁抵抗計（メガー）ではありません"),
+    ("20260803-setchi-megger-torichigae",
+     "### 保護接地の確認は接地抵抗計であってメガーではありません（2026-08-03 是正）"),
 ]
 
 # canary: これらの正典値が消えていたら FAIL（黙った削除の検知）。
@@ -1589,7 +1607,7 @@ def check_boost(docs):
 # 2026-08-03: main（基準 180）と本ブランチ（基準 232）の衝突を、より厳しい main 側を
 # 起点に解消。本ブランチの wiring シールド接地 ASCII 図の SVG 化で実測 180→179 のため
 # ラチェット慣行どおり基準も 179 に下げる。
-CODEBLOCK_WARN_BASELINE = 158
+CODEBLOCK_WARN_BASELINE = 157
 
 
 def warn_codeblocks(docs):
