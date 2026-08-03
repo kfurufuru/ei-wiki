@@ -1068,6 +1068,29 @@ FORBIDDEN = [
      "電力会社は協議の相手方。正典 docs/01-koatsu/harmonics.md）",
      "電力品質ガイドライン（電力会社自主規制）により、高調波発生機器を増設する場合は"
      "電力会社への事前協議と高調波流出電流計算が求められる。"),
+    # 20260803-factory-path-zangai: 2026-08-03 の docs/guidelines/trouble-first-response.md
+    # 根拠節整備で発見。自工場固有の内容を private repo へ退避した際（feedback-rules R2）の
+    # 残骸で、本 repo に factory/ ディレクトリは存在しない。存在しないパスへ誘導しない（R4）。
+    ("20260803-factory-path-zangai",
+     re.compile(r"^(?=.*factory/)(?!.*(?:ありません|存在しません|残骸|是正|誤り|かつて))"),
+     "本 repo に存在しない `factory/` パスを参照しない（07-site の private repo 退避時の残骸。"
+     "記録台帳の様式は事業場ごとに異なるためパスを書かない。feedback-rules R2・R4）",
+     "記録先：`factory/trouble-log.md` または所定のトラブル記録台帳"),
+    # 20260803-loopcal-sink-24v: 2026-08-03 の docs/05-hozen/instruments.md 根拠節整備で確定。
+    # ループキャリブレータの SINK（SIMULATE）は外部ループ電源が必須で、キャリブレータは
+    # 電流を吸い込む側。24V を供給しながら測るのは別機能（ループ電源付き測定／LOOP POWER）。
+    # 主要各社（Fluke 707・横河 CA450・Additel 209/210・Beamex MC6・日置 SS7012）の
+    # 取説・カタログで定義の一致を確認（規格ではなくメーカー仕様）。
+    # 是正解説文・両者を対比して正しく書き分けている行は負ガードで除外する。
+    ("20260803-loopcal-sink-24v",
+     _both_unless(r"SINK|シンク", r"24\s*V.{0,14}供給",
+                  r"ではありません|ではない|吸い込|LOOP POWER|ループ電源付き|"
+                  r"是正|かつて|誤り|確認でき|別の機能"),
+     "ループキャリブレータの SINK を「24V を供給しながら測る」と書かない"
+     "（SINK は外部ループ電源が必須で電流を吸い込む側。24V 供給は別機能の"
+     "ループ電源付き測定。正典 docs/05-hozen/instruments.md）",
+     "| シンク（SINK） | キャリブレーターが 24V 電源を供給しながら mA を計測 | "
+     "ループ電源ありの回路で伝送器出力を測定 |"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -1435,6 +1458,16 @@ NEGATIVE_FIXTURES = [
     # 2026-08-03 09-hoantokei/denryoku-toiawase.md 根拠節整備の是正文（実際に docs に書いた行）。
     ("20260803-kouchouha-jishukisei",
      "!!! info \"高調波のガイドラインは経済産業省のもの（電力会社の自主規制ではない）\""),
+    # 2026-08-03 guidelines/trouble-first-response.md 根拠節整備の是正文（実際に docs に書いた行）。
+    ("20260803-factory-path-zangai",
+     "記録先を「`factory/trouble-log.md` または所定のトラブル記録台帳」と書いていましたが、"
+     "**本 repo に `factory/` というディレクトリはありません**。"),
+    # 2026-08-03 05-hozen/instruments.md 根拠節整備の是正文（実際に docs に書いた行）。
+    ("20260803-loopcal-sink-24v",
+     "!!! warning \"SINK は「24V を供給する」モードではありません\""),
+    ("20260803-loopcal-sink-24v",
+     "呼称は SIMULATE / SINK / 電源供給 Off 設定とメーカー間で揺れますが、"
+     "**意味の割れは確認されませんでした**（「SINK＝24V を供給する側」と定義するメーカーは確認できず）。"),
     # lint-ok を撤去して負ガードに移した行（誤りを説明する正当な warning 本文）。
     ("20260710-ocr-shunji-150pct",
      "瞬時要素を定格の 1.5〜2 倍（150〜200%）に整定すると、変圧器投入のたびに"
@@ -1642,7 +1675,7 @@ def check_boost(docs):
 # 2026-08-03: main（基準 180）と本ブランチ（基準 232）の衝突を、より厳しい main 側を
 # 起点に解消。本ブランチの wiring シールド接地 ASCII 図の SVG 化で実測 180→179 のため
 # ラチェット慣行どおり基準も 179 に下げる。
-CODEBLOCK_WARN_BASELINE = 153
+CODEBLOCK_WARN_BASELINE = 148
 
 
 def warn_codeblocks(docs):
