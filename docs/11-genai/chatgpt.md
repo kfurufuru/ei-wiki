@@ -134,7 +134,7 @@ OpenAI社が開発した対話型AIサービス。ブラウザ（`chatgpt.com`�
 |------|--------------|------|
 | 長文ドキュメントの作成・読解 | Claude | 長文の理解・生成が得意 |
 | 短い質問・素早いQ&A | ChatGPT | レスポンスが速い |
-| Web検索が必要な調査 | Bing Copilot | リアルタイム情報に対応 |
+| Web検索が必要な調査 | Microsoft Copilot（旧 Bing Chat） | リアルタイム情報に対応 |
 | Officeツールと連携した作業 | M365 Copilot | Office統合が強み |
 | コード作成・データ分析 | ChatGPT（有料版） | Code Interpreterで実行も可 |
 

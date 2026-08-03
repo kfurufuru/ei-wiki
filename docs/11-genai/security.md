@@ -63,7 +63,7 @@ audience:
 <figure>
 <svg viewBox="0 0 720 414" width="720" height="414" role="img"
      aria-labelledby="fig-genai-boundary-title" xmlns="http://www.w3.org/2000/svg">
-  <title id="fig-genai-boundary-title">生成AIツールごとの入力データの行き先。M365 Copilot（会社契約）とローカルLLMは社内に留まるため社内情報の入力が可能。ChatGPT・Claude.ai・Bing Copilotの個人アカウントは社外のサーバーへ送信されるため原則禁止、Claude CodeはAPI経由でAnthropicへ送信されるため要IT確認。</title>
+  <title id="fig-genai-boundary-title">生成AIツールごとの入力データの行き先。M365 Copilot（会社契約）とローカルLLMは社内に留まるため社内情報の入力が可能。ChatGPT・Claude.ai・Microsoft Copilot（旧 Bing Chat）の個人アカウントは社外のサーバーへ送信されるため原則禁止、Claude CodeはAPI経由でAnthropicへ送信されるため要IT確認。</title>
   <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.5">
     <!-- 入力元 -->
     <rect x="280" y="14" width="160" height="38" rx="6"/>
@@ -111,7 +111,7 @@ audience:
     <text x="44" y="220">ローカルLLM（社内サーバー等）</text>
     <text x="404" y="152">ChatGPT（個人アカウント）</text>
     <text x="404" y="220">Claude.ai（個人アカウント）</text>
-    <text x="404" y="288">Bing Copilot（Edgeブラウザ）</text>
+    <text x="404" y="288">Microsoft Copilot（個人）</text>
     <text x="404" y="356">Claude Code（APIキー使用）</text>
   </g>
   <!-- 行き先 -->
@@ -135,7 +135,7 @@ audience:
     <text x="676" y="356" text-anchor="end" style="fill: var(--ei-fig-warn)">要IT確認</text>
   </g>
 </svg>
-<figcaption>ツール別ルールの根拠は「データの行き先」。実線の枠内は会社の管理下に留まるため社内情報を入力でき、破線の枠内は社外のサーバーへ出るため原則禁止。右端は下表の「社内情報の入力」欄と同じ判断。Bing Copilot は会社契約版が別扱いになる点に注意。</figcaption>
+<figcaption>ツール別ルールの根拠は「データの行き先」。実線の枠内は会社の管理下に留まるため社内情報を入力でき、破線の枠内は社外のサーバーへ出るため原則禁止。右端は下表の「社内情報の入力」欄と同じ判断。Microsoft Copilot（旧 Bing Chat）は会社契約版が別扱いになる点に注意。</figcaption>
 </figure>
 
 | ツール | 社内情報の入力 | データの行き先 | 判断 |
@@ -143,7 +143,7 @@ audience:
 | M365 Copilot（会社契約） | 可 | 社内Microsoft 365テナント内に留まる | 社内文書・業務情報は入力OK |
 | ChatGPT（個人アカウント） | 原則禁止 | OpenAI（米国）のサーバーへ送信 | 社外秘・個人情報はNG |
 | Claude.ai（個人アカウント） | 原則禁止 | Anthropic（米国）のサーバーへ送信 | 社外秘・個人情報はNG |
-| Bing Copilot（Edgeブラウザ） | 原則禁止 | Microsoft（個人向けサービス扱い） | 社外秘NG ※会社契約版は別扱い |
+| Microsoft Copilot（個人アカウント。**旧 Bing Chat**） | 原則禁止 | Microsoft（個人向けサービス扱い） | 社外秘NG ※会社契約版は別扱い |
 | Claude Code（APIキー使用） | 要IT確認 | API経由でAnthropicへ送信 | IT部門のポリシー確認が必要 |
 | ローカルLLM（社内サーバー等） | 可（IT許可後） | 社内に留まる | IT部門の承認後に使用 |
 

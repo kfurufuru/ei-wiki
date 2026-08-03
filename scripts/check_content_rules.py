@@ -947,6 +947,28 @@ FORBIDDEN = [
      "生成AIの料金（月額・ドル建て）を本文に固定しない。プラン名・金額は変わるため"
      "公式の料金ページへ誘導する（正典 docs/11-genai/basics.md）",
      "4. 有料プラン（ChatGPT Plus, 月額20ドル）で有料版の高性能モデルが使用可能"),
+    # 以下2件: 2026-08-03 の docs/09-hoantokei/legal-duties.md 根拠節整備＋R2/R3 掃除で確定。
+    # 20260803-jishagenten-toukoujou: 本 repo は一般知識のみを扱う公開リポジトリ（feedback-rules
+    # R2: 自工場固有情報は private repo へ／R3: 会社・工場が特定できる記述はぼかす）。
+    # 「当工場」「弊社」「当社」の自社視点は、読者の事業場に当てはめられる書き方に置き換える。
+    # 是正の経緯を説明する行（旧表現を引用する解説）は負ガードで除外する。
+    ("20260803-jishagenten-toukoujou",
+     re.compile(r"^(?=.*(?:当工場|弊社|当社))"
+                r"(?!.*(?:是正|かつて|残っ|改めま|書かない|置き換え|禁止))"),
+     "本文に「当工場」「弊社」「当社」を書かない（本 repo は一般知識のみ。"
+     "feedback-rules R2・R3。読者の事業場に当てはめられる書き方にする）",
+     "> **当工場への適用**: 当工場は化学プラントであり、電気・蒸気・燃料の消費量が"
+     "基準を超えるため**特定事業者**に該当する。"),
+    # 20260803-bing-copilot-kyusho: Microsoft の対話AIは Bing Chat から Copilot に改称済み。
+    # 「Bing Copilot」を現行名として書かない（旧称であることを同一行に明示する場合は可）。
+    # 前弾（PR #83）では open PR が同表記のファイルを掴んでいたため登録を見送っていた。
+    ("20260803-bing-copilot-kyusho",
+     _both_unless(r"Bing", r"Copilot",
+                  r"旧称|旧\s*Bing|改称|是正|誤り|かつて"),
+     "「Bing Copilot」を現行名として書かない（Microsoft Copilot に改称済み。"
+     "旧称であることを同一行に明示する場合は可。正典 docs/11-genai/basics.md）",
+     "| Bing Copilot（Edgeブラウザ） | 原則禁止 | Microsoft（個人向けサービス扱い） | "
+     "社外秘NG ※会社契約版は別扱い |"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -1266,6 +1288,16 @@ NEGATIVE_FIXTURES = [
     ("20260803-keiryoho-teiki-kensa",
      "| 計量法の定期検査（取引・証明に使う計量器に限る）の対象・校正周期 | "
      "[校正](../05-hozen/calibration.md) |"),
+    # 2026-08-03 R2/R3 掃除・旧称是正の説明文（実際に docs に書いた行）。
+    ("20260803-jishagenten-toukoujou",
+     "本ページには**自事業場を前提とした書き方**（「当工場は特別高圧または高圧受電のため対象」"
+     "「監督対象設備（当工場の場合）」「関東では関東東北産業保安監督部」）が残っていました。"),
+    ("20260803-bing-copilot-kyusho",
+     "| Microsoft Copilot | Microsoft | ブラウザ・アプリ | 無料枠あり。Web 検索と連携。"
+     "**旧称 Bing Chat** で、Edge 専用ではない |"),
+    ("20260803-bing-copilot-kyusho",
+     "| Microsoft Copilot（個人アカウント。**旧 Bing Chat**） | 原則禁止 | "
+     "Microsoft（個人向けサービス扱い） | 社外秘NG ※会社契約版は別扱い |"),
 ]
 
 # canary: これらの正典値が消えていたら FAIL（黙った削除の検知）。
@@ -1469,7 +1501,7 @@ def check_boost(docs):
 # 2026-08-03: main（基準 180）と本ブランチ（基準 232）の衝突を、より厳しい main 側を
 # 起点に解消。本ブランチの wiring シールド接地 ASCII 図の SVG 化で実測 180→179 のため
 # ラチェット慣行どおり基準も 179 に下げる。
-CODEBLOCK_WARN_BASELINE = 170
+CODEBLOCK_WARN_BASELINE = 169
 
 
 def warn_codeblocks(docs):
