@@ -927,6 +927,26 @@ FORBIDDEN = [
      "85%基準・1%あたり0.5%割引なら力率95%は5%割引。5%×0.5=2.5%は力率90%の値で、"
      "割引率を二重に半減させている",
      "力率95%の場合（5%の割引）: 割引額 = 1,600,000円 × 5% × 0.5 = -40,000円/月"),
+    # 以下2件: 2026-08-03 の docs/11-genai/basics.md 根拠節整備で確定。
+    # 20260803-chatopenai-kyu-url: ChatGPT の現行の入口は chatgpt.com（OpenAI ヘルプセンターで確認）。
+    # 旧ドメイン chat.openai.com を手順に残すと初学者が迷うため、現行ドメインか
+    # 「旧」である旨の明示を同一行に伴わない記述を止める。
+    ("20260803-chatopenai-kyu-url",
+     re.compile(r"^(?=.*chat\.openai\.com)"
+                r"(?!.*(?:chatgpt\.com|旧|是正|誤り|かつて))"),
+     "ChatGPT の入口は chatgpt.com。旧ドメイン chat.openai.com を単独で手順に書かない"
+     "（正典 docs/11-genai/basics.md）",
+     "1. `chat.openai.com` にアクセス"),
+    # 20260803-genai-gakuhi-kotei: 生成AIの料金プランは頻繁に変わるため、月額・ドル建ての
+    # 金額を本文に固定しない（R10 陳腐化する固有名）。公式の料金ページへ誘導する。
+    # 是正の経緯を説明する行・「変わる」旨を同一行に書いた行は負ガードで除外する。
+    ("20260803-genai-gakuhi-kotei",
+     _both_unless(r"ChatGPT|Copilot|Claude|Gemini",
+                  r"月額\s*[0-9]|[0-9]+\s*ドル",
+                  r"変わる|公式|書きません|是正|誤り|かつて"),
+     "生成AIの料金（月額・ドル建て）を本文に固定しない。プラン名・金額は変わるため"
+     "公式の料金ページへ誘導する（正典 docs/11-genai/basics.md）",
+     "4. 有料プラン（ChatGPT Plus, 月額20ドル）で有料版の高性能モデルが使用可能"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -1233,6 +1253,19 @@ NEGATIVE_FIXTURES = [
     ("20260803-multilin-abb",
      "| GE（現 GE Vernova） | Multilin シリーズ | デジタル保護リレー（多機能）。"
      "**Multilin は GE のブランド**で ABB の製品ではない |"),
+    # 2026-08-03 11-genai/basics.md・chatgpt.md 根拠節整備の是正文（実際に docs に書いた行）。
+    ("20260803-chatopenai-kyu-url",
+     "1. `chatgpt.com` にアクセス（**旧 `chat.openai.com` は現行の入口ではありません**）"),
+    ("20260803-chatopenai-kyu-url",
+     "- **`chat.openai.com` → `chatgpt.com`**。OpenAI のヘルプセンターが現行の入口として "
+     "`chatgpt.com` を案内していることを確認しました"),
+    ("20260803-genai-gakuhi-kotei",
+     "- **「ChatGPT Plus, 月額20ドル」を削除**。プラン名も金額も変わるため、"
+     "公式の料金ページを見る導線に置き換えました"),
+    # 正典参照テーブルから校正ページを指す行（限定つきで正しく書いた行）を巻き込まない証明。
+    ("20260803-keiryoho-teiki-kensa",
+     "| 計量法の定期検査（取引・証明に使う計量器に限る）の対象・校正周期 | "
+     "[校正](../05-hozen/calibration.md) |"),
 ]
 
 # canary: これらの正典値が消えていたら FAIL（黙った削除の検知）。
@@ -1436,7 +1469,7 @@ def check_boost(docs):
 # 2026-08-03: main（基準 180）と本ブランチ（基準 232）の衝突を、より厳しい main 側を
 # 起点に解消。本ブランチの wiring シールド接地 ASCII 図の SVG 化で実測 180→179 のため
 # ラチェット慣行どおり基準も 179 に下げる。
-CODEBLOCK_WARN_BASELINE = 179
+CODEBLOCK_WARN_BASELINE = 170
 
 
 def warn_codeblocks(docs):
