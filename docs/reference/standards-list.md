@@ -5,7 +5,7 @@ tags:
   - 逆引き
 audience:
   - 電気担当
-last_verified: 2026-07-11
+last_verified: 2026-08-05
 ---
 
 # 規格一覧
@@ -22,7 +22,7 @@ last_verified: 2026-07-11
 | 内線規程（JEAC 8001） | 屋内電気設備の標準技術基準 | 屋内配線設計・施工 | 電気技術規程（有償） |
 | 高圧受電設備規程（JEAC 8011） | 自家用高圧受電設備の技術基準 | 高圧受変電設備設計 | 電気技術規程（有償） |
 | JIS C 1010-1 | 測定・制御・試験室用電気機器の安全 | 測定器の安全規格 | JSA Web デジタルライブラリ |
-| JIS C 0364 | 建築電気設備（IEC 60364 対応） | 建築電気設備設計 | JSA |
+| JIS C 60364 群 | 低圧電気設備（IEC 60364 対応） | 低圧電気設備の設計・検証 | JSA |
 | IEC 60364 | Low-voltage electrical installations | 低圧電気設備の国際標準 | IEC |
 
 ---
@@ -36,7 +36,7 @@ last_verified: 2026-07-11
 | IEC 60204-1 | Safety of machinery - Electrical equipment | 制御盤・非常停止の設計 | IEC |
 | IEC 61439 | Low-voltage switchgear and controlgear assemblies | 低圧制御盤の設計・試験 | IEC |
 | IEC 60947-5-5 | Emergency stop devices with mechanical latching | 非常停止装置の規格 | IEC |
-| JEM 1195 | 開放型電動機の騒音測定方法 | 電動機の騒音評価 | JEMA |
+| JEM 1195 | 低圧コントロールセンタ | 低圧 MCC の仕様・形式 | JEMA |
 | JIS C 4034 | 回転電気機械 | 電動機の設計・試験 | JSA |
 
 ---
@@ -65,8 +65,8 @@ last_verified: 2026-07-11
 | ISA-5.4 | Instrument Loop Diagrams | ループ図の作成標準 | ISA（有償） |
 | ISA-18.2 | Management of Alarm Systems | アラーム管理（実務は [アラーム管理](../03-keiso/alarm-management.md)） | ISA（有償） |
 | ISA-88 | Batch Control | バッチプロセス制御 | ISA（有償） |
-| NAMUR NE 43 | Standardization of Signal Level | 4-20mA の障害検出信号（3.6/21mA） | NAMUR（無料） |
-| NAMUR NE 107 | Self-monitoring and Diagnosis | HART 機器の診断情報活用 | NAMUR（無料） |
+| NAMUR NE 43 | Standardization of Signal Level | 4-20mA の障害検出信号（3.6/21mA） | NAMUR |
+| NAMUR NE 107 | Self-monitoring and Diagnosis | HART 機器の診断情報活用 | NAMUR |
 | IEC 61158 | Fieldbus for use in industrial control systems | フィールドバスの国際標準 | IEC |
 | IEC 61784 | Profile sets for continuous and discrete manufacturing | フィールドバスプロファイル | IEC |
 
@@ -77,8 +77,8 @@ last_verified: 2026-07-11
 | 規格番号 | タイトル | 適用場面 | 入手先 |
 |---------|---------|---------|-------|
 | IEC 61511-1 | Safety instrumented systems for the process industry | 化学・石油化学プロセスの SIS 設計 | IEC |
-| IEC 61511-2 | Application guidelines | SIS 設計ガイドライン | IEC |
-| IEC 61511-3 | Guidance for functional safety assessment | SIL 評価の実施方法 | IEC |
+| IEC 61511-2 | Guidelines for the application of IEC 61511-1 | 61511-1 の適用ガイド | IEC |
+| IEC 61511-3 | Guidance for the determination of the required safety integrity levels | **必要 SIL の決定**（HAZOP・LOPA 等のリスク評価手法の例示） | IEC |
 | IEC 61508 | Functional safety of E/E/PE safety-related systems | SIS の基礎規格（SIL の定義） | IEC |
 | IEC 62061 | Safety of machinery - SIL | 機械向け安全計装 | IEC |
 
@@ -87,7 +87,7 @@ last_verified: 2026-07-11
 <figure>
 <svg viewBox="0 0 640 344" width="640" height="344" role="img"
      aria-labelledby="fig-fsafety-hierarchy-title" xmlns="http://www.w3.org/2000/svg">
-  <title id="fig-fsafety-hierarchy-title">機能安全規格の関係。SILを定義する基礎規格 IEC 61508 の下に、プロセス産業向けの IEC 61511 と機械向けの IEC 62061 が分かれる。IEC 61511 はさらにパート1（SIS設計）、パート2（設計ガイドライン）、パート3（SIL評価の実施方法）に分かれる。</title>
+  <title id="fig-fsafety-hierarchy-title">機能安全規格の関係。SILを定義する基礎規格 IEC 61508 の下に、プロセス産業向けの IEC 61511 と機械向けの IEC 62061 が分かれる。IEC 61511 はさらにパート1（SIS設計）、パート2（61511-1の適用ガイド）、パート3（必要SILの決定）に分かれる。</title>
   <g style="stroke: var(--md-default-fg-color); fill: none" stroke-width="1.6">
     <rect x="180" y="16" width="280" height="56" rx="6"/>
     <line x1="320" y1="72" x2="320" y2="96"/>
@@ -129,8 +129,8 @@ last_verified: 2026-07-11
   </g>
   <g style="fill: var(--md-default-fg-color)" font-size="11">
     <text x="76" y="221">-1　化学・石油化学プロセスの SIS 設計</text>
-    <text x="76" y="265">-2　SIS 設計ガイドライン</text>
-    <text x="76" y="309">-3　SIL 評価の実施方法</text>
+    <text x="76" y="265">-2　61511-1 の適用ガイド</text>
+    <text x="76" y="309">-3　必要 SIL の決定（リスク評価）</text>
   </g>
 </svg>
 <figcaption>SIL を定義する基礎規格が IEC 61508、そこからプロセス産業向けに具体化したものが IEC 61511、機械向けが IEC 62061。化学プラントの SIS 設計で直接参照するのは IEC 61511 の 3 パート。</figcaption>
@@ -147,3 +147,56 @@ last_verified: 2026-07-11
 | 労働安全衛生法 | 厚生労働省 | 停電作業・特別教育 | 厚労省 HP |
 | 消防法 | 総務省 | 防爆機器・非常電源・危険物 | 消防庁 HP |
 | 計量法 | 経済産業省 | 取引・証明用計量器の校正 | 経産省 HP |
+
+---
+
+## 根拠
+
+### 本ページの位置づけ
+
+**規格番号とタイトルの索引**であり、規格の要求内容を書くページではありません。要求内容は各正典ページ（[電気計装工事で押さえるJIS規格](../03-keiso/jis-standards.md)・[防爆](../03-keiso/explosion-proof.md)・[安全計装 SIS/SIL](../03-keiso/sis-sil.md)・[アラーム管理](../03-keiso/alarm-management.md)）にあり、本ページからは番号でたどるだけです。
+
+### 是正の記録（2026-08-05）
+
+索引ページの誤りは**参照先を丸ごと間違えさせる**ため、番号とタイトルの対応を洗い直しました。
+
+| 項目 | 旧記載 | 是正後 |
+|---|---|---|
+| JEM 1195 | 開放型電動機の騒音測定方法 | **低圧コントロールセンタ**（低圧 MCC の規格。メーカー各社の製品説明で一致） |
+| JIS C 0364 | 建築電気設備 | **JIS C 60364 群「低圧電気設備」**。中核部は C60364 に採番替えされており、旧番号のまま引くと現行版に届かない |
+| IEC 61511-3 | Guidance for functional safety assessment／SIL 評価の実施方法 | **Guidance for the determination of the required safety integrity levels**＝**必要 SIL の決定**。「評価の実施方法」ではなく「どの SIL が必要かを決める」パート |
+| IEC 61511-2 | Application guidelines | **Guidelines for the application of IEC 61511-1** |
+| NAMUR NE 43／NE 107 の入手先 | NAMUR（無料） | **NAMUR**（入手条件を未確認のため「無料」を削除） |
+
+IEC 61511-3 の是正は**図（機能安全規格の階層）の中の文字・title・figcaption も同時に直しました**。本文だけ直すと図が旧記述のまま残ります。
+
+### 二次資料で一致を確認（原本未照合）
+
+- **IEC 61511-2／-3 の正式表題**は IEC webstore・ANSI webstore の書誌情報で一致を確認しました。**規格本文は未入手**です（2016 年版が第2版で 2003 年版を置き換えたことも書誌情報どまり）
+- **JEM 1195 が低圧コントロールセンタである**ことは、複数メーカーの製品説明で一致を確認しました。**JEMA の規格本文は未入手**です
+- **JIS C 0364 → C 60364 の採番替え**は JSA・規格本文の公開索引で確認しました。ただし**特殊設備・特殊場所を扱う第7部は JIS C 0364-7-xxx の採番が残っています**（例: JIS C 0364-7-714）。「すべてが C60364 に移った」わけではありません
+
+### 原本未照合（honest-hold）
+
+- **本表のすべての規格について、本文は未入手です。** タイトル・適用場面は書誌情報と公開索引に基づくもので、**条項番号は一切引用していません**
+- **版年は書きません。** 過去に「JIS C 0448:2011」という**実在しない版年**を載せていた事案があるため、本ページは版年を持たない索引に統一しています。版が要る作業では JSA・IEC の現行版を直接確認してください
+- **JIS C 0448 の正式表題**（マンマシンインタフェース関連）は原本未照合のため、本表では短縮表記のままにしてあります
+- **入手先の欄は「どこが発行しているか」の目安**で、無償／有償の別は NAMUR ほか一部で未確認です
+
+### 限界の明示
+
+- **網羅表ではありません。** プラントで参照する規格のうち、本 Wiki の他ページから参照されるものを中心に並べたものです
+- **索引の誤りは下流全体に伝播します。** 本表の番号を根拠として使う前に、実際の規格の表題を発行元で確認してください
+- **法規の欄（日本固有）は主管省庁の目安**で、条項の特定は各正典ページ（[法定義務一覧](../09-hoantokei/legal-duties.md) ほか）によってください
+
+### 正典参照
+
+| 項目 | 正典 |
+|---|---|
+| 各 JIS が計装工事のどこに効くか | [電気計装工事で押さえるJIS規格](../03-keiso/jis-standards.md) |
+| 防爆の規格体系・EPL・ガスグループ | [防爆](../03-keiso/explosion-proof.md) |
+| SIL・安全計装の設計 | [安全計装 SIS/SIL](../03-keiso/sis-sil.md) |
+| アラーム管理の実務 | [アラーム管理](../03-keiso/alarm-management.md) |
+| 法定義務・届出の条項 | [法定義務一覧](../09-hoantokei/legal-duties.md) |
+
+照合日: 2026-08-05（書誌情報レベルの確認。規格本文はいずれも未入手）。

@@ -1158,6 +1158,46 @@ FORBIDDEN = [
      "正典 docs/01-koatsu/power-factor.md）",
      "直列リアクトルを接続することで共振周波数を商用周波数より低い帯域に下げ、"
      "高調波電流の集中を防ぐ。"),
+    # 以下4件: 2026-08-05 の docs/06-trouble/protection.md・docs/reference/standards-list.md
+    # 根拠節整備で確定。
+    # 20260805-keidenki-kiroku-3-5nen: 保護継電器試験記録の保存期間を定めた条文は確認できない。
+    # 一般高圧ガス保安規則第83条第5項は検査記録の「記載事項」のみで保存期間の定めが無く、
+    # 期間があるのは法第60条の帳簿（2年／危害等は10年）。電気事業法側は未照合。
+    ("20260805-keidenki-kiroku-3-5nen",
+     _both_unless(r"3\s*[〜~～ー]\s*5\s*年", r"高圧ガス保安法|電気事業法",
+                  r"かつて|是正|確認できませ|ではありません|ではない|保安規程"),
+     "試験記録の保存期間を「高圧ガス保安法・電気事業法で3〜5年」と書かない"
+     "（一般則第83条第5項は記載事項のみで保存期間の定めが無い。期間があるのは"
+     "法第60条の帳簿＝2年／10年。正典 docs/06-trouble/protection.md）",
+     "高圧ガス保安法および電気事業法に基づき、試験記録は定められた期間（通常 3〜5 年）保管する。"),
+    # 20260805-zct-chuseisen-kantsu: ZCT は貫通導体の電流のベクトル和を測る。中性線は電流路
+    # なので貫通させるのが正（外すと不平衡分が零相電流に見えて誤動作）。貫通させてはいけないのは
+    # 接地線側（貫通させると地絡電流が打ち消され不動作）。向きの反転は危険側に外れる。
+    ("20260805-zct-chuseisen-kantsu",
+     _both_unless(r"中性線|N\s*線", r"貫通",
+                  r"含めて|貫通させるのが正|かつて|是正|誤り|逆|ではありません|ではない"),
+     "中性線を「ZCT に貫通させると誤動作」と書かない（中性線は電流路なので貫通させるのが正。"
+     "貫通させてはいけないのは接地線側。正典 docs/06-trouble/protection.md）",
+     "中性線（N線）が ZCT を貫通していないか（貫通している場合は誤動作の原因）"),
+    # 20260805-jem1195-souon: JEM 1195 は低圧コントロールセンタの規格。
+    # 「開放型電動機の騒音測定方法」は別物の取り違え。
+    ("20260805-jem1195-souon",
+     _both_unless(r"JEM\s*[-‐ ]?1195", r"騒音",
+                  r"コントロールセンタ|かつて|是正|誤り|ではありません|ではない"),
+     "JEM 1195 を騒音測定方法と書かない（JEM 1195 は低圧コントロールセンタ。"
+     "正典 docs/reference/standards-list.md）",
+     "| JEM 1195 | 開放型電動機の騒音測定方法 | 電動機の騒音評価 | JEMA |"),
+    # 20260805-iec61511-3-assessment: IEC 61511-3 は "Guidance for the determination of
+    # the required safety integrity levels"＝必要 SIL の決定。「機能安全アセスメントの実施方法」
+    # ではない（アセスメントは 61511-1 の要求）。図中テキスト・title・figcaption も同時対象。
+    ("20260805-iec61511-3-assessment",
+     _both_unless(r"61511-3|61511\s*の?\s*パート\s*3|-3　",
+                  r"SIL\s*評価の実施|functional safety assessment",
+                  r"必要 SIL の決定|必要SILの決定|かつて|是正|誤り|ではなく|ではありません"),
+     "IEC 61511-3 を「SIL 評価の実施方法／functional safety assessment」と書かない"
+     "（必要 SIL の決定＝determination of the required SIL。"
+     "正典 docs/reference/standards-list.md）",
+     "| IEC 61511-3 | Guidance for functional safety assessment | SIL 評価の実施方法 | IEC |"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -1193,6 +1233,22 @@ EXTRA_POSITIVE = [
 # 巻き込みやすいため、実際に docs に書いた説明文の代表例をここに登録して守る。
 # (id, その ID が検出してはならないサンプル)
 NEGATIVE_FIXTURES = [
+    # 2026-08-05 第39弾の是正文（実際に docs に書いた行）。
+    ("20260805-keidenki-kiroku-3-5nen",
+     "試験記録は**保安規程・社内規程で定めた期間**保管する。"),
+    ("20260805-zct-chuseisen-kantsu",
+     "**その回路の電流路をまとめて貫通させているか**（三相3線なら3本、"
+     "中性線がある回路なら**中性線も含めて**）。"),
+    ("20260805-zct-chuseisen-kantsu",
+     "本ページはかつて「中性線（N線）が ZCT を貫通していないか"
+     "（貫通している場合は誤動作の原因）」と、**向きを逆に**書いていました。"),
+    ("20260805-jem1195-souon",
+     "| JEM 1195 | 開放型電動機の騒音測定方法 | **低圧コントロールセンタ**"
+     "（低圧 MCC の規格。メーカー各社の製品説明で一致） |"),
+    ("20260805-iec61511-3-assessment",
+     "| IEC 61511-3 | Guidance for functional safety assessment／SIL 評価の実施方法 | "
+     "**Guidance for the determination of the required safety integrity levels**＝"
+     "**必要 SIL の決定**。 |"),
     # 2026-08-05 の是正文（実際に docs に書いた行）。是正解説そのものを巻き込まないこと。
     ("20260805-fieldbus-1900m-trunk",
      "1900 m は**トランクと全スパーを足した総延長**です。トランク単独の上限と読むと、"
