@@ -1198,6 +1198,18 @@ FORBIDDEN = [
      "（必要 SIL の決定＝determination of the required SIL。"
      "正典 docs/reference/standards-list.md）",
      "| IEC 61511-3 | Guidance for functional safety assessment | SIL 評価の実施方法 | IEC |"),
+    # 20260805-shoene-kirokugimu-tenyou: 2026-08-05 docs/08-energy/demand-management.md
+    # 根拠節整備で確定。省エネ法（法第5条第1項の判断の基準＝平成21年経産省告示第66号）が
+    # 求めるのは「エネルギー使用量の計量・記録」で、デマンド警報の対応記録・巡視記録等の
+    # 運用記録ではない。「省エネ法の記録義務」という語で他分野の記録に流用するのを止める。
+    ("20260805-shoene-kirokugimu-tenyou",
+     re.compile(r"^(?=.*省エネ法の記録義務)"
+                r"(?!.*(?:ではありません|ではない|是正|かつて|誤り|"
+                r"エネルギー使用量|計量・記録))"),
+     "「省エネ法の記録義務」を他分野の運用記録の根拠に流用しない"
+     "（求められているのはエネルギー使用量の計量・記録＝判断の基準。"
+     "正典 docs/08-energy/energy-law.md・docs/08-energy/demand-management.md）",
+     "6. **記録**: 警報発生日時・原因・対応内容を記録（省エネ法の記録義務にも対応）"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -1233,6 +1245,13 @@ EXTRA_POSITIVE = [
 # 巻き込みやすいため、実際に docs に書いた説明文の代表例をここに登録して守る。
 # (id, その ID が検出してはならないサンプル)
 NEGATIVE_FIXTURES = [
+    # 2026-08-05 第40弾の是正文（実際に docs に書いた行）。
+    ("20260805-shoene-kirokugimu-tenyou",
+     "省エネ法（判断の基準）が求めているのは**エネルギー使用量の計量・記録**で、"
+     "デマンド警報への対応記録ではありません"),
+    ("20260805-shoene-kirokugimu-tenyou",
+     "6. **記録**: 警報発生日時・原因・対応内容を記録"
+     "（社内の運用記録。次回の設定値・優先順位の見直しに使う）"),
     # 2026-08-05 第39弾の是正文（実際に docs に書いた行）。
     ("20260805-keidenki-kiroku-3-5nen",
      "試験記録は**保安規程・社内規程で定めた期間**保管する。"),
