@@ -319,3 +319,4 @@ audience:
 - [energy-law.md](energy-law.md) — 省エネ法の報告義務
 - [energy-monitoring.md](energy-monitoring.md) — PIヒストリアンでのエネルギー監視
 - [vfd-energy.md](vfd-energy.md) — インバータによるデマンド低減効果
+- [juhenden.md](../01-koatsu/juhenden.md) — 需要率・不等率・負荷率（設備側から最大需要を見積もる）
