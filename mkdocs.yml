@@ -241,6 +241,7 @@ nav:
       - 他部門調整ノウハウ: 05-hozen/coordination.md
       - データ活用・予兆保全: 05-hozen/predictive-maintenance.md
       - サーモグラフィ診断: 05-hozen/thermography.md
+      - 復旧性管理: 05-hozen/recovery-management.md
     - 工事・検収:
       - 03-koji-kenshu/index.md
       - フロー全体図: 03-koji-kenshu/flow-overview.md
