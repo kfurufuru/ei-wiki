@@ -216,6 +216,7 @@ nav:
     - 設計:
       - 04-sekkei/index.md
       - 設備投資フロー: 04-sekkei/investment-flow.md
+      - 改善効果の金額化: 04-sekkei/improvement-benefit.md
       - 仕様書の書き方: 04-sekkei/spec-writing.md
       - 盤設計: 04-sekkei/panel-design.md
       - 電路設計: 04-sekkei/cable-route.md
