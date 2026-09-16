@@ -264,6 +264,7 @@ nav:
       - LOTO（ロックアウト）: 10-safety/lockout-tagout.md
       - リスクアセスメント: 10-safety/risk-assessment.md
       - よくあるミス・ヒヤリハット集: 10-safety/near-miss.md
+      - 制御セキュリティの現場チェック: 10-safety/ot-security.md
     - 主任技術者業務:
       - 09-hoantokei/index.md
       - 法定業務一覧: 09-hoantokei/legal-duties.md
