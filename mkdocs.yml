@@ -242,6 +242,7 @@ nav:
       - データ活用・予兆保全: 05-hozen/predictive-maintenance.md
       - サーモグラフィ診断: 05-hozen/thermography.md
       - 復旧性管理: 05-hozen/recovery-management.md
+      - 故障モード棚卸し: 05-hozen/failure-mode-inventory.md
     - 工事・検収:
       - 03-koji-kenshu/index.md
       - フロー全体図: 03-koji-kenshu/flow-overview.md
