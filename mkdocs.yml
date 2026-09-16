@@ -216,6 +216,7 @@ nav:
     - 設計:
       - 04-sekkei/index.md
       - 設備投資フロー: 04-sekkei/investment-flow.md
+      - 改善効果の金額化: 04-sekkei/improvement-benefit.md
       - 仕様書の書き方: 04-sekkei/spec-writing.md
       - 盤設計: 04-sekkei/panel-design.md
       - 電路設計: 04-sekkei/cable-route.md
@@ -242,6 +243,7 @@ nav:
       - データ活用・予兆保全: 05-hozen/predictive-maintenance.md
       - サーモグラフィ診断: 05-hozen/thermography.md
       - 復旧性管理: 05-hozen/recovery-management.md
+      - 故障モード棚卸し: 05-hozen/failure-mode-inventory.md
     - 工事・検収:
       - 03-koji-kenshu/index.md
       - フロー全体図: 03-koji-kenshu/flow-overview.md
@@ -263,6 +265,7 @@ nav:
       - LOTO（ロックアウト）: 10-safety/lockout-tagout.md
       - リスクアセスメント: 10-safety/risk-assessment.md
       - よくあるミス・ヒヤリハット集: 10-safety/near-miss.md
+      - 制御セキュリティの現場チェック: 10-safety/ot-security.md
     - 主任技術者業務:
       - 09-hoantokei/index.md
       - 法定業務一覧: 09-hoantokei/legal-duties.md
