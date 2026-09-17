@@ -161,6 +161,7 @@ audience:
 
 ## 参考
 
+- 次のステップ：[生成AIの動向と現場への含意](trends.md)
 - 次のステップ：[M365 Copilot活用](m365-copilot.md)
 - 次のステップ：[ChatGPT活用](chatgpt.md)
 - セキュリティ確認：[注意事項・情報セキュリティ](security.md)

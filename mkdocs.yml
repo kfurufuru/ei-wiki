@@ -284,6 +284,7 @@ nav:
     - 生成AI業務活用:
       - 11-genai/index.md
       - 生成AIの基本: 11-genai/basics.md
+      - 生成AIの動向と現場への含意: 11-genai/trends.md
       - M365 Copilot活用: 11-genai/m365-copilot.md
       - Excel Copilot 実践ガイド: 11-genai/excel-copilot.md
       - ChatGPT活用: 11-genai/chatgpt.md
