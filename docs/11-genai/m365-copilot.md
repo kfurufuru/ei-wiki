@@ -135,7 +135,7 @@ Word内でCopilotを起動し、文書の骨子を伝えると初稿を生成す
 
 ### うまく動かないとき・もっと使いこなしたいとき
 
-Excel は「ファイルの置き場所」「テーブル化」「列名」の 3 点で結果が大きく変わる。動かない原因の潰し方、セル内で AI を呼ぶ COPILOT 関数、プロンプトの型と検算の作法は [Excel Copilot 実践ガイド](excel-copilot.md) にまとめた。
+Excel は「ファイルの置き場所」「テーブル化」「列名」の 3 点で結果が大きく変わる。動かない原因の潰し方、自由記述の分類・抽出、プロンプトの型と検算の作法は [Excel Copilot 実践ガイド](excel-copilot.md) にまとめた。
 
 ---
 
@@ -192,7 +192,7 @@ Wordで作成した文書やOutlineからPowerPointのスライドを自動生�
 | 入力禁止情報・ツール別の判断・データの行き先 | [注意事項・情報セキュリティ](security.md) |
 | トレーニング不使用・テナント境界の一次根拠（Microsoft Learn） | [注意事項・情報セキュリティ](security.md) の根拠節 |
 | プロンプトの書き方 | [プロンプトの書き方](prompt-writing.md) |
-| Excel での使いこなし・COPILOT 関数・検算 | [Excel Copilot 実践ガイド](excel-copilot.md) |
+| Excel での使いこなし・自由記述の分類・検算 | [Excel Copilot 実践ガイド](excel-copilot.md) |
 
 照合日: 2026-08-06（セキュリティ記述を security.md の一次照合済み確定事項に整合。UI 名称・機序の陳腐化・誤記を是正し、画面名は「例」に格下げ）。
 
