@@ -88,9 +88,9 @@
     - NG: `Motor_Control.md`、コミット「更新」 → OK: `motor-control.md`、「update: モーター制御ページ追記」
 - **R30 一括自動変換は正対照・二重適用チェックなしで実行しない**（2026-07-01 mermaid一括修復スクリプトが文字破壊した教訓）
     - NG: 全ファイルにsed一括置換して即コミット → OK: 数ファイルで試行→差分目視→二重適用テスト→適用
-- **R31 編集作業は専用 worktree で行う。primary checkout（`C:/Users/kfuru/ei-wiki`）は read-only 扱い**（2026-09-17 事故）
-    - git の HEAD・index・作業ツリーは **worktree 単位の共有資源**で、セッションごとには持てません。複数セッションが同じ checkout に居ると、片方の commit が**もう片方の未コミット変更を巻き込みます**
-    - NG: primary に cd して `git checkout -b feature/x` → OK: `git worktree add "$TEMP/ei-wiki-x" -b feature/x origin/main` を切ってそこで作業
+- **R31 並行セッションは同じ作業ツリーを共有しない**。本repoで別のClaudeセッションが動いている可能性があるときは `git worktree add <tmp> main` で分離して作業し、終わったら `git worktree remove`。共有ツリーでは `checkout -b` 直後に相手がbranchを切り替え、自分のcommitが相手のbranchに乗り、相手の未commit編集を `git add` が巻き込む（2026-09-17 PR#107 でnav行の混入によりCI失敗）
+    - NG: 本体の作業ツリーで `git checkout -b` → 編集 → `git add` → commit → OK: 一時worktreeで作業し、push前に `git diff --stat main..HEAD` で自分の変更だけか確認
+    - **primary checkout（`C:/Users/kfuru/ei-wiki`）は read-only 扱いにする。** HEAD・index・作業ツリーは worktree 単位の共有資源で、セッションごとには持てない
 - **R32 自分が作っていないブランチ・自分以外の未追跡ファイルを見たら、checkout せず停止して報告する**（2026-09-17 事故の分岐点）
     - 「別セッションが同居している」決定的な信号。ここで checkout すると相手の足元で HEAD が変わります
     - NG: 想定と違うブランチに居たので自分のブランチへ checkout → OK: 状況を報告し、worktree を切って自分の場所を作る

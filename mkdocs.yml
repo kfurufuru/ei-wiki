@@ -284,11 +284,13 @@ nav:
     - 生成AI業務活用:
       - 11-genai/index.md
       - 生成AIの基本: 11-genai/basics.md
+      - 生成AIの動向と現場への含意: 11-genai/trends.md
       - M365 Copilot活用: 11-genai/m365-copilot.md
       - Excel Copilot 実践ガイド: 11-genai/excel-copilot.md
       - ChatGPT活用: 11-genai/chatgpt.md
       - プロンプトの書き方: 11-genai/prompt-writing.md
       - 電気計装業務への応用: 11-genai/ei-applications.md
+      - Copilotエージェントの作り方: 11-genai/copilot-agents.md
       - 注意事項・情報セキュリティ: 11-genai/security.md
   - リファレンス:
     - reference/index.md
