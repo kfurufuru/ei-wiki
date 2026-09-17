@@ -6,7 +6,7 @@ tags:
   - 防爆
 audience:
   - 電気担当
-last_verified: 2026-09-17
+last_verified: 2026-09-18
 ---
 
 # 防爆
@@ -273,7 +273,7 @@ Zone 1 以上のエリアでは、耐圧防爆ボックスへのケーブル引�
 - 電気設備に関する技術基準を定める省令（平成9年通商産業省令第52号）: [第69条](https://laws.e-gov.go.jp/law/409M50000400052#Mp-Ch_3-Se_5-At_69)
 - 消防法（昭和23年法律第186号）: [第10条](https://laws.e-gov.go.jp/law/323AC1000000186#Mp-Ch_3-At_10)
 - 危険物の規制に関する政令（昭和34年政令第306号）: [第9条](https://laws.e-gov.go.jp/law/334CO0000000306#Mp-Ch_3-Se_1-At_9)
-- 電気設備の技術基準の解釈（令和7年11月20日改正）: [経済産業省 原典 PDF](https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf) — 第176条。URL は 2026-09-17 に所在を確認。本文の照合日は上記各項のとおり（2026-08-01）で、本日は再照合していません
+- 電気設備の技術基準の解釈（令和7年11月20日改正）: [経済産業省 原典 PDF](https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf) — 第176条。**2026-09-18 に同 PDF の該当条を直接照合**し、本ページの引用内容と一致することを確認しました（前回照合 2026-08-01。条番号の異同はありません）
 
 ## 関連ページ
 

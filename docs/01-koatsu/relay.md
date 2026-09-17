@@ -6,7 +6,7 @@ tags:
   - 保護継電器
 audience:
   - 電気担当
-last_verified: 2026-09-17
+last_verified: 2026-09-18
 ---
 
 # 保護継電器
@@ -126,7 +126,7 @@ CT 二次換算電流 = 変圧器定格電流（A） / CT 変流比
 本節で引用した条文の所在です。e-Gov のリンクは現行条文で、2026-09-17 に e-Gov 法令 API（v1）で取得した本文と本節の引用内容が一致することを再確認しました。アンカー ID は e-Gov 法令 API の XML 階層（章・節・款）から算出し、実ページで要素の存在を確認しました。ただし e-Gov は読み込み直後に該当条まで自動でスクロールしないことがあります。その場合は画面左の目次または法令内検索で条番号へ移動してください。
 
 - 電気設備に関する技術基準を定める省令（平成9年通商産業省令第52号）: [第14条](https://laws.e-gov.go.jp/law/409M50000400052#Mp-Ch_1-Se_3-Ss_2-At_14)・[第15条](https://laws.e-gov.go.jp/law/409M50000400052#Mp-Ch_1-Se_3-Ss_2-At_15)
-- 電気設備の技術基準の解釈（令和7年11月20日改正）: [経済産業省 原典 PDF](https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf) — 第34条・第36条。URL は 2026-09-17 に所在を確認。本文の照合日は上記各項のとおり（2026-07-30）で、本日は再照合していません
+- 電気設備の技術基準の解釈（令和7年11月20日改正）: [経済産業省 原典 PDF](https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf) — 第34条・第36条。**2026-09-18 に同 PDF の該当条を直接照合**し、本ページの引用内容と一致することを確認しました（前回照合 2026-07-30。条番号の異同はありません）
 
 ---
 
