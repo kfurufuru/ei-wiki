@@ -6,7 +6,7 @@ tags:
   - 逆引き
 audience:
   - 電気担当
-last_verified: 2026-09-17
+last_verified: 2026-09-18
 ---
 
 # 規格・法規
@@ -143,7 +143,7 @@ last_verified: 2026-09-17
 - 消防法（昭和23年法律第186号）: [第10条](https://laws.e-gov.go.jp/law/323AC1000000186#Mp-Ch_3-At_10)・[第11条](https://laws.e-gov.go.jp/law/323AC1000000186#Mp-Ch_3-At_11)・[第17条](https://laws.e-gov.go.jp/law/323AC1000000186#Mp-Ch_4-At_17)
 - 危険物の規制に関する政令（昭和34年政令第306号）: [第9条](https://laws.e-gov.go.jp/law/334CO0000000306#Mp-Ch_3-Se_1-At_9)
 - 消防法施行規則（昭和36年自治省令第6号）: [第28条の3](https://laws.e-gov.go.jp/law/336M50000008006#Mp-Ch_2-Se_2-Ss_3-At_28_3)
-- 電気設備の技術基準の解釈（令和7年11月20日改正）: [経済産業省 原典 PDF](https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf) — 第176条。URL は 2026-09-17 に所在を確認。本文の照合日は上記各項のとおり（2026-08-01）で、本日は再照合していません
+- 電気設備の技術基準の解釈（令和7年11月20日改正）: [経済産業省 原典 PDF](https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf) — 第176条。**2026-09-18 に同 PDF の該当条を直接照合**し、本ページの引用内容と一致することを確認しました（前回照合 2026-08-01。条番号の異同はありません）
 
 ---
 
