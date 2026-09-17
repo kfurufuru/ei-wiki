@@ -3,7 +3,7 @@ title: 省エネ法対応
 description: エネルギーの使用の合理化及び非化石エネルギーへの転換等に関する法律（省エネ法）の概要・特定事業者の義務・エネルギー計量の実務
 tags:
   - 省エネ
-last_verified: 2026-08-03
+last_verified: 2026-09-17
 audience:
   - 電気担当
   - 保全担当
@@ -260,6 +260,14 @@ audience:
 - 省エネ法（e-Gov法令検索）
 - 資源エネルギー庁「省エネ法に基づく定期報告書等の手引き」（毎年改訂）
 - ESIMS（省エネ法電子報告システム）: https://esims.eccj.or.jp/
+
+### 条文リンク（e-Gov 法令検索・2026-09-17 閲覧）
+
+本節で引用した条文の所在です。e-Gov のリンクは現行条文で、2026-09-17 に e-Gov 法令 API（v1）で取得した本文と本節の引用内容が一致することを再確認しました。アンカー ID は e-Gov 法令 API の XML 階層（章・節・款）から算出し、実ページで要素の存在を確認しました。ただし e-Gov は読み込み直後に該当条まで自動でスクロールしないことがあります。その場合は画面左の目次または法令内検索で条番号へ移動してください。
+
+- エネルギーの使用の合理化及び非化石エネルギーへの転換等に関する法律（省エネ法・昭和54年法律第49号）: [第5条](https://laws.e-gov.go.jp/law/354AC0000000049#Mp-Ch_3-Se_1-Ss_1-At_5)・[第9条](https://laws.e-gov.go.jp/law/354AC0000000049#Mp-Ch_3-Se_1-Ss_2-At_9)・[第11条](https://laws.e-gov.go.jp/law/354AC0000000049#Mp-Ch_3-Se_1-Ss_2-At_11)・[第12条](https://laws.e-gov.go.jp/law/354AC0000000049#Mp-Ch_3-Se_1-Ss_2-At_12)・[第16条](https://laws.e-gov.go.jp/law/354AC0000000049#Mp-Ch_3-Se_1-Ss_2-At_16)・[第174条](https://laws.e-gov.go.jp/law/354AC0000000049#Mp-Ch_9-At_174)・[第175条](https://laws.e-gov.go.jp/law/354AC0000000049#Mp-Ch_9-At_175)・[第177条](https://laws.e-gov.go.jp/law/354AC0000000049#Mp-Ch_9-At_177)・[第178条](https://laws.e-gov.go.jp/law/354AC0000000049#Mp-Ch_9-At_178)
+- 同法施行令（昭和54年政令第267号）: [第2条](https://laws.e-gov.go.jp/law/354CO0000000267#Mp-At_2)・[第32条](https://laws.e-gov.go.jp/law/354CO0000000267#Mp-At_32)
+- 同法施行規則（昭和54年通商産業省令第74号）: [第4条](https://laws.e-gov.go.jp/law/354M50000400074#Mp-At_4)
 
 ## 関連記事
 
