@@ -22,7 +22,7 @@ audience:
 |------|---------|------|
 | [生成AIの基本](basics.md) | 全員（AI初心者向け） | ChatGPT/Copilotとは何か、できること・できないこと |
 | [M365 Copilot活用](m365-copilot.md) | 全員 | Teams/Outlook/Excel/WordでのCopilot実践 |
-| [Excel Copilot 実践ガイド](excel-copilot.md) | 全員 | Excel で動かない原因の潰し方・COPILOT 関数・プロンプトの型と検算 |
+| [Excel Copilot 実践ガイド](excel-copilot.md) | 全員 | Excel で動かない原因の潰し方・自由記述の分類・プロンプトの型と検算 |
 | [ChatGPT活用](chatgpt.md) | 全員 | ChatGPT・Claude の使い方と業務活用例 |
 | [プロンプトの書き方](prompt-writing.md) | 全員 | 良い指示の出し方・コツ |
 | [電気計装業務への応用](ei-applications.md) | 電気担当 | 技術文書作成・トラブル解析・仕様書ドラフトへの活用 |
