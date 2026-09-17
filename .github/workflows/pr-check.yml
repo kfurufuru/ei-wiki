@@ -17,6 +17,10 @@ jobs:
           python-version: '3.x'
       - run: python scripts/check_content_rules.py --self-test
       - run: python scripts/check_content_rules.py
+      # nav/index のダングリング検査。pre-commit と同じものを CI でも走らせる
+      # （core.hooksPath は clone ごとの設定で、未設定の環境があるため）
+      - run: python scripts/check_nav_targets.py --self-test
+      - run: python scripts/check_nav_targets.py
       - run: pip install -r requirements.txt
       - run: mkdocs build --strict
       # 漏えい検査: 先に --self-test（正対照）で検出器の生存を証明してから

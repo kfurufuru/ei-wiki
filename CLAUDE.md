@@ -100,6 +100,37 @@ last_verified: 2026-01-15
 - 順序は 分野 → 主題 → 用途。1ページにしか付かない粒度の細かい語は付けず本文検索に委ねる
 - 新語を足したくなったら語彙拡張ではなく `reference/tags.md` の既存語へのマッピングで対応
 
+### 並行作業の鉄則（2026-09-17 の事故で確立）
+
+**primary checkout（`C:/Users/kfuru/ei-wiki`）は read-only 扱い。編集は必ず専用 worktree で行う。**
+
+```bash
+git fetch origin
+git worktree add "$TEMP/ei-wiki-<作業名>" -b <branch> origin/main
+cd "$TEMP/ei-wiki-<作業名>"
+```
+
+git の HEAD・index・作業ツリーは **worktree 単位の共有資源**で、セッションごとには持てません。
+2026-09-17 に3セッションが primary を共有し、片方の `git commit` が
+**もう片方の未コミット変更（nav 1行・index 1行）を巻き込んだ**コミットを作りました。
+そのコミットは誤ったブランチに乗り、cherry-pick で別PRへ運ばれて CI を落としました。
+同時刻に worktree を使っていたセッションだけが無事故でした。
+
+- **自分が作っていないブランチ・自分以外の未追跡ファイルを見たら、checkout せず停止して報告する**（R32）
+- **ブランチの基点は fetch 後の `origin/main`。** local main や他の feature ブランチから切らない（R33）
+- 詳細は `.claude/rules/feedback-rules.md` の R31〜R34
+
+**pre-commit を有効にする（clone ごとに1回。git config はコミットされない）:**
+
+```bash
+git config core.hooksPath .githooks
+```
+
+`.githooks/pre-commit` が `scripts/check_nav_targets.py --staged` を走らせ、
+**nav・セクションindex に載っているのに本体ファイルが無いコミット**を止めます
+（上の事故で実際に出来たコミットの形）。CI の `mkdocs build --strict` も同じものを
+捕まえますが、捕まえるのは push 後です。手元で止めれば壊れたコミットは存在しません。
+
 ### 記事メタ・数値の運用ルール（Phase 4 清算で確立）
 - **last_verified運用**: 実際に内容を検証・修正したページのみ当日日付に更新する。日付の機械的な一括書き換えは禁止（鮮度監査の信頼性のため）
     - **「検証した」の定義**: そのページの根拠節が挙げる数値・条文・規格値を、出典（e-Gov API・原典 PDF・メーカー資料）に当たって突き合わせたこと。**節を追加した・文言を整えた・リンクを張っただけでは進めない**（2026-08-01〜06 に根拠節を付けた 118 ページの日付を一斉に進めた結果、2027-08 に 118 件が同時 EXPIRED になる「崖」ができた）

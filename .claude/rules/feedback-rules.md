@@ -88,6 +88,17 @@
     - NG: `Motor_Control.md`、コミット「更新」 → OK: `motor-control.md`、「update: モーター制御ページ追記」
 - **R30 一括自動変換は正対照・二重適用チェックなしで実行しない**（2026-07-01 mermaid一括修復スクリプトが文字破壊した教訓）
     - NG: 全ファイルにsed一括置換して即コミット → OK: 数ファイルで試行→差分目視→二重適用テスト→適用
+- **R31 編集作業は専用 worktree で行う。primary checkout（`C:/Users/kfuru/ei-wiki`）は read-only 扱い**（2026-09-17 事故）
+    - git の HEAD・index・作業ツリーは **worktree 単位の共有資源**で、セッションごとには持てません。複数セッションが同じ checkout に居ると、片方の commit が**もう片方の未コミット変更を巻き込みます**
+    - NG: primary に cd して `git checkout -b feature/x` → OK: `git worktree add "$TEMP/ei-wiki-x" -b feature/x origin/main` を切ってそこで作業
+- **R32 自分が作っていないブランチ・自分以外の未追跡ファイルを見たら、checkout せず停止して報告する**（2026-09-17 事故の分岐点）
+    - 「別セッションが同居している」決定的な信号。ここで checkout すると相手の足元で HEAD が変わります
+    - NG: 想定と違うブランチに居たので自分のブランチへ checkout → OK: 状況を報告し、worktree を切って自分の場所を作る
+- **R33 ブランチの基点は fetch 後の `origin/main`**。local main や他の feature ブランチから切らない（2026-09-17 事故。4機能が1ブランチに載り PR を作り直した）
+    - NG: 今いる feature ブランチ上で `git checkout -b feature/x` → OK: `git fetch origin` してから `origin/main` を基点に worktree を切る
+- **R34 バッククォートを含む文字列をシェル経由で流し込まない**（2026-09-17。R31 を書いている最中に発生）
+    - シェルはバッククォートをコマンド置換として**実行します**。ルール文の例に含めた `git checkout -b` が実際に走り、共有 checkout のブランチが変わりました
+    - NG: シェルの `-c` 越しに本文を流し込む → OK: 本文の投入は Write / Edit ツールで行う
 
 ## 9. 例外ルール（1回限りの指摘。捨てずに遵守）
 
