@@ -7,7 +7,7 @@ audience:
   - 新入社員・派遣（電気計装ほぼ未経験）
   - 中堅・転換配属（電気OK・計装弱め）
   - 実務経験者（設計・電験対策も視野）
-last_verified: 2026-08-06
+last_verified: 2026-09-18
 ---
 
 # 読む順番ガイド
@@ -269,6 +269,23 @@ last_verified: 2026-08-06
         [:octicons-arrow-right-24: reference/standards-list.md](reference/standards-list.md)
 
     </div>
+
+    ---
+
+    ### 電験3種の学習は姉妹Wikiへ
+
+    !!! info "本Wikiは実務向けで、試験対策の体系は持ちません"
+        本Wikiが扱うのは**現場で判断するための知識**です。試験範囲の網羅・出題形式・過去問の解説は扱いません。
+        電験3種の法規を体系的に学ぶときは姉妹Wikiを使ってください。
+
+        [:octicons-arrow-right-24: 電験3種 法規Wiki](https://kfurufuru.github.io/denken-wiki/)
+
+        本Wikiの次のページには、対応する試験範囲を補足する「電験学習者向け」の注記があります。
+
+        - [低圧配電](02-teiatsu/distribution.md) — AF / AT と「過電流遮断器の定格電流」の用語差
+        - [計装の接地](03-keiso/grounding-gnd.md) — 保護接地と機能接地の区別
+        - [幹線サイズと過電流遮断器](04-sekkei/feeder-breaker-sizing.md) — 幹線の許容電流と遮断器定格の関係
+        - [特別教育・資格一覧](10-safety/special-education.md) — 電験3種の監督範囲と試験制度
 
 ---
 
