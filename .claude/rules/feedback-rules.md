@@ -90,6 +90,15 @@
     - NG: 全ファイルにsed一括置換して即コミット → OK: 数ファイルで試行→差分目視→二重適用テスト→適用
 - **R31 並行セッションは同じ作業ツリーを共有しない**。本repoで別のClaudeセッションが動いている可能性があるときは `git worktree add <tmp> main` で分離して作業し、終わったら `git worktree remove`。共有ツリーでは `checkout -b` 直後に相手がbranchを切り替え、自分のcommitが相手のbranchに乗り、相手の未commit編集を `git add` が巻き込む（2026-09-17 PR#107 でnav行の混入によりCI失敗）
     - NG: 本体の作業ツリーで `git checkout -b` → 編集 → `git add` → commit → OK: 一時worktreeで作業し、push前に `git diff --stat main..HEAD` で自分の変更だけか確認
+    - **primary checkout（`C:/Users/kfuru/ei-wiki`）は read-only 扱いにする。** HEAD・index・作業ツリーは worktree 単位の共有資源で、セッションごとには持てない
+- **R32 自分が作っていないブランチ・自分以外の未追跡ファイルを見たら、checkout せず停止して報告する**（2026-09-17 事故の分岐点）
+    - 「別セッションが同居している」決定的な信号。ここで checkout すると相手の足元で HEAD が変わります
+    - NG: 想定と違うブランチに居たので自分のブランチへ checkout → OK: 状況を報告し、worktree を切って自分の場所を作る
+- **R33 ブランチの基点は fetch 後の `origin/main`**。local main や他の feature ブランチから切らない（2026-09-17 事故。4機能が1ブランチに載り PR を作り直した）
+    - NG: 今いる feature ブランチ上で `git checkout -b feature/x` → OK: `git fetch origin` してから `origin/main` を基点に worktree を切る
+- **R34 バッククォートを含む文字列をシェル経由で流し込まない**（2026-09-17。R31 を書いている最中に発生）
+    - シェルはバッククォートをコマンド置換として**実行します**。ルール文の例に含めた `git checkout -b` が実際に走り、共有 checkout のブランチが変わりました
+    - NG: シェルの `-c` 越しに本文を流し込む → OK: 本文の投入は Write / Edit ツールで行う
 
 ## 9. 例外ルール（1回限りの指摘。捨てずに遵守）
 

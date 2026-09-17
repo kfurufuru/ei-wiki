@@ -1,0 +1,36 @@
+#!/bin/sh
+# ei-wiki pre-commit — 壊れたコミットをそもそも作らせない
+#
+# 有効化（clone ごとに1回必要。git config はコミットされないため）:
+#   git config core.hooksPath .githooks
+#
+# 2026-09-17 の事故: 作業ツリーを共有した別セッションの commit が、
+# こちらの未コミットの nav 1行・index 1行を巻き込み、
+# 「nav には載っているがファイルが無い」コミットが出来た。
+# それが cherry-pick で別ブランチへ運ばれ、そちらの CI が落ちた。
+#
+# CI（mkdocs build --strict）は同じものを捕まえるが、捕まえるのは push 後。
+# ここで止めれば壊れたコミットが存在しないので、運ばれることもない。
+#
+# 所要 7〜8 秒（Windows・git 2回 + python 起動）。
+# 「mkdocs.yml か index.md を触ったときだけ走らせる」高速化は**採らない**。
+# スキップ条件を1つ書き損ねると、その瞬間から黙って無検査になるため。
+
+set -e
+
+if command -v python >/dev/null 2>&1; then
+  PY=python
+elif command -v py >/dev/null 2>&1; then
+  PY=py
+else
+  echo "[WARN] pre-commit: python が見つからないため nav 整合を検査できませんでした。" >&2
+  echo "       検査は CI（mkdocs build --strict）に委ねられます。" >&2
+  exit 0
+fi
+
+"$PY" -X utf8 scripts/check_nav_targets.py --staged || {
+  echo "" >&2
+  echo "commit を中止しました。" >&2
+  echo "意図的に通す場合: git commit --no-verify" >&2
+  exit 1
+}

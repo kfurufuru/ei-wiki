@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cat \"C:/Users/kfuru/.claude/hooks/style-rules.txt\" && cat \"C:/Users/kfuru/.claude/hooks/work-rules.txt\""
+            "command": "for f in \"$HOME/.claude/hooks/style-rules.txt\" \"$HOME/.claude/hooks/work-rules.txt\"; do if [ -f \"$f\" ]; then cat \"$f\"; else echo \"[WARN] ルール注入ファイルが不在: $f — .claude/rules/feedback-rules.md のみで運用中\" >&2; fi; done; exit 0"
           }
         ]
       }
