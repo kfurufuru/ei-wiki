@@ -392,3 +392,4 @@ audience:
 - 関連記事：[M365 Copilot活用](m365-copilot.md)
 - 関連記事：[プロンプトの書き方](prompt-writing.md)
 - 関連記事：[注意事項・情報セキュリティ](security.md)
+- 関連記事：[生成AIの動向と現場への含意](trends.md)
