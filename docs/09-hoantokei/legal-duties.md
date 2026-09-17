@@ -3,7 +3,7 @@ title: 法定業務一覧
 description: 電気事業法に基づく電気主任技術者の法定義務・月次/年次点検・電気事故報告・工事計画届出の要否
 tags:
   - 法規・保安
-last_verified: 2026-08-03
+last_verified: 2026-09-17
 audience:
   - 電気主任
   - 電気担当
@@ -234,6 +234,14 @@ audience:
 | 省エネ法との役割分担 | [省エネ法対応](../08-energy/energy-law.md) |
 
 照合日: 2026-07-30（条文）／2026-08-03（記述の一般化）。
+
+### 条文リンク（e-Gov 法令検索・2026-09-17 閲覧）
+
+本節で引用した条文の所在です。e-Gov のリンクは現行条文で、2026-09-17 に e-Gov 法令 API（v1）で取得した本文と本節の引用内容が一致することを再確認しました。アンカー ID は e-Gov 法令 API の XML 階層（章・節・款）から算出し、2026-09-17 に実ページで要素の存在を確認しました。ただし e-Gov は読み込み直後に該当条まで自動でスクロールしないことがあります。その場合は画面左の目次または法令内検索で条番号へ移動してください。
+
+- 電気事業法（昭和39年法律第170号）: [第42条](https://laws.e-gov.go.jp/law/339AC0000000170#Mp-Ch_3-Se_2-Ss_2-At_42)・[第43条](https://laws.e-gov.go.jp/law/339AC0000000170#Mp-Ch_3-Se_2-Ss_2-At_43)・[第48条](https://laws.e-gov.go.jp/law/339AC0000000170#Mp-Ch_3-Se_2-Ss_4-At_48)・[第106条](https://laws.e-gov.go.jp/law/339AC0000000170#Mp-Ch_8-At_106)・[第119条](https://laws.e-gov.go.jp/law/339AC0000000170#Mp-Ch_9-At_119)・[第120条](https://laws.e-gov.go.jp/law/339AC0000000170#Mp-Ch_9-At_120)
+- 電気事業法施行規則（平成7年通商産業省令第77号）: [第50条](https://laws.e-gov.go.jp/law/407M50000400077#Mp-Ch_3-Se_2-Ss_2-At_50)・[第51条](https://laws.e-gov.go.jp/law/407M50000400077#Mp-Ch_3-Se_2-Ss_2-At_51)・[第65条](https://laws.e-gov.go.jp/law/407M50000400077#Mp-Ch_3-Se_2-Ss_3-At_65)
+- 電気関係報告規則（昭和40年通商産業省令第54号）: [第3条](https://laws.e-gov.go.jp/law/340M50000400054#Mp-At_3)
 
 ---
 
