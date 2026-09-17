@@ -186,7 +186,7 @@ flowchart TD
 
 ### Step 3：生成AIを活用したトレンド分析
 
-ExcelデータをChatGPT/ClaudeにコピーしてAI分析を活用する具体的な指示例：
+ExcelデータをChatGPT/ClaudeにコピーしてAI分析を活用する具体的な指示例（会社契約の M365 Copilot なら Excel 内で直接依頼できる。手順は [Excel Copilot 実践ガイド](../11-genai/excel-copilot.md)）：
 
 ```text
 指示例1: 絶縁抵抗の急落・継続低下トレンドの特定
