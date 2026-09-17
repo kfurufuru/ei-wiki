@@ -255,12 +255,12 @@ Phase 1（スニペットによる数値の物理一元化）は、Phase 4の数
 | ID | 内容 | 現状 | 優先 |
 |----|------|------|------|
 | R12 | 電圧降下の導体抵抗が 20℃ 値（非保守側）のまま「未解決」警告で 6 週間放置 | **PR #103**。技資103号B 表③④の R(90℃) を原本照合して正典表・cable-calc.js・calculators を切替。lint FORBIDDEN＋canary 追加 | 済（マージ待ち） |
-| R13 | 「e-Gov で逐語照合」と書きながら条文 URL が無い（全 132 ページで e-Gov リンク 1 本） | **PR #104** で被リンク上位 7 ページに条文リンク節（e-Gov API で再照合済み）。**残り**: 「未照合」を含む 88 ページのうち法令を引用する残ページ。`--queue` の再検証時に、そのページの条文リンク節を併せて付ける（週2ページの中で消化） | 中 |
+| R13 | 「e-Gov で逐語照合」と書きながら条文 URL が無い（全 132 ページで e-Gov リンク 1 本） | **#104**（7 ページ）＋**第2バッチ**（11 ページ: jiko-taiou / ptw / lockout-tagout / fault-current / hoan-kisoku / koji-tetsuzuki / investment-flow / energy-law / motor-control / relay / insulation-test）で計 18 ページ。**残り 26 ページ**（e-Gov 照合を謳うが条文リンク節が無いページ。security / juhenden / distribution / inverter / lighting / renovation-design / calibration / coordination / periodic-inspection / 06-trouble 5 本 / energy-monitoring / denryoku-toiawase / 10-safety 4 本 / guidelines 5 本 / glossary / standards-list）。`--queue` の週2ページ再検証の中で消化 | 中 |
 | R14 | 規格全文の転載サイトを「逐語照合」の出典としていた（7箇所） | **PR #105** で原本未照合・二次資料に格下げ＋lint `20260917-tensai-site-shutten`。**残り**: 該当規格（JIS C 0448 / B 9960-1 / C 0508-1・6 / C 1602 / C 1610）を JSA 原本で照合できたら格上げ | 低 |
 | R15 | 電技解釈の原典 PDF は所在 URL のみ追加（#104）。本文は各ページの既存照合日のまま | 令和7年11月20日改正版で再照合する機会に、条番号の異同を確認 | 低 |
-| R16 | CLAUDE.md「Skill配置ルール」のグローバルスキル4本（ai-architect / ai-reviewer / inbox-manager / morning-reporter）が現在の環境に存在しない（2026-09-06 旧PC故障で消失） | 表を現状に合わせて修正するか、復旧するかを決める | 低 |
-| R17 | squash マージ済みの `fix/konkyo38〜58` 系リモートブランチ 21 本と、マージ済み 4 本が残っていた | 2026-09-17 に内容が main に含まれることを確認して削除。**閉じた PR（#15 fault-current-pct-z / #16 hoan-kisoku-retention / #33 salvage/figures）と未 PR の `fix/hoantokei-konkyo` は未反映の差分があるため残置**。採否を決めて消す | 低 |
+| R16 | CLAUDE.md「Skill配置ルール」のグローバルスキル4本（ai-architect / ai-reviewer / inbox-manager / morning-reporter）が現在の環境に存在しない（2026-09-06 旧PC故障で消失） | **PR #109** で表を現状（wiki-review / wiki-editor / wiki-deployer）に修正。復旧は別途判断 | 済（マージ待ち） |
+| R17 | squash マージ済みの `fix/konkyo38〜58` 系リモートブランチ 21 本と、マージ済み 4 本が残っていた | 2026-09-17 に内容が main に含まれることを確認して削除。同日、閉じた PR の `fix/fault-current-pct-z`（%Z の式は main が既に正しい形）・`fix/hoan-kisoku-retention`（保存年限の注記は legal-duties にあり）・未 PR の `fix/hoantokei-konkyo`（第50条第3項の整理は main に反映済み）も **main が上位互換であることを確認して削除**。**残るのは `salvage/figures-from-audit-branch`（#33 closed・インライン SVG 22 枚・845 行）のみ**。採否は要判断 | 低 |
 | R18 | 対象読者に「電験学習者」を掲げるが、電験に触れるページは 7 本で導線が無い | 宣言を外すか、電験Wiki（denken-wiki）への橋渡しページを作るかを決める | 低 |
-| R19 | 新規ページの数値は lint（ブラックリスト）を素通りする。2026-09-17 の OT セキュリティ節 10 ページ・改善効果の金額化ページは機械検証なしで公開された | 新規ページの PR には「根拠節の一次照合URL」を必須にする運用（PR テンプレート）を検討 | 中 |
+| R19 | 新規ページの数値は lint（ブラックリスト）を素通りする。2026-09-17 の OT セキュリティ節 10 ページ・改善効果の金額化ページは機械検証なしで公開された | **PR #109** で `.github/pull_request_template.md` を新設（一次照合表・lint 追加・last_verified の扱いをチェックリスト化） | 済（マージ待ち） |
 
 **更新ルール**: 残件を消化したら本台帳の該当行を「済」にし、新たに判明した課題は行を追加する。要確認注記は放置せず、確認先と優先度をここで一元管理する。**PR を出すたびに本台帳を触る**（2026-07-11〜09-17 の停止を繰り返さない）。
