@@ -119,8 +119,13 @@ last_verified: 2026-01-15
 
 | 配置 | パス | 対象Skill |
 |------|------|----------|
-| グローバル | `~/.claude/skills/` | ai-architect, ai-reviewer, inbox-manager, morning-reporter |
-| ローカル | `.claude/skills/` | mkdocs-writer, wiki-deployer |
+| グローバル | `~/.claude/skills/` | wiki-review（Wiki 監修。正本は OneDrive `bootstrap/skills/`） |
+| ローカル | `.claude/skills/` | wiki-editor（記事追加・更新の4工程）, wiki-deployer（デプロイ確認） |
+| ローカル（コマンド） | `.claude/commands/` | add-wiki-page, add-calculator, deploy-wiki |
+
+> 旧記載の ai-architect / ai-reviewer / inbox-manager / morning-reporter / mkdocs-writer は
+> 2026-09-06 の旧PC故障で失われ、現在は存在しない（2026-09-17 に実機で確認し表を現状へ合わせた）。
+> 復旧するなら OneDrive `bootstrap/` 経由で置き、この表も同時に直す。
 
 ## 命名規則
 
