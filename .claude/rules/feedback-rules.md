@@ -88,6 +88,8 @@
     - NG: `Motor_Control.md`、コミット「更新」 → OK: `motor-control.md`、「update: モーター制御ページ追記」
 - **R30 一括自動変換は正対照・二重適用チェックなしで実行しない**（2026-07-01 mermaid一括修復スクリプトが文字破壊した教訓）
     - NG: 全ファイルにsed一括置換して即コミット → OK: 数ファイルで試行→差分目視→二重適用テスト→適用
+- **R31 並行セッションは同じ作業ツリーを共有しない**。本repoで別のClaudeセッションが動いている可能性があるときは `git worktree add <tmp> main` で分離して作業し、終わったら `git worktree remove`。共有ツリーでは `checkout -b` 直後に相手がbranchを切り替え、自分のcommitが相手のbranchに乗り、相手の未commit編集を `git add` が巻き込む（2026-09-17 PR#107 でnav行の混入によりCI失敗）
+    - NG: 本体の作業ツリーで `git checkout -b` → 編集 → `git add` → commit → OK: 一時worktreeで作業し、push前に `git diff --stat main..HEAD` で自分の変更だけか確認
 
 ## 9. 例外ルール（1回限りの指摘。捨てずに遵守）
 
