@@ -24,8 +24,39 @@ import datetime as _dt
 import sys
 from pathlib import Path
 
-EXPIRED_DAYS = 365
-DUE_SOON_DAYS = 300
+# 再検証の間隔（2026-09-19 に一律 365 日から区分制へ変更）
+#
+# 一律 365 日は両方向に間違っていた。生成AI のページは半年で陳腐化し（2026-08 に
+# 旧ドメイン・月額料金など6件を是正）、法令アンカーのページは 1 年経っても
+# 条番号が動かない（2026-07→09 の再照合で異同ゼロ）。加えて 136 ページを
+# 365 日で1周するには週 2.6 ページ要り、運用の週2ページでは構造的に追いつかず
+# 崖が解消しない（1周 476 日）。
+#
+# 区分を入れて必要ペースを 1.60 ページ/週 に下げ、週2ページで定常の EXPIRED が
+# ゼロになることをシミュレーションで確認した（毎週いちばん超過率の高い2件を
+# 消化する前提・260 週）。
+#
+# **730 日が許されるのは、カレンダーが唯一の見張りではないから。**
+#   - scripts/check_law_revisions.py … 引用法令の改正を e-Gov API で直接検出（イベント起動）
+#   - scripts/check_content_rules.py … 既知の誤り値を FORBIDDEN、正典値を canary で保護
+#   - .github/pull_request_template.md … 新規の数値に一次照合表を要求
+# この 3 本を外すなら間隔も 365 日に戻すこと。
+DEFAULT_INTERVAL_DAYS = 730
+
+# セクション別の上書き。変化が速い分野だけ短くする。
+SECTION_INTERVAL_DAYS = {
+    "11-genai": 180,   # 製品名・料金・機能が半年で変わる（実績あり）
+}
+
+# DUE_SOON は満了の 60 日前から
+DUE_SOON_MARGIN_DAYS = 60
+
+
+def interval_for(rel_path: str) -> int:
+    """docs/<section>/... の section で再検証間隔を決める。"""
+    parts = rel_path.split("/")
+    section = parts[1] if len(parts) > 2 else ""
+    return SECTION_INTERVAL_DAYS.get(section, DEFAULT_INTERVAL_DAYS)
 
 
 def count_inbound_links(docs_dir: Path, repo_root: Path) -> dict[str, int]:
@@ -86,10 +117,10 @@ def parse_frontmatter_last_verified(md_path: Path) -> str | None:
     return None
 
 
-def classify(days: int) -> str:
-    if days > EXPIRED_DAYS:
+def classify(days: int, interval: int = DEFAULT_INTERVAL_DAYS) -> str:
+    if days > interval:
         return "EXPIRED"
-    if days >= DUE_SOON_DAYS:
+    if days >= interval - DUE_SOON_MARGIN_DAYS:
         return "DUE_SOON"
     return "OK"
 
@@ -140,7 +171,7 @@ def main() -> int:
             rows.append(("WARN", rel, value, "-"))
             continue
         days = (today - d).days
-        status = classify(days)
+        status = classify(days, interval_for(rel))
         counts[status] += 1
         rows.append((status, rel, value, days))
 

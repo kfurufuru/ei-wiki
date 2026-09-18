@@ -18,5 +18,12 @@ jobs:
         with:
           python-version: "3.11"
 
+      # 検出器の生存証明 → 本走査（fail-closed）
+      - name: Law revision watcher (self-test)
+        run: python scripts/check_law_revisions.py --self-test
+
+      - name: Law revision watcher
+        run: python scripts/check_law_revisions.py
+
       - name: Run last_verified check
         run: python scripts/check_last_verified.py --ci
