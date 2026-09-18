@@ -1,0 +1,204 @@
+{
+ "checked": "2026-09-19",
+ "note": "e-Gov 法令 API v2 の law_revision_id。改正があると変わる。",
+ "laws": {
+  "409M50000400052": {
+   "title": "電気設備に関する技術基準を定める省令",
+   "revision_id": "409M50000400052_20230320_504M60000400096",
+   "amendment_enforcement_date": "2023-03-20",
+   "pages": [
+    "docs/01-koatsu/insulation-test.md",
+    "docs/01-koatsu/relay.md",
+    "docs/02-teiatsu/distribution.md",
+    "docs/02-teiatsu/grounding-lv.md",
+    "docs/02-teiatsu/motor-control.md",
+    "docs/03-keiso/explosion-proof.md",
+    "docs/04-sekkei/fault-current.md",
+    "docs/05-hozen/insulation-management.md",
+    "docs/06-trouble/power.md",
+    "docs/guidelines/panel-wiring.md",
+    "docs/guidelines/seigyoban-tekkyo-guideline.md",
+    "docs/reference/glossary.md"
+   ]
+  },
+  "339AC0000000170": {
+   "title": "電気事業法",
+   "revision_id": "339AC0000000170_20260803_508AC0000000068",
+   "amendment_enforcement_date": "2026-08-03",
+   "pages": [
+    "docs/01-koatsu/juhenden.md",
+    "docs/04-sekkei/investment-flow.md",
+    "docs/04-sekkei/standards.md",
+    "docs/05-hozen/coordination.md",
+    "docs/06-trouble/basics.md",
+    "docs/09-hoantokei/denryoku-toiawase.md",
+    "docs/09-hoantokei/hoan-kisoku.md",
+    "docs/09-hoantokei/koji-tetsuzuki.md",
+    "docs/09-hoantokei/legal-duties.md",
+    "docs/10-safety/special-education.md"
+   ]
+  },
+  "407M50000400077": {
+   "title": "電気事業法施行規則",
+   "revision_id": "407M50000400077_20260401_507M60000400068",
+   "amendment_enforcement_date": "2026-04-01",
+   "pages": [
+    "docs/04-sekkei/renovation-design.md",
+    "docs/04-sekkei/standards.md",
+    "docs/05-hozen/periodic-inspection.md",
+    "docs/09-hoantokei/hoan-kisoku.md",
+    "docs/09-hoantokei/koji-tetsuzuki.md",
+    "docs/09-hoantokei/legal-duties.md",
+    "docs/10-safety/special-education.md"
+   ]
+  },
+  "347M50002000032": {
+   "title": "労働安全衛生規則",
+   "revision_id": "347M50002000032_20260801_508M60000100086",
+   "amendment_enforcement_date": "2026-08-01",
+   "pages": [
+    "docs/02-teiatsu/inverter.md",
+    "docs/03-keiso/explosion-proof.md",
+    "docs/04-sekkei/standards.md",
+    "docs/05-hozen/coordination.md",
+    "docs/05-hozen/outage-work.md",
+    "docs/05-hozen/periodic-inspection.md",
+    "docs/09-hoantokei/koji-tetsuzuki.md",
+    "docs/10-safety/lockout-tagout.md",
+    "docs/10-safety/ptw.md",
+    "docs/10-safety/risk-assessment.md",
+    "docs/10-safety/special-education.md",
+    "docs/guidelines/panel-wiring.md",
+    "docs/guidelines/protective-relay-test.md",
+    "docs/guidelines/seigyoban-tekkyo-guideline.md",
+    "docs/guidelines/work-permit.md"
+   ]
+  },
+  "347AC0000000057": {
+   "title": "労働安全衛生法",
+   "revision_id": "347AC0000000057_20260401_507AC0000000033",
+   "amendment_enforcement_date": "2026-04-01",
+   "pages": [
+    "docs/04-sekkei/standards.md",
+    "docs/09-hoantokei/koji-tetsuzuki.md",
+    "docs/10-safety/index.md",
+    "docs/10-safety/risk-assessment.md",
+    "docs/10-safety/special-education.md",
+    "docs/guidelines/seigyoban-tekkyo-guideline.md"
+   ]
+  },
+  "347CO0000000318": {
+   "title": "労働安全衛生法施行令",
+   "revision_id": "347CO0000000318_20260401_507CO0000000361",
+   "amendment_enforcement_date": "2026-04-01",
+   "pages": [
+    "docs/10-safety/special-education.md"
+   ]
+  },
+  "340M50000400054": {
+   "title": "電気関係報告規則",
+   "revision_id": "340M50000400054_20251120_507M60000400074",
+   "amendment_enforcement_date": "2025-11-20",
+   "pages": [
+    "docs/01-koatsu/juhenden.md",
+    "docs/06-trouble/basics.md",
+    "docs/06-trouble/valve.md",
+    "docs/09-hoantokei/jiko-taiou.md",
+    "docs/09-hoantokei/koji-tetsuzuki.md",
+    "docs/09-hoantokei/legal-duties.md",
+    "docs/guidelines/seigyoban-tekkyo-guideline.md"
+   ]
+  },
+  "326AC0000000204": {
+   "title": "高圧ガス保安法",
+   "revision_id": "326AC0000000204_20251001_507AC0000000044",
+   "amendment_enforcement_date": "2025-10-01",
+   "pages": [
+    "docs/04-sekkei/investment-flow.md",
+    "docs/04-sekkei/standards.md",
+    "docs/05-hozen/outage-work.md",
+    "docs/06-trouble/protection.md"
+   ]
+  },
+  "323AC1000000186": {
+   "title": "消防法",
+   "revision_id": "323AC1000000186_20250601_504AC0000000068",
+   "amendment_enforcement_date": "2025-06-01",
+   "pages": [
+    "docs/03-keiso/explosion-proof.md",
+    "docs/04-sekkei/standards.md",
+    "docs/reference/standards-list.md"
+   ]
+  },
+  "334CO0000000306": {
+   "title": "危険物の規制に関する政令",
+   "revision_id": "334CO0000000306_20260404_508CO0000000115",
+   "amendment_enforcement_date": "2026-04-04",
+   "pages": [
+    "docs/03-keiso/explosion-proof.md",
+    "docs/04-sekkei/standards.md",
+    "docs/reference/standards-list.md"
+   ]
+  },
+  "336M50000008006": {
+   "title": "消防法施行規則",
+   "revision_id": "336M50000008006_20260626_508M60000008081",
+   "amendment_enforcement_date": "2026-06-26",
+   "pages": [
+    "docs/02-teiatsu/lighting.md",
+    "docs/04-sekkei/standards.md"
+   ]
+  },
+  "404AC0000000051": {
+   "title": "計量法",
+   "revision_id": "404AC0000000051_20250601_504AC0000000068",
+   "amendment_enforcement_date": "2025-06-01",
+   "pages": [
+    "docs/05-hozen/calibration.md",
+    "docs/08-energy/energy-monitoring.md"
+   ]
+  },
+  "335AC0000000139": {
+   "title": "電気工事士法",
+   "revision_id": "335AC0000000139_20250601_504AC0000000068",
+   "amendment_enforcement_date": "2025-06-01",
+   "pages": [
+    "docs/guidelines/panel-wiring.md",
+    "docs/guidelines/seigyoban-tekkyo-guideline.md"
+   ]
+  },
+  "325CO0000000338": {
+   "title": "建築基準法施行令",
+   "revision_id": "325CO0000000338_20251201_507CO0000000377",
+   "amendment_enforcement_date": "2025-12-01",
+   "pages": [
+    "docs/02-teiatsu/lighting.md",
+    "docs/guidelines/seigyoban-tekkyo-guideline.md"
+   ]
+  },
+  "354AC0000000049": {
+   "title": "エネルギーの使用の合理化及び非化石エネルギーへの転換等に関する法律",
+   "revision_id": "354AC0000000049_20250601_504AC0000000068",
+   "amendment_enforcement_date": "2025-06-01",
+   "pages": [
+    "docs/08-energy/energy-law.md"
+   ]
+  },
+  "354CO0000000267": {
+   "title": "エネルギーの使用の合理化及び非化石エネルギーへの転換等に関する法律施行令",
+   "revision_id": "354CO0000000267_20260701_508CO0000000205",
+   "amendment_enforcement_date": "2026-07-01",
+   "pages": [
+    "docs/08-energy/energy-law.md"
+   ]
+  },
+  "354M50000400074": {
+   "title": "エネルギーの使用の合理化及び非化石エネルギーへの転換等に関する法律施行規則",
+   "revision_id": "354M50000400074_20260701_508M60000400059",
+   "amendment_enforcement_date": "2026-07-01",
+   "pages": [
+    "docs/08-energy/energy-law.md"
+   ]
+  }
+ }
+}
