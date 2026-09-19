@@ -2236,6 +2236,8 @@ CANARIES = [
     ("docs/02-teiatsu/panel-hmi.md", "解除されても、それにより直ちに再起動することがない", "非常停止の機能要件(5)（厚労省 包括指針 別表第4-1）"),
     ("docs/04-sekkei/spec-writing.md", "第14条の2第1項第三号", "防爆機器が型式検定の対象である根拠条"),
     ("docs/03-keiso/instrument-air.md", "ライン圧力のもとで 4 °C（39 °F）を超えない", "ISA-7.0.01 の露点上限（2つ目の条件）"),
+    ("docs/06-trouble/instrument-air.md", "ライン圧力のもとで 4 ℃（39 °F）を超えない", "露点上限（トラブル側にも同じ条件を置く）"),
+    ("docs/03-keiso/flow.md", "差圧式の実用ターンダウンは 3:1 程度", "開平による低流量誤差拡大の帰結"),
     ("docs/03-keiso/control-valve.md", "Cv/Kv = 1.156 099", "SI 定義値から導いた Cv/Kv 換算係数"),
     ("docs/01-koatsu/grounding-hv.md", "直径 **4 mm** 以上（断面積 12.57 mm²）", "B種接地線（上記以外）の条文値と断面積換算"),
     ("docs/01-koatsu/grounding-hv.md", "直径 **2.6 mm** 以上（断面積 5.31 mm²）", "A種接地線の条文値と断面積換算（公称5.5mm²と実断面積を混同しない）"),
