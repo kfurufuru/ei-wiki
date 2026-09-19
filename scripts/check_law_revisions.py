@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import datetime as _dt
 import json
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -52,18 +53,58 @@ def fetch(law_id: str) -> dict:
     return laws[0]["revision_info"]
 
 
+def scan_docs() -> tuple[dict[str, set[str]], dict[str, set[str]]]:
+    """docs の中の e-Gov リンクから (法令ID -> アンカー集合, 法令ID -> 引用ページ集合) を集める。"""
+    root = Path(__file__).resolve().parent.parent / "docs"
+    used: dict[str, set[str]] = {}
+    pages: dict[str, set[str]] = {}
+    pat = re.compile(r"laws\.e-gov\.go\.jp/law/(\w+)#([\w-]+)")
+    for md in sorted(root.rglob("*.md")):
+        rel = md.relative_to(root.parent).as_posix()
+        for law, anc in pat.findall(md.read_text(encoding="utf-8")):
+            used.setdefault(law, set()).add(anc)
+            pages.setdefault(law, set()).add(rel)
+    return used, pages
+
+
 def check_offline(data: dict) -> list[str]:
-    """JSON 自体の壊れを検出する（黙って無検査にならないため）。"""
+    """JSON 自体の壊れと、docs のアンカーが記録と食い違っていないかを検出する。
+
+    アンカー照合を入れた理由（2026-09-19）:
+      条アンカー（例 Mp-Ch_3-Se_1-At_58）は法令 XML の章・節・款から算出する必要があり、
+      手で書くと静かに間違える（実際に第26条・第38条で Se_5 と誤記した）。誤ったアンカーでも
+      リンクは開くため、読者はページ先頭に飛ばされるだけで気づかない。記録済みの正しい値と
+      突き合わせて、新規・変更されたアンカーを必ず人の目に出す。
+    """
     problems: list[str] = []
     laws = data.get("laws") or {}
     if not laws:
         problems.append("laws が空。JSON が壊れると全法令が無検査になる")
     for lid, v in laws.items():
-        for key in ("title", "revision_id", "amendment_enforcement_date", "pages"):
-            if not v.get(key):
-                problems.append(f"{lid}: {key} が空")
+        for key in ("title", "revision_id", "amendment_enforcement_date", "pages", "anchors"):
+            if v.get(key) is None:
+                problems.append(f"{lid}: {key} が無い")
         if not str(v.get("revision_id", "")).startswith(lid):
             problems.append(f"{lid}: revision_id が law_id で始まっていない（{v.get('revision_id')}）")
+        for anc in v.get("anchors") or []:
+            if not anc.startswith("Mp-") or "At_" not in anc:
+                problems.append(f"{lid}: アンカー書式が不正（{anc}）")
+
+    used, pages = scan_docs()
+    for lid in sorted(used):
+        if lid not in laws:
+            problems.append(
+                f"{lid}: docs が引用しているのに本 JSON に無い"
+                f"（{'・'.join(sorted(pages[lid])[:3])} ほか）。--update で登録すること"
+            )
+            continue
+        known = set(laws[lid].get("anchors") or [])
+        for anc in sorted(used[lid] - known):
+            problems.append(
+                f"{lid}: 未記録のアンカー {anc}"
+                f"（{'・'.join(sorted(p for p in pages[lid])[:2])}）。"
+                "法令 XML の章・節・款から算出した値か確認し、正しければ --update で記録すること"
+            )
     return problems
 
 
@@ -90,8 +131,9 @@ def self_test() -> int:
 
     print(
         f"[OK] self-test: 法令 {len(data['laws'])} 件・"
+        f"アンカー {sum(len(v.get('anchors') or []) for v in data['laws'].values())} 件・"
         f"引用ページ {sum(len(v['pages']) for v in data['laws'].values())} 件、"
-        "陽性対照（revision_id 改ざん）を検出、JSON 自己検査パス"
+        "陽性対照（revision_id 改ざん）を検出、JSON 自己検査＋docs アンカー照合パス"
     )
     return 0
 
