@@ -1,6 +1,6 @@
 {
  "checked": "2026-09-19",
- "note": "e-Gov 法令 API v2 の law_revision_id。改正があると変わる。",
+ "note": "e-Gov 法令 API v2 の law_revision_id（改正があると変わる）と、docs が使う条アンカー（XML 階層から算出し照合済みの値）。",
  "laws": {
   "409M50000400052": {
    "title": "電気設備に関する技術基準を定める省令",
@@ -11,14 +11,28 @@
     "docs/01-koatsu/relay.md",
     "docs/02-teiatsu/distribution.md",
     "docs/02-teiatsu/grounding-lv.md",
+    "docs/02-teiatsu/insulation-monitoring.md",
     "docs/02-teiatsu/motor-control.md",
     "docs/03-keiso/explosion-proof.md",
     "docs/04-sekkei/fault-current.md",
     "docs/05-hozen/insulation-management.md",
+    "docs/06-trouble/motor.md",
     "docs/06-trouble/power.md",
+    "docs/guidelines/grounding-inspection.md",
     "docs/guidelines/panel-wiring.md",
     "docs/guidelines/seigyoban-tekkyo-guideline.md",
     "docs/reference/glossary.md"
+   ],
+   "anchors": [
+    "Mp-Ch_1-Se_1-At_1",
+    "Mp-Ch_1-Se_1-At_2",
+    "Mp-Ch_1-Se_3-Ss_1-At_10",
+    "Mp-Ch_1-Se_3-Ss_1-At_11",
+    "Mp-Ch_1-Se_3-Ss_2-At_14",
+    "Mp-Ch_1-Se_3-Ss_2-At_15",
+    "Mp-Ch_3-Se_1-At_58",
+    "Mp-Ch_3-Se_3-At_65",
+    "Mp-Ch_3-Se_5-At_69"
    ]
   },
   "339AC0000000170": {
@@ -27,15 +41,31 @@
    "amendment_enforcement_date": "2026-08-03",
    "pages": [
     "docs/01-koatsu/juhenden.md",
+    "docs/03-keiso/koji-kanryo.md",
     "docs/04-sekkei/investment-flow.md",
     "docs/04-sekkei/standards.md",
+    "docs/04-sekkei/voltage-drop.md",
     "docs/05-hozen/coordination.md",
+    "docs/05-hozen/maintenance-system.md",
     "docs/06-trouble/basics.md",
     "docs/09-hoantokei/denryoku-toiawase.md",
     "docs/09-hoantokei/hoan-kisoku.md",
     "docs/09-hoantokei/koji-tetsuzuki.md",
     "docs/09-hoantokei/legal-duties.md",
     "docs/10-safety/special-education.md"
+   ],
+   "anchors": [
+    "Mp-Ch_2-Se_2-Ss_2-At_26",
+    "Mp-Ch_3-Se_1-At_38",
+    "Mp-Ch_3-Se_2-Ss_1-At_39",
+    "Mp-Ch_3-Se_2-Ss_2-At_42",
+    "Mp-Ch_3-Se_2-Ss_2-At_43",
+    "Mp-Ch_3-Se_2-Ss_2-At_44",
+    "Mp-Ch_3-Se_2-Ss_4-At_48",
+    "Mp-Ch_3-Se_2-Ss_4-At_51",
+    "Mp-Ch_8-At_106",
+    "Mp-Ch_9-At_119",
+    "Mp-Ch_9-At_120"
    ]
   },
   "407M50000400077": {
@@ -45,11 +75,20 @@
    "pages": [
     "docs/04-sekkei/renovation-design.md",
     "docs/04-sekkei/standards.md",
+    "docs/04-sekkei/voltage-drop.md",
+    "docs/05-hozen/maintenance-system.md",
     "docs/05-hozen/periodic-inspection.md",
     "docs/09-hoantokei/hoan-kisoku.md",
     "docs/09-hoantokei/koji-tetsuzuki.md",
     "docs/09-hoantokei/legal-duties.md",
     "docs/10-safety/special-education.md"
+   ],
+   "anchors": [
+    "Mp-Ch_2-Se_2-Ss_2-At_38",
+    "Mp-Ch_3-Se_2-Ss_2-At_50",
+    "Mp-Ch_3-Se_2-Ss_2-At_51",
+    "Mp-Ch_3-Se_2-Ss_2-At_56",
+    "Mp-Ch_3-Se_2-Ss_3-At_65"
    ]
   },
   "347M50002000032": {
@@ -59,10 +98,13 @@
    "pages": [
     "docs/02-teiatsu/inverter.md",
     "docs/03-keiso/explosion-proof.md",
+    "docs/03-keiso/level.md",
+    "docs/04-sekkei/spec-writing.md",
     "docs/04-sekkei/standards.md",
     "docs/05-hozen/coordination.md",
     "docs/05-hozen/outage-work.md",
     "docs/05-hozen/periodic-inspection.md",
+    "docs/06-trouble/motor.md",
     "docs/09-hoantokei/koji-tetsuzuki.md",
     "docs/10-safety/lockout-tagout.md",
     "docs/10-safety/ptw.md",
@@ -72,6 +114,18 @@
     "docs/guidelines/protective-relay-test.md",
     "docs/guidelines/seigyoban-tekkyo-guideline.md",
     "docs/guidelines/work-permit.md"
+   ],
+   "anchors": [
+    "Mp-Pa_1-Ch_2_4-At_24_11",
+    "Mp-Pa_1-Ch_3-Se_2-At_34_2_7",
+    "Mp-Pa_1-Ch_4-At_36",
+    "Mp-Pa_1-Ch_4-At_38",
+    "Mp-Pa_2-Ch_4-Se_4-At_280",
+    "Mp-Pa_2-Ch_5-Se_3-At_339",
+    "Mp-Pa_2-Ch_5-Se_3-At_340",
+    "Mp-Pa_2-Ch_5-Se_5-At_350",
+    "Mp-Pa_2-Ch_5-Se_5-At_352",
+    "Mp-Pa_2-Ch_9-Se_1-At_518"
    ]
   },
   "347AC0000000057": {
@@ -85,6 +139,17 @@
     "docs/10-safety/risk-assessment.md",
     "docs/10-safety/special-education.md",
     "docs/guidelines/seigyoban-tekkyo-guideline.md"
+   ],
+   "anchors": [
+    "Mp-Ch_12-At_119",
+    "Mp-Ch_12-At_120",
+    "Mp-Ch_3-At_12",
+    "Mp-Ch_4-At_20",
+    "Mp-Ch_4-At_28_2",
+    "Mp-Ch_5-Se_2-At_57",
+    "Mp-Ch_5-Se_2-At_57_2",
+    "Mp-Ch_5-Se_2-At_57_3",
+    "Mp-Ch_6-At_59"
    ]
   },
   "347CO0000000318": {
@@ -93,6 +158,9 @@
    "amendment_enforcement_date": "2026-04-01",
    "pages": [
     "docs/10-safety/special-education.md"
+   ],
+   "anchors": [
+    "Mp-At_4"
    ]
   },
   "340M50000400054": {
@@ -106,7 +174,11 @@
     "docs/09-hoantokei/jiko-taiou.md",
     "docs/09-hoantokei/koji-tetsuzuki.md",
     "docs/09-hoantokei/legal-duties.md",
-    "docs/guidelines/seigyoban-tekkyo-guideline.md"
+    "docs/guidelines/seigyoban-tekkyo-guideline.md",
+    "docs/guidelines/trouble-first-response.md"
+   ],
+   "anchors": [
+    "Mp-At_3"
    ]
   },
   "326AC0000000204": {
@@ -117,7 +189,13 @@
     "docs/04-sekkei/investment-flow.md",
     "docs/04-sekkei/standards.md",
     "docs/05-hozen/outage-work.md",
-    "docs/06-trouble/protection.md"
+    "docs/06-trouble/protection.md",
+    "docs/06-trouble/signal.md"
+   ],
+   "anchors": [
+    "Mp-Ch_2-At_14",
+    "Mp-Ch_2-At_20",
+    "Mp-Ch_5-At_60"
    ]
   },
   "323AC1000000186": {
@@ -126,8 +204,14 @@
    "amendment_enforcement_date": "2025-06-01",
    "pages": [
     "docs/03-keiso/explosion-proof.md",
+    "docs/03-keiso/level.md",
     "docs/04-sekkei/standards.md",
     "docs/reference/standards-list.md"
+   ],
+   "anchors": [
+    "Mp-Ch_3-At_10",
+    "Mp-Ch_3-At_11",
+    "Mp-Ch_4-At_17"
    ]
   },
   "334CO0000000306": {
@@ -136,8 +220,12 @@
    "amendment_enforcement_date": "2026-04-04",
    "pages": [
     "docs/03-keiso/explosion-proof.md",
+    "docs/03-keiso/level.md",
     "docs/04-sekkei/standards.md",
     "docs/reference/standards-list.md"
+   ],
+   "anchors": [
+    "Mp-Ch_3-Se_1-At_9"
    ]
   },
   "336M50000008006": {
@@ -147,6 +235,9 @@
    "pages": [
     "docs/02-teiatsu/lighting.md",
     "docs/04-sekkei/standards.md"
+   ],
+   "anchors": [
+    "Mp-Ch_2-Se_2-Ss_3-At_28_3"
    ]
   },
   "404AC0000000051": {
@@ -156,6 +247,10 @@
    "pages": [
     "docs/05-hozen/calibration.md",
     "docs/08-energy/energy-monitoring.md"
+   ],
+   "anchors": [
+    "Mp-Ch_3-Se_3-At_16",
+    "Mp-Ch_8-Se_2-At_144"
    ]
   },
   "335AC0000000139": {
@@ -165,6 +260,10 @@
    "pages": [
     "docs/guidelines/panel-wiring.md",
     "docs/guidelines/seigyoban-tekkyo-guideline.md"
+   ],
+   "anchors": [
+    "Mp-At_2",
+    "Mp-At_3"
    ]
   },
   "325CO0000000338": {
@@ -174,6 +273,10 @@
    "pages": [
     "docs/02-teiatsu/lighting.md",
     "docs/guidelines/seigyoban-tekkyo-guideline.md"
+   ],
+   "anchors": [
+    "Mp-Ch_4-At_112",
+    "Mp-Ch_5-Se_4-At_126_5"
    ]
   },
   "354AC0000000049": {
@@ -181,7 +284,19 @@
    "revision_id": "354AC0000000049_20250601_504AC0000000068",
    "amendment_enforcement_date": "2025-06-01",
    "pages": [
+    "docs/08-energy/demand-management.md",
     "docs/08-energy/energy-law.md"
+   ],
+   "anchors": [
+    "Mp-Ch_3-Se_1-Ss_1-At_5",
+    "Mp-Ch_3-Se_1-Ss_2-At_11",
+    "Mp-Ch_3-Se_1-Ss_2-At_12",
+    "Mp-Ch_3-Se_1-Ss_2-At_16",
+    "Mp-Ch_3-Se_1-Ss_2-At_9",
+    "Mp-Ch_9-At_174",
+    "Mp-Ch_9-At_175",
+    "Mp-Ch_9-At_177",
+    "Mp-Ch_9-At_178"
    ]
   },
   "354CO0000000267": {
@@ -190,6 +305,10 @@
    "amendment_enforcement_date": "2026-07-01",
    "pages": [
     "docs/08-energy/energy-law.md"
+   ],
+   "anchors": [
+    "Mp-At_2",
+    "Mp-At_32"
    ]
   },
   "354M50000400074": {
@@ -198,6 +317,20 @@
    "amendment_enforcement_date": "2026-07-01",
    "pages": [
     "docs/08-energy/energy-law.md"
+   ],
+   "anchors": [
+    "Mp-At_4"
+   ]
+  },
+  "341M50000400053": {
+   "title": "一般高圧ガス保安規則",
+   "revision_id": "341M50000400053_20251001_507M60000400065",
+   "amendment_enforcement_date": "2025-10-01",
+   "pages": [
+    "docs/06-trouble/signal.md"
+   ],
+   "anchors": [
+    "Mp-Ch_14-At_95"
    ]
   }
  }
