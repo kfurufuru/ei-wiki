@@ -47,7 +47,7 @@
 *[TBM]: Time-Based Maintenance（時間基準保全）
 *[CBM]: Condition-Based Maintenance（状態基準保全）
 *[MTBF]: Mean Time Between Failures（平均故障間隔）
-*[MTTR]: Mean Time To Repair（平均修復時間）
+*[MTTR]: Mean Time To Restoration（平均修復時間）
 
 <!-- 現場俗語・別称（検索精度向上） -->
 *[遮断器]: Circuit Breaker（ブレーカ・CB）
