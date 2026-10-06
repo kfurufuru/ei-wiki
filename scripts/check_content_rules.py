@@ -1624,6 +1624,14 @@ FORBIDDEN = [
      _both_unless(r"(?i)mean\s+time\s+to\s+repair", r"(?i)repair", r"非推奨|是正|誤り"),
      "MTTR は Mean Time To Restoration（平均修復時間・IEV 192-07-23）。Repair は非推奨語",
      "MTTR（Mean Time To Repair）"),
+    # 20261006-mtbf-relay-nen: 交換して使い捨てるリレーの寿命を「MTBF = ○年」で書かない。
+    # 使い捨て品は MTTF（IEV 192-05-11。正典 05-hozen/maintenance-system.md の用語表）で、
+    # 接点が摩耗する補助リレーの寿命は年数でなく動作回数で決まる（05-hozen/lifetime.md）。
+    # 2026-10-06 に保全体系の計算例「MTBF = 3 年のリレー」で発見・是正。
+    ("20261006-mtbf-relay-nen",
+     _both(r"MTBF\s*[=＝]\s*[\d.]+\s*年", r"リレー|継電器"),
+     "交換部品のリレーに「MTBF = ○年」を使わない（使い捨て品は MTTF、補助リレーの寿命は動作回数）",
+     "例：MTBF = 3 年のリレー → 3 × 0.7 = 2.1 年"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
