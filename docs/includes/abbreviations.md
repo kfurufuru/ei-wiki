@@ -19,7 +19,8 @@
 *[ZCT]: Zero-phase Current Transformer（零相変流器）
 *[CT]: Current Transformer（変流器）
 *[PT]: Potential Transformer（計器用変圧器）
-*[CVT]: Cross-linked polyethylene insulated PVC sheathed cable（架橋ポリエチレン絶縁ビニルシースケーブル）
+*[CV]: Cross-linked polyethylene insulated Vinyl sheathed cable（架橋ポリエチレン絶縁ビニルシースケーブル）
+*[CVT]: CV cable, Triplex type（単心 CV を3本より合わせたトリプレックス形 CV ケーブル）
 <!-- 計装系 -->
 *[PLC]: Programmable Logic Controller（プログラマブルロジックコントローラ）
 *[DCS]: Distributed Control System（分散制御システム）
@@ -27,12 +28,10 @@
 *[HART]: Highway Addressable Remote Transducer（スマート伝送器通信プロトコル）
 *[RTD]: Resistance Temperature Detector（測温抵抗体）
 *[TC]: Thermocouple（熱電対）
-*[DP]: Differential Pressure（差圧）
 *[PID]: Proportional-Integral-Derivative（比例積分微分制御）
 *[SP]: Set Point（設定値）
 *[PV]: Process Variable（プロセス変数/現在値）
 *[MV]: Manipulated Variable（操作量）
-*[CV]: Cv Value（バルブ流量係数）
 *[SIL]: Safety Integrity Level（安全度水準）
 *[SIS]: Safety Instrumented System（安全計装システム）
 *[P&ID]: Piping and Instrumentation Diagram（配管計装図）
@@ -64,7 +63,7 @@
 *[調節弁]: Control Valve（制御弁・CV）
 *[I/Pコンバータ]: Current-to-Pressure Converter（電空変換器）
 *[ポジショナ]: Positioner（バルブポジショナ・弁開度制御器）
-*[ハンドヘルド]: Field Communicator（フィールドコミュニケータ・475/375）
+*[ハンドヘルド]: Field Communicator（フィールドコミュニケータ）
 *[二次側]: Secondary Side（変圧器・CTの出力側）
 *[一次側]: Primary Side（変圧器・CTの入力側）
 *[グランド]: Gland Packing（グランドパッキン・軸封部）
@@ -82,12 +81,12 @@
 *[軸受]: Bearing（ベアリング）
 *[配電盤]: Distribution Board（分電盤・スイッチギア）
 *[制御盤]: Control Panel（操作盤・MCC）
-*[端子台]: Terminal Block（テーミナルブロック・TB）
+*[端子台]: Terminal Block（ターミナルブロック・TB）
 *[継電器]: Relay（リレー）
 *[変流器]: Current Transformer（CT）
 *[計器用変圧器]: Potential Transformer（PT・VT）
 *[零相変流器]: Zero-phase CT（ZCT・地絡検出用CT）
-*[高圧受電]: High Voltage Reception（特高・高圧引込み）
+*[高圧受電]: High Voltage Reception（高圧引込み）
 *[デマンド]: Demand（最大需要電力・デマンド制御）
 *[力率]: Power Factor（PF・cosφ）
 *[高調波]: Harmonics（電流/電圧の高調波成分）
@@ -104,4 +103,4 @@
 *[防爆エリア]: Explosive Atmosphere（危険場所・Ex区域）
 *[腐食]: Corrosion（さび・電食・塩害腐食）
 *[絶縁劣化]: Insulation Degradation（経年絶縁低下・IR低下）
-*[接地抵抗]: Earth Resistance（アース抵抗・地絡抵抗）
+*[接地抵抗]: Earth Resistance（アース抵抗）

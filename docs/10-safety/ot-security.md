@@ -157,7 +157,7 @@ last_verified: 2026-09-17
 | 工場システムにおけるサイバー・フィジカル・セキュリティ対策ガイドライン | 経済産業省 | 社内説明・計画立案の土台 |
 | J-CLICS（ICSセキュリティ自己評価ツール） | JPCERT/CC | チェックリスト形式の自己評価 |
 | 制御システムのセキュリティリスク分析ガイド | IPA | リスク分析の実施手順とシート |
-| NIST SP 800-82（Guide to Operational Technology Security） | NIST（英語） | 体系的に学ぶ場合 |
+| NIST Special Publication 800-82（Guide to Operational Technology Security） | NIST（英語） | 体系的に学ぶ場合 |
 
 ---
 
@@ -188,7 +188,7 @@ last_verified: 2026-09-17
   （Ver1.0 / Ver1.1 が掲載。別冊「スマート化を進める上でのポイント」は 2024-04 公表）
 - JPCERT/CC「J-CLICS STEP1／STEP2」および「J-CLICS 攻撃経路対策編」（2023-03 公開）
 - IPA「制御システムのセキュリティリスク分析ガイド 第2版」（2026-04 版。別冊「実施例」あり）
-- NIST SP 800-82 Rev.3（2023 年発行）
+- NIST Special Publication 800-82 Rev.3（2023 年発行）
 
 ### 限界の明示
 
