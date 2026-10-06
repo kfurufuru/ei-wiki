@@ -121,8 +121,11 @@ markdown_extensions:
   - abbr
   - pymdownx.mark
   - pymdownx.snippets:
+      # base_path の既定はリポジトリのルート。旧記述 includes/abbreviations.md は存在しないパスで、
+      # 2026-10-05 まで全ページでツールチップが無効だった。check_paths で読めないときはビルドを止める
+      check_paths: true
       auto_append:
-        - includes/abbreviations.md
+        - docs/includes/abbreviations.md
 
 extra_css:
   - stylesheets/custom.css

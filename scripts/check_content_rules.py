@@ -1614,6 +1614,16 @@ FORBIDDEN = [
      "電圧降下の計算例に R(20℃) = 1.34 Ω/km を使わない（設計基準は R(90℃) = 1.71 Ω/km。"
      "技資第103号B 表③④。正典 docs/04-sekkei/voltage-drop.md）",
      "CV 14sq（R = 1.34 Ω/km、X = 0.0828 Ω/km）、I = 30A"),
+    # 20261005-mttr-repair: MTTR の展開形を「Mean Time To Repair」と書かない。
+    # IEC 60050-192（IEV 192-07-23）は mean time to restoration で、repair は非推奨語。
+    # 2026-10-05 に includes/abbreviations.md のツールチップで発見（正典は 05-hozen/maintenance-system.md）。
+    # 大小文字の揺れ（Mean Time to Repair 等）も捕まえ、正典の「mean time to repair は非推奨語」のような
+    # 是正の説明行は負ガードで除外する。
+    # 注意: includes/ は EXCLUDE_DIRS で走査外なので、ツールチップ本体の再発はこの行では止まらない。
+    ("20261005-mttr-repair",
+     _both_unless(r"(?i)mean\s+time\s+to\s+repair", r"(?i)repair", r"非推奨|是正|誤り"),
+     "MTTR は Mean Time To Restoration（平均修復時間・IEV 192-07-23）。Repair は非推奨語",
+     "MTTR（Mean Time To Repair）"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
