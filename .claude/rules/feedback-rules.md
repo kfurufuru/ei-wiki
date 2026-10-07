@@ -70,6 +70,7 @@
 
 - **R24 検索の日本語トークナイザ設定（separator）とabbreviations.mdのsnippets設定を変更しない**
     - NG: searchプラグイン設定を丸ごと書き換え → OK: navのみ触り、plugins/markdown_extensionsは現状維持
+    - **2026-10-06 例外（古舘さん承認・PR #132）**: snippets の `auto_append` を `docs/includes/abbreviations.md` に是正し、`check_paths: true` を追加した。旧パス `includes/abbreviations.md` はリポジトリのルート基準で存在せず、略語ツールチップは全ページで一度も表示されていなかった。守る対象は「略語ツールチップが全ページに付く」という機能であって、旧パスの文字列ではない。**旧パスへ戻さない**（戻すと `check_paths` でビルドが止まる）
 - **R25 navは既存階層・インデントを維持**し、適切なセクション配下に追加
     - NG: nav末尾に無所属で追加 → OK: 該当セクションの階層内に挿入
 
