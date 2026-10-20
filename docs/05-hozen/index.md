@@ -18,6 +18,7 @@ last_verified: 2026-09-14
 | 記事 | 概要 |
 |------|------|
 | [保全体系](maintenance-system.md) | BM・TBM・CBM・PdM の考え方と使い分け・重要度ランク |
+| [故障率と保全周期の決め方](maintenance-interval.md) | 故障記録から故障率・ワイブルを求め、故障の型ごとの式で交換・試験・点検・校正の周期を決めて見直す |
 | [定期点検](periodic-inspection.md) | 年次・月次点検の標準チェックリスト |
 | [絶縁管理](insulation-management.md) | 絶縁抵抗の基準値・測定手順・記録管理 |
 | [校正](calibration.md) | 計装機器の校正手順・トレーサビリティ |

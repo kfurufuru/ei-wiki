@@ -235,6 +235,7 @@ nav:
     - 保全:
       - 05-hozen/index.md
       - 保全体系: 05-hozen/maintenance-system.md
+      - 故障率と保全周期: 05-hozen/maintenance-interval.md
       - 定期点検: 05-hozen/periodic-inspection.md
       - 絶縁管理: 05-hozen/insulation-management.md
       - 校正: 05-hozen/calibration.md
