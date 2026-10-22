@@ -36,6 +36,7 @@ frontmatter 必須キー欠落・06-trouble の search.boost 欠落を fail-clos
 import argparse
 import io
 import re
+import unicodedata
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -73,6 +74,13 @@ def _both_unless(pat_a: str, pat_b: str, neg: str):
     ra, rb, rn = re.compile(pat_a), re.compile(pat_b), re.compile(neg)
     return lambda line: (bool(ra.search(line)) and bool(rb.search(line))
                          and not rn.search(line))
+
+
+def _nfkc_both_unless(pat_a: str, pat_b: str, neg: str):
+    """_both_unless と同じだが、行を NFKC で正規化してから判定する。
+    全角英数（ＡＴＥＸ・８０ GHz）・全角記号（＊）の表記揺れで素通りさせないための版（2026-10-22）。"""
+    pred = _both_unless(pat_a, pat_b, neg)
+    return lambda line: pred(unicodedata.normalize("NFKC", line))
 
 
 # 単位「Ω」の表記揺れ（記号 Ω とカタカナ「オーム」）を両方拾う断片。
@@ -1632,6 +1640,42 @@ FORBIDDEN = [
      _both(r"MTBF\s*[=＝]\s*[\d.]+\s*年", r"リレー|継電器"),
      "交換部品のリレーに「MTBF = ○年」を使わない（使い捨て品は MTTF、補助リレーの寿命は動作回数）",
      "例：MTBF = 3 年のリレー → 3 × 0.7 = 2.1 年"),
+    # 20261022-ex-kaigai-ninsho: 防爆機器の確認項目に ATEX・IECEx を国内の受入根拠として並べない。
+    # 国内は型式検定の表示が使用の条件（安衛法第44条の2第5項・第7項、施行令第14条の2第1項第三号）。
+    # 2026-09-19 に spec-writing で確定していたが、level / explosion-proof / analyzer / panel-hmi の
+    # 5 箇所へ伝播していなかった（2026-10-22 の分散再検証で発見・是正）。
+    # 「ATEX だけでは国内で使えない」等の是正文は負ガードで通す。
+    ("20261022-ex-kaigai-ninsho",
+     # 負ガードは単語の有無でなく「是正後の結論の形」に限る。「型式検定は不要」「代わりになる」の
+     # ような正反対の文が単語だけで素通りした（2026-10-22 敵対監査）。
+     _nfkc_both_unless(r"(?i)ATEX|IECEx",
+                       r"(認証|証明書|証書)\**[）)]?.{0,12}(確認|明記|入手|選定|使用|取得)|Ex\s*認証",
+                       r"だけでは|のみでは|代わりにならない|根拠にならない|使えない|不可|"
+                       r"EU\s*の制度|輸出|是正|誤り|以前の本ページ|修正前"),
+     "防爆機器の確認を ATEX・IECEx の認証で済ませない。国内は型式検定の表示が要る"
+     "（安衛法第44条の2第7項。正典 docs/04-sekkei/spec-writing.md）",
+     "防爆機器は**Ex認証（TIIS/ATEX/IECEx）**を確認し、ガスグループ（IIA/IIB/IIC）が"),
+    # 20261022-seal-leg-no-g: 封液柱の補正式を「封液柱 × ρ」（g なし）で書かない。
+    # 左辺 Pa・右辺 kg/m² で次元が合わず 9.81 倍ずれる。正しくは ΔP = ρp × g × H − ρs × g × hs。
+    # 2026-10-22 に docs/03-keiso/level.md で発見・是正。
+    ("20261022-seal-leg-no-g",
+     # (A) 封液柱と密度を掛けるのに g が無い式（語順・記号・変数名の揺れを含む）。
+     # (B) 「封液柱の静圧が加算される」型の符号の誤り（封液柱は低圧側＝差し引かれる）。
+     lambda line: (
+         _nfkc_both_unless(r"封液柱(?:高さ)?\s*[×*・xX]\s*ρ|ρ\S*\s*[×*・xX]\s*封液柱|ρ_?s(?:eal)?\s*[×*・xX]\s*h", r"ρ",
+                           r"g\s*[×*・]|[×*・]\s*g\b|9\.8|是正|以前の本ページ|旧式は|修正前")(line)
+         or _nfkc_both_unless(r"封液.{0,12}(?:加算|足し|加え)", r".",
+                              r"差し引|是正|以前の本ページ|書いていましたが|修正前")(line)),
+     "封液柱の補正式に g（重力加速度）を入れる（ΔP = ρp × g × H − ρs × g × hs。正典 docs/03-keiso/level.md）",
+     "実測差圧 = プロセス液柱 × ρ_process - 封液柱 × ρ_seal"),
+    # 20261022-foam-80ghz: 「泡が多い → 80 GHz」と断定しない。
+    # Endress+Hauser は泡の吸収が問題なら低い周波数が透過しやすい場合があるとし、VEGA も 80 GHz は
+    # 軽い泡までで厚い泡はガイドパルスを勧める（二次資料・2026-10-22）。メーカー間で見解が割れる。
+    ("20261022-foam-80ghz",
+     _nfkc_both_unless(r"(?<!気)泡|フォーム", r"(?:79|80)\s*GHz|W\s*バンド",
+                       r"言い切れ|割れ|以前の本ページ|是正|厚い泡では|厚い泡は|避け|修正前"),
+     "泡のある槽に 80 GHz を断定的に勧めない（厚い泡はガイドパルス。正典 docs/03-keiso/level.md）",
+     "| 80 GHz（Wバンド） | 最小ビーム。最高精度 | 泡・蒸気が多いタンク |"),
 ]
 
 # 追加正対照（回帰 fixture）: 過去に表記揺れで検出をすり抜けた実例。
@@ -1664,6 +1708,23 @@ EXTRA_POSITIVE = [
     # （20260803-sealing-cable-gaikei は散文の手順行だけでなく確認表の行も止める）。
     ("20260803-sealing-cable-gaikei",
      "| シール材の充填量 | 空隙なし・充填厚さ ≥ ケーブル外径 |"),
+    # 2026-10-22 敵対監査で素通りを再現した入力（強化後は検出されること）。
+    ("20261022-ex-kaigai-ninsho", "ATEX 認証を確認すれば型式検定は不要"),
+    ("20261022-ex-kaigai-ninsho", "ATEX 認証を確認すれば、型式検定の代わりになる"),
+    ("20261022-ex-kaigai-ninsho", "ＡＴＥＸ／ＩＥＣＥｘ認証を確認する"),
+    ("20261022-ex-kaigai-ninsho", "IECEX 認証を確認する"),
+    ("20261022-ex-kaigai-ninsho", "ATEX または IECEx の認証品を選定する"),
+    ("20261022-ex-kaigai-ninsho", "機器の ATEX 証明書を入手する"),
+    ("20261022-seal-leg-no-g", "ρ_seal × 封液柱"),
+    ("20261022-seal-leg-no-g", "ΔP = ρp × H − ρs × hs"),
+    ("20261022-seal-leg-no-g", "封液柱 ＊ ρs"),
+    ("20261022-seal-leg-no-g", "封液柱×ρ（旧式と同じ考え方で十分）"),
+    ("20261022-seal-leg-no-g", "密閉タンクでシールポット（封液）を使う場合、封液柱の静圧が加算されるため補正が必要。"),
+    ("20261022-foam-80ghz", "泡や蒸気が多い → W バンド"),
+    ("20261022-foam-80ghz", "泡が多い → ８０ GHz"),
+    ("20261022-foam-80ghz", "フォームが多い槽 → 80 GHz"),
+    ("20261022-foam-80ghz", "泡が多い → 79 GHz 帯レーダー"),
+    ("20261022-foam-80ghz", "泡が多い → 80 GHz（軽い泡でも厚い泡でも測れる）"),
 ]
 
 # 負対照 fixture: 是正後の「正しい説明文」を誤検出しないことの回帰証明。
@@ -2220,6 +2281,29 @@ NEGATIVE_FIXTURES = [
     ("20260710-ocr-shunji-150pct",
      "瞬時要素を定格の 1.5〜2 倍（150〜200%）に整定すると、変圧器投入のたびに"
      "励磁突入電流（定格の 6〜10 倍）で瞬時要素が**誤動作**トリップします。"),
+    # 2026-10-22 分散再検証の是正文（実際に docs に書いた行）。
+    ("20261022-ex-kaigai-ninsho",
+     "| 防爆機器の確認 | 「Ex認証（TIIS/ATEX/IECEx）を確認」 | 国内は型式検定の表示"
+     "（安衛法第44条の2第5項・第7項）。ATEX・IECEx だけでは国内で使えない。"),
+    ("20261022-ex-kaigai-ninsho",
+     "    1. **国内の型式検定に合格した型式であることの表示**が機器に付いていること"
+     "（労働安全衛生法第44条の2第5項・第7項。ATEX・IECEx だけでは国内で使えません。"),
+    ("20261022-seal-leg-no-g",
+     "    以前の本ページは「プロセス液柱 × ρ − 封液柱 × ρ」の形で書いており、g（重力加速度）が抜けていました。"),
+    ("20261022-foam-80ghz",
+     "    以前の本ページは「泡や蒸気が多い → 80 GHz」としていましたが、メーカーの公開資料で見解が割れます。"),
+    ("20261022-foam-80ghz",
+     "    80 GHz を主力とする VEGA も、80 GHz で測れるのは**軽い泡**までで、厚い泡ではガイドパルスを勧めています。"),
+    # 2026-10-22 敵対監査で誤検出を再現した正しい文（強化後は通ること）。
+    ("20261022-ex-kaigai-ninsho", "ATEX 認証のみでは不可と確認する"),
+    ("20261022-ex-kaigai-ninsho", "輸出先が EU の場合は ATEX 認証書を入手する"),
+    ("20261022-ex-kaigai-ninsho", "ATEX・IECEx 認証は国内では使用の根拠にならないことを確認"),
+    ("20261022-seal-leg-no-g", "封液柱 × ρs × g"),
+    ("20261022-seal-leg-no-g", "ρs：封液の密度（kg/m³）、hs：上部ノズルから伝送器までの封液柱の高さ（m）"),
+    ("20261022-seal-leg-no-g", "封液柱 × ρs × 9.81 を差し引く"),
+    ("20261022-foam-80ghz", "厚い泡では 80 GHz でも液面の反射が返らない"),
+    ("20261022-foam-80ghz", "泡のある槽では 80 GHz を避け、ガイドパルスを使う"),
+    ("20261022-foam-80ghz", "流量計の気泡対策と、レベル計の 80 GHz 選定は別ページ"),
 ]
 
 # canary: これらの正典値が消えていたら FAIL（黙った削除の検知）。
@@ -2280,6 +2364,13 @@ CANARIES = [
      '<td style="text-align:right;padding:0.3rem 0.8rem">76</td>'
      '<td style="text-align:right;padding:0.3rem 0.8rem">76</td>',
      "許容電流表 CV 3心 14mm² 行の正典値"),
+    # 2026-10-22: 分散再検証で是正した正典値。黙って消える（旧式・旧記述への退行）のを番兵で止める。
+    ("docs/03-keiso/level.md", "ΔP = ρp × g × H − ρs × g × hs", "封液柱補正式（g を含む正しい形）"),
+    ("docs/03-keiso/level.md", "第44条の2第5項", "防爆機器は型式検定の表示を確認する根拠条"),
+    ("docs/04-sekkei/spec-writing.md", "同条**第7項**は", "表示のない型式検定対象機器の使用禁止"),
+    ("docs/guidelines/grounding-inspection.md", "**x = 0.5 D では ρ / (2πD) だけ低く出ます。**",
+     "3極法で P を中点に置くと過小に出ること（合格側への誤判定の防止）"),
+    ("docs/guidelines/grounding-inspection.md", "C 用 **20 m 以上**", "E〜C 間 20 m の配置に届く C 用コード長"),
 ]
 
 _LINTOK = re.compile(r"<!--\s*lint-ok:\s*([\w,\-]+)")
