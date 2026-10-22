@@ -133,6 +133,8 @@
    "revision_id": "347AC0000000057_20260401_507AC0000000033",
    "amendment_enforcement_date": "2026-04-01",
    "pages": [
+    "docs/03-keiso/level.md",
+    "docs/04-sekkei/spec-writing.md",
     "docs/04-sekkei/standards.md",
     "docs/09-hoantokei/koji-tetsuzuki.md",
     "docs/10-safety/index.md",
@@ -146,6 +148,7 @@
     "Mp-Ch_3-At_12",
     "Mp-Ch_4-At_20",
     "Mp-Ch_4-At_28_2",
+    "Mp-Ch_5-Se_1-At_44_2",
     "Mp-Ch_5-Se_2-At_57",
     "Mp-Ch_5-Se_2-At_57_2",
     "Mp-Ch_5-Se_2-At_57_3",
@@ -157,9 +160,12 @@
    "revision_id": "347CO0000000318_20260401_507CO0000000361",
    "amendment_enforcement_date": "2026-04-01",
    "pages": [
+    "docs/03-keiso/level.md",
+    "docs/04-sekkei/spec-writing.md",
     "docs/10-safety/special-education.md"
    ],
    "anchors": [
+    "Mp-At_14_2",
     "Mp-At_4"
    ]
   },
