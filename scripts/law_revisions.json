@@ -1,5 +1,5 @@
 {
- "checked": "2026-09-19",
+ "checked": "2026-10-22",
  "note": "e-Gov 法令 API v2 の law_revision_id（改正があると変わる）と、docs が使う条アンカー（XML 階層から算出し照合済みの値）。",
  "laws": {
   "409M50000400052": {
@@ -93,8 +93,8 @@
   },
   "347M50002000032": {
    "title": "労働安全衛生規則",
-   "revision_id": "347M50002000032_20260801_508M60000100086",
-   "amendment_enforcement_date": "2026-08-01",
+   "revision_id": "347M50002000032_20261001_508M60000100116",
+   "amendment_enforcement_date": "2026-10-01",
    "pages": [
     "docs/02-teiatsu/inverter.md",
     "docs/03-keiso/explosion-proof.md",
@@ -130,8 +130,8 @@
   },
   "347AC0000000057": {
    "title": "労働安全衛生法",
-   "revision_id": "347AC0000000057_20260401_507AC0000000033",
-   "amendment_enforcement_date": "2026-04-01",
+   "revision_id": "347AC0000000057_20261001_507AC0000000033",
+   "amendment_enforcement_date": "2026-10-01",
    "pages": [
     "docs/03-keiso/level.md",
     "docs/04-sekkei/spec-writing.md",
@@ -157,8 +157,8 @@
   },
   "347CO0000000318": {
    "title": "労働安全衛生法施行令",
-   "revision_id": "347CO0000000318_20260401_507CO0000000361",
-   "amendment_enforcement_date": "2026-04-01",
+   "revision_id": "347CO0000000318_20261001_508CO0000000196",
+   "amendment_enforcement_date": "2026-10-01",
    "pages": [
     "docs/03-keiso/level.md",
     "docs/04-sekkei/spec-writing.md",
