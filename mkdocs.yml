@@ -186,6 +186,7 @@ nav:
     - 低圧配電: 02-teiatsu/distribution.md
     - モーター制御: 02-teiatsu/motor-control.md
     - インバータ: 02-teiatsu/inverter.md
+    - ノイズフィルタ: 02-teiatsu/noise-filter.md
     - 低圧ケーブル: 02-teiatsu/lv-cable.md
     - 制御回路: 02-teiatsu/control-circuit.md
     - PLC基礎: 02-teiatsu/plc.md
