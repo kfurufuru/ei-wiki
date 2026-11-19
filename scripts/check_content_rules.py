@@ -2601,6 +2601,10 @@ CANARIES = [
     # 2026-11-19: CISPR 11 グループ1 AC 電源ポートの許容値（総務省 一部答申 令和7年12月8日 別紙1 表2・表4）。
     ("docs/02-teiatsu/noise-filter.md", "| 0.15〜0.50 | 79／66 dBμV |", "CISPR 11 クラス A（20 kVA 以下）0.15〜0.50 MHz の許容値"),
     ("docs/02-teiatsu/noise-filter.md", "| 5〜30 | 73／60 dBμV | 60／50 dBμV |", "CISPR 11 5〜30 MHz の許容値（クラス A／B）"),
+    ("docs/02-teiatsu/noise-filter.md", "| 0.15〜0.50 | 79／66 dBμV | 66〜56／56〜46 dBμV（周波数の対数に対し直線的に減少） |", "CISPR 11 0.15〜0.50 MHz の許容値（クラス B の減少の向きを含む）"),
+    ("docs/02-teiatsu/noise-filter.md", "| 0.50〜5 | 73／60 dBμV | 56／46 dBμV |", "CISPR 11 0.50〜5 MHz の許容値（クラス A／B）"),
+    ("docs/02-teiatsu/noise-filter.md", "| 周波数（MHz） | クラス A（定格電力 20 kVA 以下）準尖頭値／平均値 | クラス B 準尖頭値／平均値 |", "CISPR 11 表の見出し（20 kVA 以下・準尖頭値／平均値の列順）"),
+    ("docs/02-teiatsu/noise-filter.md", "「漏れ電流は最大約 4mA（400V クラスは、8mA）」", "FR-BIF の漏れ電流（L-06049-L p.49）"),
     # 2026-11-18: EMC フィルタの設置側（入力側）と、ラインノイズフィルタの出力側の巻き付け上限（三菱 L-06049-L）。
     ("docs/02-teiatsu/inverter.md", "**インバータ一次側（入力側）に挿入**", "EMC フィルタの設置側（入力側。L-06049-L p.50）"),
     ("docs/02-teiatsu/inverter.md", "巻き付けは1個につき 4T 以内", "ラインノイズフィルタの出力側の巻き付け上限（L-06049-L p.48）"),
