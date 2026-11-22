@@ -204,5 +204,6 @@ flowchart LR
 
 - [力率改善ROI](../08-energy/power-factor-roi.md) — 投資回収の試算・力率割引制度（経済性の正典）
 - [高調波対策](harmonics.md) — 直列リアクトルと高調波の関係を掘り下げる
+- [電気の規模感（桁のはしご）](../reference/scale-ladder.md) — 力率ごとの電流倍率と機器の代表的な力率
 - [変圧器](transformer.md) — 進相過剰による電圧上昇が変圧器に与える影響
 - [高圧カテゴリ](index.md) — より広い高圧知識へ
