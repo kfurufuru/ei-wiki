@@ -304,4 +304,5 @@ nav:
     - 規格一覧: reference/standards-list.md
     - 計算ツール集: reference/calculators.md
     - ケーブル許容電流表: reference/ampacity.md
+    - 電気の規模感（桁のはしご）: reference/scale-ladder.md
     - 記事鮮度監査: reference/audit-status.md
