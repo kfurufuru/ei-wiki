@@ -18,9 +18,9 @@ last_verified: 2026-11-22
 
 ## 概要（30秒まとめ）
 
-- **1000倍ごとに区切って覚えます。** 容量なら 10 W（LED電球）→ 1 kW（ドライヤー）→ 1 MW（高圧受電の工場）→ 1 GW（原子力1基）です。
+- **1000倍ごとの目盛りに実物を当てて覚えます。** 容量なら 1 kW（ドライヤー）→ 1 MW（高圧受電の工場）→ 1 GW（原子力1基）です。LED電球（10 W）はその手前です。
 - **計算結果の桁チェックに使います。** 家庭の負荷が数 MW、発電所の出力が数 kW になったら、単位か桁の誤りです。
-- **量どうしはつながっています。** 同じ電力なら電圧が10倍で電流は1/10、損失（I²R）は1/100です。容量が大きい需要家ほど高い電圧で受電するのはこのためです。
+- **量どうしはつながっています。** 同じ電力・同じ力率・同じ線路なら、電圧が10倍で電流は1/10、損失（I²R）は1/100です。容量が大きい需要家ほど高い電圧で受電するのはこのためです。
 
 !!! warning "数値の性格"
     図と表の数値は、桁をつかむための**代表値・目安**です。設計や判定の基準値として使わないでください。法令で決まっている値は「法定」と書き、根拠の正典ページへリンクしています。接地抵抗・絶縁抵抗の判定値は、このページには書かず正典ページを参照します。図の色付きの棒は、法令や契約の境目、または判定値が別に決まっている行です。
@@ -29,7 +29,7 @@ last_verified: 2026-11-22
 
 <figure id="fig-scale-power" style="scroll-margin-top: 4rem">
 <svg viewBox="0 0 640 346" width="640" height="346" role="img" aria-labelledby="fig-scale-power-title" xmlns="http://www.w3.org/2000/svg">
-  <title id="fig-scale-power-title">容量のはしご図。横軸は対数目盛りで、1 W から 100 GW まで1000倍ごとに太線を引いている。LED電球 10 W、ドライヤー 1 kW、小型電動機 3.7 kW、低圧と高圧の契約の境目の目安 50 kW、高圧受電の工場 1 MW、特高受電の目安 2 MW、風車1基 3 MW、新幹線1編成 17 MW、大工場 40 MW、原子力1基 1 GW、東京エリアの最大需要 約55 GW を棒の長さで並べている。</title>
+  <title id="fig-scale-power-title">容量のはしご図。横軸は対数目盛りで、1 W から 100 GW まで1000倍ごとに太線を引いている。LED電球 10 W、ドライヤー 1 kW、小型電動機 3.7 kW、低圧と高圧の契約の境目の目安 50 kW、高圧受電の工場 1 MW、特高受電の目安 2 MW、風車1基 2〜4 MW、新幹線1編成 17 MW、大工場 40 MW、原子力1基 1 GW、東京エリアの最大需要 約55 GW を棒の長さで並べている。</title>
   <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1" stroke-opacity="0.35">
     <line x1="128.0" y1="38" x2="128.0" y2="330"/>
     <line x1="155.5" y1="38" x2="155.5" y2="330" stroke-dasharray="2 3"/>
@@ -106,7 +106,7 @@ last_verified: 2026-11-22
 
 <figure id="fig-scale-voltage" style="scroll-margin-top: 4rem">
 <svg viewBox="0 0 640 398" width="640" height="398" role="img" aria-labelledby="fig-scale-voltage-title" xmlns="http://www.w3.org/2000/svg">
-  <title id="fig-scale-voltage-title">電圧のはしご図。横軸は対数目盛りで、1 V から 1 MV まで。乾電池 1.5 V、自動車 12 V、家庭 100 V、工場の動力 400 V、低圧の上限 交流 600 V、直流電化 1,500 V、高圧配電 6.6 kV、高圧の上限 7,000 V、特高受電 22 kV、第三種の上限 50 kV、大工場の受電 66 kV、154 kV、基幹送電 500 kV を並べ、法令の境目3本を色付きで示している。</title>
+  <title id="fig-scale-voltage-title">電圧のはしご図。横軸は対数目盛りで、1 V から 1 MV まで。乾電池 1.5 V、自動車 12 V、家庭 100 V、工場の動力 400 V、低圧の上限 交流 600 V、直流電化 1,500 V、高圧配電 6.6 kV、高圧の上限 7,000 V、特高受電 22 kV、第三種の範囲（50 kV 未満）、大工場の受電 66 kV、154 kV、基幹送電 500 kV を並べ、法令の境目3本を色付きで示している。</title>
   <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1" stroke-opacity="0.35">
     <line x1="128.0" y1="38" x2="128.0" y2="382"/>
     <line x1="178.3" y1="38" x2="178.3" y2="382" stroke-dasharray="2 3"/>
@@ -138,7 +138,7 @@ last_verified: 2026-11-22
   <text x="273.8" y="165.0" font-size="12" style="fill: var(--md-default-fg-color)">低圧の上限（交流）</text>
   <rect x="128" y="179.0" width="159.9" height="16" style="fill: var(--md-default-fg-color)" fill-opacity="0.22"/>
   <text x="120" y="191.0" font-size="12" text-anchor="end" style="fill: var(--md-default-fg-color)">1,500 V</text>
-  <text x="293.9" y="191.0" font-size="12" style="fill: var(--md-default-fg-color)">直流電化（高圧）</text>
+  <text x="293.9" y="191.0" font-size="12" style="fill: var(--md-default-fg-color)">直流電化（750 V 超で高圧）</text>
   <rect x="128" y="205.0" width="192.3" height="16" style="fill: var(--md-default-fg-color)" fill-opacity="0.22"/>
   <text x="120" y="217.0" font-size="12" text-anchor="end" style="fill: var(--md-default-fg-color)">6.6 kV</text>
   <text x="326.3" y="217.0" font-size="12" style="fill: var(--md-default-fg-color)">高圧配電線</text>
@@ -231,13 +231,13 @@ last_verified: 2026-11-22
   <text x="320.6" y="243.0" font-size="12" style="fill: var(--md-default-fg-color)">1,000 kVA 変圧器の一次</text>
   <rect x="128" y="257.0" width="209.3" height="16" style="fill: var(--md-default-fg-color)" fill-opacity="0.22"/>
   <text x="120" y="269.0" font-size="12" text-anchor="end" style="fill: var(--md-default-fg-color)">約350 A</text>
-  <text x="343.3" y="269.0" font-size="12" style="fill: var(--md-default-fg-color)">40 MW を 66 kV で受電</text>
+  <text x="343.3" y="269.0" font-size="12" style="fill: var(--md-default-fg-color)">40 MW を 66 kV で受電（力率1）</text>
   <rect x="128" y="283.0" width="243.1" height="16" style="fill: var(--md-default-fg-color)" fill-opacity="0.22"/>
   <text x="120" y="295.0" font-size="12" text-anchor="end" style="fill: var(--md-default-fg-color)">約2,750 A</text>
   <text x="377.1" y="295.0" font-size="12" style="fill: var(--md-default-fg-color)">1,000 kVA 変圧器の二次</text>
   <rect x="128" y="309.0" width="247.0" height="16" style="fill: var(--md-default-fg-color)" fill-opacity="0.22"/>
   <text x="120" y="321.0" font-size="12" text-anchor="end" style="fill: var(--md-default-fg-color)">約3,500 A</text>
-  <text x="381.0" y="321.0" font-size="12" style="fill: var(--md-default-fg-color)">40 MW を 6.6 kV で受電</text>
+  <text x="381.0" y="321.0" font-size="12" style="fill: var(--md-default-fg-color)">40 MW を 6.6 kV で受電（力率1）</text>
   <rect x="128" y="335.0" width="267.9" height="16" style="fill: var(--md-default-fg-color)" fill-opacity="0.22"/>
   <text x="120" y="347.0" font-size="12" text-anchor="end" style="fill: var(--md-default-fg-color)">12.5 kA</text>
   <text x="401.9" y="347.0" font-size="12" style="fill: var(--md-default-fg-color)">遮断器の定格遮断電流</text>
@@ -253,7 +253,7 @@ last_verified: 2026-11-22
 | 4〜20 mA | 計装の統一信号（[計装の基礎](../03-keiso/basics.md)） | LED 1個も数 mA〜20 mA |
 | 30 mA | 漏電遮断器の高感度形（[低圧配電](../02-teiatsu/distribution.md)） | 感度の数値は法令ではなく実務標準 |
 | 0.2 A 程度 | 高圧受電設備の地絡継電器（GR）の整定の目安 | 地絡保護 |
-| 数 A〜十数 A | 高圧配電線の1線地絡電流 Ig | B種接地抵抗の計算に使う |
+| 数 A 程度 | 高圧配電線の1線地絡電流 Ig | B種接地抵抗の計算に使う |
 | 10 A〜15 A | ドライヤー 1 kW（100 V）、コンセント1口 15 A | 分岐回路 |
 | 約 80 A | 三相 200 V・22 kW 電動機（効率 0.9・力率 0.85 で計算） | 低圧動力の幹線 |
 | 約 87 A／約 2,750 A | 1,000 kVA 変圧器の一次側（6.6 kV）／二次側（210 V） | 同じ変圧器で約30倍違う |
@@ -264,7 +264,7 @@ last_verified: 2026-11-22
 !!! danger "感電の数値は目安"
     感電の危険は数十 mA から高まると言われますが、個人差・通電時間・通電経路で大きく変わります。安全の判断基準には使わず、停電・検電・接地の手順（[ロックアウト・タグアウト](../10-safety/lockout-tagout.md)）で守ってください。
 
-人に危ない電流（mA）と設備を壊す電流（kA）は約100万倍離れています。地絡保護は前者、短絡保護は後者を相手にしています。
+人が感じる電流（mA）・高圧の地絡電流（数 A）・短絡電流（kA）は、それぞれ桁が違います。低圧の漏電遮断器は mA、高圧の地絡継電器は 1 A 未満、遮断器は kA 単位の電流を扱います。6.6 kV の非接地系統では地絡電流が短絡電流より桁違いに小さいので、地絡は過電流継電器ではなく、零相電流を見る地絡継電器で検出します。
 
 ## 抵抗（Ω）
 
@@ -341,13 +341,13 @@ last_verified: 2026-11-22
 | MΩ 級 | 低圧の絶縁抵抗 | 判定値は[絶縁管理](../05-hozen/insulation-management.md) |
 | GΩ 級 | 良好な高圧ケーブルの絶縁抵抗 | 判定値は[絶縁管理](../05-hozen/insulation-management.md) |
 
-オームの法則でつなぐと、100 V が人体の約 1 kΩ にかかれば約 100 mA、絶縁抵抗 0.1 MΩ にかかれば 1 mA です。「流したい所（電線・接地）は小さく、流したくない所（絶縁）は大きく」で、両者は約100万倍以上離れています。
+オームの法則でつなぐと、100 V が人体の約 1 kΩ にかかれば約 100 mA、絶縁抵抗 0.1 MΩ にかかれば 1 mA です。「流したい所（電線・接地）は小さく、流したくない所（絶縁）は大きく」です。電線（mΩ〜Ω）と低圧の電路の絶縁（0.1 MΩ 以上）は10万倍以上、接地（10〜100 Ω 級）と低圧の電路の絶縁でも数百倍以上離れています。
 
 ## インピーダンス（%Z・Ω）
 
 <figure id="fig-scale-impedance" style="scroll-margin-top: 4rem">
 <svg viewBox="0 0 640 190" width="640" height="190" role="img" aria-labelledby="fig-scale-impedance-title" xmlns="http://www.w3.org/2000/svg">
-  <title id="fig-scale-impedance-title">パーセントインピーダンスのはしご図。横軸は対数目盛りで、1 % から 10,000 % まで。受電用変圧器 3〜6 %、直列リアクトル 6 %、特高の大型変圧器 10〜15 %、同期発電機の同期リアクタンス 100〜200 %、変圧器の励磁インピーダンス 数千 % を並べている。</title>
+  <title id="fig-scale-impedance-title">パーセントインピーダンスのはしご図。横軸は対数目盛りで、1 % から 10,000 % まで。配電用変圧器 4〜6 %、直列リアクトル 6 %、特高の大型変圧器 10〜15 %、同期発電機の同期リアクタンス 100〜200 %、変圧器の励磁インピーダンス 数千 % を並べている。</title>
   <g style="stroke: var(--md-default-fg-color--light); fill: none" stroke-width="1" stroke-opacity="0.35">
     <line x1="128.0" y1="38" x2="128.0" y2="174"/>
     <line x1="203.5" y1="38" x2="203.5" y2="174" stroke-dasharray="2 3"/>
@@ -359,9 +359,9 @@ last_verified: 2026-11-22
     <text x="128.0" y="32">1 %</text>
     <text x="354.5" y="32">1 k%</text>
   </g>
-  <rect x="128" y="49.0" width="49.3" height="16" style="fill: var(--md-default-fg-color)" fill-opacity="0.22"/>
-  <text x="120" y="61.0" font-size="12" text-anchor="end" style="fill: var(--md-default-fg-color)">3〜6 %</text>
-  <text x="183.3" y="61.0" font-size="12" style="fill: var(--md-default-fg-color)">受電用変圧器の %Z</text>
+  <rect x="128" y="49.0" width="52.8" height="16" style="fill: var(--md-default-fg-color)" fill-opacity="0.22"/>
+  <text x="120" y="61.0" font-size="12" text-anchor="end" style="fill: var(--md-default-fg-color)">4〜6 %</text>
+  <text x="186.8" y="61.0" font-size="12" style="fill: var(--md-default-fg-color)">配電用変圧器の %Z</text>
   <rect x="128" y="75.0" width="58.8" height="16" style="fill: var(--md-default-fg-color)" fill-opacity="0.22"/>
   <text x="120" y="87.0" font-size="12" text-anchor="end" style="fill: var(--md-default-fg-color)">6 %</text>
   <text x="192.8" y="87.0" font-size="12" style="fill: var(--md-default-fg-color)">直列リアクトル</text>
@@ -381,7 +381,7 @@ last_verified: 2026-11-22
 
 | 大きさ | 例（50 Hz） | 現場での使いどころ |
 |---|---|---|
-| 3〜6 % | 受電用変圧器の %Z | 短絡すると定格の約20〜30倍が流れる |
+| 4〜6 % | 配電用変圧器の %Z | 短絡すると定格の約17〜25倍が流れる |
 | 6 % | 進相コンデンサの直列リアクトル | 第5調波で 5² × 6 % ＝ 150 % となり誘導性（[高調波](../01-koatsu/harmonics.md)） |
 | 10〜15 % 程度 | 特高の大型変圧器 | 短絡電流を抑えるため大きめに作る |
 | 100〜200 % | 同期発電機の同期リアクタンス | 短絡比 ＝ 1／同期リアクタンス（単位法） |
