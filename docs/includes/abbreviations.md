@@ -104,3 +104,8 @@
 *[腐食]: Corrosion（さび・電食・塩害腐食）
 *[絶縁劣化]: Insulation Degradation（経年絶縁低下・IR低下）
 *[接地抵抗]: Earth Resistance（アース抵抗）
+
+<!-- 安全 -->
+*[LOTO]: Lockout/Tagout（ロックアウト・タグアウト：施錠と札による隔離）
+*[KY]: Kiken Yochi（危険予知）
+*[PTW]: Permit to Work（作業許可）
