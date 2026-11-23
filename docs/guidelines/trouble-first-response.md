@@ -212,7 +212,7 @@ graph TD
 - [非定常時の判断フレーム](../06-trouble/abnormal-situation.md)
 - [電気事故対応と報告](../09-hoantokei/jiko-taiou.md)
 - [作業許可証（PTW）発行手順](work-permit.md)
-- [作業記憶の負荷を減らす（立場別）](working-memory.md) — 頭に抱えたまま対応しないための工夫（記録係を分ける等）
+- [作業記憶の負荷を減らす（困りごと・立場別）](working-memory.md) — 頭に抱えたまま対応しないための工夫（記録係を分ける等）
 
 ---
 
