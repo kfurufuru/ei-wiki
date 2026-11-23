@@ -262,6 +262,7 @@ nav:
     - ケーブルトレイ施工: guidelines/cable-tray.md
     - 作業許可証(PTW): guidelines/work-permit.md
     - 制御盤撤去工事ガイドライン: guidelines/seigyoban-tekkyo-guideline.md
+    - 作業記憶の負荷を減らす（立場別）: guidelines/working-memory.md
   - 安全・保安:
     - 安全管理:
       - 10-safety/index.md
